@@ -126,6 +126,7 @@ python -m yarnstand run examples/pitaya_v09.json --out results/pitaya_v09.json
 - [Проверка персика v13](docs/peach-v13.md)
 - [Короткая калибровка после печати](docs/calibration.md)
 - [Результаты для PITAYA и сравнительных вариантов](docs/results.md)
+- [Повторная проверка PITAYA v10 по STL и STEP](docs/pitaya-v10-recheck.md)
 - [Сырые сценарии](results/scenarios.csv)
 - [Чувствительность](results/sensitivity.csv)
 

@@ -1,0 +1,31 @@
+{
+  "static_paths": 720,
+  "static_statuses": {
+    "clear": 696,
+    "contact": 24
+  },
+  "static_contact_parts": {
+    "body": 24,
+    "platter": 24,
+    "leaf_1": 1,
+    "seeds": 5,
+    "leaf_2": 1,
+    "leaf_3": 1,
+    "leaf_4": 1,
+    "leaf_5": 1,
+    "leaf_6": 1
+  },
+  "diameter_tension_cases": 54,
+  "dynamics_cases": 60,
+  "dynamics_events": {
+    "ball_slipping": 30,
+    "ball_lifting": 7
+  },
+  "sweeps": 27,
+  "sweep_statuses": {
+    "clear_prescribed_sweep": 23,
+    "initial_contact": 2,
+    "contact_on_prescribed_sweep": 2
+  },
+  "elapsed_s": 78.01499999999942
+}

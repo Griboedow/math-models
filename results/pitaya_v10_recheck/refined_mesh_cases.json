@@ -1,0 +1,29 @@
+[
+  {
+    "case": {
+      "ball": "full",
+      "setup": "high_table",
+      "exit_fraction": -0.65,
+      "azimuth_deg": 240,
+      "diameter_m": 0.002,
+      "tension_N": 0.01
+    },
+    "result": {
+      "status": "clear",
+      "min_sampled_clearance_m": 4.580657375747666e-05,
+      "clearance_lower_bound_m": 2.080738894762454e-05,
+      "worst_point_m": [
+        -0.04699532776472263,
+        -0.03152941382387647,
+        0.043156318162193986
+      ],
+      "nearest_part": "body",
+      "contact_parts": [],
+      "centerline_crossings": [],
+      "sample_count": 7498,
+      "max_sample_spacing_m": 4.999836961970423e-05,
+      "yarn_radius_m": 0.001,
+      "scope": "prescribed finite-radius centerline; no contact rerouting or friction"
+    }
+  }
+]

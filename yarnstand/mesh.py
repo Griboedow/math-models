@@ -35,7 +35,11 @@ class MeshScene:
             cells.ImportLegacyFormat(numpy_to_vtkIdTypeArray(a.ravel(),deep=True))
             poly=vtk.vtkPolyData();poly.SetPoints(pts);poly.SetPolys(cells)
             field=vtk.vtkImplicitPolyDataDistance();field.SetInput(poly)
-            tree=vtk.vtkOBBTree();tree.SetDataSet(poly);tree.BuildLocator()
+            tree=vtk.vtkOBBTree();tree.SetDataSet(poly)
+            # Scene units are metres. VTK's 0.01 default is a centimetre and
+            # can miss crossings of small curved surfaces. This epsilon is
+            # numerical only; yarn radius and clearance margins are separate.
+            tree.SetTolerance(1e-9);tree.BuildLocator()
             self.parts.append((name,field,tree,np.asarray(mesh.bounds),poly))
         if not self.parts:raise ValueError('Scene must contain at least one mesh')
         self.provenance={}

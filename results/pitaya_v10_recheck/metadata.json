@@ -1,0 +1,563 @@
+{
+  "simulator_commit": "f5322a7932dea19f92ca371f747bcb993a7e9e73",
+  "source_version_note": "Commit identifies the checkout base; SHA-256 values identify the exact sources actually executed, including the local VTK tolerance fix.",
+  "simulator_source_sha256": {
+    "mesh.py": "97d405d359e2e61e0ab4368ffee6868e7138acda711ff5078fd1259ecb2d6d49",
+    "model.py": "2755932f2aaeb79472d1b6c9abe57029d84e82093d0d8803fa38861c113ee72b",
+    "presets.py": "9f9b436932c9b274e8b906208ce05a882665d40a6f2c7b7e387874bb7b15f59a"
+  },
+  "geometry_version": "PITAYA_v10",
+  "stand_assumptions": {
+    "name": "PITAYA_v10 geometry; v09 mechanical assumptions",
+    "mass_kg": 0.23,
+    "rotor_inertia_kg_m2": 6.5e-05,
+    "com_height_m": 0.031,
+    "platform_height_m": 0.045,
+    "platform_radius_m": 0.052,
+    "support_radius_m": 0.052,
+    "pad_radius_m": 0.005,
+    "pad_count": 6,
+    "pad_angle_deg": 30.0,
+    "support_points_m": null,
+    "foot_friction": 0.45,
+    "start_torque_Nm": 0.0006,
+    "running_torque_Nm": 0.0003,
+    "viscous_Nm_s": 1.5e-05,
+    "body_profile_m": [
+      [
+        0.0531,
+        0.04
+      ],
+      [
+        0.0548,
+        0.0424
+      ],
+      [
+        0.0564,
+        0.0421
+      ],
+      [
+        0.0588,
+        0.0402
+      ],
+      [
+        0.0618,
+        0.037
+      ],
+      [
+        0.0662,
+        0.031
+      ],
+      [
+        0.0695,
+        0.024
+      ],
+      [
+        0.0714,
+        0.0165
+      ]
+    ],
+    "leaves": [
+      [
+        0.074,
+        0.021,
+        30,
+        0.012,
+        0.019,
+        0.02
+      ],
+      [
+        0.074,
+        0.021,
+        90,
+        0.012,
+        0.019,
+        0.02
+      ],
+      [
+        0.074,
+        0.021,
+        150,
+        0.012,
+        0.019,
+        0.02
+      ],
+      [
+        0.074,
+        0.021,
+        210,
+        0.012,
+        0.019,
+        0.02
+      ],
+      [
+        0.074,
+        0.021,
+        270,
+        0.012,
+        0.019,
+        0.02
+      ],
+      [
+        0.074,
+        0.021,
+        330,
+        0.012,
+        0.019,
+        0.02
+      ]
+    ]
+  },
+  "ball_presets": {
+    "full": {
+      "name": "Full round ball 100 g",
+      "mass_kg": 0.1,
+      "radius_x_m": 0.045,
+      "radius_y_m": 0.045,
+      "radius_z_m": 0.044,
+      "unwind_radius_ratio": 0.85,
+      "exit_height_fraction": 0.0,
+      "inertia_factor": 0.2,
+      "eccentricity_m": 0.003,
+      "contact_radius_m": 0.018,
+      "contact_friction": 0.4,
+      "spindle_coupling_Nm": 0.0,
+      "line_density_kg_m": 0.00025,
+      "yarn_axial_rigidity_N": 4.0,
+      "yarn_damping_Ns_m": 0.025,
+      "yarn_diameter_m": 0.002,
+      "peel_force_N": 0.015
+    },
+    "nearly_empty": {
+      "name": "Nearly empty round ball 10 g",
+      "mass_kg": 0.01,
+      "radius_x_m": 0.021,
+      "radius_y_m": 0.021,
+      "radius_z_m": 0.023,
+      "unwind_radius_ratio": 0.85,
+      "exit_height_fraction": 0.0,
+      "inertia_factor": 0.2,
+      "eccentricity_m": 0.003,
+      "contact_radius_m": 0.009,
+      "contact_friction": 0.4,
+      "spindle_coupling_Nm": 0.0,
+      "line_density_kg_m": 0.00025,
+      "yarn_axial_rigidity_N": 4.0,
+      "yarn_damping_Ns_m": 0.025,
+      "yarn_diameter_m": 0.002,
+      "peel_force_N": 0.01
+    }
+  },
+  "setup_presets": {
+    "desk_side": {
+      "name": "Desk side: hand 20 cm above base",
+      "distance_m": 0.4,
+      "hand_height_m": 0.2,
+      "azimuth_deg": 0
+    },
+    "front": {
+      "name": "In front: hand 16 cm above base",
+      "distance_m": 0.35,
+      "hand_height_m": 0.16,
+      "azimuth_deg": 90
+    },
+    "far_side": {
+      "name": "Far side: hand 15 cm above base",
+      "distance_m": 0.7,
+      "hand_height_m": 0.15,
+      "azimuth_deg": 150
+    },
+    "high_table": {
+      "name": "High table: hand 5 cm below base",
+      "distance_m": 0.35,
+      "hand_height_m": -0.05,
+      "azimuth_deg": 30
+    },
+    "floor": {
+      "name": "On floor: hand 65 cm above base",
+      "distance_m": 0.45,
+      "hand_height_m": 0.65,
+      "azimuth_deg": 0
+    }
+  },
+  "motion_presets": {
+    "knitting": {
+      "name": "Knitting illustrative",
+      "cycle_s": 1.0,
+      "draw_m": 0.024,
+      "duty": 0.55,
+      "lateral_amplitude_m": 0.008,
+      "lateral_cycle_s": 1.3,
+      "duration_s": 12.0,
+      "dt_s": 0.0005
+    },
+    "crochet": {
+      "name": "Crochet illustrative",
+      "cycle_s": 1.35,
+      "draw_m": 0.045,
+      "duty": 0.3,
+      "lateral_amplitude_m": 0.014,
+      "lateral_cycle_s": 1.35,
+      "duration_s": 12.0,
+      "dt_s": 0.0005
+    }
+  },
+  "mesh_provenance": {
+    "manifest_sha256": "db3a99da4473fc679089b024e8b18cc70ffb07734b73704c0ec446ec5af075c5",
+    "sources": [
+      {
+        "name": "body",
+        "file": "body.stl",
+        "sha256": "19eed3e7bdccfdc050ade7efedf73e53f08e7c9a11827871f903ee86d7edcb7c",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "platter",
+        "file": "platter.stl",
+        "sha256": "48fedcccc31c45fc9f1b9fc7b7323000b2cb60b3d41b3c5bb4611cca3c580467",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "seeds",
+        "file": "seeds.stl",
+        "sha256": "b54105d62b36ecbf5907debee5c2c9c2df372797fea0e59fefa03f92e9faa745",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "post",
+        "file": "post.stl",
+        "sha256": "b22c82a89f563c24834d36ecec3e110ab580923590951ad389bd020b393f0c58",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_1",
+        "file": "leaf_1.stl",
+        "sha256": "a5b0acf74d1559c5e0436e19136221b1d6ca5742130706619a012e1e06ccbfbb",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_2",
+        "file": "leaf_2.stl",
+        "sha256": "6cdb0357bee518c1612d725ce3802c60ae977f5d04891dfaba928689ff17e5f4",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_3",
+        "file": "leaf_3.stl",
+        "sha256": "2d51ba380b941372d077ad93995902ae037c1d29d0ed19d9705a6ad1661ce96f",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_4",
+        "file": "leaf_4.stl",
+        "sha256": "19aaf3185073f44e9223a2b1237ab9b762a1fe14a88fe24ad70fcb12ad0acfc1",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_5",
+        "file": "leaf_5.stl",
+        "sha256": "0cc7a7d4c808862195964d799ebe882b0101c6c888cfefdf82704a1c1576ea7e",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_6",
+        "file": "leaf_6.stl",
+        "sha256": "e1b5607b0068d7b9cc5b3838c3d78db5a22eb3a91f14b48513204cc05e5579dc",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "pads",
+        "file": "pads.stl",
+        "sha256": "fcf2e73c0623ec5eeb9bfe3b44d72f6b823277f5e01b499fbd19cd4374f1431e",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m"
+  },
+  "limitations": [
+    "prescribed geometry, not free sliding or a snag probability",
+    "no fuzz, FDM roughness, or deformation",
+    "stand mass and friction are assumptions",
+    "no table edge/environment model"
+  ],
+  "static_path_tension_N": 0.04,
+  "static_yarn_diameter_m": 0.002,
+  "polyline_generation_step_m": 0.004,
+  "path_sampling_step_m": 0.0005,
+  "sweep_motion_step_m": 0.001
+}
