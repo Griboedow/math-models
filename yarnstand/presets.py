@@ -12,6 +12,10 @@ def stand(name='pitaya_v08'):
     if name=='pitaya_v07':
         return replace(s,name='PITAYA v07 estimate',leaves=[[.082,.014,30+60*i,.012,.016,.010] for i in range(6)])
     if name=='pitaya_v08': return s
+    if name=='pitaya_v09':
+        # Broad calyx leaves: coarse ellipsoids, not exact CAD collision surfaces.
+        # Mechanical mass/inertia assumptions are unchanged, not new measurements.
+        return replace(s,name='PITAYA v09 estimate',leaves=[[.074,.021,30+60*i,.012,.019,.020] for i in range(6)])
     if name=='wide_feet': return replace(s,name='Comparison: pads at r=62 mm',support_radius_m=.062)
     if name=='light_small': return replace(s,name='Example lightweight small stand',mass_kg=.10,support_radius_m=.032,platform_radius_m=.045,rotor_inertia_kg_m2=.000035,body_profile_m=[[.046,.041],[.050,.025]],leaves=[])
     if name=='high_drag': return replace(s,name='Sensitivity: high bearing drag',start_torque_Nm=.003,running_torque_Nm=.0015)
