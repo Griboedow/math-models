@@ -69,6 +69,20 @@ class MechanicsTests(unittest.TestCase):
         from_config(cfg)
         self.assertEqual(cfg,before)
 
+    def test_partial_final_step_stays_within_requested_duration(self):
+        r=simulate(m=replace(Motion(),duration_s=2.0001))
+        self.assertLessEqual(r['trace'][-1]['t_s'],2.0001)
+
+    def test_names_must_be_strings_for_the_ui(self):
+        for group in ['stand','ball','motion','setup']:
+            with self.assertRaises(ValueError):from_config({group:{'name':None}})
+
+    def test_both_fruit_presets_survive_integration(self):
+        peach=presets.config('peach_v13');pitaya=presets.config('pitaya_v09')
+        from_config(peach);from_config(pitaya)
+        self.assertGreater(peach['stand']['platform_height_m'],pitaya['stand']['platform_height_m'])
+        self.assertEqual(len(pitaya['stand']['leaves']),6)
+
     def test_no_compression_or_negative_rotation(self):
         r=simulate(m=replace(Motion(),duration_s=2.0))
         self.assertTrue(all(t['tension_N']>=0 and t['rpm']>=0 for t in r['trace']))

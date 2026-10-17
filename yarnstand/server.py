@@ -8,7 +8,7 @@ from .cli import clean
 from .presets import config
 
 
-def serve(port):
+def make_server(port=0):
     class Handler(BaseHTTPRequestHandler):
         def send(self,status,body,kind='application/json'):
             raw=body.encode('utf-8');self.send_response(status)
@@ -17,15 +17,17 @@ def serve(port):
         def do_GET(self):
             path=urlsplit(self.path).path
             if path=='/': self.send(200,(Path(__file__).parent/'ui.html').read_text(encoding='utf-8'),'text/html')
+            elif path=='/ui.js': self.send(200,(Path(__file__).parent/'ui.js').read_text(encoding='utf-8'),'application/javascript')
             elif path=='/presets':
                 configs={f'{ba}/{mo}/{po}':config(ball_name=ba,motion_name=mo,setup_name=po) for ba in ['full','nearly_empty','large'] for mo in ['knitting','crochet','gentle'] for po in ['desk_side','front','far_side','high_table','floor']}
-                configs.update({f'{st}/{key}':config(st,ba,mo,po) for st in ['pitaya_v08','peach_v13'] for key in list(configs) for ba,mo,po in [key.split('/')]})
+                configs.update({f'{st}/{key}':config(st,ba,mo,po) for st in ['pitaya_v08','pitaya_v09','peach_v13'] for key in list(configs) for ba,mo,po in [key.split('/')]})
                 self.send(200,json.dumps(configs,ensure_ascii=False))
             else:self.send(404,'{"error":"Not found"}')
         def do_POST(self):
             if self.path!='/simulate': return self.send(404,'{"error":"Not found"}')
             origin=self.headers.get('Origin')
-            if origin and origin not in [f'http://127.0.0.1:{port}',f'http://localhost:{port}']: return self.send(403,'{"error":"Same-origin only"}')
+            active_port=self.server.server_port
+            if origin and origin not in [f'http://127.0.0.1:{active_port}',f'http://localhost:{active_port}']: return self.send(403,'{"error":"Same-origin only"}')
             try:
                 n=int(self.headers.get('Content-Length','0'))
                 if not 0<n<=100000:raise ValueError('Invalid request size')
@@ -34,5 +36,10 @@ def serve(port):
                 self.send(200,json.dumps(clean(simulate(*args)),ensure_ascii=False,allow_nan=False))
             except (ValueError,TypeError,KeyError) as e:self.send(400,json.dumps({'error':str(e)}))
         def log_message(self,*args): pass
-    print(f'Open http://127.0.0.1:{port} — Ctrl+C to stop. CPU, no external services.',flush=True)
-    ThreadingHTTPServer(('127.0.0.1',port),Handler).serve_forever()
+    return ThreadingHTTPServer(('127.0.0.1',port),Handler)
+
+
+def serve(port):
+    with make_server(port) as server:
+        print(f'Open http://127.0.0.1:{server.server_port} — Ctrl+C to stop. CPU, no external services.',flush=True)
+        server.serve_forever()

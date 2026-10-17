@@ -80,6 +80,8 @@ def _positive(obj, names, zero=False):
 
 
 def validate(s,b,m,p):
+    for obj in (s,b,m,p):
+        if not isinstance(obj.name,str):raise ValueError(f'{type(obj).__name__}.name must be a string')
     _positive(s,['mass_kg','rotor_inertia_kg_m2','platform_height_m','platform_radius_m','support_radius_m'])
     _positive(s,['pad_radius_m','foot_friction','start_torque_Nm','running_torque_Nm','viscous_Nm_s','com_height_m'],True)
     _positive(b,['mass_kg','radius_x_m','radius_y_m','radius_z_m','unwind_radius_ratio','inertia_factor','contact_radius_m','yarn_axial_rigidity_N','yarn_diameter_m'])
@@ -231,7 +233,7 @@ def simulate(s= None,b=None,m=None,p=None,keep_trace=True):
     min_margin=math.inf; rpm_max=0.; earliest={}; total_steps=math.ceil(m.duration_s/m.dt_s)
     period=max(1,round(.01/m.dt_s)); peak_t=0.; valid_peak=None
     for step in range(total_steps):
-        dt=min(m.dt_s,m.duration_s-step*m.dt_s); t=(step+.5)*m.dt_s
+        dt=min(m.dt_s,m.duration_s-step*m.dt_s); t=step*m.dt_s+dt/2
         freq=2*math.pi/m.lateral_cycle_s
         off=m.lateral_amplitude_m*math.sin(freq*t)
         voff=m.lateral_amplitude_m*freq*math.cos(freq*t)

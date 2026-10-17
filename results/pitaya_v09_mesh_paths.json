@@ -11,6 +11,7 @@
     "leaf_5": "658b475f020a9b4e082980c1e5d043bb5a83f7278154810bac5c33169f911828",
     "leaf_6": "b508720d4c46ea965a62c5cc58002628d93bcc4fbfcdecf96c9714f19bcafaf3"
   },
+  "winding_radius_model": "ellipsoid horizontal section: sqrt(a*b) * unwind_radius_ratio * sqrt(1-exit_height_fraction**2)",
   "stand_assumptions": {
     "name": "PITAYA v09 estimate",
     "mass_kg": 0.23,

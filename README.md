@@ -34,6 +34,8 @@ python -m yarnstand suite
 python -m yarnstand sensitivity
 # Проверки физических предельных случаев и сходимости
 python -m unittest discover -s tests -v
+# Проверки состояния интерфейса (только для разработки, Node 18+)
+node --test tests/test_ui.js
 ```
 
 Установка как обычного пакета необязательна: `python -m pip install .` добавит

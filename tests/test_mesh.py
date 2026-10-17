@@ -2,10 +2,13 @@ import unittest
 try:
     import numpy as np
     import trimesh
-    from yarnstand.mesh import MeshScene,taut_path
+    import vtk
     AVAILABLE=True
 except ImportError:
     AVAILABLE=False
+if AVAILABLE:
+    # A broken import inside our module must fail tests, not silently skip them.
+    from yarnstand.mesh import MeshScene,taut_path
 
 
 @unittest.skipUnless(AVAILABLE,'Install the mesh extra')
@@ -72,3 +75,19 @@ class MeshTests(unittest.TestCase):
         points,status=taut_path(Stand(),Ball(),Setup(),0)
         self.assertIsNone(points)
         self.assertEqual(status,'slack_or_too_low_tension')
+
+    def test_nonfinite_geometry_rejected_before_vtk(self):
+        m=trimesh.creation.box();m.vertices[0,0]=float('nan')
+        with self.assertRaises(ValueError):MeshScene([('corrupt',m)])
+        with self.assertRaises(ValueError):self.scene.distance([[float('nan'),0,0]])
+
+    def test_tiny_sampling_step_fails_without_allocating_billions_of_points(self):
+        from yarnstand.model import Stand,Ball,Setup
+        with self.assertRaises(ValueError):self.scene.screen([[0,0,.02],[.1,0,.02]],.001,max_step_m=1e-15)
+        with self.assertRaises(ValueError):taut_path(Stand(),Ball(),Setup(),.04,step_m=1e-15)
+        with self.assertRaises(ValueError):self.scene.sweep([[[0,0,.02],[.1,0,.02]],[[0,0,.03],[.1,0,.03]]],.001,motion_step_m=1e-15)
+
+    def test_near_zero_positive_clearance_is_not_reported_as_clear(self):
+        r=self.scene.screen([[-.02,0,.01101],[.02,0,.01101]],.001,max_step_m=.002)
+        self.assertGreater(r['min_sampled_clearance_m'],0)
+        self.assertEqual(r['status'],'unresolved_sampling_margin')

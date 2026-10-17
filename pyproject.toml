@@ -21,4 +21,4 @@ yarnstand = "yarnstand.cli:main"
 packages = ["yarnstand"]
 
 [tool.setuptools.package-data]
-yarnstand = ["ui.html"]
+yarnstand = ["ui.html", "ui.js"]

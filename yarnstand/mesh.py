@@ -10,13 +10,23 @@ import numpy as np
 import vtk
 import trimesh
 
+MAX_PATH_SAMPLES=250000
+MAX_SWEEP_POINTS=2000000
+
+
+def _subdivisions(length,step,budget):
+    ratio=float(length)/step
+    if budget<1 or not math.isfinite(ratio) or ratio>budget:
+        raise ValueError('Sampling would exceed the work limit; use a larger step or split the job')
+    return max(1,math.ceil(ratio))
+
 
 class MeshScene:
     def __init__(self, parts):
         """parts: [(name, trimesh.Trimesh in metres)]."""
         self.parts=[]
         for name,mesh in parts:
-            if not mesh.is_watertight or not mesh.is_winding_consistent or mesh.volume<=0:
+            if not np.isfinite(mesh.vertices).all() or not math.isfinite(mesh.volume) or not mesh.is_watertight or not mesh.is_winding_consistent or mesh.volume<=0:
                 raise ValueError(f'{name}: a closed, consistently outward oriented mesh is required')
             from vtk.util.numpy_support import numpy_to_vtk, numpy_to_vtkIdTypeArray
             pts=vtk.vtkPoints();pts.SetData(numpy_to_vtk(np.asarray(mesh.vertices),deep=True))
@@ -50,6 +60,7 @@ class MeshScene:
 
     def distance(self,points,normals=False):
         p=np.asarray(points,dtype=float).reshape(-1,3)
+        if not np.isfinite(p).all():raise ValueError('Finite query points required')
         distances=np.full(len(p),np.inf);indices=np.full(len(p),-1,dtype=int)
         gradient=np.zeros_like(p)
         for i,(name,field,tree,bounds,poly) in enumerate(self.parts):
@@ -79,9 +90,10 @@ class MeshScene:
         if not math.isfinite(radius_m) or radius_m<=0:raise ValueError('Positive finite yarn radius required')
         step=max_step_m if max_step_m is not None else min(radius_m/2,.0005)
         if not math.isfinite(step) or step<=0:raise ValueError('Positive finite sampling step required')
+        if len(points)>MAX_PATH_SAMPLES:raise ValueError('Too many path points; split the job')
         samples=[points[0]];largest=0.
         for a,b in zip(points,points[1:]):
-            length=np.linalg.norm(b-a);count=max(1,math.ceil(length/step))
+            length=np.linalg.norm(b-a);count=_subdivisions(length,step,MAX_PATH_SAMPLES-len(samples))
             largest=max(largest,length/count)
             samples.extend(a+(b-a)*(j/count) for j in range(1,count+1))
         samples=np.asarray(samples)
@@ -117,10 +129,11 @@ class MeshScene:
         if not math.isfinite(radius_m) or radius_m<=0:raise ValueError('Positive finite radius required')
         step=motion_step_m if motion_step_m is not None else min(radius_m/2,.0005)
         if not math.isfinite(step) or step<=0:raise ValueError('Positive finite motion step required')
+        frame_limit=min(100000,MAX_SWEEP_POINTS//poses.shape[1])
+        if len(poses)>frame_limit:raise ValueError('Sweep requires too many points; split the job')
         frames=[poses[0]];largest=0.
         for a,b in zip(poses,poses[1:]):
-            movement=float(np.linalg.norm(b-a,axis=1).max());count=max(1,math.ceil(movement/step))
-            if len(frames)+count>100000:raise ValueError('Sweep requires too many poses; split the job')
+            movement=float(np.linalg.norm(b-a,axis=1).max());count=_subdivisions(movement,step,frame_limit-len(frames))
             largest=max(largest,movement/count)
             frames.extend(a+(b-a)*(j/count) for j in range(1,count+1))
         results=[]
@@ -147,7 +160,8 @@ def taut_path(stand,ball,setup,tension_N,step_m=.001):
     if H<.001:return None,'slack_or_too_low_tension'
     coefficient=ball.line_density_kg_m*G*horizontal**2/(2*H)
     if coefficient/4>.1*length:return None,'large_sag_outside_approximation'
-    t=np.linspace(0,1,max(2,math.ceil(length/step_m)+1))
+    count=_subdivisions(length,step_m,MAX_PATH_SAMPLES-1)
+    t=np.linspace(0,1,count+1)
     points=np.asarray(q)+t[:,None]*(np.asarray(h)-q)
     points[:,2]-=coefficient*t*(1-t)
     return points,'small_sag_approximation'

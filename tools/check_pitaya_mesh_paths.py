@@ -46,6 +46,7 @@ for ba in ['full','nearly_empty']:
                         if tree.IntersectWithLine(a,c,hitpoints,ids): hits.add(name);break
                 rows.append({'ball':ba,'setup':po,'exit_fraction':fraction,'azimuth_deg':azimuth,'hit_parts':sorted(hits)})
 out={'geometry_version':ROOT.name,'mesh_sha256':mesh_hashes,
+     'winding_radius_model':'ellipsoid horizontal section: sqrt(a*b) * unwind_radius_ratio * sqrt(1-exit_height_fraction**2)',
      'stand_assumptions':asdict(stand),
      'ball_presets':{n:asdict(presets.ball(n)) for n in ['full','nearly_empty']},
      'setup_presets':{n:asdict(presets.setup(n)) for n in ['desk_side','high_table','floor']},
