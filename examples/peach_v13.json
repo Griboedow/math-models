@@ -1,0 +1,81 @@
+{
+  "stand": {
+    "name": "PEACH v13 CAD + slicer estimate",
+    "mass_kg": 0.3003084037791386,
+    "rotor_inertia_kg_m2": 5.451548171275403e-05,
+    "com_height_m": 0.035018388595569126,
+    "platform_height_m": 0.0707,
+    "platform_radius_m": 0.052,
+    "support_radius_m": 0.054,
+    "pad_radius_m": 0.00395,
+    "pad_count": 6,
+    "pad_angle_deg": 30,
+    "support_points_m": null,
+    "foot_friction": 0.45,
+    "start_torque_Nm": 0.0006,
+    "running_torque_Nm": 0.0003,
+    "viscous_Nm_s": 1.5e-05,
+    "body_profile_m": [
+      [
+        0.0531,
+        0.0667
+      ],
+      [
+        0.057,
+        0.0664
+      ],
+      [
+        0.061,
+        0.064
+      ],
+      [
+        0.067,
+        0.058
+      ],
+      [
+        0.072,
+        0.051
+      ],
+      [
+        0.078,
+        0.036
+      ]
+    ],
+    "leaves": []
+  },
+  "ball": {
+    "name": "Full round ball 100 g",
+    "mass_kg": 0.1,
+    "radius_x_m": 0.045,
+    "radius_y_m": 0.045,
+    "radius_z_m": 0.044,
+    "unwind_radius_ratio": 0.85,
+    "exit_height_fraction": 0.0,
+    "inertia_factor": 0.2,
+    "eccentricity_m": 0.003,
+    "contact_radius_m": 0.018,
+    "contact_friction": 0.4,
+    "spindle_coupling_Nm": 0.0,
+    "line_density_kg_m": 0.00025,
+    "yarn_axial_rigidity_N": 4.0,
+    "yarn_damping_Ns_m": 0.025,
+    "yarn_diameter_m": 0.002,
+    "peel_force_N": 0.015
+  },
+  "motion": {
+    "name": "Knitting illustrative",
+    "cycle_s": 1.0,
+    "draw_m": 0.024,
+    "duty": 0.55,
+    "lateral_amplitude_m": 0.008,
+    "lateral_cycle_s": 1.3,
+    "duration_s": 12.0,
+    "dt_s": 0.0005
+  },
+  "setup": {
+    "name": "Desk side: hand 20 cm above base",
+    "distance_m": 0.4,
+    "hand_height_m": 0.2,
+    "azimuth_deg": 0
+  }
+}

@@ -144,7 +144,9 @@ def geometry(s,b,p,hand_offset=0.):
     hx=p.distance_m*math.cos(a)-hand_offset*math.sin(a)
     hy=p.distance_m*math.sin(a)+hand_offset*math.cos(a)
     d=math.hypot(hx,hy); ex,ey=hx/d,hy/d
-    r=math.sqrt(b.radius_x_m*b.radius_y_m)*b.unwind_radius_ratio
+    # Circular surrogate of the ellipsoid's horizontal section. Near the
+    # poles both the winding radius and the available torque arm shrink.
+    r=math.sqrt(b.radius_x_m*b.radius_y_m)*b.unwind_radius_ratio*math.sqrt(1-b.exit_height_fraction**2)
     radial=r*r/d; tang=r*math.sqrt(1-(r/d)**2)
     px,py=radial*ex+tang*ey,radial*ey-tang*ex
     pz=s.platform_height_m+b.radius_z_m*(1+b.exit_height_fraction)
@@ -227,7 +229,7 @@ def simulate(s= None,b=None,m=None,p=None,keep_trace=True):
     theta=omega=payout=demand=0.
     tensions=[]; slacks=[]; trace=[]; slip_peak=tip_peak=traction_peak=0.
     min_margin=math.inf; rpm_max=0.; earliest={}; total_steps=math.ceil(m.duration_s/m.dt_s)
-    period=max(1,round(.01/m.dt_s)); peak_t=0.
+    period=max(1,round(.01/m.dt_s)); peak_t=0.; valid_peak=None
     for step in range(total_steps):
         dt=min(m.dt_s,m.duration_s-step*m.dt_s); t=(step+.5)*m.dt_s
         freq=2*math.pi/m.lateral_cycle_s
@@ -272,6 +274,7 @@ def simulate(s= None,b=None,m=None,p=None,keep_trace=True):
             if value>1 and name not in earliest: earliest[name]=round(t,5)
         if normal<=0 and 'stand_lifting' not in earliest: earliest['stand_lifting']=round(t,5)
         if fz>=b.mass_kg*G and 'ball_lifting' not in earliest: earliest['ball_lifting']=round(t,5)
+        if not earliest:valid_peak=max(valid_peak or 0.,tension)
         slack=max(0.,payout-demand)
         tensions.append(tension); slacks.append(slack)
         slip_peak=max(slip_peak,slip_util); tip_peak=max(tip_peak,tip_util)
@@ -279,7 +282,7 @@ def simulate(s= None,b=None,m=None,p=None,keep_trace=True):
         rpm_max=max(rpm_max,omega*60/(2*math.pi))
         if tension>peak_t: peak_t=tension
         if keep_trace and step%period==0:
-            trace.append({'t_s':round(t,5),'tension_N':tension,'slack_m':slack,'rpm':omega*60/(2*math.pi),'slide_utilization':slip_util,'tip_utilization':tip_util,'ball_traction_utilization':traction})
+            trace.append({'t_s':round(t,5),'tension_N':tension,'slack_m':slack,'rpm':omega*60/(2*math.pi),'slide_utilization':slip_util,'tip_utilization':tip_util,'ball_traction_utilization':traction,'coupled_assumptions_valid':not bool(earliest)})
     warnings=[]
     if abs(limits['elevation_deg'])>60: warnings.append('Steep yarn angle: actual yarn may peel over the ball; fixed tangent model uncertain.')
     if earliest: warnings.append('Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates.')
@@ -290,7 +293,9 @@ def simulate(s= None,b=None,m=None,p=None,keep_trace=True):
              'max_slack_m':max(slacks),'max_rpm':rpm_max,'max_slide_utilization':slip_peak,'max_tip_utilization':tip_peak,
              'minimum_support_margin_m':min_margin,'max_ball_traction_utilization':traction_peak,'first_events_s':earliest,
              'inertia_kg_m2':inertia,'effective_stiffness_N_m':spring,'static_limits':limits,'path_screen':path,
-             'hypotheses_valid_for_entire_run':not bool(earliest),'warnings':warnings}
+             'hypotheses_valid_for_entire_run':not bool(earliest),
+             'valid_coupled_interval_end_s':min(earliest.values()) if earliest else m.duration_s,
+             'peak_tension_before_first_event_N':valid_peak,'warnings':warnings}
     return {'inputs':{'stand':asdict(s),'ball':asdict(b),'motion':asdict(m),'setup':asdict(p)},'summary':summary,'trace':trace}
 
 

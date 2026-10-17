@@ -2,6 +2,7 @@
 from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
 from pathlib import Path
 import json
+from urllib.parse import urlsplit
 from .model import simulate,from_config
 from .cli import clean
 from .presets import config
@@ -14,9 +15,11 @@ def serve(port):
             self.send_header('Content-Type',kind+'; charset=utf-8');self.send_header('Content-Length',str(len(raw)))
             self.send_header('Cache-Control','no-store');self.end_headers();self.wfile.write(raw)
         def do_GET(self):
-            if self.path=='/': self.send(200,(Path(__file__).parent/'ui.html').read_text(encoding='utf-8'),'text/html')
-            elif self.path=='/presets':
+            path=urlsplit(self.path).path
+            if path=='/': self.send(200,(Path(__file__).parent/'ui.html').read_text(encoding='utf-8'),'text/html')
+            elif path=='/presets':
                 configs={f'{ba}/{mo}/{po}':config(ball_name=ba,motion_name=mo,setup_name=po) for ba in ['full','nearly_empty','large'] for mo in ['knitting','crochet','gentle'] for po in ['desk_side','front','far_side','high_table','floor']}
+                configs.update({f'{st}/{key}':config(st,ba,mo,po) for st in ['pitaya_v08','peach_v13'] for key in list(configs) for ba,mo,po in [key.split('/')]})
                 self.send(200,json.dumps(configs,ensure_ascii=False))
             else:self.send(404,'{"error":"Not found"}')
         def do_POST(self):

@@ -32,6 +32,18 @@ class MechanicsTests(unittest.TestCase):
         s,p=Stand(),Setup()
         self.assertGreater(static_limits(s,presets.ball('nearly_empty'),p)['start_tension_N'],static_limits(s,presets.ball(),p)['start_tension_N'])
 
+    def test_exit_section_stays_on_ellipsoid(self):
+        b=Ball(radius_x_m=.045,radius_y_m=.045,unwind_radius_ratio=1)
+        for fraction in [-.9,-.65,0,.65,.9]:
+            q,*_=geometry(Stand(),replace(b,exit_height_fraction=fraction),Setup())
+            self.assertAlmostEqual((q[0]**2+q[1]**2)/b.radius_x_m**2+fraction**2,1,places=12)
+
+    def test_low_exit_reduces_horizontal_torque_arm(self):
+        s=Stand();b=Ball();low=replace(b,exit_height_fraction=-.8)
+        middle=static_limits(s,b,Setup(hand_height_m=s.platform_height_m+b.radius_z_m))
+        bottom=static_limits(s,low,Setup(hand_height_m=s.platform_height_m+low.radius_z_m*.2))
+        self.assertAlmostEqual(bottom['lever_m']/middle['lever_m'],.6,places=12)
+
     def test_weight_increases_static_reserve(self):
         s,b,p=Stand(),Ball(),Setup()
         self.assertGreater(static_limits(replace(s,mass_kg=.4),b,p)['critical_snag_N'],static_limits(s,b,p)['critical_snag_N'])
@@ -65,6 +77,10 @@ class MechanicsTests(unittest.TestCase):
         r=simulate(s=Stand(start_torque_Nm=.003,running_torque_Nm=.0015),b=presets.ball('nearly_empty'),m=replace(Motion(),duration_s=2.))
         self.assertIn('ball_slipping',r['summary']['first_events_s'])
         self.assertFalse(r['summary']['hypotheses_valid_for_entire_run'])
+        s=r['summary']
+        self.assertEqual(s['valid_coupled_interval_end_s'],min(s['first_events_s'].values()))
+        self.assertLess(s['peak_tension_before_first_event_N'],s['peak_tension_N'])
+        self.assertFalse(r['trace'][-1]['coupled_assumptions_valid'])
 
     def test_low_exit_downward_ray_contacts_rim(self):
         c=path_clearance(presets.stand(),replace(presets.ball('nearly_empty'),exit_height_fraction=-.65),presets.setup('high_table'),.04)

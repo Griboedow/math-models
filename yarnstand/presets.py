@@ -12,6 +12,11 @@ def stand(name='pitaya_v08'):
     if name=='pitaya_v07':
         return replace(s,name='PITAYA v07 estimate',leaves=[[.082,.014,30+60*i,.012,.016,.010] for i in range(6)])
     if name=='pitaya_v08': return s
+    if name=='peach_v13':
+        return Stand(name='PEACH v13 CAD + slicer estimate',mass_kg=.3003084,rotor_inertia_kg_m2=.0000545155,
+                     com_height_m=.0350184,platform_height_m=.0707,platform_radius_m=.052,
+                     support_radius_m=.054,pad_radius_m=.00395,pad_count=6,pad_angle_deg=30,
+                     body_profile_m=[[.0531,.0667],[.057,.0664],[.061,.064],[.067,.058],[.072,.051],[.078,.036]],leaves=[])
     if name=='wide_feet': return replace(s,name='Comparison: pads at r=62 mm',support_radius_m=.062)
     if name=='light_small': return replace(s,name='Example lightweight small stand',mass_kg=.10,support_radius_m=.032,platform_radius_m=.045,rotor_inertia_kg_m2=.000035,body_profile_m=[[.046,.041],[.050,.025]],leaves=[])
     if name=='high_drag': return replace(s,name='Sensitivity: high bearing drag',start_torque_Nm=.003,running_torque_Nm=.0015)

@@ -25,7 +25,8 @@ def flatten(result,extra=None):
             'critical_snag_N':x['static_limits']['critical_snag_N'],'start_N':x['static_limits']['start_tension_N'],
             'slide_util':x['max_slide_utilization'],'tip_util':x['max_tip_utilization'],
             'ball_traction_util':x['max_ball_traction_utilization'],'model_valid':x['hypotheses_valid_for_entire_run'],
-            'events':';'.join(x['first_events_s']), 'path_status':x['path_screen']['status'],
+            'events':';'.join(x['first_events_s']), 'valid_until_s':x['valid_coupled_interval_end_s'],
+            'peak_before_event_N':x['peak_tension_before_first_event_N'], 'path_status':x['path_screen']['status'],
             'path_clearance_mm':1000*x['path_screen']['min_clearance_m'] if x['path_screen']['min_clearance_m'] is not None else None}
 
 
@@ -92,6 +93,10 @@ def main():
     pre=sub.add_parser('preset');pre.add_argument('--stand',default='pitaya_v08');pre.add_argument('--ball',default='full');pre.add_argument('--motion',default='knitting');pre.add_argument('--setup',default='desk_side');pre.add_argument('--out',default='examples/custom.json')
     for name in ['suite','sensitivity']: sub.add_parser(name).add_argument('--out',default='results')
     serve=sub.add_parser('serve');serve.add_argument('--port',type=int,default=8765)
+    mesh=sub.add_parser('mesh-check',help='Optional mesh extra: finite-radius yarn versus actual STL')
+    mesh.add_argument('manifest');mesh.add_argument('config');mesh.add_argument('--tension',type=float,default=.04);mesh.add_argument('--out',default='results/custom_mesh.json')
+    sweep=sub.add_parser('mesh-sweep',help='Optional mesh extra: prescribed cord poses, not friction dynamics')
+    sweep.add_argument('manifest');sweep.add_argument('poses');sweep.add_argument('--out',default='results/custom_sweep.json')
     args=parser.parse_args()
     if args.action=='preset': save(args.out,presets.config(args.stand,args.ball,args.motion,args.setup)); print(args.out)
     elif args.action=='run':
@@ -102,3 +107,16 @@ def main():
     elif args.action=='serve':
         from .server import serve
         serve(args.port)
+    elif args.action=='mesh-check':
+        from .mesh import MeshScene,taut_path
+        s,b,m,p=from_config(json.loads(Path(args.config).read_text(encoding='utf-8-sig')))
+        scene=MeshScene.from_manifest(args.manifest);points,status=taut_path(s,b,p,args.tension)
+        result=scene.screen(points,b.yarn_diameter_m/2) if points is not None else {'status':status}
+        save(args.out,{'inputs':{'config':json.loads(Path(args.config).read_text(encoding='utf-8-sig')),'tension_N':args.tension},'provenance':scene.provenance,'result':result,'points_m':points.tolist() if points is not None else None})
+        print(json.dumps(clean(result),ensure_ascii=False,indent=2))
+    elif args.action=='mesh-sweep':
+        from .mesh import MeshScene
+        scene=MeshScene.from_manifest(args.manifest);data=json.loads(Path(args.poses).read_text(encoding='utf-8-sig'))
+        result=scene.sweep(data['poses_m'],data['yarn_radius_m'])
+        save(args.out,{'inputs':data,'provenance':scene.provenance,'result':result})
+        print(json.dumps(clean({k:v for k,v in result.items() if k!='screens'}),ensure_ascii=False,indent=2))
