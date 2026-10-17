@@ -1,0 +1,138 @@
+{
+  "stand": {
+    "name": "PITAYA v08 estimate",
+    "mass_kg": 0.23,
+    "rotor_inertia_kg_m2": 6.5e-05,
+    "com_height_m": 0.031,
+    "platform_height_m": 0.045,
+    "platform_radius_m": 0.052,
+    "support_radius_m": 0.052,
+    "pad_radius_m": 0.005,
+    "pad_count": 6,
+    "pad_angle_deg": 30.0,
+    "support_points_m": null,
+    "foot_friction": 0.45,
+    "start_torque_Nm": 0.0006,
+    "running_torque_Nm": 0.0003,
+    "viscous_Nm_s": 1.5e-05,
+    "body_profile_m": [
+      [
+        0.0531,
+        0.04
+      ],
+      [
+        0.0548,
+        0.0424
+      ],
+      [
+        0.0564,
+        0.0421
+      ],
+      [
+        0.0588,
+        0.0402
+      ],
+      [
+        0.0618,
+        0.037
+      ],
+      [
+        0.0662,
+        0.031
+      ],
+      [
+        0.0695,
+        0.024
+      ],
+      [
+        0.0714,
+        0.0165
+      ]
+    ],
+    "leaves": [
+      [
+        0.074,
+        0.019,
+        30,
+        0.006,
+        0.01,
+        0.015
+      ],
+      [
+        0.074,
+        0.019,
+        90,
+        0.006,
+        0.01,
+        0.015
+      ],
+      [
+        0.074,
+        0.019,
+        150,
+        0.006,
+        0.01,
+        0.015
+      ],
+      [
+        0.074,
+        0.019,
+        210,
+        0.006,
+        0.01,
+        0.015
+      ],
+      [
+        0.074,
+        0.019,
+        270,
+        0.006,
+        0.01,
+        0.015
+      ],
+      [
+        0.074,
+        0.019,
+        330,
+        0.006,
+        0.01,
+        0.015
+      ]
+    ]
+  },
+  "ball": {
+    "name": "Full round ball 100 g",
+    "mass_kg": 0.1,
+    "radius_x_m": 0.045,
+    "radius_y_m": 0.045,
+    "radius_z_m": 0.044,
+    "unwind_radius_ratio": 0.85,
+    "exit_height_fraction": 0.0,
+    "inertia_factor": 0.2,
+    "eccentricity_m": 0.003,
+    "contact_radius_m": 0.018,
+    "contact_friction": 0.4,
+    "spindle_coupling_Nm": 0.0,
+    "line_density_kg_m": 0.00025,
+    "yarn_axial_rigidity_N": 4.0,
+    "yarn_damping_Ns_m": 0.025,
+    "yarn_diameter_m": 0.002,
+    "peel_force_N": 0.015
+  },
+  "motion": {
+    "name": "Knitting illustrative",
+    "cycle_s": 1.0,
+    "draw_m": 0.024,
+    "duty": 0.55,
+    "lateral_amplitude_m": 0.008,
+    "lateral_cycle_s": 1.3,
+    "duration_s": 12.0,
+    "dt_s": 0.0005
+  },
+  "setup": {
+    "name": "Desk side: hand 20 cm above base",
+    "distance_m": 0.4,
+    "hand_height_m": 0.2,
+    "azimuth_deg": 0
+  }
+}

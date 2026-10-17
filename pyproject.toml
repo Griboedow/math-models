@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yarn-stand-simulator"
+version = "0.1.0"
+description = "Transparent comparative mechanics for rotating yarn stands and round yarn balls"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+readme = "README.md"
+dependencies = []
+
+[project.scripts]
+yarnstand = "yarnstand.cli:main"
+
+[tool.setuptools]
+packages = ["yarnstand"]
+
+[tool.setuptools.package-data]
+yarnstand = ["ui.html"]

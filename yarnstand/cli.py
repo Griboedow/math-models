@@ -1,0 +1,104 @@
+"""Run with python -m yarnstand (Python 3.10+; no third-party dependencies)."""
+import argparse, csv, json, math
+from pathlib import Path
+from dataclasses import replace
+from .model import simulate,from_config,path_clearance
+from . import presets
+
+
+def clean(value):
+    if isinstance(value,float) and not math.isfinite(value): return None
+    if isinstance(value,dict): return {k:clean(v) for k,v in value.items()}
+    if isinstance(value,list): return [clean(v) for v in value]
+    return value
+
+
+def save(path,data):
+    path=Path(path); path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_text(json.dumps(clean(data),ensure_ascii=False,indent=2,allow_nan=False),encoding='utf-8')
+
+
+def flatten(result,extra=None):
+    x=result['summary']; i=result['inputs']
+    return {**(extra or {}),'stand':i['stand']['name'],'ball':i['ball']['name'],'motion':i['motion']['name'],'setup':i['setup']['name'],
+            'peak_N':x['peak_tension_N'],'p95_N':x['p95_tension_N'],'slack_mm':1000*x['max_slack_m'],
+            'critical_snag_N':x['static_limits']['critical_snag_N'],'start_N':x['static_limits']['start_tension_N'],
+            'slide_util':x['max_slide_utilization'],'tip_util':x['max_tip_utilization'],
+            'ball_traction_util':x['max_ball_traction_utilization'],'model_valid':x['hypotheses_valid_for_entire_run'],
+            'events':';'.join(x['first_events_s']), 'path_status':x['path_screen']['status'],
+            'path_clearance_mm':1000*x['path_screen']['min_clearance_m'] if x['path_screen']['min_clearance_m'] is not None else None}
+
+
+def write_csv(path,rows):
+    with Path(path).open('w',newline='',encoding='utf-8') as f:
+        w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(clean(rows))
+
+
+def suite(out):
+    out=Path(out);out.mkdir(parents=True,exist_ok=True)
+    results=[]; rows=[]
+    for st in ['pitaya_v08','wide_feet','light_small','high_drag']:
+        for ba in ['full','nearly_empty']:
+            for mo in ['knitting','crochet']:
+                for po in ['desk_side','front','far_side','high_table','floor']:
+                    result=simulate(presets.stand(st),presets.ball(ba),presets.motion(mo),presets.setup(po),keep_trace=(st=='pitaya_v08' and po=='desk_side'))
+                    result['case']={'stand':st,'ball':ba,'motion':mo,'setup':po}
+                    rows.append(flatten(result,result['case'] | {'stand_preset':st}));results.append(result)
+        print('Completed',st,flush=True)
+    save(out/'scenarios.json',results);write_csv(out/'scenarios.csv',rows)
+    # Geometry screen includes low/high exits around a full turn, not only centre.
+    screens=[]
+    for st in ['pitaya_v07','pitaya_v08']:
+        for ba in ['full','nearly_empty']:
+            for po in ['desk_side','high_table','floor']:
+                for fraction in [-.65,0,.65]:
+                    for azimuth in range(0,360,15):
+                        b=replace(presets.ball(ba),exit_height_fraction=fraction)
+                        p=replace(presets.setup(po),azimuth_deg=azimuth)
+                        c=path_clearance(presets.stand(st),b,p,.04)
+                        screens.append({'stand':st,'ball':ba,'setup':po,'exit_fraction':fraction,'azimuth_deg':azimuth,**c})
+    save(out/'path_screens.json',screens)
+    return results
+
+
+def sensitivity(out):
+    """Deterministic grid, no probabilistic meaning or measured distributions."""
+    rows=[]
+    for ba in ['full','nearly_empty']:
+        for mo in ['knitting','crochet']:
+            for torque in [.0002,.0006,.0015,.003]:
+                for foot_mu in [.2,.45,.7]:
+                    s=replace(presets.stand(),start_torque_Nm=torque,running_torque_Nm=torque*.5,foot_friction=foot_mu)
+                    r=simulate(s,presets.ball(ba),presets.motion(mo),presets.setup(),keep_trace=False)
+                    rows.append(flatten(r,{'sweep':'bearing_and_feet','start_torque_mNm':1000*torque,'foot_mu':foot_mu,'peel_force_N':r['inputs']['ball']['peel_force_N'],'axial_rigidity_N':r['inputs']['ball']['yarn_axial_rigidity_N'],'spindle_coupling_Nm':0.,'ball_preset':ba,'motion_preset':mo}))
+    for ba in ['full','nearly_empty']:
+        for peel in [0.,.015,.05]:
+            for rigidity in [.5,4.,12.]:
+                b=replace(presets.ball(ba),peel_force_N=peel,yarn_axial_rigidity_N=rigidity)
+                r=simulate(presets.stand(),b,presets.motion('crochet'),presets.setup(),keep_trace=False)
+                rows.append(flatten(r,{'sweep':'yarn_properties','start_torque_mNm':.6,'foot_mu':.45,'peel_force_N':peel,'axial_rigidity_N':rigidity,'spindle_coupling_Nm':0.,'ball_preset':ba,'motion_preset':'crochet'}))
+    for coupling in [.0005,.002,.005]:
+        b=replace(presets.ball('nearly_empty'),spindle_coupling_Nm=coupling)
+        r=simulate(presets.stand(),b,presets.motion('crochet'),presets.setup(),keep_trace=False)
+        rows.append(flatten(r,{'sweep':'spindle_grip','start_torque_mNm':.6,'foot_mu':.45,'peel_force_N':b.peel_force_N,'axial_rigidity_N':b.yarn_axial_rigidity_N,'spindle_coupling_Nm':coupling,'ball_preset':'nearly_empty','motion_preset':'crochet'}))
+    Path(out).mkdir(parents=True,exist_ok=True);write_csv(Path(out)/'sensitivity.csv',rows);save(Path(out)/'sensitivity.json',rows)
+    print('Sensitivity cases:',len(rows))
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    sub=parser.add_subparsers(dest='action',required=True)
+    run=sub.add_parser('run');run.add_argument('config');run.add_argument('--out',default='results/custom.json')
+    pre=sub.add_parser('preset');pre.add_argument('--stand',default='pitaya_v08');pre.add_argument('--ball',default='full');pre.add_argument('--motion',default='knitting');pre.add_argument('--setup',default='desk_side');pre.add_argument('--out',default='examples/custom.json')
+    for name in ['suite','sensitivity']: sub.add_parser(name).add_argument('--out',default='results')
+    serve=sub.add_parser('serve');serve.add_argument('--port',type=int,default=8765)
+    args=parser.parse_args()
+    if args.action=='preset': save(args.out,presets.config(args.stand,args.ball,args.motion,args.setup)); print(args.out)
+    elif args.action=='run':
+        cfg=json.loads(Path(args.config).read_text(encoding='utf-8-sig'));r=simulate(*from_config(cfg));save(args.out,r)
+        print(json.dumps(clean(r['summary']),ensure_ascii=False,indent=2));print('Saved:',args.out)
+    elif args.action=='suite': suite(args.out)
+    elif args.action=='sensitivity': sensitivity(args.out)
+    elif args.action=='serve':
+        from .server import serve
+        serve(args.port)

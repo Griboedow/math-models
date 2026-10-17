@@ -1,0 +1,51 @@
+"""Editable assumptions, NOT measured knitting/crochet population data."""
+from dataclasses import replace
+from .model import Stand, Ball, Motion, Setup
+
+PROFILE=[[.0531,.040],[.0548,.0424],[.0564,.0421],[.0588,.0402],
+         [.0618,.037],[.0662,.031],[.0695,.024],[.0714,.0165]]
+
+
+def stand(name='pitaya_v08'):
+    leaves=[[.074,.019,30+60*i,.006,.010,.015] for i in range(6)]
+    s=Stand(body_profile_m=PROFILE,leaves=leaves)
+    if name=='pitaya_v07':
+        return replace(s,name='PITAYA v07 estimate',leaves=[[.082,.014,30+60*i,.012,.016,.010] for i in range(6)])
+    if name=='pitaya_v08': return s
+    if name=='wide_feet': return replace(s,name='Comparison: pads at r=62 mm',support_radius_m=.062)
+    if name=='light_small': return replace(s,name='Example lightweight small stand',mass_kg=.10,support_radius_m=.032,platform_radius_m=.045,rotor_inertia_kg_m2=.000035,body_profile_m=[[.046,.041],[.050,.025]],leaves=[])
+    if name=='high_drag': return replace(s,name='Sensitivity: high bearing drag',start_torque_Nm=.003,running_torque_Nm=.0015)
+    raise ValueError('Unknown stand preset')
+
+
+def ball(name='full'):
+    b=Ball()
+    if name=='full': return b
+    if name=='nearly_empty': return replace(b,name='Nearly empty round ball 10 g',mass_kg=.010,radius_x_m=.021,radius_y_m=.021,radius_z_m=.023,contact_radius_m=.009,eccentricity_m=.003,peel_force_N=.01)
+    if name=='large': return replace(b,name='Large round ball 200 g',mass_kg=.200,radius_x_m=.057,radius_y_m=.057,radius_z_m=.055,contact_radius_m=.024)
+    raise ValueError('Unknown ball preset')
+
+
+def motion(name='knitting'):
+    m=Motion()
+    if name=='knitting': return m
+    if name=='crochet': return replace(m,name='Crochet illustrative',cycle_s=1.35,draw_m=.045,duty=.30,lateral_amplitude_m=.014,lateral_cycle_s=1.35)
+    if name=='gentle': return replace(m,name='Slow smooth draw',cycle_s=1.8,draw_m=.024,duty=.8,lateral_amplitude_m=.003)
+    raise ValueError('Unknown motion preset')
+
+
+def setup(name='desk_side'):
+    options={
+        'desk_side':Setup('Desk side: hand 20 cm above base',.40,.20,0),
+        'front':Setup('In front: hand 16 cm above base',.35,.16,90),
+        'far_side':Setup('Far side: hand 15 cm above base',.70,.15,150),
+        'high_table':Setup('High table: hand 5 cm below base',.35,-.05,30),
+        'floor':Setup('On floor: hand 65 cm above base',.45,.65,0),
+    }
+    if name not in options: raise ValueError('Unknown position preset')
+    return options[name]
+
+
+def config(stand_name='pitaya_v08',ball_name='full',motion_name='knitting',setup_name='desk_side'):
+    from dataclasses import asdict
+    return {k:asdict(v) for k,v in zip(['stand','ball','motion','setup'],[stand(stand_name),ball(ball_name),motion(motion_name),setup(setup_name)])}
