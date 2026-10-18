@@ -1,0 +1,342 @@
+{
+  "scope": "prescribed geometry and conservative clearance envelopes; no frictional locking or release force",
+  "cases": [
+    {
+      "case": "sweep_second_4mm_tip",
+      "before": "allowance_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -2
+    }
+  ],
+  "summary": {
+    "improved": 1,
+    "worsened": 0,
+    "remaining_flagged": 0
+  },
+  "baseline_provenance": {
+    "manifest_sha256": "a8f11a3770903f990e2240c3d6eaa384f37c62ec3e6536ce7d1d31a91ef4b8ef",
+    "sources": [
+      {
+        "name": "01_body_peach",
+        "file": "01_body_peach.stl",
+        "sha256": "fa10bb04350fad4e190f0e7de11826ef73af2da5f8d7af73b8d998c27f78b716",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "02_puffy_platter_peach",
+        "file": "02_puffy_platter_peach.stl",
+        "sha256": "ebee73d9ec74795440ffd208325cb0d1a465dca95a776b8b13e1ea5c9d70a21d",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "03_striped_spindle_honey",
+        "file": "03_striped_spindle_honey.stl",
+        "sha256": "32f4f370dbe78882e6fe48ee8f2f4a27239787b07f12fdfbdde2741de440c2dd",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "04_leaf_green",
+        "file": "04_leaf_green.stl",
+        "sha256": "d0758172edbff62ddf6f9fc6054471868837f2d7df69b870d2a9d75f5fb088e0",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "08_leaf_second_green",
+        "file": "08_leaf_second_green.stl",
+        "sha256": "c72f77ed0085c687007e3434e0d3510bd2c7fcc0ad20c9303f2003ddc07dea5a",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "candidate_provenance": {
+    "manifest_sha256": "1066d316d78ae8ab546f15f2daba557c9d5542b066ffb77e440095afd42d5c93",
+    "sources": [
+      {
+        "name": "01_body_peach",
+        "file": "01_body_peach.stl",
+        "sha256": "5eef57e813296ef55fea20c37aeeba35325e61286fe7784978493548d667673c",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "02_puffy_platter_peach",
+        "file": "02_puffy_platter_peach.stl",
+        "sha256": "ebee73d9ec74795440ffd208325cb0d1a465dca95a776b8b13e1ea5c9d70a21d",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "03_striped_spindle_honey",
+        "file": "03_striped_spindle_honey.stl",
+        "sha256": "32f4f370dbe78882e6fe48ee8f2f4a27239787b07f12fdfbdde2741de440c2dd",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "04_leaf_green",
+        "file": "04_leaf_green.stl",
+        "sha256": "d0758172edbff62ddf6f9fc6054471868837f2d7df69b870d2a9d75f5fb088e0",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "08_leaf_second_green",
+        "file": "08_leaf_second_green.stl",
+        "sha256": "9f9f2bbfc411ba9c043e2bd1c78a99c21be75772dae8fa39652e3d85cb420c38",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "same_runtime": true,
+  "same_audit_code": true
+}

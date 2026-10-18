@@ -14,9 +14,14 @@ args=parser.parse_args()
 scene=MeshScene.from_manifest(args.manifest);report=json.loads(Path(args.audit).read_text(encoding='utf-8-sig'))
 case=next(c for c in report['cases'] if c['id']==args.case)
 part=next(p for p in case['parts'] if p['part']==args.part);site=part['site']
+if site is None:parser.error('This part was separated by bounding volumes; no sampled closest pose is available')
 inputs=next(c for c in report['inputs']['cases'] if c['id']==args.case)
 focus=np.asarray(site['surface_world_m']);origin=np.asarray(inputs.get('rotation_origin_m',[0,0,0]))
 progress=site['pose_coordinate'];i=min(int(progress),len(inputs['poses_m'])-1);fraction=progress-i
+# Successful rows intentionally omit the large stored cord pose. Reconstruct
+# their checked world pose from the unchanged input nodes and interpolation.
+poses=np.asarray(inputs['poses_m'])
+cord_pose=site.get('cord_pose_world_m',poses[i] if i==len(poses)-1 else poses[i]+fraction*(poses[i+1]-poses[i]))
 ren=vtk.vtkRenderer();ren.SetBackground(.955,.961,.94)
 for name,_,_,_,poly in scene.parts:
     mapper=vtk.vtkPolyDataMapper();mapper.SetInputData(poly)
@@ -38,8 +43,8 @@ def cord(points,radius,color,opacity=1.):
     mapper=vtk.vtkPolyDataMapper();mapper.SetInputConnection(tube.GetOutputPort())
     actor=vtk.vtkActor();actor.SetMapper(mapper);actor.GetProperty().SetColor(*color);actor.GetProperty().SetOpacity(opacity);ren.AddActor(actor)
 
-cord(site['cord_pose_world_m'],case['yarn_radius_m']+report['effective_radial_allowance_m'],(.93,.6,.12),.3)
-cord(site['cord_pose_world_m'],case['yarn_radius_m'],(.76,.18,.13))
+cord(cord_pose,case['yarn_radius_m']+report['effective_radial_allowance_m'],(.93,.6,.12),.3)
+cord(cord_pose,case['yarn_radius_m'],(.76,.18,.13))
 sphere=vtk.vtkSphereSource();sphere.SetCenter(*focus);sphere.SetRadius(.00065);sphere.SetThetaResolution(20);sphere.SetPhiResolution(16)
 mapper=vtk.vtkPolyDataMapper();mapper.SetInputConnection(sphere.GetOutputPort());actor=vtk.vtkActor();actor.SetMapper(mapper);actor.GetProperty().SetColor(.95,.03,.08);ren.AddActor(actor)
 camera=ren.GetActiveCamera();camera.SetFocalPoint(*focus)

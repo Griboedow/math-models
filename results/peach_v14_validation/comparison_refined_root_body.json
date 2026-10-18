@@ -1,0 +1,94 @@
+{
+  "scope": "prescribed geometry and conservative clearance envelopes; no frictional locking or release force",
+  "cases": [
+    {
+      "case": "sweep_second_2mm_root",
+      "before": "allowance_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -2
+    }
+  ],
+  "summary": {
+    "improved": 1,
+    "worsened": 0,
+    "remaining_flagged": 0
+  },
+  "baseline_provenance": {
+    "manifest_sha256": "cb5f3dcbbe5ec7b93e0a6cf08e46918c9fc5c01ec7d3fb96b0e96fb6409da08b",
+    "sources": [
+      {
+        "name": "01_body_peach",
+        "file": "01_body_peach.stl",
+        "sha256": "fa10bb04350fad4e190f0e7de11826ef73af2da5f8d7af73b8d998c27f78b716",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "candidate_provenance": {
+    "manifest_sha256": "0ee840da91e81bb4996f02f8821e155a1110eae390061e637a633580deb2dbd0",
+    "sources": [
+      {
+        "name": "01_body_peach",
+        "file": "01_body_peach.stl",
+        "sha256": "5eef57e813296ef55fea20c37aeeba35325e61286fe7784978493548d667673c",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.7
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "same_runtime": true,
+  "same_audit_code": true
+}

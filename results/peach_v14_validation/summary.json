@@ -1,0 +1,302 @@
+{
+  "revision": "PEACH_v14",
+  "baseline": "PEACH_v13",
+  "simulator_version": "0.3.0",
+  "simulator_commit": "a698bae1f233cdacc0f07e7d9bcadbe07bd1b44e",
+  "simulator_sources": {
+    "model.py": "6ec8f8abbb57d96f44f0a6c7f70fc3fe7829afe38fc7f9efa3ebaadbbb1a832f",
+    "paths.py": "78a8ff05c09789eae6fad37bd1e7ed7834d06a16051ca56c69d1f3819893244a",
+    "mesh.py": "dacd057bb042e04a97c5ac5f6c5c931681aa614aff20f6b22afa7c08fdd7df21",
+    "presets.py": "9f9b436932c9b274e8b906208ce05a882665d40a6f2c7b7e387874bb7b15f59a"
+  },
+  "radial_allowance_mm": 0.5,
+  "refined_steps_mm": {
+    "space": 0.025,
+    "motion": 0.025
+  },
+  "base_case_count": 12,
+  "final_before": {
+    "nominal_contact": 4,
+    "clear_with_allowance": 7,
+    "allowance_contact": 1
+  },
+  "final_after": {
+    "nominal_contact": 4,
+    "clear_with_allowance": 8
+  },
+  "case_statuses_before": {
+    "sweep_main_2mm_root": "nominal_contact",
+    "sweep_main_2mm_tip": "clear_with_allowance",
+    "sweep_main_4mm_root": "nominal_contact",
+    "sweep_main_4mm_tip": "clear_with_allowance",
+    "sweep_second_2mm_root": "nominal_contact",
+    "sweep_second_2mm_tip": "clear_with_allowance",
+    "sweep_second_4mm_root": "nominal_contact",
+    "sweep_second_4mm_tip": "allowance_contact",
+    "platter_edge_2mm_-1_turn": "clear_with_allowance",
+    "platter_edge_2mm_+1_turn": "clear_with_allowance",
+    "platter_edge_4mm_-1_turn": "clear_with_allowance",
+    "platter_edge_4mm_+1_turn": "clear_with_allowance"
+  },
+  "case_statuses_after": {
+    "sweep_main_2mm_root": "nominal_contact",
+    "sweep_main_2mm_tip": "clear_with_allowance",
+    "sweep_main_4mm_root": "nominal_contact",
+    "sweep_main_4mm_tip": "clear_with_allowance",
+    "sweep_second_2mm_root": "nominal_contact",
+    "sweep_second_2mm_tip": "clear_with_allowance",
+    "sweep_second_4mm_root": "nominal_contact",
+    "sweep_second_4mm_tip": "clear_with_allowance",
+    "platter_edge_2mm_-1_turn": "clear_with_allowance",
+    "platter_edge_2mm_+1_turn": "clear_with_allowance",
+    "platter_edge_4mm_-1_turn": "clear_with_allowance",
+    "platter_edge_4mm_+1_turn": "clear_with_allowance"
+  },
+  "comparisons": {
+    "snags": {
+      "improved": 1,
+      "worsened": 0,
+      "remaining_flagged": 5
+    },
+    "refined_tip": {
+      "improved": 1,
+      "worsened": 0,
+      "remaining_flagged": 0
+    },
+    "refined_root": {
+      "improved": 0,
+      "worsened": 0,
+      "remaining_flagged": 1
+    },
+    "refined_root_body": {
+      "improved": 1,
+      "worsened": 0,
+      "remaining_flagged": 0
+    },
+    "release": {
+      "improved": 1,
+      "worsened": 0,
+      "remaining_flagged": 0
+    },
+    "refined_release": {
+      "improved": 1,
+      "worsened": 0,
+      "remaining_flagged": 0
+    }
+  },
+  "small_leaf_4mm_tip_clearances": [
+    {
+      "part": "01_body_peach",
+      "before_nominal_mm": 0.189052173589669,
+      "after_nominal_mm": 0.667237501755276,
+      "before_lower_with_allowance_mm": -0.335827885504471,
+      "after_lower_with_allowance_mm": 0.14235744266113598
+    },
+    {
+      "part": "08_leaf_second_green",
+      "before_nominal_mm": 0.5441205480817145,
+      "after_nominal_mm": 0.6084081944841948,
+      "before_lower_with_allowance_mm": 0.019243695356551113,
+      "after_lower_with_allowance_mm": 0.08353134175903137
+    }
+  ],
+  "root_body_further_refinement": {
+    "space_step_mm": 0.0125,
+    "motion_step_mm": 0.0125,
+    "status": "clear_with_allowance",
+    "lower_bound_with_allowance_mm": 0.003141751647530198,
+    "scope": "Body-only refinement of sweep_second_2mm_root; complete path still contacts the leaf."
+  },
+  "additional_exits": {
+    "cases": 4,
+    "case_statuses": {
+      "clear_with_allowance": 4
+    },
+    "part_statuses": {
+      "clear_with_allowance": 20
+    },
+    "distance_samples": 3823980
+  },
+  "static_paths": {
+    "dynamics_cases": 45,
+    "dynamics_events": {
+      "ball_slipping": 15,
+      "ball_lifting": 2
+    },
+    "dynamics_valid_in_reported_scope": 30,
+    "static_paths": 8640,
+    "static_statuses": {
+      "path_intersects_ball": 4272,
+      "clear": 3704,
+      "contact": 664
+    },
+    "sweeps": 8,
+    "sweep_statuses": {
+      "contact_on_prescribed_sweep": 4,
+      "clear_prescribed_sweep": 4
+    },
+    "elapsed_s": 277.2969999999914
+  },
+  "static_path_classification_changes": 0,
+  "full_ball_desk": [
+    {
+      "motion": "knitting",
+      "peak_N": 0.09101067710258645,
+      "slack_mm": 35.20845335140918
+    },
+    {
+      "motion": "crochet",
+      "peak_N": 0.19132789370835748,
+      "slack_mm": 196.69443323270545
+    },
+    {
+      "motion": "gentle",
+      "peak_N": 0.0415393003816887,
+      "slack_mm": 0.0
+    }
+  ],
+  "sensitivity_cases": 60,
+  "coupling_cases": 15,
+  "time_step_pairs": [
+    {
+      "case": [
+        "full",
+        "crochet",
+        "desk_side"
+      ],
+      "peak_relative_difference": 3.6741268899710603e-06,
+      "slack_absolute_difference_mm": 0.005584414927067849,
+      "events_dt_05ms": {},
+      "events_dt_025ms": {}
+    },
+    {
+      "case": [
+        "nearly_empty",
+        "knitting",
+        "desk_side"
+      ],
+      "peak_relative_difference": 0.00013437136640098078,
+      "slack_absolute_difference_mm": 0.010619749583370974,
+      "events_dt_05ms": {
+        "ball_slipping": 0.14025
+      },
+      "events_dt_025ms": {
+        "ball_slipping": 0.14012
+      }
+    },
+    {
+      "case": [
+        "full",
+        "knitting",
+        "floor"
+      ],
+      "peak_relative_difference": 4.623970005099906e-05,
+      "slack_absolute_difference_mm": 0.009344456956633662,
+      "events_dt_05ms": {},
+      "events_dt_025ms": {}
+    }
+  ],
+  "front_max_difference_mm": 5.4767212986917e-10,
+  "bearing_stack": {
+    "body_probe_xy_mm": [
+      10.8,
+      0
+    ],
+    "body_shoulders_z_mm": [
+      19.850000381469727,
+      28.0
+    ],
+    "shoulder_gap_mm": 8.149999618530273,
+    "spacer_height_mm": 8.149999618530273,
+    "axial_mismatch_mm": 0.0,
+    "v13_axial_mismatch_mm": -0.16,
+    "interfaces": [
+      {
+        "part": "bearing_lower",
+        "z_bounds_mm": [
+          12.850000381469727,
+          19.850000381469727
+        ]
+      },
+      {
+        "part": "bearing_upper",
+        "z_bounds_mm": [
+          28.0,
+          35.0
+        ]
+      },
+      {
+        "part": "05_upper_inner_race_collar_2mm",
+        "z_bounds_mm": [
+          35.0,
+          37.0
+        ]
+      },
+      {
+        "part": "07_lower_inner_race_washer_1mm",
+        "z_bounds_mm": [
+          11.850000381469727,
+          12.850000381469727
+        ]
+      }
+    ],
+    "scope": "Nominal geometry only. Printed bore fit, spacer height, bearing widths and tightening still require calibration."
+  },
+  "valid_print_test_meshes": 14,
+  "assembly_intersection_checks": 30,
+  "changed_parts_slice_without_warnings": true,
+  "physical_print_tested": false,
+  "frictional_release_simulated": false,
+  "shared_mechanical_assumptions": {
+    "scope": "Replay the original 60 sensitivity + 15 coupling cases on model 0.3.0.\n\nMechanical estimates are shared by v13 and v14 for this controlled comparison;\nthe small CAD relief is not treated as a measured change in printed mass/friction.\n",
+    "stand": {
+      "name": "PEACH v13 CAD + slicer estimate",
+      "mass_kg": 0.3003084,
+      "rotor_inertia_kg_m2": 5.45155e-05,
+      "com_height_m": 0.0350184,
+      "platform_height_m": 0.0707,
+      "platform_radius_m": 0.052,
+      "support_radius_m": 0.054,
+      "pad_radius_m": 0.00395,
+      "pad_count": 6,
+      "pad_angle_deg": 30,
+      "support_points_m": null,
+      "foot_friction": 0.45,
+      "start_torque_Nm": 0.0006,
+      "running_torque_Nm": 0.0003,
+      "viscous_Nm_s": 1.5e-05,
+      "body_profile_m": [
+        [
+          0.0531,
+          0.0667
+        ],
+        [
+          0.057,
+          0.0664
+        ],
+        [
+          0.061,
+          0.064
+        ],
+        [
+          0.067,
+          0.058
+        ],
+        [
+          0.072,
+          0.051
+        ],
+        [
+          0.078,
+          0.036
+        ]
+      ],
+      "leaves": []
+    },
+    "source_sha256": {
+      "model.py": "6ec8f8abbb57d96f44f0a6c7f70fc3fe7829afe38fc7f9efa3ebaadbbb1a832f",
+      "paths.py": "78a8ff05c09789eae6fad37bd1e7ed7834d06a16051ca56c69d1f3819893244a",
+      "presets.py": "9f9b436932c9b274e8b906208ce05a882665d40a6f2c7b7e387874bb7b15f59a"
+    }
+  }
+}

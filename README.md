@@ -134,6 +134,7 @@ python -m yarnstand run examples/pitaya_v09.json --out results/pitaya_v09.json
 
 - [Уравнения, единицы и границы применимости](docs/model.md)
 - [Проверка персика v13](docs/peach-v13.md)
+- [Персик v14: исправление прохода и подшипников, сравнение с v13](docs/peach-v14.md)
 - [Короткая калибровка после печати](docs/calibration.md)
 - [Результаты для PITAYA и сравнительных вариантов](docs/results.md)
 - [Архив проверки PITAYA v10 и неизменённые CAD-посадки](docs/pitaya-v10-recheck.md)
