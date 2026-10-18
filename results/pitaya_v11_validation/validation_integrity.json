@@ -1,0 +1,18 @@
+{
+  "original_40_cases_byte_identical": true,
+  "all_reported_geometry_hashes_match_current_files": true,
+  "same_audit_code": true,
+  "same_runtime": true,
+  "same_54_sensitivity_input_combinations": true,
+  "unresolved_scenarios_or_parts": 0,
+  "CAD_checks_passed": true,
+  "step_assembly_valid_solids": 49,
+  "print_STL_count": 15,
+  "python_tests_passed": 65,
+  "UI_tests_passed": 10,
+  "comparison": {
+    "improved": 6,
+    "worsened": 0,
+    "remaining_flagged": 26
+  }
+}

@@ -1,4 +1,4 @@
-"""Check saved v10 STEP parts against the unchanged v09 mechanism (CadQuery).
+"""Check saved PITAYA STEP parts against the unchanged v09 mechanism (CadQuery).
 Usage: python tools/check_pitaya_cad.py PITAYA_v10 PITAYA_v09 --out report.json
 No CAD files are overwritten. This checks fit, not printed material strength.
 """
@@ -10,6 +10,11 @@ p=argparse.ArgumentParser(description=__doc__);p.add_argument('current',type=Pat
 a=p.parse_args();t=time.monotonic()
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def load(path):return cq.importers.importStep(str(path)).val()
+def surface_distance(x,y):
+    # Compare all boundary shells after checking intersection volumes. The
+    # solid-distance shortcut may report a spurious containment at a STEP
+    # spline seam (OCCT 7.9); it must not replace the boundary measurement.
+    return min(s.distance(t) for s in x.Shells() for t in y.Shells())
 body=load(a.current/'cad/body_preview.step');leaf=load(a.current/'cad/leaf_preview.step')
 old=load(a.previous/'cad/PITAYA_v09_assembly.step').Solids()
 if len(old)!=49: raise ValueError('Unexpected v09 assembly structure; do not guess part indices')
@@ -43,7 +48,9 @@ report={'scope':'Saved STEP geometry and assembly fit; no FEA or physical print 
  'unchanged_mechanism_meshes':unchanged,'intersection_volumes_mm3':checks,
  'six_leaf_positions':leaf_seated,'leaf_insertion':insertion,
  'body_to_platter_min_distance_mm':body.distance(platter),
- 'leaf_to_body_min_distance_mm':body.distance(leaf.rotate((0,0,0),(0,0,1),30)),
+ 'leaf_to_body_min_distance_mm':surface_distance(body,leaf.rotate((0,0,0),(0,0,1),30)),
+ 'leaf_to_body_raw_solid_distance_mm':body.distance(leaf.rotate((0,0,0),(0,0,1),30)),
+ 'clearance_method':'Minimum distance between all boundary shells; solid non-overlap checked separately by Boolean intersection. Raw solid-distance containment shortcut retained for diagnostics.',
  'leaf_floor_clearance_mm':leaf.BoundingBox().zmin+1,
  'elapsed_s':time.monotonic()-t,'physically_printed':False}
 values=list(checks.values())+[x[k] for x in leaf_seated.values() for k in x]+[x['intersection_mm3'] for x in insertion]

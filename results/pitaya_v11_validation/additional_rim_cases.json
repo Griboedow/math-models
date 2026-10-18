@@ -1,0 +1,103 @@
+{
+  "description": "Separate additional setup: a 4 mm cord starts 2 mm higher, clear of the fixed fruit rim. Original 40-case set remains unchanged.",
+  "allowances_m": {
+    "print": 0.0002,
+    "fuzz": 0.0002,
+    "mesh": 5e-05,
+    "reserve": 5e-05
+  },
+  "sampling_step_m": 0.00025,
+  "motion_step_m": 0.00025,
+  "cases": [
+    {
+      "id": "platter_edge_4mm_-1_turn_raised_2mm",
+      "yarn_radius_m": 0.002,
+      "poses_m": [
+        [
+          [
+            0.0535,
+            -0.012,
+            0.04611
+          ],
+          [
+            0.0535,
+            0.012,
+            0.04611
+          ]
+        ],
+        [
+          [
+            0.0535,
+            -0.012,
+            0.04611
+          ],
+          [
+            0.0535,
+            0.012,
+            0.04611
+          ]
+        ]
+      ],
+      "part_rotation_deg": {
+        "platter": [
+          0,
+          -360
+        ],
+        "seeds": [
+          0,
+          -360
+        ],
+        "post": [
+          0,
+          -360
+        ]
+      },
+      "description": "Full rotation at unchanged XY and Z + 2 mm; additional admissible initial position, not a replacement for the original test."
+    },
+    {
+      "id": "platter_edge_4mm_+1_turn_raised_2mm",
+      "yarn_radius_m": 0.002,
+      "poses_m": [
+        [
+          [
+            0.0535,
+            -0.012,
+            0.04611
+          ],
+          [
+            0.0535,
+            0.012,
+            0.04611
+          ]
+        ],
+        [
+          [
+            0.0535,
+            -0.012,
+            0.04611
+          ],
+          [
+            0.0535,
+            0.012,
+            0.04611
+          ]
+        ]
+      ],
+      "part_rotation_deg": {
+        "platter": [
+          0,
+          360
+        ],
+        "seeds": [
+          0,
+          360
+        ],
+        "post": [
+          0,
+          360
+        ]
+      },
+      "description": "Full rotation at unchanged XY and Z + 2 mm; additional admissible initial position, not a replacement for the original test."
+    }
+  ]
+}

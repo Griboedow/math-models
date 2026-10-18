@@ -1,0 +1,65 @@
+{
+  "cadquery_version": "2.8.0",
+  "units": "mm",
+  "geometry_version": "PITAYA v11",
+  "source_sha256": {
+    "build_model.py": "ebecfccf7b2c4fceb0677d6276992fb421e3fbbefffa92e2b55c635e81fde8d9",
+    "check_yarn_paths.py": "2ef8112f54f0a46120da69c366ec71038a6403618bbf3b151f503397a0024180",
+    "joint_geometry.py": "13dd213c839aefd5b24f7a0a7a3f187c39ce2dae6f9dd515311020d0ff857750",
+    "nut_holder.py": "ef7bb2089c4ff51fc22812387121513c07838b787df4d2b20637c24ee5eb230f",
+    "render_model.py": "c1f2fef52abb701940c8f131fcf0395ee850c847da2e2b91eeae6e5f76aa54b8",
+    "slice_windows.py": "cd830fbefa4b0a90ac0c7e26ff526b0b81898f8adb5cd3b5d5da6f3031d4a63e",
+    "validate_exports.py": "40863198f53091ff125f796c825125ef1271bf94be3bf74861a9e2bd8c295343"
+  },
+  "native_sha256": {
+    "body_preview.step": "913d3e56bb856b7bab4db78169bf1ec14176ff421063fb582a547c4d72e6f521",
+    "leaf_preview.step": "d4bd327f6eeead282d6d5385c8dba45261627d804fcb29b85fb7fe76d0d1ae54",
+    "PITAYA_v11_assembly.step": "148aac28f66dacc05f802c533b2252864d9b2dd36c680269f5cf984a5f7cbe85"
+  },
+  "print_sha256": {
+    "01_body_pink.stl": "078648d971d608b3fc17c20445453adf589520dc673dab478ebc69d9e001ad69",
+    "02_rotor_ivory.stl": "5f2d93cd2377bad26fc2df3393b02cd2df62a2e18c7147f23c5dd5f40c686922",
+    "02_rotor_seeds_multicolor.3mf": "15def11234ba4f339e4416e554daed2c886ed4c6223cc8c017624791d7aae86b",
+    "03_seeds_black_AMS.stl": "50c47608e8927b0505e1e7c03017465512b1d7cec2325a81b702fcc79b58800f",
+    "04_post_ivory.stl": "63d3ce06c6d764b77b4b3ca54fb599f72e1fda98821ea3a736eca093ed83d605",
+    "05_leaf_green_PRINT_6.stl": "6b9f892f9782aca8c4bb8722553bda44818ca80b5338392acd60f8f47dc93438",
+    "06_upper_race_collar.stl": "d77427e1c8697a69d6a6843f44ce8ee7dac4184a34fd4994d2f97e80a0d008b0",
+    "07_inner_spacer_2p00.stl": "663d1cc3c0f4e391b7e97c690fd7e193e0b2473cd4c65e50a0639f6986e25e8e",
+    "08_lower_race_washer.stl": "d77427e1c8697a69d6a6843f44ce8ee7dac4184a34fd4994d2f97e80a0d008b0",
+    "09_bearing_fit_coupon_21p9_22p0_22p1_22p2.stl": "9e18170a53021f6fac94936b506d56d00b9add1b0190e31637e44f3927a441af",
+    "10_optional_inner_spacer_1p85.stl": "8d286ac7dd8229f96a4c6eea8e7dcd3bc60a9e2cd685c7c6047e2a61ec53fcd7",
+    "11_optional_inner_spacer_2p15.stl": "3e2916d639c504f79f7f74b541bb38a2ffa31d4a1748be1d02aba55831c97a20",
+    "12_thread_test_male.stl": "6234d478f4500b9397eb9aa49e088cf0a7c01eb4f1c4e4bf780a1064dac9219b",
+    "13_thread_test_female.stl": "83c98916a7b3e4fa3f01784f3e5caa4ded22b66f66ffa4a842dc52cbf1731ae9",
+    "14_leaf_socket_test.stl": "7d4a3d6e9b8cdd0304c147c2132fc0dd7e31f0ebfaf30a8922d9a230b733a79c",
+    "15_nut_holder_13mm.stl": "446b2325a0c608710dab1f1f1c26fdd4f89015eda4adce471fd47d87e60ac19b"
+  },
+  "step_roundtrip": {
+    "body": {
+      "valid": true,
+      "solids": 1,
+      "volume_difference_mm3": 0.01245541829848662
+    },
+    "leaf": {
+      "valid": true,
+      "solids": 1,
+      "volume_difference_mm3": 3.7316567613743246e-09
+    },
+    "assembly": {
+      "valid": true,
+      "solids": 49
+    }
+  },
+  "fit_coupon": "print/14_leaf_socket_test.stl",
+  "physically_printed": false,
+  "minimum_CAD_surface_gap_mm": 0.21033585266338709,
+  "source_code_location": "source/ in the separately delivered PITAYA_v11_model.zip",
+  "geometry_changes": {
+    "distal_leaf_shortening_max_local_mm": 3.8,
+    "shortening_blend_start_local_x_mm": 18.0,
+    "socket_true_outline_offset_mm": 0.4,
+    "socket_back_gap_mm": 0.35,
+    "dowel_radial_gap_mm": 0.25,
+    "socket_offset_spline_approximation_tolerance_mm": 1e-05
+  }
+}

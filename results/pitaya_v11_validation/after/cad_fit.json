@@ -1,0 +1,128 @@
+{
+  "scope": "Saved STEP geometry and assembly fit; no FEA or physical print validation",
+  "native_source_hashes": {
+    "body_preview.step": "913d3e56bb856b7bab4db78169bf1ec14176ff421063fb582a547c4d72e6f521",
+    "leaf_preview.step": "d4bd327f6eeead282d6d5385c8dba45261627d804fcb29b85fb7fe76d0d1ae54"
+  },
+  "body_valid": true,
+  "leaf_valid": true,
+  "body_solids": 1,
+  "leaf_solids": 1,
+  "unchanged_mechanism_meshes": {
+    "platter": {
+      "unchanged": true,
+      "sha256": "48fedcccc31c45fc9f1b9fc7b7323000b2cb60b3d41b3c5bb4611cca3c580467"
+    },
+    "post": {
+      "unchanged": true,
+      "sha256": "b22c82a89f563c24834d36ecec3e110ab580923590951ad389bd020b393f0c58"
+    },
+    "seeds": {
+      "unchanged": true,
+      "sha256": "b54105d62b36ecbf5907debee5c2c9c2df372797fea0e59fefa03f92e9faa745"
+    },
+    "collar": {
+      "unchanged": true,
+      "sha256": "1f448cbd77b728a7e52a96df24feb24c29e773e9edb5fa5fee27bd18e9e130df"
+    },
+    "spacer": {
+      "unchanged": true,
+      "sha256": "2138febc35b2d6ccc6a20ce9fa5e6bc859d5f93c84cebdd306300d7b96129bf4"
+    },
+    "washer": {
+      "unchanged": true,
+      "sha256": "c2080262ab225ef56719d73b6e655ad7973ec0e193bacded00604b376d00276b"
+    },
+    "bearing_lower": {
+      "unchanged": true,
+      "sha256": "ab9192970259942c85d768c339fa0b7b691a0c29c8d08a9601813aca9dfcba22"
+    },
+    "bearing_upper": {
+      "unchanged": true,
+      "sha256": "b711e6170d49e70d0519cdee6108339f2ec5b34f159a13c43ba16d22704e6adc"
+    },
+    "bolt_M8x45": {
+      "unchanged": true,
+      "sha256": "e3c61e96088a1ff803e94dbda08039db7d3097fcca9851fa6210335985d12a56"
+    },
+    "nut_M8_nyloc": {
+      "unchanged": true,
+      "sha256": "f45649b44b96c811e395540357d0539d7241f74f24e02f2bf78e4be9e33a1527"
+    },
+    "pads": {
+      "unchanged": true,
+      "sha256": "fcf2e73c0623ec5eeb9bfe3b44d72f6b823277f5e01b499fbd19cd4374f1431e"
+    }
+  },
+  "intersection_volumes_mm3": {
+    "body_platter": 0.0,
+    "body_post": 0.0,
+    "body_bolt": 0.0,
+    "body_collar": 0.0,
+    "body_spacer": 0.0,
+    "platter_post": 0.0,
+    "post_bolt": 0.0,
+    "post_nut": 0.0,
+    "body_rotor_envelope": 0.0
+  },
+  "six_leaf_positions": {
+    "30": {
+      "body_intersection_mm3": 0.0,
+      "platter_intersection_mm3": 0.0
+    },
+    "90": {
+      "body_intersection_mm3": 0.0,
+      "platter_intersection_mm3": 0.0
+    },
+    "150": {
+      "body_intersection_mm3": 0.0,
+      "platter_intersection_mm3": 0.0
+    },
+    "210": {
+      "body_intersection_mm3": 0.0,
+      "platter_intersection_mm3": 0.0
+    },
+    "270": {
+      "body_intersection_mm3": 0.0,
+      "platter_intersection_mm3": 0.0
+    },
+    "330": {
+      "body_intersection_mm3": 0.0,
+      "platter_intersection_mm3": 0.0
+    }
+  },
+  "leaf_insertion": [
+    {
+      "offset_mm": 0,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_mm": 0.5,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_mm": 1.5,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_mm": 3,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_mm": 6,
+      "intersection_mm3": 0.0
+    },
+    {
+      "offset_mm": 9,
+      "intersection_mm3": 0.0
+    }
+  ],
+  "body_to_platter_min_distance_mm": 0.8000000000000007,
+  "leaf_to_body_min_distance_mm": 0.21033585266338709,
+  "leaf_to_body_raw_solid_distance_mm": 0.0,
+  "clearance_method": "Minimum distance between all boundary shells; solid non-overlap checked separately by Boolean intersection. Raw solid-distance containment shortcut retained for diagnostics.",
+  "leaf_floor_clearance_mm": 6.974175681078058,
+  "elapsed_s": 44.687000000005355,
+  "physically_printed": false,
+  "pass": true
+}

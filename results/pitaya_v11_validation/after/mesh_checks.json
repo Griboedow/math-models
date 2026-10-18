@@ -1,0 +1,248 @@
+[
+  {
+    "file": "01_body_pink.stl",
+    "triangles": 477888,
+    "removed_degenerate_triangles": 6,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      142.569,
+      142.553,
+      41.425
+    ],
+    "parts": 1
+  },
+  {
+    "file": "02_rotor_ivory.stl",
+    "triangles": 106850,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      104.015,
+      104.015,
+      18.114
+    ],
+    "parts": 1
+  },
+  {
+    "file": "03_seeds_black_AMS.stl",
+    "triangles": 61048,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      88.677,
+      85.168,
+      1.221
+    ],
+    "parts": 21
+  },
+  {
+    "file": "04_post_ivory.stl",
+    "triangles": 134358,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      32.4,
+      32.4,
+      139.0
+    ],
+    "parts": 1
+  },
+  {
+    "file": "05_leaf_green_PRINT_6.stl",
+    "triangles": 155956,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      32.209,
+      21.647,
+      28.928
+    ],
+    "parts": 1
+  },
+  {
+    "file": "06_upper_race_collar.stl",
+    "triangles": 2240,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      10.4,
+      10.4,
+      1.0
+    ],
+    "parts": 1
+  },
+  {
+    "file": "07_inner_spacer_2p00.stl",
+    "triangles": 2240,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      10.4,
+      10.4,
+      2.0
+    ],
+    "parts": 1
+  },
+  {
+    "file": "08_lower_race_washer.stl",
+    "triangles": 2240,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      10.4,
+      10.4,
+      1.0
+    ],
+    "parts": 1
+  },
+  {
+    "file": "09_bearing_fit_coupon_21p9_22p0_22p1_22p2.stl",
+    "triangles": 20548,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      110.0,
+      26.0,
+      7.5
+    ],
+    "parts": 1
+  },
+  {
+    "file": "10_optional_inner_spacer_1p85.stl",
+    "triangles": 2240,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      10.4,
+      10.4,
+      1.85
+    ],
+    "parts": 1
+  },
+  {
+    "file": "11_optional_inner_spacer_2p15.stl",
+    "triangles": 2240,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      10.4,
+      10.4,
+      2.15
+    ],
+    "parts": 1
+  },
+  {
+    "file": "12_thread_test_male.stl",
+    "triangles": 52408,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      32.4,
+      32.4,
+      33.5
+    ],
+    "parts": 1
+  },
+  {
+    "file": "13_thread_test_female.stl",
+    "triangles": 17948,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      32.4,
+      32.4,
+      18.0
+    ],
+    "parts": 1
+  },
+  {
+    "file": "14_leaf_socket_test.stl",
+    "triangles": 34430,
+    "removed_degenerate_triangles": 1,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      19.277,
+      44.0,
+      40.0
+    ],
+    "parts": 1
+  },
+  {
+    "file": "15_nut_holder_13mm.stl",
+    "triangles": 6280,
+    "removed_degenerate_triangles": 0,
+    "watertight": true,
+    "positive_volume": true,
+    "consistent_winding": true,
+    "size_mm": [
+      30.022,
+      26.0,
+      36.0
+    ],
+    "parts": 1
+  },
+  {
+    "file": "02_rotor_seeds_multicolor.3mf",
+    "part": "Ivory_platter",
+    "watertight": true,
+    "positive_volume": true,
+    "bounds": [
+      [
+        -52.007533,
+        -52.007639,
+        0.0
+      ],
+      [
+        52.007625,
+        52.007467,
+        18.113599
+      ]
+    ]
+  },
+  {
+    "file": "02_rotor_seeds_multicolor.3mf",
+    "part": "Black_flush_seeds",
+    "watertight": true,
+    "positive_volume": true,
+    "bounds": [
+      [
+        -46.340665,
+        -43.748012,
+        16.893005
+      ],
+      [
+        42.336782,
+        41.419599,
+        18.113599
+      ]
+    ]
+  }
+]

@@ -1,0 +1,948 @@
+{
+  "scope": "prescribed geometry and conservative clearance envelopes; no frictional locking or release force",
+  "cases": [
+    {
+      "case": "leaf_1_loop_lift_straight_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_1_loop_lift_straight_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_2_loop_lift_straight_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_2_loop_lift_straight_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_3_loop_lift_straight_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_3_loop_lift_straight_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_4_loop_lift_straight_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_4_loop_lift_straight_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_5_loop_lift_straight_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_5_loop_lift_straight_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_6_loop_lift_straight_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_6_loop_lift_straight_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_1_loop_lift_diagonal_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_1_loop_lift_diagonal_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_2_loop_lift_diagonal_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_2_loop_lift_diagonal_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_3_loop_lift_diagonal_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_3_loop_lift_diagonal_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_4_loop_lift_diagonal_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_4_loop_lift_diagonal_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_5_loop_lift_diagonal_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_5_loop_lift_diagonal_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_6_loop_lift_diagonal_2mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_6_loop_lift_diagonal_4mm",
+      "before": "nominal_contact",
+      "after": "nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_1_loop_outward_then_up_2mm",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_1_loop_outward_then_up_4mm",
+      "before": "nominal_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -3
+    },
+    {
+      "case": "leaf_2_loop_outward_then_up_2mm",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_2_loop_outward_then_up_4mm",
+      "before": "nominal_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -3
+    },
+    {
+      "case": "leaf_3_loop_outward_then_up_2mm",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_3_loop_outward_then_up_4mm",
+      "before": "nominal_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -3
+    },
+    {
+      "case": "leaf_4_loop_outward_then_up_2mm",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_4_loop_outward_then_up_4mm",
+      "before": "nominal_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -3
+    },
+    {
+      "case": "leaf_5_loop_outward_then_up_2mm",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_5_loop_outward_then_up_4mm",
+      "before": "nominal_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -3
+    },
+    {
+      "case": "leaf_6_loop_outward_then_up_2mm",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "leaf_6_loop_outward_then_up_4mm",
+      "before": "nominal_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -3
+    },
+    {
+      "case": "platter_edge_2mm_-1_turn",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "platter_edge_2mm_+1_turn",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "platter_edge_4mm_-1_turn",
+      "before": "initial_nominal_contact",
+      "after": "initial_nominal_contact",
+      "risk_rank_change": 0
+    },
+    {
+      "case": "platter_edge_4mm_+1_turn",
+      "before": "initial_nominal_contact",
+      "after": "initial_nominal_contact",
+      "risk_rank_change": 0
+    }
+  ],
+  "summary": {
+    "improved": 6,
+    "worsened": 0,
+    "remaining_flagged": 26
+  },
+  "baseline_provenance": {
+    "manifest_sha256": "1cd786bfafc00545f64d45cfa392e1f636d84b65044accc6820f71faaa59a38c",
+    "sources": [
+      {
+        "name": "body",
+        "file": "body.stl",
+        "sha256": "19eed3e7bdccfdc050ade7efedf73e53f08e7c9a11827871f903ee86d7edcb7c",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "platter",
+        "file": "platter.stl",
+        "sha256": "48fedcccc31c45fc9f1b9fc7b7323000b2cb60b3d41b3c5bb4611cca3c580467",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "seeds",
+        "file": "seeds.stl",
+        "sha256": "b54105d62b36ecbf5907debee5c2c9c2df372797fea0e59fefa03f92e9faa745",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "post",
+        "file": "post.stl",
+        "sha256": "b22c82a89f563c24834d36ecec3e110ab580923590951ad389bd020b393f0c58",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_1",
+        "file": "leaf_1.stl",
+        "sha256": "a5b0acf74d1559c5e0436e19136221b1d6ca5742130706619a012e1e06ccbfbb",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_2",
+        "file": "leaf_2.stl",
+        "sha256": "6cdb0357bee518c1612d725ce3802c60ae977f5d04891dfaba928689ff17e5f4",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_3",
+        "file": "leaf_3.stl",
+        "sha256": "2d51ba380b941372d077ad93995902ae037c1d29d0ed19d9705a6ad1661ce96f",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_4",
+        "file": "leaf_4.stl",
+        "sha256": "19aaf3185073f44e9223a2b1237ab9b762a1fe14a88fe24ad70fcb12ad0acfc1",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_5",
+        "file": "leaf_5.stl",
+        "sha256": "0cc7a7d4c808862195964d799ebe882b0101c6c888cfefdf82704a1c1576ea7e",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_6",
+        "file": "leaf_6.stl",
+        "sha256": "e1b5607b0068d7b9cc5b3838c3d78db5a22eb3a91f14b48513204cc05e5579dc",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "pads",
+        "file": "pads.stl",
+        "sha256": "fcf2e73c0623ec5eeb9bfe3b44d72f6b823277f5e01b499fbd19cd4374f1431e",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "candidate_provenance": {
+    "manifest_sha256": "9997510cd4f6d147b620749a06efce7afbc0e8cd6579e79f65243f395cb386f1",
+    "sources": [
+      {
+        "name": "body",
+        "file": "body.stl",
+        "sha256": "2706c623fdbd74a10c782cd52c50810525367674d0c9fdcfe2ce62ffc99c06c8",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "platter",
+        "file": "platter.stl",
+        "sha256": "48fedcccc31c45fc9f1b9fc7b7323000b2cb60b3d41b3c5bb4611cca3c580467",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "seeds",
+        "file": "seeds.stl",
+        "sha256": "b54105d62b36ecbf5907debee5c2c9c2df372797fea0e59fefa03f92e9faa745",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "post",
+        "file": "post.stl",
+        "sha256": "b22c82a89f563c24834d36ecec3e110ab580923590951ad389bd020b393f0c58",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_1",
+        "file": "leaf_1.stl",
+        "sha256": "517ae2fd01ecb82fcf6c54dbbab674e97c5ca8fad8293e12ada4277dcadf641c",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_2",
+        "file": "leaf_2.stl",
+        "sha256": "3915bbc0471d90cb7ddd1d7a3802d51ccb17a69695265bb2e1ee8aef49a3faaa",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_3",
+        "file": "leaf_3.stl",
+        "sha256": "19e4fd2b7ebce44ee4fc5fbb0aa8ba8d4e7c6a78e95a740938586f516ac6fd06",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_4",
+        "file": "leaf_4.stl",
+        "sha256": "15a6ed12e72f9c9ba517833ff6a4e37ac4b3f865b58af80735991b472bce5f8e",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_5",
+        "file": "leaf_5.stl",
+        "sha256": "d569c1bf2c4d6ed84f0fe3d89f6699a8b5b4e3219907d2ea01151a30e22aa8f0",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_6",
+        "file": "leaf_6.stl",
+        "sha256": "ff5353a4d187fd0cc75ab419307264531664d4d24d2d82b1ba15a3f6e6710896",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "pads",
+        "file": "pads.stl",
+        "sha256": "fcf2e73c0623ec5eeb9bfe3b44d72f6b823277f5e01b499fbd19cd4374f1431e",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "same_runtime": true,
+  "same_audit_code": true
+}

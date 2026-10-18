@@ -1,0 +1,143 @@
+{
+  "project_sha256": "a4a3faf8c0eb4298754722213bcacc883f2e2388f10ad46d37ab15ac5fd9f96d",
+  "result": {
+    "error_string": "Success.",
+    "export_time": 1,
+    "layer_height": 0.11999999731779099,
+    "plate_index": 0,
+    "prepare_time": 2344,
+    "return_code": 0,
+    "sliced_plates": [
+      {
+        "feature_type_times": {
+          "Custom": 402.6206970214844,
+          "Flush": 26.0,
+          "Gap infill": 53.8029899597168,
+          "Inner wall": 1127.5517578125,
+          "Internal solid infill": 570.2321166992188,
+          "Outer wall": 1624.369384765625,
+          "Overhang wall": 13.252603530883789,
+          "Sparse infill": 444.7350158691406,
+          "Support": 1002.5609130859375,
+          "Support interface": 24.032302856445312,
+          "Top surface": 5.798027992248535,
+          "Travel": 1197.50927734375,
+          "Undefined": 1190.9873046875
+        },
+        "filament_change_times": 0,
+        "filaments": [
+          {
+            "filament_id": "GFA00",
+            "id": 1,
+            "main_used_g": 17.20683479309082,
+            "total_used_g": 17.20683479309082
+          }
+        ],
+        "generate_support_material_time": 554,
+        "id": 1,
+        "infill_time": 78,
+        "layer_filament_change": 0,
+        "main_predication": 6038.2109375,
+        "make_perimeters_time": 150,
+        "obj_cached_cnt": 0,
+        "objects": [
+          {
+            "bbox": {
+              "depth": 34.8470344543457,
+              "height": 28.92814064025879,
+              "width": 25.814794540405273,
+              "x": 159.2894287109375,
+              "y": 137.44947814941406,
+              "z": -2.0129395039703013e-08
+            },
+            "id": 5,
+            "name": "05_leaf_green_PRINT_6.stl_1",
+            "triangle_count": 155956
+          },
+          {
+            "bbox": {
+              "depth": 34.8470344543457,
+              "height": 28.92814064025879,
+              "width": 25.81479263305664,
+              "x": 113.55937957763672,
+              "y": 137.44947814941406,
+              "z": -2.0129395039703013e-08
+            },
+            "id": 9,
+            "name": "05_leaf_green_PRINT_6.stl_2",
+            "triangle_count": 155956
+          },
+          {
+            "bbox": {
+              "depth": 34.84703826904297,
+              "height": 28.92814064025879,
+              "width": 25.814794540405273,
+              "x": 159.2894287109375,
+              "y": 82.95895385742188,
+              "z": -2.0129395039703013e-08
+            },
+            "id": 13,
+            "name": "05_leaf_green_PRINT_6.stl_3",
+            "triangle_count": 155956
+          },
+          {
+            "bbox": {
+              "depth": 34.84703826904297,
+              "height": 28.92814064025879,
+              "width": 25.81479263305664,
+              "x": 113.55937957763672,
+              "y": 82.95895385742188,
+              "z": -2.0129395039703013e-08
+            },
+            "id": 17,
+            "name": "05_leaf_green_PRINT_6.stl_4",
+            "triangle_count": 155956
+          },
+          {
+            "bbox": {
+              "depth": 34.8470344543457,
+              "height": 28.92814064025879,
+              "width": 25.81479263305664,
+              "x": 67.82933044433594,
+              "y": 137.44947814941406,
+              "z": -2.0129395039703013e-08
+            },
+            "id": 21,
+            "name": "05_leaf_green_PRINT_6.stl_5",
+            "triangle_count": 155956
+          },
+          {
+            "bbox": {
+              "depth": 34.847042083740234,
+              "height": 28.92814064025879,
+              "width": 25.81479263305664,
+              "x": 67.82933044433594,
+              "y": 82.95893859863281,
+              "z": -2.0129395039703013e-08
+            },
+            "id": 25,
+            "name": "05_leaf_green_PRINT_6.stl_6",
+            "triangle_count": 155956
+          }
+        ],
+        "sliced_time": 6173,
+        "sliced_time_with_cache": 5139,
+        "total_predication": 6486.3095703125,
+        "triangle_count": 935736,
+        "warning_message": ""
+      }
+    ],
+    "sparse_infill_density": 15.0,
+    "upward_compatible_machine": [
+      "Bambu Lab A1 0.4 nozzle",
+      "Bambu Lab H2S 0.4 nozzle",
+      "Bambu Lab H2D 0.4 nozzle",
+      "Bambu Lab H2D Pro 0.4 nozzle",
+      "Bambu Lab H2C 0.4 nozzle",
+      "Bambu Lab X2D 0.4 nozzle",
+      "Bambu Lab A2L 0.4 nozzle"
+    ],
+    "wall_loops": 3
+  },
+  "physically_printed": false
+}

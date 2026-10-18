@@ -1,0 +1,72 @@
+{
+  "leaf_dowel_embedded_volume_mm3": [
+    43.429376843225384,
+    24.24147281429928
+  ],
+  "leaf_body_min_clearance_mm": 0.2103358526612033,
+  "leaf_tip_shortening_local_mm": 3.8,
+  "leaf_socket_outline_offset_mm": 0.4,
+  "leaf_socket_back_clearance_mm": 0.35,
+  "leaf_dowel_radial_clearance_mm": 0.25,
+  "leaf_width_local_mm": 34.34,
+  "leaf_floor_clearance_mm": 6.97,
+  "body_platter_intersection_mm3": 0.0,
+  "body_post_intersection_mm3": 0.0,
+  "platter_post_intersection_mm3": 0.0,
+  "post_bolt_intersection_mm3": 0.0,
+  "post_nut_intersection_mm3": 0.0,
+  "body_bolt_intersection_mm3": 0.0,
+  "leaf_body_intersection_mm3": 0.0,
+  "leaf_insertion_3mm_intersection_mm3": 0.0,
+  "leaf_insertion_1p5mm_intersection_mm3": 0.0,
+  "leaf_insertion_6mm_intersection_mm3": 0.0,
+  "rotor_swept_envelope_intersection_mm3": 0.0,
+  "leaf_solids": 1,
+  "seed_count": 21,
+  "upper_collar_body_intersection_mm3": 0.0,
+  "spacer_body_intersection_mm3": 0.0,
+  "assembled_height_mm": 168.5,
+  "body_max_diameter_mm": 142.67,
+  "body_size_mm": [
+    142.67,
+    142.65,
+    41.53
+  ],
+  "platter_diameter_mm": 104,
+  "spindle_tip_above_fruit_center_mm": 124.5,
+  "post_print_height_mm": 139.0,
+  "post_visible_height_above_seat_mm": 123.5,
+  "joint_seating_z_mm": 44.0,
+  "slender_stem_start_z_mm": 47.0,
+  "slender_stem_start_v06_z_mm": 65.0,
+  "foot_blend_height_mm": 3.0,
+  "male_thread_major_diameter_mm": 25.0,
+  "male_thread_root_diameter_mm": 23.0,
+  "thread_nominal_turns": 4.0,
+  "thread_pitch_mm": 2.5,
+  "pilot_diameter_mm": 25.0,
+  "pilot_bore_diameter_mm": 25.4,
+  "pilot_length_mm": 2.7,
+  "post_nut_cavity_diameter_mm": 15.8,
+  "post_bolt_tail_bore_diameter_mm": 8.8,
+  "post_root_radial_wall_nominal_mm": 3.6,
+  "post_stem_radial_wall_nominal_mm": 3.6,
+  "post_cavity_top_z_mm": 58.35,
+  "bolt_tail_axial_clearance_mm": 1.0,
+  "nut_top_axial_clearance_mm": 0.8,
+  "socket_boss_body_radial_clearance_mm": 0.9,
+  "bearing_z_ranges_mm": [
+    [
+      9,
+      16
+    ],
+    [
+      18,
+      25
+    ]
+  ],
+  "bolt_head_location": "underside Z0..8, shaft Z8..53",
+  "radial_running_clearance_mm": 1.1,
+  "axial_running_clearance_mm": 1.0,
+  "fit_status": "UNPRINTED PROTOTYPE -- fit coupons and physical validation required"
+}

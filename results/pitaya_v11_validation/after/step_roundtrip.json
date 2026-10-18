@@ -1,0 +1,16 @@
+{
+  "body": {
+    "valid": true,
+    "solids": 1,
+    "volume_difference_mm3": 0.01245541829848662
+  },
+  "leaf": {
+    "valid": true,
+    "solids": 1,
+    "volume_difference_mm3": 3.7316567613743246e-09
+  },
+  "assembly": {
+    "valid": true,
+    "solids": 49
+  }
+}

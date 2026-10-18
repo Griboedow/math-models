@@ -1,0 +1,939 @@
+{
+  "schema_version": 1,
+  "scope": "prescribed geometry and conservative clearance envelopes; no frictional locking or release force",
+  "allowances_m": {
+    "print": 0.0002,
+    "fuzz": 0.0002,
+    "mesh": 5e-05,
+    "reserve": 5e-05
+  },
+  "effective_radial_allowance_m": 0.0005,
+  "sampling_step_m": 0.00025,
+  "motion_step_m": 0.00025,
+  "summary": {
+    "cases": 2,
+    "case_statuses": {
+      "clear_with_allowance": 2
+    },
+    "part_statuses": {
+      "clear_with_allowance": 22
+    },
+    "distance_samples": 806376
+  },
+  "provenance": {
+    "manifest_sha256": "9997510cd4f6d147b620749a06efce7afbc0e8cd6579e79f65243f395cb386f1",
+    "sources": [
+      {
+        "name": "body",
+        "file": "body.stl",
+        "sha256": "2706c623fdbd74a10c782cd52c50810525367674d0c9fdcfe2ce62ffc99c06c8",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "platter",
+        "file": "platter.stl",
+        "sha256": "48fedcccc31c45fc9f1b9fc7b7323000b2cb60b3d41b3c5bb4611cca3c580467",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "seeds",
+        "file": "seeds.stl",
+        "sha256": "b54105d62b36ecbf5907debee5c2c9c2df372797fea0e59fefa03f92e9faa745",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "post",
+        "file": "post.stl",
+        "sha256": "b22c82a89f563c24834d36ecec3e110ab580923590951ad389bd020b393f0c58",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_1",
+        "file": "leaf_1.stl",
+        "sha256": "517ae2fd01ecb82fcf6c54dbbab674e97c5ca8fad8293e12ada4277dcadf641c",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_2",
+        "file": "leaf_2.stl",
+        "sha256": "3915bbc0471d90cb7ddd1d7a3802d51ccb17a69695265bb2e1ee8aef49a3faaa",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_3",
+        "file": "leaf_3.stl",
+        "sha256": "19e4fd2b7ebce44ee4fc5fbb0aa8ba8d4e7c6a78e95a740938586f516ac6fd06",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_4",
+        "file": "leaf_4.stl",
+        "sha256": "15a6ed12e72f9c9ba517833ff6a4e37ac4b3f865b58af80735991b472bce5f8e",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_5",
+        "file": "leaf_5.stl",
+        "sha256": "d569c1bf2c4d6ed84f0fe3d89f6699a8b5b4e3219907d2ea01151a30e22aa8f0",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "leaf_6",
+        "file": "leaf_6.stl",
+        "sha256": "ff5353a4d187fd0cc75ab419307264531664d4d24d2d82b1ba15a3f6e6710896",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "name": "pads",
+        "file": "pads.stl",
+        "sha256": "fcf2e73c0623ec5eeb9bfe3b44d72f6b823277f5e01b499fbd19cd4374f1431e",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "source_sha256": {
+    "snags.py": "896280a3e4f7590223ffd372759b08c961c79871613102ef856974ac7508c2c0",
+    "mesh.py": "dacd057bb042e04a97c5ac5f6c5c931681aa614aff20f6b22afa7c08fdd7df21"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "vtk": "9.6.2",
+    "numpy": "2.5.4",
+    "trimesh": "5.1.1"
+  },
+  "inputs": {
+    "description": "Separate additional setup: a 4 mm cord starts 2 mm higher, clear of the fixed fruit rim. Original 40-case set remains unchanged.",
+    "allowances_m": {
+      "print": 0.0002,
+      "fuzz": 0.0002,
+      "mesh": 5e-05,
+      "reserve": 5e-05
+    },
+    "sampling_step_m": 0.00025,
+    "motion_step_m": 0.00025,
+    "cases": [
+      {
+        "id": "platter_edge_4mm_-1_turn_raised_2mm",
+        "yarn_radius_m": 0.002,
+        "poses_m": [
+          [
+            [
+              0.0535,
+              -0.012,
+              0.04611
+            ],
+            [
+              0.0535,
+              0.012,
+              0.04611
+            ]
+          ],
+          [
+            [
+              0.0535,
+              -0.012,
+              0.04611
+            ],
+            [
+              0.0535,
+              0.012,
+              0.04611
+            ]
+          ]
+        ],
+        "part_rotation_deg": {
+          "platter": [
+            0,
+            -360
+          ],
+          "seeds": [
+            0,
+            -360
+          ],
+          "post": [
+            0,
+            -360
+          ]
+        },
+        "description": "Full rotation at unchanged XY and Z + 2 mm; additional admissible initial position, not a replacement for the original test."
+      },
+      {
+        "id": "platter_edge_4mm_+1_turn_raised_2mm",
+        "yarn_radius_m": 0.002,
+        "poses_m": [
+          [
+            [
+              0.0535,
+              -0.012,
+              0.04611
+            ],
+            [
+              0.0535,
+              0.012,
+              0.04611
+            ]
+          ],
+          [
+            [
+              0.0535,
+              -0.012,
+              0.04611
+            ],
+            [
+              0.0535,
+              0.012,
+              0.04611
+            ]
+          ]
+        ],
+        "part_rotation_deg": {
+          "platter": [
+            0,
+            360
+          ],
+          "seeds": [
+            0,
+            360
+          ],
+          "post": [
+            0,
+            360
+          ]
+        },
+        "description": "Full rotation at unchanged XY and Z + 2 mm; additional admissible initial position, not a replacement for the original test."
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "platter_edge_4mm_-1_turn_raised_2mm",
+      "yarn_radius_m": 0.002,
+      "status": "clear_with_allowance",
+      "parts": [
+        {
+          "part": "body",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.001184520111083979,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_1",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.010656255274551728,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_2",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.06079499878324848,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_3",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.09821848955065848,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_4",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.0983730158159452,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_5",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.059905607924041336,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_6",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.010316494060454595,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "pads",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.04284748019012375,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "platter",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": 0.002231646810206516,
+          "clearance_lower_bound_with_allowance_m": 0.0014817365384036272,
+          "checked_frames": 1380,
+          "site": {
+            "surface_reference_assembly_m": [
+              0.05072063197082882,
+              -2.014628517584702e-20,
+              0.04291908350395186
+            ],
+            "surface_world_m": [
+              0.05072063197082882,
+              -2.014628517584702e-20,
+              0.04291908350395186
+            ],
+            "cord_world_m": [
+              0.0535,
+              0.0,
+              0.04611
+            ],
+            "outward_normal_reference": [
+              0.0,
+              -1.0,
+              0.0
+            ],
+            "source_file": "platter.stl",
+            "surface_source_coordinates": [
+              50.72063197082882,
+              -2.014628517584702e-17,
+              41.91908350395186
+            ],
+            "source_unit": "mm",
+            "pose_coordinate": 0.0,
+            "part_angle_deg": 0.0
+          },
+          "clearance_deficit_bound_m": 0.0
+        },
+        {
+          "part": "post",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": 0.035316511668224256,
+          "clearance_lower_bound_with_allowance_m": 0.03456660139642136,
+          "checked_frames": 1380,
+          "site": {
+            "surface_reference_assembly_m": [
+              0.016200000762939454,
+              0.0,
+              0.045
+            ],
+            "surface_world_m": [
+              0.016200000762939454,
+              0.0,
+              0.045
+            ],
+            "cord_world_m": [
+              0.0535,
+              0.0,
+              0.04611
+            ],
+            "outward_normal_reference": [
+              0.8852641809575905,
+              0.0011894132317897767,
+              -0.4650869974635397
+            ],
+            "source_file": "post.stl",
+            "surface_source_coordinates": [
+              16.200000762939453,
+              0.0,
+              44.0
+            ],
+            "source_unit": "mm",
+            "pose_coordinate": 0.0,
+            "part_angle_deg": 0.0
+          },
+          "clearance_deficit_bound_m": 0.0
+        },
+        {
+          "part": "seeds",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": 0.005107187365462503,
+          "clearance_lower_bound_with_allowance_m": 0.004357804508976763,
+          "checked_frames": 1380,
+          "site": {
+            "surface_reference_assembly_m": [
+              -0.04632444586648953,
+              0.005138575444493501,
+              0.04437301348081625
+            ],
+            "surface_world_m": [
+              0.046607814326768485,
+              0.0002662444695112859,
+              0.04437301348081625
+            ],
+            "cord_world_m": [
+              0.0535,
+              0.00024999999999999957,
+              0.04611
+            ],
+            "outward_normal_reference": [
+              -0.7469365008139462,
+              0.08842924886433247,
+              0.6589887189452546
+            ],
+            "source_file": "seeds.stl",
+            "surface_source_coordinates": [
+              -46.32444586648953,
+              5.138575444493501,
+              43.37301348081625
+            ],
+            "source_unit": "mm",
+            "pose_coordinate": 0.4815083393763597,
+            "part_angle_deg": -173.3430021754895
+          },
+          "clearance_deficit_bound_m": 0.0
+        }
+      ]
+    },
+    {
+      "id": "platter_edge_4mm_+1_turn_raised_2mm",
+      "yarn_radius_m": 0.002,
+      "status": "clear_with_allowance",
+      "parts": [
+        {
+          "part": "body",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.001184520111083979,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_1",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.010656255274551728,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_2",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.06079499878324848,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_3",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.09821848955065848,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_4",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.0983730158159452,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_5",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.059905607924041336,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "leaf_6",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.010316494060454595,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "pads",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.04284748019012375,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        },
+        {
+          "part": "platter",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": 0.002231646810206516,
+          "clearance_lower_bound_with_allowance_m": 0.0014817365384036272,
+          "checked_frames": 1380,
+          "site": {
+            "surface_reference_assembly_m": [
+              0.05072063197082882,
+              -2.014628517584702e-20,
+              0.04291908350395186
+            ],
+            "surface_world_m": [
+              0.05072063197082882,
+              -2.014628517584702e-20,
+              0.04291908350395186
+            ],
+            "cord_world_m": [
+              0.0535,
+              0.0,
+              0.04611
+            ],
+            "outward_normal_reference": [
+              0.0,
+              -1.0,
+              0.0
+            ],
+            "source_file": "platter.stl",
+            "surface_source_coordinates": [
+              50.72063197082882,
+              -2.014628517584702e-17,
+              41.91908350395186
+            ],
+            "source_unit": "mm",
+            "pose_coordinate": 0.0,
+            "part_angle_deg": 0.0
+          },
+          "clearance_deficit_bound_m": 0.0
+        },
+        {
+          "part": "post",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": 0.035316511668224256,
+          "clearance_lower_bound_with_allowance_m": 0.03456660139642136,
+          "checked_frames": 1380,
+          "site": {
+            "surface_reference_assembly_m": [
+              0.016200000762939454,
+              0.0,
+              0.045
+            ],
+            "surface_world_m": [
+              0.016200000762939454,
+              0.0,
+              0.045
+            ],
+            "cord_world_m": [
+              0.0535,
+              0.0,
+              0.04611
+            ],
+            "outward_normal_reference": [
+              0.8852641809575905,
+              0.0011894132317897767,
+              -0.4650869974635397
+            ],
+            "source_file": "post.stl",
+            "surface_source_coordinates": [
+              16.200000762939453,
+              0.0,
+              44.0
+            ],
+            "source_unit": "mm",
+            "pose_coordinate": 0.0,
+            "part_angle_deg": 0.0
+          },
+          "clearance_deficit_bound_m": 0.0
+        },
+        {
+          "part": "seeds",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": 0.005107187365462503,
+          "clearance_lower_bound_with_allowance_m": 0.004357804508976756,
+          "checked_frames": 1380,
+          "site": {
+            "surface_reference_assembly_m": [
+              -0.04632444586648954,
+              0.005138575444493467,
+              0.04437301348081625
+            ],
+            "surface_world_m": [
+              0.046607814326768485,
+              0.00026624446951128993,
+              0.04437301348081625
+            ],
+            "cord_world_m": [
+              0.05349999999999999,
+              0.0002499999999999973,
+              0.04611
+            ],
+            "outward_normal_reference": [
+              -0.7469365008139462,
+              0.08842924886433247,
+              0.6589887189452546
+            ],
+            "source_file": "seeds.stl",
+            "surface_source_coordinates": [
+              -46.32444586648954,
+              5.138575444493466,
+              43.37301348081625
+            ],
+            "source_unit": "mm",
+            "pose_coordinate": 0.5184916606236403,
+            "part_angle_deg": 186.65699782451048
+          },
+          "clearance_deficit_bound_m": 0.0
+        }
+      ]
+    }
+  ],
+  "exporter_sha256": "896280a3e4f7590223ffd372759b08c961c79871613102ef856974ac7508c2c0"
+}

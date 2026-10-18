@@ -1,2 +1,4 @@
 * text=auto eol=lf
 *.png binary
+# Preserve the exact input/report bytes referenced by recorded SHA-256 values.
+results/pitaya_v11_validation/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

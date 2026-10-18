@@ -147,6 +147,7 @@ python tools/run_snag_audit_parallel.py scene.json cases.json --out results/desi
 
 [Результаты и координаты для персика v13](peach-snag-review.md).
 [Результаты и координаты для PITAYA v10](pitaya-snag-review.md).
+[Исправленная PITAYA v11 и сравнение на одинаковых сценариях](pitaya-v11.md).
 
 Полный контрольный пример, не требующий CAD-комплекта:
 
