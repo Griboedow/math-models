@@ -13,9 +13,10 @@ import trimesh
 MAX_PATH_SAMPLES=250000
 MAX_SWEEP_POINTS=2000000
 INTERSECTION_TOLERANCE_M=1e-9
-# VTK 9.7 moved the all-intersections tolerance from the locator property
-# to a method argument. Older OBBTree versions only implement the old overload.
-_EXPLICIT_INTERSECTION_TOLERANCE=(vtk.vtkVersion.GetVTKMajorVersion(),vtk.vtkVersion.GetVTKMinorVersion()) >= (9,7)
+# VTK 9.7 ignores the locator tolerance and its all-hit overload can miss
+# curved cells. The first-hit overload takes an explicit tolerance and avoids
+# that defect. Preserve the verified pre-9.7 route for saved-result provenance.
+_USE_FIRST_INTERSECTION=(vtk.vtkVersion.GetVTKMajorVersion(),vtk.vtkVersion.GetVTKMinorVersion()) >= (9,7)
 
 
 def _subdivisions(length,step,budget):
@@ -55,7 +56,7 @@ class MeshScene:
         # Scene units are metres. VTK's 0.01 default is a centimetre and
         # can miss crossings of small curved surfaces. This epsilon is
         # numerical only; yarn radius and clearance margins are separate.
-        if not _EXPLICIT_INTERSECTION_TOLERANCE:tree.SetTolerance(INTERSECTION_TOLERANCE_M)
+        if not _USE_FIRST_INTERSECTION:tree.SetTolerance(INTERSECTION_TOLERANCE_M)
         tree.BuildLocator()
         self.parts.append((name,field,tree,np.asarray(mesh.bounds),poly))
 
@@ -99,10 +100,11 @@ class MeshScene:
         for name,field,tree,bounds,poly in self.parts:
             for a,b in zip(points,points[1:]):
                 if np.any(np.maximum(a,b)<bounds[0]) or np.any(np.minimum(a,b)>bounds[1]):continue
-                hits=vtk.vtkPoints();ids=vtk.vtkIdList()
-                if _EXPLICIT_INTERSECTION_TOLERANCE:
-                    crossed=tree.IntersectWithLine(a,b,INTERSECTION_TOLERANCE_M,hits,ids)
+                if _USE_FIRST_INTERSECTION:
+                    crossed=tree.IntersectWithLine(a,b,INTERSECTION_TOLERANCE_M,
+                        vtk.mutable(0.),[0.,0.,0.],[0.,0.,0.],vtk.mutable(0))
                 else:
+                    hits=vtk.vtkPoints();ids=vtk.vtkIdList()
                     crossed=tree.IntersectWithLine(a,b,hits,ids)
                 if crossed:found.add(name);break
         return sorted(found)

@@ -38,11 +38,15 @@ class MeshTests(unittest.TestCase):
     def test_curved_surface_crossings_in_metre_units(self):
         sphere=trimesh.creation.icosphere(subdivisions=3,radius=.05)
         scene=MeshScene([('sphere',sphere)])
-        x=np.arange(-.06,.061,.004)
-        points=np.column_stack((x,np.zeros(len(x)),np.full(len(x),.04)))
         # Both endpoints are outside, while this chord enters the sphere.
-        # vtkOBBTree's default 0.01 tolerance incorrectly returned no crossings.
-        self.assertEqual(scene.intersections(points),['sphere'])
+        # Both the old default tolerance and VTK 9.7's all-hit overload miss it.
+        for step in (.004,.001):
+            x=np.arange(-.06,.061,step)
+            points=np.column_stack((x,np.zeros(len(x)),np.full(len(x),.04)))
+            for axis in range(3):
+                rotated=np.roll(points,axis,axis=1)
+                self.assertEqual(scene.intersections(rotated),['sphere'])
+                self.assertEqual(scene.intersections(rotated[::-1]),['sphere'])
 
     def test_clearance_lower_bound_is_conservative(self):
         r=self.scene.screen([[-.02,0,.015],[.02,0,.015]],.001,max_step_m=.0005)
