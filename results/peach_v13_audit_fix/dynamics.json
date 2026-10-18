@@ -1,0 +1,5832 @@
+[
+  {
+    "case": {
+      "ball": "full",
+      "motion": "knitting",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.09101067710258645,
+      "p95_tension_N": 0.07254653252262451,
+      "mean_tension_N": 0.008571223755202742,
+      "max_slack_m": 0.03520845335140918,
+      "max_rpm": 33.64773255233192,
+      "max_slide_utilization": 0.05281825841792053,
+      "max_tip_utilization": 0.06464849188874436,
+      "minimum_support_margin_m": 0.04743669950163088,
+      "max_ball_traction_utilization": 0.22120477456647059,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 9.839835202619579,
+      "static_limits": {
+        "start_tension_N": 0.02863693344653863,
+        "slide_N": 1.6476588808537374,
+        "tip_N": 1.6208908886382647,
+        "lift_N": 18.70848043800555,
+        "critical_snag_N": 1.6208908886382647,
+        "lever_m": 0.04399816148932617,
+        "span_m": 0.406510873163314,
+        "elevation_deg": 12.112652863310073
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.001768473979891716,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.09101067710258645,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.09101067710258645,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "knitting",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.09703694784109375,
+      "p95_tension_N": 0.07377893084297069,
+      "mean_tension_N": 0.008635583423253662,
+      "max_slack_m": 0.03649867742665425,
+      "max_rpm": 34.75414413905947,
+      "max_slide_utilization": 0.058518984413773234,
+      "max_tip_utilization": 0.06030247180849056,
+      "minimum_support_margin_m": 0.04765710952587017,
+      "max_ball_traction_utilization": 0.23824904190068105,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 11.427307964652696,
+      "static_limits": {
+        "start_tension_N": 0.02844640936072621,
+        "slide_N": 1.6827133520774875,
+        "tip_N": 1.7237284003597082,
+        "lift_N": 30.334248242557493,
+        "critical_snag_N": 1.6827133520774875,
+        "lever_m": 0.044621577694373804,
+        "span_m": 0.35003869786067937,
+        "elevation_deg": 7.435746119823907
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.0013200286755727098,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.09703694784109375,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.09703694784109375,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "knitting",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.07269133193042104,
+      "p95_tension_N": 0.06305056937600793,
+      "mean_tension_N": 0.01033371466541798,
+      "max_slack_m": 0.027498588433160776,
+      "max_rpm": 30.054899675661307,
+      "max_slide_utilization": 0.041896320893282,
+      "max_tip_utilization": 0.052021738438795796,
+      "minimum_support_margin_m": 0.04807706999752701,
+      "max_ball_traction_utilization": 0.1750485648522398,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 5.7188328854547805,
+      "static_limits": {
+        "start_tension_N": 0.028350346438678342,
+        "slide_N": 1.7294837869405806,
+        "tip_N": 1.846127885348631,
+        "lift_N": 77.78453485434221,
+        "critical_snag_N": 1.7294837869405806,
+        "lever_m": 0.04494265394204996,
+        "span_m": 0.6994434144375083,
+        "elevation_deg": 2.892872474824157
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.005288718589647273,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.07269133193042104,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.07269133193042104,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "knitting",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.10335416729166692,
+      "p95_tension_N": 0.07512727040294924,
+      "mean_tension_N": 0.010115869019917583,
+      "max_slack_m": 0.04072140166430077,
+      "max_rpm": 36.15154601997246,
+      "max_slide_utilization": 0.05442925837045782,
+      "max_tip_utilization": 0.06040064683015218,
+      "minimum_support_margin_m": 0.0476521305431447,
+      "max_ball_traction_utilization": 0.22139101086766577,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 10.411545682262622,
+      "static_limits": {
+        "start_tension_N": 0.0297582564081316,
+        "slide_N": 2.4862323089287215,
+        "tip_N": 2.712705801451888,
+        "lift_N": null,
+        "critical_snag_N": 2.4862323089287215,
+        "lever_m": 0.0406552090848217,
+        "span_m": 0.38418887282168906,
+        "elevation_deg": -25.384794990972566
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.029579854727238133,
+        "sag_max_m": 0.0015200541817803198,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.10335416729166692,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.10335416729166692,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "knitting",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.09682849736256609,
+      "p95_tension_N": 0.0809112614785281,
+      "mean_tension_N": 0.017369156684692445,
+      "max_slack_m": 0.028241951353356956,
+      "max_rpm": 34.20335081554581,
+      "max_slide_utilization": 0.03692516613311346,
+      "max_tip_utilization": 0.05015502347290157,
+      "minimum_support_margin_m": 0.04817174114107509,
+      "max_ball_traction_utilization": 0.17487762088339082,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 5.73173505356689,
+      "static_limits": {
+        "start_tension_N": 0.035781768837253564,
+        "slide_N": 1.7902605849597828,
+        "tip_N": 1.7827797192523378,
+        "lift_N": 5.117902638354389,
+        "critical_snag_N": 1.7827797192523378,
+        "lever_m": 0.028871459628808646,
+        "span_m": 0.6978689633448388,
+        "elevation_deg": 50.089665781446634
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.004171162044791066,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.09682849736256609,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.09682849736256609,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "crochet",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.19132789370835748,
+      "p95_tension_N": 0.04044622094273113,
+      "mean_tension_N": 0.006643274128674685,
+      "max_slack_m": 0.19669443323270544,
+      "max_rpm": 79.46749089549152,
+      "max_slide_utilization": 0.11260104661878677,
+      "max_tip_utilization": 0.12737336524564755,
+      "minimum_support_margin_m": 0.04425558422795416,
+      "max_ball_traction_utilization": 0.4907375149246051,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 9.839835202619579,
+      "static_limits": {
+        "start_tension_N": 0.02863693344653863,
+        "slide_N": 1.6476588808537374,
+        "tip_N": 1.6208908886382647,
+        "lift_N": 18.70848043800555,
+        "critical_snag_N": 1.6208908886382647,
+        "lever_m": 0.04399816148932617,
+        "span_m": 0.406510873163314,
+        "elevation_deg": 12.112652863310073
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.001768473979891716,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.19132789370835748,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.19132789370835748,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "crochet",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.1991908681457892,
+      "p95_tension_N": 0.0229991787245104,
+      "mean_tension_N": 0.006011973016159189,
+      "max_slack_m": 0.20524460388262858,
+      "max_rpm": 81.0964019882818,
+      "max_slide_utilization": 0.10324329998198244,
+      "max_tip_utilization": 0.10090150448562651,
+      "minimum_support_margin_m": 0.04559811448875187,
+      "max_ball_traction_utilization": 0.5102892439162425,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 11.427307964652696,
+      "static_limits": {
+        "start_tension_N": 0.02844640936072621,
+        "slide_N": 1.6827133520774875,
+        "tip_N": 1.7237284003597082,
+        "lift_N": 30.334248242557493,
+        "critical_snag_N": 1.6827133520774875,
+        "lever_m": 0.044621577694373804,
+        "span_m": 0.35003869786067937,
+        "elevation_deg": 7.435746119823907
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.0013200286755727098,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.1991908681457892,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.1991908681457892,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "crochet",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.14589188210595838,
+      "p95_tension_N": 0.06403577574562119,
+      "mean_tension_N": 0.007460587684154173,
+      "max_slack_m": 0.1388951465252775,
+      "max_rpm": 66.17609987506775,
+      "max_slide_utilization": 0.08810471913906295,
+      "max_tip_utilization": 0.08906900734865356,
+      "minimum_support_margin_m": 0.04619820398042748,
+      "max_ball_traction_utilization": 0.3661013843731632,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 5.7188328854547805,
+      "static_limits": {
+        "start_tension_N": 0.028350346438678342,
+        "slide_N": 1.7294837869405806,
+        "tip_N": 1.846127885348631,
+        "lift_N": 77.78453485434221,
+        "critical_snag_N": 1.7294837869405806,
+        "lever_m": 0.04494265394204996,
+        "span_m": 0.6994434144375083,
+        "elevation_deg": 2.892872474824157
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.005288718589647273,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.14589188210595838,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.14589188210595838,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "crochet",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.21204381167847527,
+      "p95_tension_N": 0.037157785339549505,
+      "mean_tension_N": 0.006522561192426133,
+      "max_slack_m": 0.21173302210966652,
+      "max_rpm": 84.61866842068017,
+      "max_slide_utilization": 0.1080255691785828,
+      "max_tip_utilization": 0.11707649853749615,
+      "minimum_support_margin_m": 0.04477779365147799,
+      "max_ball_traction_utilization": 0.4442481480384521,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 10.411545682262622,
+      "static_limits": {
+        "start_tension_N": 0.0297582564081316,
+        "slide_N": 2.4862323089287215,
+        "tip_N": 2.712705801451888,
+        "lift_N": null,
+        "critical_snag_N": 2.4862323089287215,
+        "lever_m": 0.0406552090848217,
+        "span_m": 0.38418887282168906,
+        "elevation_deg": -25.384794990972566
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.029579854727238133,
+        "sag_max_m": 0.0015200541817803198,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.21204381167847527,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.21204381167847527,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "crochet",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.19199089652588117,
+      "p95_tension_N": 0.09938316823456197,
+      "mean_tension_N": 0.010983377328647284,
+      "max_slack_m": 0.12674480663496682,
+      "max_rpm": 73.18730467469787,
+      "max_slide_utilization": 0.07662772094298824,
+      "max_tip_utilization": 0.08799839686777489,
+      "minimum_support_margin_m": 0.04625250038902288,
+      "max_ball_traction_utilization": 0.3763641838076478,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 5.73173505356689,
+      "static_limits": {
+        "start_tension_N": 0.035781768837253564,
+        "slide_N": 1.7902605849597828,
+        "tip_N": 1.7827797192523378,
+        "lift_N": 5.117902638354389,
+        "critical_snag_N": 1.7827797192523378,
+        "lever_m": 0.028871459628808646,
+        "span_m": 0.6978689633448388,
+        "elevation_deg": 50.089665781446634
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.004171162044791066,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.19199089652588117,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.19199089652588117,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "gentle",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.0415393003816887,
+      "p95_tension_N": 0.03747411094692936,
+      "mean_tension_N": 0.01730034433732731,
+      "max_slack_m": 0.0,
+      "max_rpm": 11.331008191089818,
+      "max_slide_utilization": 0.023975054298440386,
+      "max_tip_utilization": 0.03755221142690958,
+      "minimum_support_margin_m": 0.04881089743976804,
+      "max_ball_traction_utilization": 0.0931671472382668,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 9.839835202619579,
+      "static_limits": {
+        "start_tension_N": 0.02863693344653863,
+        "slide_N": 1.6476588808537374,
+        "tip_N": 1.6208908886382647,
+        "lift_N": 18.70848043800555,
+        "critical_snag_N": 1.6208908886382647,
+        "lever_m": 0.04399816148932617,
+        "span_m": 0.406510873163314,
+        "elevation_deg": 12.112652863310073
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.001768473979891716,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.0415393003816887,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.0415393003816887,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "gentle",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.040239084480175574,
+      "p95_tension_N": 0.03604231155623546,
+      "mean_tension_N": 0.019148603161442693,
+      "max_slack_m": 0.0,
+      "max_rpm": 10.273541757027182,
+      "max_slide_utilization": 0.023128875570614472,
+      "max_tip_utilization": 0.036536263334642334,
+      "minimum_support_margin_m": 0.048862421625001304,
+      "max_ball_traction_utilization": 0.09040401556920433,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 11.427307964652696,
+      "static_limits": {
+        "start_tension_N": 0.02844640936072621,
+        "slide_N": 1.6827133520774875,
+        "tip_N": 1.7237284003597082,
+        "lift_N": 30.334248242557493,
+        "critical_snag_N": 1.6827133520774875,
+        "lever_m": 0.044621577694373804,
+        "span_m": 0.35003869786067937,
+        "elevation_deg": 7.435746119823907
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.0013200286755727098,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.040239084480175574,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.040239084480175574,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "gentle",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.04014064734879091,
+      "p95_tension_N": 0.03467007073762268,
+      "mean_tension_N": 0.02078141786696041,
+      "max_slack_m": 0.0,
+      "max_rpm": 12.79425454689782,
+      "max_slide_utilization": 0.02216842308402695,
+      "max_tip_utilization": 0.032611893459640856,
+      "minimum_support_margin_m": 0.04906144750230984,
+      "max_ball_traction_utilization": 0.09049973706228656,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 5.7188328854547805,
+      "static_limits": {
+        "start_tension_N": 0.028350346438678342,
+        "slide_N": 1.7294837869405806,
+        "tip_N": 1.846127885348631,
+        "lift_N": 77.78453485434221,
+        "critical_snag_N": 1.7294837869405806,
+        "lever_m": 0.04494265394204996,
+        "span_m": 0.6994434144375083,
+        "elevation_deg": 2.892872474824157
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.005288718589647273,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.04014064734879091,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.04014064734879091,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "gentle",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.04566005134604386,
+      "p95_tension_N": 0.04099493549239373,
+      "mean_tension_N": 0.017229985056142733,
+      "max_slack_m": 0.0,
+      "max_rpm": 13.048228579893921,
+      "max_slide_utilization": 0.024368405277326494,
+      "max_tip_utilization": 0.03520850107544452,
+      "minimum_support_margin_m": 0.04892975958164432,
+      "max_ball_traction_utilization": 0.09503555450573584,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 10.411545682262622,
+      "static_limits": {
+        "start_tension_N": 0.0297582564081316,
+        "slide_N": 2.4862323089287215,
+        "tip_N": 2.712705801451888,
+        "lift_N": null,
+        "critical_snag_N": 2.4862323089287215,
+        "lever_m": 0.0406552090848217,
+        "span_m": 0.38418887282168906,
+        "elevation_deg": -25.384794990972566
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.029579854727238133,
+        "sag_max_m": 0.0015200541817803198,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.04566005134604386,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.04566005134604386,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "full",
+      "motion": "gentle",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Full round ball 100 g",
+        "mass_kg": 0.1,
+        "radius_x_m": 0.045,
+        "radius_y_m": 0.045,
+        "radius_z_m": 0.044,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.018,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.05749239798695738,
+      "p95_tension_N": 0.05540531793740384,
+      "mean_tension_N": 0.014594791549289395,
+      "max_slack_m": 0.00644919263162376,
+      "max_rpm": 20.198870433450313,
+      "max_slide_utilization": 0.021935287194432086,
+      "max_tip_utilization": 0.035700289374852014,
+      "minimum_support_margin_m": 0.04890481835519083,
+      "max_ball_traction_utilization": 0.10073689596034799,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.0001364155,
+      "effective_stiffness_N_m": 5.73173505356689,
+      "static_limits": {
+        "start_tension_N": 0.035781768837253564,
+        "slide_N": 1.7902605849597828,
+        "tip_N": 1.7827797192523378,
+        "lift_N": 5.117902638354389,
+        "critical_snag_N": 1.7827797192523378,
+        "lever_m": 0.028871459628808646,
+        "span_m": 0.6978689633448388,
+        "elevation_deg": 50.089665781446634
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.043,
+        "sag_max_m": 0.004171162044791066,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.05749239798695738,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.05749239798695738,
+      "warnings": []
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "knitting",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.12024131209322463,
+      "p95_tension_N": 0.08753895119005302,
+      "mean_tension_N": 0.014903095158686791,
+      "max_slack_m": 0.04248724773126519,
+      "max_rpm": 63.99867965123455,
+      "max_slide_utilization": 0.08616169884686649,
+      "max_tip_utilization": 0.07304574069402192,
+      "minimum_support_margin_m": 0.047010829906337516,
+      "max_ball_traction_utilization": 8.998702559706018,
+      "first_events_s": {
+        "ball_slipping": 0.14025
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 9.677015912998144,
+      "static_limits": {
+        "start_tension_N": 0.03956581389508063,
+        "slide_N": 1.2655010401638276,
+        "tip_N": 1.4928600722857208,
+        "lift_N": 11.8331257346011,
+        "critical_snag_N": 1.2655010401638276,
+        "lever_m": 0.0202937082039819,
+        "span_m": 0.4133505655010043,
+        "elevation_deg": 14.902010197922866
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0013234055357085606,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.026087927127549662,
+      "valid_coupled_interval_end_s": 0.14025,
+      "peak_tension_before_first_event_N": 0.026087927127549662,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "knitting",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.12667010301151346,
+      "p95_tension_N": 0.09330182121092369,
+      "mean_tension_N": 0.014257241742719372,
+      "max_slack_m": 0.04611731103436753,
+      "max_rpm": 66.23562374150866,
+      "max_slide_utilization": 0.0913495376240294,
+      "max_tip_utilization": 0.06934850860647349,
+      "minimum_support_margin_m": 0.04719833640630454,
+      "max_ball_traction_utilization": 8.72907869867349,
+      "first_events_s": {
+        "ball_slipping": 0.13175
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 11.248445817119043,
+      "static_limits": {
+        "start_tension_N": 0.03908134727054746,
+        "slide_N": 1.2841648771420249,
+        "tip_N": 1.646609171598218,
+        "lift_N": 16.321803680294327,
+        "critical_snag_N": 1.2841648771420249,
+        "lever_m": 0.020631781410198224,
+        "span_m": 0.35560468219639624,
+        "elevation_deg": 10.745273459909628
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0009916087566914644,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.026254143013193502,
+      "valid_coupled_interval_end_s": 0.13175,
+      "peak_tension_before_first_event_N": 0.026254143013193502,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "knitting",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.09288545517036405,
+      "p95_tension_N": 0.0719408823452926,
+      "mean_tension_N": 0.016514704021777002,
+      "max_slack_m": 0.03208041068588492,
+      "max_rpm": 55.83662075539826,
+      "max_slide_utilization": 0.06816366572468908,
+      "max_tip_utilization": 0.05088611802904669,
+      "minimum_support_margin_m": 0.048134663408836056,
+      "max_ball_traction_utilization": 5.17873912330163,
+      "first_events_s": {
+        "ball_slipping": 0.17525
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 5.6984411307521885,
+      "static_limits": {
+        "start_tension_N": 0.0386637733708944,
+        "slide_N": 1.3258082043896593,
+        "tip_N": 1.7681953251805247,
+        "lift_N": 37.94108428409812,
+        "critical_snag_N": 1.3258082043896593,
+        "lever_m": 0.02093234523718529,
+        "span_m": 0.7019463583494112,
+        "elevation_deg": 4.600381362320186
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.003905638509946782,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.02644759886447709,
+      "valid_coupled_interval_end_s": 0.17525,
+      "peak_tension_before_first_event_N": 0.02644759886447709,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "knitting",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.13098038082855676,
+      "p95_tension_N": 0.10066680400711889,
+      "mean_tension_N": 0.013618933124112135,
+      "max_slack_m": 0.04644721655229958,
+      "max_rpm": 68.64719602909909,
+      "max_slide_utilization": 0.08632866979757317,
+      "max_tip_utilization": 0.06504240264076366,
+      "minimum_support_margin_m": 0.047421869154329416,
+      "max_ball_traction_utilization": 4.29065518439761,
+      "first_events_s": {
+        "ball_slipping": 0.14325
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 10.588508304371041,
+      "static_limits": {
+        "start_tension_N": 0.04089386622349227,
+        "slide_N": 1.8170116142702684,
+        "tip_N": 2.6814349884778546,
+        "lift_N": null,
+        "critical_snag_N": 1.8170116142702684,
+        "lever_m": 0.019421330941860195,
+        "span_m": 0.37776803729272806,
+        "elevation_deg": -22.35797611376093
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.002345146552923034,
+        "sag_max_m": 0.0010694647300604349,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.030273713156775003,
+      "valid_coupled_interval_end_s": 0.14325,
+      "peak_tension_before_first_event_N": 0.030273713156775003,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "knitting",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.12972085144752812,
+      "p95_tension_N": 0.10674892424919631,
+      "mean_tension_N": 0.03445272073597971,
+      "max_slack_m": 0.022841662096688004,
+      "max_rpm": 65.96988691864848,
+      "max_slide_utilization": 0.0611506547907235,
+      "max_tip_utilization": 0.05120797552203643,
+      "minimum_support_margin_m": 0.04811834028641106,
+      "max_ball_traction_utilization": null,
+      "first_events_s": {
+        "ball_slipping": 0.18675,
+        "ball_lifting": 2.35425
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 5.592744673612543,
+      "static_limits": {
+        "start_tension_N": 0.05545983493332648,
+        "slide_N": 1.3994584907395624,
+        "tip_N": 1.5796912426425052,
+        "lift_N": 3.912372036271868,
+        "critical_snag_N": 1.3994584907395624,
+        "lever_m": 0.01319846411409078,
+        "span_m": 0.7152123390993754,
+        "elevation_deg": 51.060584122371
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0028265849776120677,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.030285531285804412,
+      "valid_coupled_interval_end_s": 0.18675,
+      "peak_tension_before_first_event_N": 0.030285531285804412,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "crochet",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.254326556506733,
+      "p95_tension_N": 0.01969267284535615,
+      "mean_tension_N": 0.007804420656297643,
+      "max_slack_m": 0.17681288710430187,
+      "max_rpm": 140.2349217441805,
+      "max_slide_utilization": 0.18557356750069084,
+      "max_tip_utilization": 0.15471302243584806,
+      "minimum_support_margin_m": 0.04286904334854941,
+      "max_ball_traction_utilization": 40.859251507982385,
+      "first_events_s": {
+        "ball_slipping": 0.08125
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 9.677015912998144,
+      "static_limits": {
+        "start_tension_N": 0.03956581389508063,
+        "slide_N": 1.2655010401638276,
+        "tip_N": 1.4928600722857208,
+        "lift_N": 11.8331257346011,
+        "critical_snag_N": 1.2655010401638276,
+        "lever_m": 0.0202937082039819,
+        "span_m": 0.4133505655010043,
+        "elevation_deg": 14.902010197922866
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0013234055357085606,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.026023704821692875,
+      "valid_coupled_interval_end_s": 0.08125,
+      "peak_tension_before_first_event_N": 0.026023704821692875,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates.",
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "crochet",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.2725367134357898,
+      "p95_tension_N": 0.11412038863938494,
+      "mean_tension_N": 0.011945924994372234,
+      "max_slack_m": 0.19541028360477908,
+      "max_rpm": 147.67914815490002,
+      "max_slide_utilization": 0.1977989204112429,
+      "max_tip_utilization": 0.1518016914983161,
+      "minimum_support_margin_m": 0.04301669257949188,
+      "max_ball_traction_utilization": 30.85564458283033,
+      "first_events_s": {
+        "ball_slipping": 0.07625
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 11.248445817119043,
+      "static_limits": {
+        "start_tension_N": 0.03908134727054746,
+        "slide_N": 1.2841648771420249,
+        "tip_N": 1.646609171598218,
+        "lift_N": 16.321803680294327,
+        "critical_snag_N": 1.2841648771420249,
+        "lever_m": 0.020631781410198224,
+        "span_m": 0.35560468219639624,
+        "elevation_deg": 10.745273459909628
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0009916087566914644,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.025932356914329154,
+      "valid_coupled_interval_end_s": 0.07625,
+      "peak_tension_before_first_event_N": 0.025932356914329154,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates.",
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "crochet",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.17927470306805374,
+      "p95_tension_N": 0.09727609712618601,
+      "mean_tension_N": 0.011977998766620054,
+      "max_slack_m": 0.11734396413930258,
+      "max_rpm": 108.74326240760239,
+      "max_slide_utilization": 0.1296541191676004,
+      "max_tip_utilization": 0.09509898857803517,
+      "minimum_support_margin_m": 0.04589239124040608,
+      "max_ball_traction_utilization": 11.416535373643402,
+      "first_events_s": {
+        "ball_slipping": 0.09975
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 5.6984411307521885,
+      "static_limits": {
+        "start_tension_N": 0.0386637733708944,
+        "slide_N": 1.3258082043896593,
+        "tip_N": 1.7681953251805247,
+        "lift_N": 37.94108428409812,
+        "critical_snag_N": 1.3258082043896593,
+        "lever_m": 0.02093234523718529,
+        "span_m": 0.7019463583494112,
+        "elevation_deg": 4.600381362320186
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.003905638509946782,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.026174844959243,
+      "valid_coupled_interval_end_s": 0.09975,
+      "peak_tension_before_first_event_N": 0.026174844959243,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates.",
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "crochet",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.27701385641225723,
+      "p95_tension_N": 0.0851308089548141,
+      "mean_tension_N": 0.01038825672655279,
+      "max_slack_m": 0.18385302796364172,
+      "max_rpm": 147.39213423482678,
+      "max_slide_utilization": 0.18233792261785395,
+      "max_tip_utilization": 0.13501769014299528,
+      "minimum_support_margin_m": 0.043929040493059,
+      "max_ball_traction_utilization": 6.869951383122301,
+      "first_events_s": {
+        "ball_slipping": 0.08275
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 10.588508304371041,
+      "static_limits": {
+        "start_tension_N": 0.04089386622349227,
+        "slide_N": 1.8170116142702684,
+        "tip_N": 2.6814349884778546,
+        "lift_N": null,
+        "critical_snag_N": 1.8170116142702684,
+        "lever_m": 0.019421330941860195,
+        "span_m": 0.37776803729272806,
+        "elevation_deg": -22.35797611376093
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.002345146552923034,
+        "sag_max_m": 0.0010694647300604349,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.0299532859113357,
+      "valid_coupled_interval_end_s": 0.08275,
+      "peak_tension_before_first_event_N": 0.0299532859113357,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates.",
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "crochet",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.23521250865932872,
+      "p95_tension_N": 0.15897056027210235,
+      "mean_tension_N": 0.0268592362273711,
+      "max_slack_m": 0.08903946547184616,
+      "max_rpm": 124.17562324323572,
+      "max_slide_utilization": 0.11348103581341774,
+      "max_tip_utilization": 0.09064749556742423,
+      "minimum_support_margin_m": 0.04611815036352372,
+      "max_ball_traction_utilization": null,
+      "first_events_s": {
+        "ball_slipping": 0.10625,
+        "ball_lifting": 0.19775
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 5.592744673612543,
+      "static_limits": {
+        "start_tension_N": 0.05545983493332648,
+        "slide_N": 1.3994584907395624,
+        "tip_N": 1.5796912426425052,
+        "lift_N": 3.912372036271868,
+        "critical_snag_N": 1.3994584907395624,
+        "lever_m": 0.01319846411409078,
+        "span_m": 0.7152123390993754,
+        "elevation_deg": 51.060584122371
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0028265849776120677,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.03020962230230246,
+      "valid_coupled_interval_end_s": 0.10625,
+      "peak_tension_before_first_event_N": 0.03020962230230246,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates.",
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "gentle",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.06504316758463799,
+      "p95_tension_N": 0.059236326373118896,
+      "mean_tension_N": 0.013292163696485192,
+      "max_slack_m": 0.004344193817989006,
+      "max_rpm": 30.703666371805944,
+      "max_slide_utilization": 0.046451279276477964,
+      "max_tip_utilization": 0.039368269941952264,
+      "minimum_support_margin_m": 0.04871879535695918,
+      "max_ball_traction_utilization": 3.72565721712798,
+      "first_events_s": {
+        "ball_slipping": 0.37875
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 9.677015912998144,
+      "static_limits": {
+        "start_tension_N": 0.03956581389508063,
+        "slide_N": 1.2655010401638276,
+        "tip_N": 1.4928600722857208,
+        "lift_N": 11.8331257346011,
+        "critical_snag_N": 1.2655010401638276,
+        "lever_m": 0.0202937082039819,
+        "span_m": 0.4133505655010043,
+        "elevation_deg": 14.902010197922866
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0013234055357085606,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.02616927799148912,
+      "valid_coupled_interval_end_s": 0.37875,
+      "peak_tension_before_first_event_N": 0.02616927799148912,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "gentle",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.0581483368879713,
+      "p95_tension_N": 0.052245406947492155,
+      "mean_tension_N": 0.02346740037586729,
+      "max_slack_m": 0.0006597658207697539,
+      "max_rpm": 26.258518867716806,
+      "max_slide_utilization": 0.04160606706892845,
+      "max_tip_utilization": 0.032522742050897835,
+      "minimum_support_margin_m": 0.04906596884915112,
+      "max_ball_traction_utilization": 3.0930479158196764,
+      "first_events_s": {
+        "ball_slipping": 0.35575
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 11.248445817119043,
+      "static_limits": {
+        "start_tension_N": 0.03908134727054746,
+        "slide_N": 1.2841648771420249,
+        "tip_N": 1.646609171598218,
+        "lift_N": 16.321803680294327,
+        "critical_snag_N": 1.2841648771420249,
+        "lever_m": 0.020631781410198224,
+        "span_m": 0.35560468219639624,
+        "elevation_deg": 10.745273459909628
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0009916087566914644,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.02620027213106587,
+      "valid_coupled_interval_end_s": 0.35575,
+      "peak_tension_before_first_event_N": 0.02620027213106587,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "gentle",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.05552937024554114,
+      "p95_tension_N": 0.053562967837595024,
+      "mean_tension_N": 0.01339611524935903,
+      "max_slack_m": 0.005153954076301981,
+      "max_rpm": 29.11855512426148,
+      "max_slide_utilization": 0.04035147471519627,
+      "max_tip_utilization": 0.031308474082482836,
+      "minimum_support_margin_m": 0.049127550900639416,
+      "max_ball_traction_utilization": 2.766350583920984,
+      "first_events_s": {
+        "ball_slipping": 0.47125
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 5.6984411307521885,
+      "static_limits": {
+        "start_tension_N": 0.0386637733708944,
+        "slide_N": 1.3258082043896593,
+        "tip_N": 1.7681953251805247,
+        "lift_N": 37.94108428409812,
+        "critical_snag_N": 1.3258082043896593,
+        "lever_m": 0.02093234523718529,
+        "span_m": 0.7019463583494112,
+        "elevation_deg": 4.600381362320186
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.003905638509946782,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.02648249001059795,
+      "valid_coupled_interval_end_s": 0.47125,
+      "peak_tension_before_first_event_N": 0.02648249001059795,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "gentle",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.06992070661140044,
+      "p95_tension_N": 0.06325713552551408,
+      "mean_tension_N": 0.013599751394670375,
+      "max_slack_m": 0.005365246784573202,
+      "max_rpm": 32.27388664840841,
+      "max_slide_utilization": 0.04710622278925416,
+      "max_tip_utilization": 0.03568392938167312,
+      "minimum_support_margin_m": 0.048905648058327617,
+      "max_ball_traction_utilization": 2.5316269963612075,
+      "first_events_s": {
+        "ball_slipping": 0.38675
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 10.588508304371041,
+      "static_limits": {
+        "start_tension_N": 0.04089386622349227,
+        "slide_N": 1.8170116142702684,
+        "tip_N": 2.6814349884778546,
+        "lift_N": null,
+        "critical_snag_N": 1.8170116142702684,
+        "lever_m": 0.019421330941860195,
+        "span_m": 0.37776803729272806,
+        "elevation_deg": -22.35797611376093
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.002345146552923034,
+        "sag_max_m": 0.0010694647300604349,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.03029042540010303,
+      "valid_coupled_interval_end_s": 0.38675,
+      "peak_tension_before_first_event_N": 0.03029042540010303,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "nearly_empty",
+      "motion": "gentle",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Nearly empty round ball 10 g",
+        "mass_kg": 0.01,
+        "radius_x_m": 0.021,
+        "radius_y_m": 0.021,
+        "radius_z_m": 0.023,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.009,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.01
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.08052203056689387,
+      "p95_tension_N": 0.0761581211665447,
+      "mean_tension_N": 0.02500042826368181,
+      "max_slack_m": 0.009434097278213056,
+      "max_rpm": 39.37844387993379,
+      "max_slide_utilization": 0.03787887161479305,
+      "max_tip_utilization": 0.03301544713401008,
+      "minimum_support_margin_m": 0.049040981127671184,
+      "max_ball_traction_utilization": 7.1418793413261845,
+      "first_events_s": {
+        "ball_slipping": 0.50175
+      },
+      "inertia_kg_m2": 5.6369499999999996e-05,
+      "effective_stiffness_N_m": 5.592744673612543,
+      "static_limits": {
+        "start_tension_N": 0.05545983493332648,
+        "slide_N": 1.3994584907395624,
+        "tip_N": 1.5796912426425052,
+        "lift_N": 3.912372036271868,
+        "critical_snag_N": 1.3994584907395624,
+        "lever_m": 0.01319846411409078,
+        "span_m": 0.7152123390993754,
+        "elevation_deg": 51.060584122371
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.022000000000000006,
+        "sag_max_m": 0.0028265849776120677,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": false,
+      "mechanical_hypotheses_valid_for_entire_run": false,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.030314881735468785,
+      "valid_coupled_interval_end_s": 0.50175,
+      "peak_tension_before_first_event_N": 0.030314881735468785,
+      "warnings": [
+        "Coupled stationary-support model fails at the reported first event. Later values are hypothetical locked-motion estimates."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "knitting",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.1011295177441691,
+      "p95_tension_N": 0.0809227788383709,
+      "mean_tension_N": 0.009908795664605063,
+      "max_slack_m": 0.052527593582947285,
+      "max_rpm": 25.57983763598651,
+      "max_slide_utilization": 0.046290897980971156,
+      "max_tip_utilization": 0.07378627912661576,
+      "minimum_support_margin_m": 0.046973273224393104,
+      "max_ball_traction_utilization": 0.058916793343517855,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 9.929762915993875,
+      "static_limits": {
+        "start_tension_N": 0.025710070919189677,
+        "slide_N": 2.0714653554407785,
+        "tip_N": 1.866804509762558,
+        "lift_N": 26.600559314095747,
+        "critical_snag_N": 1.866804509762558,
+        "lever_m": 0.05602203799836237,
+        "span_m": 0.4028293559312678,
+        "elevation_deg": 10.628796596443177
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.0019342929110724716,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.1011295177441691,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.1011295177441691,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.",
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "knitting",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.11322466585864033,
+      "p95_tension_N": 0.07808149667605321,
+      "mean_tension_N": 0.009325846513329062,
+      "max_slack_m": 0.05424850477847766,
+      "max_rpm": 25.924983112228414,
+      "max_slide_utilization": 0.053095349863000386,
+      "max_tip_utilization": 0.07467522967367733,
+      "minimum_support_margin_m": 0.046928189766883184,
+      "max_ball_traction_utilization": 0.06552229268440066,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 11.526492551777483,
+      "static_limits": {
+        "start_tension_N": 0.0255781128841016,
+        "slide_N": 2.1237948182345785,
+        "tip_N": 1.958225113530026,
+        "lift_N": 49.63947361008644,
+        "critical_snag_N": 1.958225113530026,
+        "lever_m": 0.056720892145306116,
+        "span_m": 0.3470266416285643,
+        "elevation_deg": 5.672357650465166
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.00144290480508244,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.11322466585864033,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.11322466585864033,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.",
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "knitting",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.08163222938055965,
+      "p95_tension_N": 0.06498100869706627,
+      "mean_tension_N": 0.012083136245749838,
+      "max_slack_m": 0.041894874261858145,
+      "max_rpm": 22.933736622196108,
+      "max_slide_utilization": 0.037282156960762106,
+      "max_tip_utilization": 0.05973883162296228,
+      "minimum_support_margin_m": 0.04768569474744312,
+      "max_ball_traction_utilization": 0.048896333829018514,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 5.729850594836435,
+      "static_limits": {
+        "start_tension_N": 0.025532698724744486,
+        "slide_N": 2.1751045626699694,
+        "tip_N": 2.0914362529310777,
+        "lift_N": 140.95123645899264,
+        "critical_snag_N": 2.0914362529310777,
+        "lever_m": 0.05696545735144013,
+        "span_m": 0.6980984815912438,
+        "elevation_deg": 1.9948027311718868
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.005849893167062692,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.08163222938055965,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.08163222938055965,
+      "warnings": [
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "knitting",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.11241776976997639,
+      "p95_tension_N": 0.0804432845630772,
+      "mean_tension_N": 0.011437316473174133,
+      "max_slack_m": 0.056944691015731644,
+      "max_rpm": 27.550002703429683,
+      "max_slide_utilization": 0.04345594819671677,
+      "max_tip_utilization": 0.07007894306534258,
+      "minimum_support_margin_m": 0.047161292151144285,
+      "max_ball_traction_utilization": 0.05806407206463585,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 10.323775651070257,
+      "static_limits": {
+        "start_tension_N": 0.02681045999946912,
+        "slide_N": 3.2127919721888345,
+        "tip_N": 3.0366330336796867,
+        "lift_N": null,
+        "critical_snag_N": 3.0366330336796867,
+        "lever_m": 0.05080242429397076,
+        "span_m": 0.38745514579109663,
+        "elevation_deg": -26.966653109984996
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.0481555628797028,
+        "sag_max_m": 0.0017159979452107677,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.11241776976997639,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.11241776976997639,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.",
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "knitting",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Knitting illustrative",
+        "cycle_s": 1.0,
+        "draw_m": 0.024,
+        "duty": 0.55,
+        "lateral_amplitude_m": 0.008,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.10369318857680605,
+      "p95_tension_N": 0.08416103960094272,
+      "mean_tension_N": 0.017384809983958513,
+      "max_slack_m": 0.02955403804700618,
+      "max_rpm": 23.788648784063085,
+      "max_slide_utilization": 0.03144328031588405,
+      "max_tip_utilization": 0.05626098870356842,
+      "minimum_support_margin_m": 0.04786207484417733,
+      "max_ball_traction_utilization": 0.04589963352250613,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 5.809061993802311,
+      "static_limits": {
+        "start_tension_N": 0.03123790962495291,
+        "slide_N": 2.2281425455703032,
+        "tip_N": 1.9831427962773955,
+        "lift_N": 6.443659640166469,
+        "critical_snag_N": 1.9831427962773955,
+        "lever_m": 0.03695056899922486,
+        "span_m": 0.6885793273109497,
+        "elevation_deg": 49.58978992373909
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.004651548847854792,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.10369318857680605,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.10369318857680605,
+      "warnings": [
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "crochet",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.2250776601694736,
+      "p95_tension_N": 0.0043021842144102766,
+      "mean_tension_N": 0.006498956208528612,
+      "max_slack_m": 0.24203619534639007,
+      "max_rpm": 58.59366740589722,
+      "max_slide_utilization": 0.10545160546706095,
+      "max_tip_utilization": 0.13878868103007308,
+      "minimum_support_margin_m": 0.04367665224368285,
+      "max_ball_traction_utilization": 0.12590284137605315,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 9.929762915993875,
+      "static_limits": {
+        "start_tension_N": 0.025710070919189677,
+        "slide_N": 2.0714653554407785,
+        "tip_N": 1.866804509762558,
+        "lift_N": 26.600559314095747,
+        "critical_snag_N": 1.866804509762558,
+        "lever_m": 0.05602203799836237,
+        "span_m": 0.4028293559312678,
+        "elevation_deg": 10.628796596443177
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.0019342929110724716,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.2250776601694736,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.2250776601694736,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.",
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "crochet",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.23829572821697106,
+      "p95_tension_N": 0.0,
+      "mean_tension_N": 0.005158342548955614,
+      "max_slack_m": 0.25975822346902894,
+      "max_rpm": 60.79051466729737,
+      "max_slide_utilization": 0.09739326966147929,
+      "max_tip_utilization": 0.09776386578234915,
+      "minimum_support_margin_m": 0.04576917540691659,
+      "max_ball_traction_utilization": 0.13315038898349424,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 11.526492551777483,
+      "static_limits": {
+        "start_tension_N": 0.0255781128841016,
+        "slide_N": 2.1237948182345785,
+        "tip_N": 1.958225113530026,
+        "lift_N": 49.63947361008644,
+        "critical_snag_N": 1.958225113530026,
+        "lever_m": 0.056720892145306116,
+        "span_m": 0.3470266416285643,
+        "elevation_deg": 5.672357650465166
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.00144290480508244,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.23829572821697106,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.23829572821697106,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.",
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "crochet",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.16466527347121832,
+      "p95_tension_N": 0.033414465020414404,
+      "mean_tension_N": 0.006616729549274794,
+      "max_slack_m": 0.17446491288674976,
+      "max_rpm": 48.05098872503633,
+      "max_slide_utilization": 0.08194066076759941,
+      "max_tip_utilization": 0.09784370225291347,
+      "minimum_support_margin_m": 0.04575319206588812,
+      "max_ball_traction_utilization": 0.093359412507993,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 5.729850594836435,
+      "static_limits": {
+        "start_tension_N": 0.025532698724744486,
+        "slide_N": 2.1751045626699694,
+        "tip_N": 2.0914362529310777,
+        "lift_N": 140.95123645899264,
+        "critical_snag_N": 2.0914362529310777,
+        "lever_m": 0.05696545735144013,
+        "span_m": 0.6980984815912438,
+        "elevation_deg": 1.9948027311718868
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.005849893167062692,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.16466527347121832,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.16466527347121832,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.",
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "crochet",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.25023936075856645,
+      "p95_tension_N": 0.04446073434444032,
+      "mean_tension_N": 0.006554370639994032,
+      "max_slack_m": 0.2586303229971163,
+      "max_rpm": 62.10640341831022,
+      "max_slide_utilization": 0.09821206126709539,
+      "max_tip_utilization": 0.12848217827481895,
+      "minimum_support_margin_m": 0.044199350362918215,
+      "max_ball_traction_utilization": 0.1182116772497311,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 10.323775651070257,
+      "static_limits": {
+        "start_tension_N": 0.02681045999946912,
+        "slide_N": 3.2127919721888345,
+        "tip_N": 3.0366330336796867,
+        "lift_N": null,
+        "critical_snag_N": 3.0366330336796867,
+        "lever_m": 0.05080242429397076,
+        "span_m": 0.38745514579109663,
+        "elevation_deg": -26.966653109984996
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.0481555628797028,
+        "sag_max_m": 0.0017159979452107677,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.25023936075856645,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.25023936075856645,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.",
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "crochet",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Crochet illustrative",
+        "cycle_s": 1.35,
+        "draw_m": 0.045,
+        "duty": 0.3,
+        "lateral_amplitude_m": 0.014,
+        "lateral_cycle_s": 1.35,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.212074088976607,
+      "p95_tension_N": 0.09027319793052693,
+      "mean_tension_N": 0.01043626599229398,
+      "max_slack_m": 0.14743623315651494,
+      "max_rpm": 52.42355643830083,
+      "max_slide_utilization": 0.06591439599105292,
+      "max_tip_utilization": 0.09185438170929902,
+      "minimum_support_margin_m": 0.046056942684113006,
+      "max_ball_traction_utilization": 0.089030094814884,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 5.809061993802311,
+      "static_limits": {
+        "start_tension_N": 0.03123790962495291,
+        "slide_N": 2.2281425455703032,
+        "tip_N": 1.9831427962773955,
+        "lift_N": 6.443659640166469,
+        "critical_snag_N": 1.9831427962773955,
+        "lever_m": 0.03695056899922486,
+        "span_m": 0.6885793273109497,
+        "elevation_deg": 49.58978992373909
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.004651548847854792,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.212074088976607,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.212074088976607,
+      "warnings": [
+        "Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.",
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "gentle",
+      "setup": "desk_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Desk side: hand 20 cm above base",
+        "distance_m": 0.4,
+        "hand_height_m": 0.2,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.045902247477419986,
+      "p95_tension_N": 0.03986865358349546,
+      "mean_tension_N": 0.017120137973436655,
+      "max_slack_m": 0.0005093298510593647,
+      "max_rpm": 9.855789815784672,
+      "max_slide_utilization": 0.02169204598725353,
+      "max_tip_utilization": 0.04431396106450313,
+      "minimum_support_margin_m": 0.04846797279284949,
+      "max_ball_traction_utilization": 0.03193321473564961,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 9.929762915993875,
+      "static_limits": {
+        "start_tension_N": 0.025710070919189677,
+        "slide_N": 2.0714653554407785,
+        "tip_N": 1.866804509762558,
+        "lift_N": 26.600559314095747,
+        "critical_snag_N": 1.866804509762558,
+        "lever_m": 0.05602203799836237,
+        "span_m": 0.4028293559312678,
+        "elevation_deg": 10.628796596443177
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.0019342929110724716,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.045902247477419986,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.045902247477419986,
+      "warnings": [
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "gentle",
+      "setup": "front"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "In front: hand 16 cm above base",
+        "distance_m": 0.35,
+        "hand_height_m": 0.16,
+        "azimuth_deg": 90
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.047362563187567194,
+      "p95_tension_N": 0.03984963455207133,
+      "mean_tension_N": 0.015438537346752297,
+      "max_slack_m": 0.0004174969246726473,
+      "max_rpm": 9.681357830074788,
+      "max_slide_utilization": 0.021467299884527027,
+      "max_tip_utilization": 0.04425173598419265,
+      "minimum_support_margin_m": 0.04847112856093299,
+      "max_ball_traction_utilization": 0.03190597476430087,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 11.526492551777483,
+      "static_limits": {
+        "start_tension_N": 0.0255781128841016,
+        "slide_N": 2.1237948182345785,
+        "tip_N": 1.958225113530026,
+        "lift_N": 49.63947361008644,
+        "critical_snag_N": 1.958225113530026,
+        "lever_m": 0.056720892145306116,
+        "span_m": 0.3470266416285643,
+        "elevation_deg": 5.672357650465166
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.00144290480508244,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.047362563187567194,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.047362563187567194,
+      "warnings": [
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "gentle",
+      "setup": "far_side"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "Far side: hand 15 cm above base",
+        "distance_m": 0.7,
+        "hand_height_m": 0.15,
+        "azimuth_deg": 150
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.04556054502647167,
+      "p95_tension_N": 0.04274389401478109,
+      "mean_tension_N": 0.010000126759686931,
+      "max_slack_m": 0.00450351158205331,
+      "max_rpm": 10.793490264867675,
+      "max_slide_utilization": 0.02052420062365147,
+      "max_tip_utilization": 0.041820860928258395,
+      "minimum_support_margin_m": 0.04859441129320464,
+      "max_ball_traction_utilization": 0.03187095332114843,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 5.729850594836435,
+      "static_limits": {
+        "start_tension_N": 0.025532698724744486,
+        "slide_N": 2.1751045626699694,
+        "tip_N": 2.0914362529310777,
+        "lift_N": 140.95123645899264,
+        "critical_snag_N": 2.0914362529310777,
+        "lever_m": 0.05696545735144013,
+        "span_m": 0.6980984815912438,
+        "elevation_deg": 1.9948027311718868
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.005849893167062692,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.04556054502647167,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.04556054502647167,
+      "warnings": [
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "gentle",
+      "setup": "high_table"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "High table: hand 5 cm below base",
+        "distance_m": 0.35,
+        "hand_height_m": -0.05,
+        "azimuth_deg": 30
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.049264534730789296,
+      "p95_tension_N": 0.04414731929303032,
+      "mean_tension_N": 0.01722544440583088,
+      "max_slack_m": 0.0010809047253945714,
+      "max_rpm": 10.877154483420648,
+      "max_slide_utilization": 0.020972576395508268,
+      "max_tip_utilization": 0.04260073095376641,
+      "minimum_support_margin_m": 0.04855485989490193,
+      "max_ball_traction_utilization": 0.031647912506723094,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 10.323775651070257,
+      "static_limits": {
+        "start_tension_N": 0.02681045999946912,
+        "slide_N": 3.2127919721888345,
+        "tip_N": 3.0366330336796867,
+        "lift_N": null,
+        "critical_snag_N": 3.0366330336796867,
+        "lever_m": 0.05080242429397076,
+        "span_m": 0.38745514579109663,
+        "elevation_deg": -26.966653109984996
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.0481555628797028,
+        "sag_max_m": 0.0017159979452107677,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.049264534730789296,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.049264534730789296,
+      "warnings": [
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  },
+  {
+    "case": {
+      "ball": "large",
+      "motion": "gentle",
+      "setup": "floor"
+    },
+    "inputs": {
+      "stand": {
+        "name": "PEACH v13 CAD + slicer estimate",
+        "mass_kg": 0.3003084,
+        "rotor_inertia_kg_m2": 5.45155e-05,
+        "com_height_m": 0.0350184,
+        "platform_height_m": 0.0707,
+        "platform_radius_m": 0.052,
+        "support_radius_m": 0.054,
+        "pad_radius_m": 0.00395,
+        "pad_count": 6,
+        "pad_angle_deg": 30,
+        "support_points_m": null,
+        "foot_friction": 0.45,
+        "start_torque_Nm": 0.0006,
+        "running_torque_Nm": 0.0003,
+        "viscous_Nm_s": 1.5e-05,
+        "body_profile_m": [
+          [
+            0.0531,
+            0.0667
+          ],
+          [
+            0.057,
+            0.0664
+          ],
+          [
+            0.061,
+            0.064
+          ],
+          [
+            0.067,
+            0.058
+          ],
+          [
+            0.072,
+            0.051
+          ],
+          [
+            0.078,
+            0.036
+          ]
+        ],
+        "leaves": []
+      },
+      "ball": {
+        "name": "Large round ball 200 g",
+        "mass_kg": 0.2,
+        "radius_x_m": 0.057,
+        "radius_y_m": 0.057,
+        "radius_z_m": 0.055,
+        "unwind_radius_ratio": 1.0,
+        "exit_height_fraction": 0.0,
+        "inertia_factor": 0.2,
+        "eccentricity_m": 0.003,
+        "contact_radius_m": 0.024,
+        "contact_friction": 0.4,
+        "spindle_coupling_Nm": 0.0,
+        "line_density_kg_m": 0.00025,
+        "yarn_axial_rigidity_N": 4.0,
+        "yarn_damping_Ns_m": 0.025,
+        "yarn_diameter_m": 0.002,
+        "peel_force_N": 0.015
+      },
+      "motion": {
+        "name": "Slow smooth draw",
+        "cycle_s": 1.8,
+        "draw_m": 0.024,
+        "duty": 0.8,
+        "lateral_amplitude_m": 0.003,
+        "lateral_cycle_s": 1.3,
+        "duration_s": 12.0,
+        "dt_s": 0.0005
+      },
+      "setup": {
+        "name": "On floor: hand 65 cm above base",
+        "distance_m": 0.45,
+        "hand_height_m": 0.65,
+        "azimuth_deg": 0
+      }
+    },
+    "summary": {
+      "peak_tension_N": 0.06174728518318206,
+      "p95_tension_N": 0.0573571696557369,
+      "mean_tension_N": 0.015407160986114521,
+      "max_slack_m": 0.012575333942825284,
+      "max_rpm": 15.187138572167271,
+      "max_slide_utilization": 0.01906092948185909,
+      "max_tip_utilization": 0.04316744647071486,
+      "minimum_support_margin_m": 0.04852611870675259,
+      "max_ball_traction_utilization": 0.03224531909315845,
+      "first_events_s": {},
+      "inertia_kg_m2": 0.00031623550000000006,
+      "effective_stiffness_N_m": 5.809061993802311,
+      "static_limits": {
+        "start_tension_N": 0.03123790962495291,
+        "slide_N": 2.2281425455703032,
+        "tip_N": 1.9831427962773955,
+        "lift_N": 6.443659640166469,
+        "critical_snag_N": 1.9831427962773955,
+        "lever_m": 0.03695056899922486,
+        "span_m": 0.6885793273109497,
+        "elevation_deg": 49.58978992373909
+      },
+      "path_screen": {
+        "status": "clear_in_sampled_path",
+        "min_clearance_m": 0.058300000000000005,
+        "sag_max_m": 0.004651548847854792,
+        "scope": "sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate"
+      },
+      "hypotheses_valid_for_entire_run": true,
+      "mechanical_hypotheses_valid_for_entire_run": true,
+      "nominal_path_valid": true,
+      "validity_scope": "mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose",
+      "peak_tension_with_valid_path_and_coupling_N": 0.06174728518318206,
+      "valid_coupled_interval_end_s": 12.0,
+      "peak_tension_before_first_event_N": 0.06174728518318206,
+      "warnings": [
+        "Ball overhangs platter; soft-ball support not represented."
+      ]
+    },
+    "trace": []
+  }
+]

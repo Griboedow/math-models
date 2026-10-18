@@ -33,6 +33,7 @@ python -m yarnstand run examples/my_stand.json --out results/custom.json
 python -m yarnstand suite
 python -m yarnstand sensitivity
 # Проверки физических предельных случаев и сходимости
+python -m pip install ".[mesh]"  # для полного набора, включая STL
 python -m unittest discover -s tests -v
 # Проверки состояния интерфейса (только для разработки, Node 18+)
 node --test tests/test_ui.js
@@ -79,7 +80,7 @@ python -m yarnstand preset --stand pitaya_v09 --out examples/pitaya_v09.json
 python -m yarnstand run examples/pitaya_v09.json --out results/pitaya_v09.json
 ```
 
-Точная проверка выбранных траекторий по STL v09 сохранена отдельно в
+Проверка выбранных траекторий нулевой толщины по STL v09 сохранена отдельно в
 [`results/pitaya_v09_mesh_paths.json`](results/pitaya_v09_mesh_paths.json).
 Она не моделирует деформацию клубка или свободные петли. Исходные таблицы
 `scenarios.csv` и `sensitivity.csv` по-прежнему относятся к указанной в них v08.
@@ -99,6 +100,13 @@ python -m yarnstand run examples/pitaya_v09.json --out results/pitaya_v09.json
 в интерфейсе; его выход за край площадки явно отмечается.
 
 ## Как читать результат
+
+Сначала проверьте `path_screen` и `nominal_path_valid`. Контакт с корпусом,
+точка схода внутри клубка и вход нити в клубок делают расчёт сил условным,
+даже если опора и сцепление сохраняются. Интерфейс показывает это предупреждение.
+`hypotheses_valid_for_entire_run` объединяет эти проверки; это не сертификат
+всех движущихся или свободных петель. В новых пресетах `unwind_radius_ratio=1`;
+импортированное старое значение 0.85 сохраняется, но не подтверждает наружный сход.
 
 Сначала смотрите `first_events_s`. Если там есть проскальзывание или потеря
 опоры, последующая кривая — **условное продолжение при принудительном сцеплении**.
@@ -126,7 +134,8 @@ python -m yarnstand run examples/pitaya_v09.json --out results/pitaya_v09.json
 - [Проверка персика v13](docs/peach-v13.md)
 - [Короткая калибровка после печати](docs/calibration.md)
 - [Результаты для PITAYA и сравнительных вариантов](docs/results.md)
-- [Повторная проверка PITAYA v10 по STL и STEP](docs/pitaya-v10-recheck.md)
+- [Архив проверки PITAYA v10 и неизменённые CAD-посадки](docs/pitaya-v10-recheck.md)
+- [Исправления аудита и актуальный пересчёт v10](docs/audit-fixes.md)
 - [Сырые сценарии](results/scenarios.csv)
 - [Чувствительность](results/sensitivity.csv)
 

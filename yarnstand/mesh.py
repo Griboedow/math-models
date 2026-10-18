@@ -26,23 +26,33 @@ class MeshScene:
         """parts: [(name, trimesh.Trimesh in metres)]."""
         self.parts=[]
         for name,mesh in parts:
-            if not np.isfinite(mesh.vertices).all() or not math.isfinite(mesh.volume) or not mesh.is_watertight or not mesh.is_winding_consistent or mesh.volume<=0:
+            if not np.isfinite(mesh.vertices).all() or not math.isfinite(mesh.volume) or not mesh.is_watertight or not mesh.is_winding_consistent:
                 raise ValueError(f'{name}: a closed, consistently outward oriented mesh is required')
-            from vtk.util.numpy_support import numpy_to_vtk, numpy_to_vtkIdTypeArray
-            pts=vtk.vtkPoints();pts.SetData(numpy_to_vtk(np.asarray(mesh.vertices),deep=True))
-            cells=vtk.vtkCellArray()
-            a=np.column_stack((np.full(len(mesh.faces),3),mesh.faces)).astype(np.int64)
-            cells.ImportLegacyFormat(numpy_to_vtkIdTypeArray(a.ravel(),deep=True))
-            poly=vtk.vtkPolyData();poly.SetPoints(pts);poly.SetPolys(cells)
-            field=vtk.vtkImplicitPolyDataDistance();field.SetInput(poly)
-            tree=vtk.vtkOBBTree();tree.SetDataSet(poly)
-            # Scene units are metres. VTK's 0.01 default is a centimetre and
-            # can miss crossings of small curved surfaces. This epsilon is
-            # numerical only; yarn radius and clearance margins are separate.
-            tree.SetTolerance(1e-9);tree.BuildLocator()
-            self.parts.append((name,field,tree,np.asarray(mesh.bounds),poly))
+            components=trimesh.graph.connected_components(mesh.face_adjacency,nodes=np.arange(len(mesh.faces)),engine='scipy')
+            for faces in components:
+                shell=mesh if len(faces)==len(mesh.faces) else mesh.submesh([faces],append=True)
+                if not shell.is_watertight or shell.volume<=0:
+                    raise ValueError(f'{name}: each disconnected shell must have outward normals and positive volume; inverted/nested cavity shells are unsupported')
+                self._add_shell(name,shell)
         if not self.parts:raise ValueError('Scene must contain at least one mesh')
         self.provenance={}
+
+    def _add_shell(self,name,mesh):
+        # Independent fields form a union of solid shells. A nearest-face
+        # field on overlapping disconnected shells can give the wrong sign.
+        from vtk.util.numpy_support import numpy_to_vtk, numpy_to_vtkIdTypeArray
+        pts=vtk.vtkPoints();pts.SetData(numpy_to_vtk(np.asarray(mesh.vertices),deep=True))
+        cells=vtk.vtkCellArray()
+        a=np.column_stack((np.full(len(mesh.faces),3),mesh.faces)).astype(np.int64)
+        cells.ImportLegacyFormat(numpy_to_vtkIdTypeArray(a.ravel(),deep=True))
+        poly=vtk.vtkPolyData();poly.SetPoints(pts);poly.SetPolys(cells)
+        field=vtk.vtkImplicitPolyDataDistance();field.SetInput(poly)
+        tree=vtk.vtkOBBTree();tree.SetDataSet(poly)
+        # Scene units are metres. VTK's 0.01 default is a centimetre and
+        # can miss crossings of small curved surfaces. This epsilon is
+        # numerical only; yarn radius and clearance margins are separate.
+        tree.SetTolerance(1e-9);tree.BuildLocator()
+        self.parts.append((name,field,tree,np.asarray(mesh.bounds),poly))
 
     @classmethod
     def from_manifest(cls,path):
@@ -155,17 +165,11 @@ class MeshScene:
 
 
 def taut_path(stand,ball,setup,tension_N,step_m=.001):
-    """Full-span small-sag path; return None rather than extrapolate to slack."""
-    from .model import geometry,G
-    if not math.isfinite(tension_N) or tension_N<0:raise ValueError('Finite nonnegative tension required')
+    """Sample the shared catenary, rejecting slack and paths inside the ball."""
+    from .model import geometry
+    from .paths import prescribed_path
     if not math.isfinite(step_m) or step_m<=0:raise ValueError('Positive finite path step required')
-    q,h,u,_,length=geometry(stand,ball,setup)
-    horizontal=math.hypot(h[0]-q[0],h[1]-q[1]);H=tension_N*math.hypot(u[0],u[1])
-    if H<.001:return None,'slack_or_too_low_tension'
-    coefficient=ball.line_density_kg_m*G*horizontal**2/(2*H)
-    if coefficient/4>.1*length:return None,'large_sag_outside_approximation'
+    *_,length=geometry(stand,ball,setup)
     count=_subdivisions(length,step_m,MAX_PATH_SAMPLES-1)
-    t=np.linspace(0,1,count+1)
-    points=np.asarray(q)+t[:,None]*(np.asarray(h)-q)
-    points[:,2]-=coefficient*t*(1-t)
-    return points,'small_sag_approximation'
+    points,status,_=prescribed_path(stand,ball,setup,tension_N,count=count)
+    return (np.asarray(points) if points is not None else None),status

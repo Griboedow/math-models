@@ -1,0 +1,70 @@
+[
+  {
+    "case": "sweep_main_2mm_root",
+    "status": "contact_on_prescribed_sweep",
+    "first_contact_frame": 85,
+    "frame_count": 163,
+    "checked_frames": 86,
+    "scope": "prescribed linear motion only; no friction or contact rerouting"
+  },
+  {
+    "case": "sweep_main_2mm_tip",
+    "status": "clear_prescribed_sweep",
+    "clearance_lower_bound_m": 0.0014961550718184525,
+    "frame_count": 225,
+    "checked_frames": 225,
+    "max_node_motion_m": 9.987572396585523e-05,
+    "scope": "prescribed linear motion only; no friction or contact rerouting"
+  },
+  {
+    "case": "sweep_main_4mm_root",
+    "status": "contact_on_prescribed_sweep",
+    "first_contact_frame": 92,
+    "frame_count": 217,
+    "checked_frames": 93,
+    "scope": "prescribed linear motion only; no friction or contact rerouting"
+  },
+  {
+    "case": "sweep_main_4mm_tip",
+    "status": "clear_prescribed_sweep",
+    "clearance_lower_bound_m": 0.0010526074551579021,
+    "frame_count": 163,
+    "checked_frames": 163,
+    "max_node_motion_m": 8.630199556189822e-05,
+    "scope": "prescribed linear motion only; no friction or contact rerouting"
+  },
+  {
+    "case": "sweep_second_2mm_root",
+    "status": "contact_on_prescribed_sweep",
+    "first_contact_frame": 56,
+    "frame_count": 163,
+    "checked_frames": 57,
+    "scope": "prescribed linear motion only; no friction or contact rerouting"
+  },
+  {
+    "case": "sweep_second_2mm_tip",
+    "status": "clear_prescribed_sweep",
+    "clearance_lower_bound_m": 0.0006743820628261903,
+    "frame_count": 217,
+    "checked_frames": 217,
+    "max_node_motion_m": 9.35880602239232e-05,
+    "scope": "prescribed linear motion only; no friction or contact rerouting"
+  },
+  {
+    "case": "sweep_second_4mm_root",
+    "status": "contact_on_prescribed_sweep",
+    "first_contact_frame": 42,
+    "frame_count": 217,
+    "checked_frames": 43,
+    "scope": "prescribed linear motion only; no friction or contact rerouting"
+  },
+  {
+    "case": "sweep_second_4mm_tip",
+    "status": "clear_prescribed_sweep",
+    "clearance_lower_bound_m": 0.00012565640261781187,
+    "frame_count": 163,
+    "checked_frames": 163,
+    "max_node_motion_m": 7.68495785776413e-05,
+    "scope": "prescribed linear motion only; no friction or contact rerouting"
+  }
+]

@@ -16,6 +16,7 @@ ROOT=args.cad_package.resolve()
 sys.path.insert(0,str(REPO))
 from yarnstand import presets
 from yarnstand.model import geometry,G
+from yarnstand.paths import prescribed_path
 trees=[]
 mesh_hashes={}
 stand=presets.stand('pitaya_v09')
@@ -34,23 +35,26 @@ for ba in ['full','nearly_empty']:
                 p=replace(presets.setup(po),azimuth_deg=azimuth)
                 q,h,u,_,L=geometry(stand,b,p)
                 horizontal=math.hypot(h[0]-q[0],h[1]-q[1]);H=.04*math.hypot(u[0],u[1])
-                sag=b.line_density_kg_m*G*horizontal**2/(2*H)
+                checked,status,curve=prescribed_path(stand,b,p,.04)
+                if checked is None:
+                    rows.append({'ball':ba,'setup':po,'exit_fraction':fraction,'azimuth_deg':azimuth,'status':status,'hit_parts':[]})
+                    continue
                 stop=min(1,.14/horizontal);points=[]
                 for j in range(51):
                     t=stop*j/50
-                    points.append([(q[0]+(h[0]-q[0])*t)*1000,(q[1]+(h[1]-q[1])*t)*1000,(q[2]+(h[2]-q[2])*t-sag*t*(1-t))*1000])
+                    points.append([v*1000 for v in curve.point(t)])
                 hits=set()
                 for name,tree in trees:
                     for a,c in zip(points,points[1:]):
                         hitpoints=vtk.vtkPoints();ids=vtk.vtkIdList()
                         if tree.IntersectWithLine(a,c,hitpoints,ids): hits.add(name);break
-                rows.append({'ball':ba,'setup':po,'exit_fraction':fraction,'azimuth_deg':azimuth,'hit_parts':sorted(hits)})
+                rows.append({'ball':ba,'setup':po,'exit_fraction':fraction,'azimuth_deg':azimuth,'status':'contact' if hits else 'clear_zero_radius_ray','hit_parts':sorted(hits)})
 out={'geometry_version':ROOT.name,'mesh_sha256':mesh_hashes,
-     'winding_radius_model':'ellipsoid horizontal section: sqrt(a*b) * unwind_radius_ratio * sqrt(1-exit_height_fraction**2)',
+     'winding_radius_model':'tangent to actual ellipsoid horizontal section; spatial paths entering the ball are rejected',
      'stand_assumptions':asdict(stand),
      'ball_presets':{n:asdict(presets.ball(n)) for n in ['full','nearly_empty']},
      'setup_presets':{n:asdict(presets.setup(n)) for n in ['desk_side','high_table','floor']},
-     'method':'VTK segment/triangle intersection; 51 points on a small-sag parabola within 140 mm horizontal distance from yarn exit; CAD Z shifted +1 mm for feet',
+     'method':'VTK segment/triangle intersection; 51 points on a catenary within 140 mm horizontal distance from yarn exit; CAD Z shifted +1 mm for feet',
      'cases':len(rows),'ray_tension_N':.04,'line_only_no_yarn_radius':True,'physical_print_tested':False,'cases_with_hits':sum(bool(r['hit_parts']) for r in rows),'results':rows}
 args.out.parent.mkdir(parents=True,exist_ok=True)
 args.out.write_text(json.dumps(out,indent=2),encoding='utf-8')

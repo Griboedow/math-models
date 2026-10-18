@@ -41,6 +41,18 @@ function result(config) {
     path_screen:{min_clearance_m:.03}},trace:[{t_s:.01,tension_N:.1,slack_m:0}]};
 }
 
+test('a geometric failure cannot display a green result with unconditional forces',()=>{
+  const h=harness();const r=result(base);
+  r.summary.nominal_path_valid=false;
+  r.summary.hypotheses_valid_for_entire_run=false;
+  r.summary.path_screen={status:'path_intersects_ball',min_clearance_m:null};
+  h.context.responseFixture=r;h.get('display(responseFixture)');
+  assert.ok(!h.element('valid').className.includes('good'));
+  assert.match(h.element('valid').textContent,/Все показанные силы условны/);
+  assert.match(h.element('path').textContent,/входит в клубок/);
+  assert.match(h.element('peakMeaning').textContent,/условный/);
+});
+
 test('rounded/clamped controls do not silently change imported JSON',()=>{
   const h=harness();
   h.get('current.stand.start_torque_Nm=.00027;current.stand.running_torque_Nm=.00011;current.setup.azimuth_deg=7;current.ball.exit_height_fraction=-.8;writeControls(current)');

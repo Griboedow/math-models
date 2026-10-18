@@ -38,7 +38,7 @@ class Ball:
     radius_x_m: float = .045
     radius_y_m: float = .045
     radius_z_m: float = .044
-    unwind_radius_ratio: float = .85
+    unwind_radius_ratio: float = 1.  # ratios below 1 place the exit inside the ball; reported as invalid
     exit_height_fraction: float = 0.  # -1 bottom, +1 top of ellipsoid
     inertia_factor: float = .2  # I_z = factor*m*(a²+b²), .2 uniform ellipsoid
     eccentricity_m: float = .003
@@ -98,6 +98,10 @@ def validate(s,b,m,p):
     if p.distance_m-m.lateral_amplitude_m<=max(b.radius_x_m,b.radius_y_m): raise ValueError('Working hand must remain outside ball')
     if m.dt_s>.002 or m.duration_s/m.dt_s>2_000_000: raise ValueError('Use dt <= .002 s and <= 2 million steps')
     if m.duration_s<m.cycle_s*2: raise ValueError('Simulate at least two cycles')
+    if m.dt_s > m.cycle_s*m.duty/20*(1+1e-12):
+        raise ValueError('Time step does not resolve the draw pulse; use dt_s <= cycle_s*duty/20')
+    if m.lateral_amplitude_m and m.dt_s > m.lateral_cycle_s/40:
+        raise ValueError('Time step does not resolve hand motion; use dt_s <= lateral_cycle_s/40')
     if s.support_points_m is not None:
         if len(s.support_points_m)<3 or any(len(q)!=2 or any(not math.isfinite(x) for x in q) for q in s.support_points_m): raise ValueError('Invalid support polygon')
     if s.body_profile_m is not None:
@@ -145,12 +149,15 @@ def geometry(s,b,p,hand_offset=0.):
     a=math.radians(p.azimuth_deg)
     hx=p.distance_m*math.cos(a)-hand_offset*math.sin(a)
     hy=p.distance_m*math.sin(a)+hand_offset*math.cos(a)
-    d=math.hypot(hx,hy); ex,ey=hx/d,hy/d
-    # Circular surrogate of the ellipsoid's horizontal section. Near the
-    # poles both the winding radius and the available torque arm shrink.
-    r=math.sqrt(b.radius_x_m*b.radius_y_m)*b.unwind_radius_ratio*math.sqrt(1-b.exit_height_fraction**2)
-    radial=r*r/d; tang=r*math.sqrt(1-(r/d)**2)
-    px,py=radial*ex+tang*ey,radial*ey-tang*ex
+    # Tangent to the actual elliptical horizontal section. This fixed-latitude
+    # construction is only usable if the spatial free path leaves the ball;
+    # the shared path checker rejects inward departures rather than inventing
+    # a new peeling mode. The ellipsoid orientation is fixed in this local model.
+    factor=b.unwind_radius_ratio*math.sqrt(1-b.exit_height_fraction**2)
+    rx,ry=b.radius_x_m*factor,b.radius_y_m*factor
+    sx,sy=hx/rx,hy/ry
+    angle=math.atan2(sy,sx)-math.acos(1/math.hypot(sx,sy))
+    px,py=rx*math.cos(angle),ry*math.sin(angle)
     pz=s.platform_height_m+b.radius_z_m*(1+b.exit_height_fraction)
     delta=(hx-px,hy-py,p.hand_height_m-pz); length=math.sqrt(sum(x*x for x in delta))
     u=tuple(x/length for x in delta)
@@ -162,6 +169,13 @@ def draw_speed(t,m):
     phase=(t % m.cycle_s)/m.cycle_s
     if phase>=m.duty: return 0.
     return 2*m.draw_m/(m.cycle_s*m.duty)*math.sin(math.pi*phase/m.duty)**2
+
+
+def drawn_length(t,m):
+    """Exact cumulative pulse integral, including intervals crossing a cycle."""
+    cycles=math.floor(t/m.cycle_s)
+    fraction=min(1.,max(0.,(t-cycles*m.cycle_s)/(m.cycle_s*m.duty)))
+    return m.draw_m*(cycles+fraction-math.sin(2*math.pi*fraction)/(2*math.pi))
 
 
 def static_limits(s,b,p,edges=None):
@@ -183,18 +197,13 @@ def static_limits(s,b,p,edges=None):
 
 
 def path_clearance(s,b,p,tension):
-    """Screening: taut tangent ray with small-sag parabola; no snag probability."""
-    q,h,u,_,L=geometry(s,b,p)
-    horizontal=math.hypot(h[0]-q[0],h[1]-q[1]); H=tension*math.hypot(u[0],u[1])
-    if H<.001: return {'status':'slack_or_too_low_tension','min_clearance_m':None}
-    sag_coefficient=b.line_density_kg_m*G*horizontal**2/(2*H)
-    if sag_coefficient/4>.1*L: return {'status':'large_sag_outside_approximation','min_clearance_m':None}
+    """Coarse body/decor screen of the same gravity-loaded path as the mesh API."""
+    from .paths import prescribed_path
+    points,status,curve=prescribed_path(s,b,p,tension)
+    if points is None: return {'status':status,'min_clearance_m':None}
     profile=s.body_profile_m or [[s.platform_radius_m+.001, s.platform_height_m-.004], [s.platform_radius_m+.020,.016]]
     best=math.inf
-    for i in range(241):
-        f=i/240
-        x=q[0]+(h[0]-q[0])*f; y=q[1]+(h[1]-q[1])*f
-        z=q[2]+(h[2]-q[2])*f-sag_coefficient*f*(1-f)
+    for x,y,z in points:
         r=math.hypot(x,y)
         if r<=s.platform_radius_m: best=min(best,z-s.platform_height_m-b.yarn_diameter_m/2)
         elif r<=profile[-1][0]:
@@ -211,7 +220,8 @@ def path_clearance(s,b,p,tension):
                 if rho<=1:
                     top=zc+az*math.sqrt(1-rho)
                     best=min(best,z-top-b.yarn_diameter_m/2)
-    return {'status':'possible_contact' if best<=0 else 'clear_in_sampled_path','min_clearance_m':best,'sag_midspan_m':sag_coefficient/4}
+    return {'status':'possible_contact' if best<=0 else 'clear_in_sampled_path','min_clearance_m':best,'sag_max_m':curve.sag_m,
+            'scope':'sampled nominal path; coarse body/decor surfaces, no full-motion clearance certificate'}
 
 
 def percentile(values,q):
@@ -226,8 +236,12 @@ def simulate(s= None,b=None,m=None,p=None,keep_trace=True):
     inertia=s.rotor_inertia_kg_m2+b.inertia_factor*b.mass_kg*(b.radius_x_m**2+b.radius_y_m**2)+b.mass_kg*b.eccentricity_m**2
     _,_,_,a0,L0=geometry(s,b,p)
     spring=b.yarn_axial_rigidity_N/L0
-    if m.dt_s> .08*math.sqrt(inertia/(spring*a0*a0)):
+    max_lever=max(b.radius_x_m,b.radius_y_m)*b.unwind_radius_ratio
+    if m.dt_s> .08*math.sqrt(inertia/(spring*max_lever*max_lever)):
         raise ValueError('Time step too large for stiffness/inertia; reduce dt_s')
+    damping=s.viscous_Nm_s+b.yarn_damping_Ns_m*max_lever*max_lever
+    if damping and m.dt_s > .2*inertia/damping:
+        raise ValueError('Time step too large for damping/inertia; reduce dt_s')
     theta=omega=payout=demand=0.
     tensions=[]; slacks=[]; trace=[]; slip_peak=tip_peak=traction_peak=0.
     min_margin=math.inf; rpm_max=0.; earliest={}; total_steps=math.ceil(m.duration_s/m.dt_s)
@@ -239,7 +253,8 @@ def simulate(s= None,b=None,m=None,p=None,keep_trace=True):
         voff=m.lateral_amplitude_m*freq*math.cos(freq*t)
         pos,hand,u,lever,L=geometry(s,b,p,off)
         az=math.radians(p.azimuth_deg)
-        demand_v=draw_speed(t,m)+voff*(-u[0]*math.sin(az)+u[1]*math.cos(az))
+        start=step*m.dt_s
+        demand_v=(drawn_length(start+dt,m)-drawn_length(start,m))/dt+voff*(-u[0]*math.sin(az)+u[1]*math.cos(az))
         demand+=demand_v*dt
         extension=demand-payout
         tension=max(0.,spring*extension+b.yarn_damping_Ns_m*(demand_v-lever*omega)) if extension>0 else 0.
@@ -291,11 +306,19 @@ def simulate(s= None,b=None,m=None,p=None,keep_trace=True):
     if max(slacks)>.05: warnings.append('Over 50 mm idealized coasting payout: real loose loops can wrap or catch. Slack is an upper-bound proxy, not a validated loop trajectory.')
     if max(b.radius_x_m,b.radius_y_m)+b.eccentricity_m>s.platform_radius_m: warnings.append('Ball overhangs platter; soft-ball support not represented.')
     path=path_clearance(s,b,p,max(limits['start_tension_N'],percentile(tensions,.5),.005))
+    path_valid=path['status']=='clear_in_sampled_path'
+    if not path_valid:
+        warnings.append('Nominal yarn path is invalid or unresolved ('+path['status']+'). Forces are conditional free-path estimates; contact/friction rerouting is not solved.')
+    for row in trace:
+        row['model_assumptions_valid']=row['coupled_assumptions_valid'] and path_valid
     summary={'peak_tension_N':peak_t,'p95_tension_N':percentile(tensions,.95),'mean_tension_N':sum(tensions)/len(tensions),
              'max_slack_m':max(slacks),'max_rpm':rpm_max,'max_slide_utilization':slip_peak,'max_tip_utilization':tip_peak,
              'minimum_support_margin_m':min_margin,'max_ball_traction_utilization':traction_peak,'first_events_s':earliest,
              'inertia_kg_m2':inertia,'effective_stiffness_N_m':spring,'static_limits':limits,'path_screen':path,
-             'hypotheses_valid_for_entire_run':not bool(earliest),
+             'hypotheses_valid_for_entire_run':not bool(earliest) and path_valid,
+             'mechanical_hypotheses_valid_for_entire_run':not bool(earliest),'nominal_path_valid':path_valid,
+             'validity_scope':'mechanical event checks plus one nominal path screen, not certification of every moving/slack yarn pose',
+             'peak_tension_with_valid_path_and_coupling_N':valid_peak if path_valid else None,
              'valid_coupled_interval_end_s':min(earliest.values()) if earliest else m.duration_s,
              'peak_tension_before_first_event_N':valid_peak,'warnings':warnings}
     return {'inputs':{'stand':asdict(s),'ball':asdict(b),'motion':asdict(m),'setup':asdict(p)},'summary':summary,'trace':trace}

@@ -33,7 +33,7 @@
     "radius_x_m": 0.045,
     "radius_y_m": 0.045,
     "radius_z_m": 0.044,
-    "unwind_radius_ratio": 0.85,
+    "unwind_radius_ratio": 1.0,
     "exit_height_fraction": 0.0,
     "inertia_factor": 0.2,
     "eccentricity_m": 0.003,

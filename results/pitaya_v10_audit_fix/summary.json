@@ -1,0 +1,39 @@
+{
+  "static_paths": 720,
+  "static_statuses": {
+    "path_intersects_ball": 240,
+    "clear": 456,
+    "contact": 24
+  },
+  "static_contact_parts": {
+    "body": 24,
+    "platter": 24,
+    "leaf_1": 1,
+    "seeds": 8,
+    "leaf_2": 1,
+    "leaf_3": 1,
+    "leaf_4": 1,
+    "leaf_5": 1,
+    "leaf_6": 1
+  },
+  "diameter_tension_cases": 54,
+  "dynamics_cases": 60,
+  "dynamics_events": {
+    "ball_slipping": 30,
+    "ball_lifting": 6
+  },
+  "dynamics_nominal_path_statuses": {
+    "path_intersects_ball": 20,
+    "clear_in_sampled_path": 38,
+    "possible_contact": 2
+  },
+  "dynamics_valid_in_reported_scope": 20,
+  "sweeps": 27,
+  "sweep_statuses": {
+    "path_intersects_ball": 8,
+    "clear_prescribed_sweep": 15,
+    "initial_contact": 2,
+    "contact_on_prescribed_sweep": 2
+  },
+  "elapsed_s": 88.09299999999348
+}

@@ -559,5 +559,7 @@
   "static_yarn_diameter_m": 0.002,
   "polyline_generation_step_m": 0.004,
   "path_sampling_step_m": 0.0005,
-  "sweep_motion_step_m": 0.001
+  "sweep_motion_step_m": 0.001,
+  "superseded_by": "../pitaya_v10_audit_fix/metadata.json",
+  "superseded_reason": "Audit fixes: arc-length-weight catenary, valid external ball path, geometric validity flags, per-shell orientation and temporal resolution."
 }

@@ -1,0 +1,155 @@
+{
+  "unit": "mm",
+  "parts": [
+    {
+      "name": "01_body_peach",
+      "path": "../../../../../2026-10-17/new-chat-7/PEACH_v13/cad/01_body_peach.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.7
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "02_puffy_platter_peach",
+      "path": "../../../../../2026-10-17/new-chat-7/PEACH_v13/cad/02_puffy_platter_peach.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.7
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "03_striped_spindle_honey",
+      "path": "../../../../../2026-10-17/new-chat-7/PEACH_v13/cad/03_striped_spindle_honey.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.7
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "04_leaf_green",
+      "path": "../../../../../2026-10-17/new-chat-7/PEACH_v13/cad/04_leaf_green.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.7
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "08_leaf_second_green",
+      "path": "../../../../../2026-10-17/new-chat-7/PEACH_v13/cad/08_leaf_second_green.stl",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1.7
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ]
+}

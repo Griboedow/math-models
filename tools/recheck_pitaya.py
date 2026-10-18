@@ -1,6 +1,6 @@
 """Recheck PITAYA CAD with the current model and finite-radius mesh API.
 
-Usage: python tools/recheck_pitaya.py /path/to/PITAYA_v10 --out results/pitaya_v10_recheck
+Usage: python tools/recheck_pitaya.py /path/to/PITAYA_v10 --out results/pitaya_v10_audit_fix
 Requires the optional mesh dependencies. CAD files are supplied separately.
 All material coefficients remain explicit assumptions, not measurements.
 """
@@ -19,7 +19,7 @@ from yarnstand.cli import save,write_csv,flatten
 
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('cad_package',type=Path)
-parser.add_argument('--out',type=Path,default=REPO/'results/pitaya_v10_recheck')
+parser.add_argument('--out',type=Path,default=REPO/'results/pitaya_v10_audit_fix')
 args=parser.parse_args();cad=args.cad_package.resolve();out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
 started=time.monotonic()
 def log(s): print(f'{time.monotonic()-started:.1f}s {s}',flush=True)
@@ -32,13 +32,14 @@ save(out/'mesh_scene.json',manifest)
 scene=MeshScene.from_manifest(out/'mesh_scene.json');log('Mesh scene loaded and closed surfaces checked')
 metadata={'simulator_commit':commit,
           'source_version_note':'Commit identifies the checkout base; SHA-256 values identify the exact sources actually executed, including any local patch.',
-          'simulator_source_sha256':{n:hashlib.sha256((REPO/'yarnstand'/n).read_bytes()).hexdigest() for n in ['mesh.py','model.py','presets.py']},
+          'simulator_source_sha256':{n:hashlib.sha256((REPO/'yarnstand'/n).read_bytes()).hexdigest() for n in ['mesh.py','model.py','paths.py','presets.py']},
           'geometry_version':cad.name,'stand_assumptions':asdict(stand),
           'ball_presets':{n:asdict(presets.ball(n)) for n in ['full','nearly_empty']},
           'setup_presets':{n:asdict(presets.setup(n)) for n in ['desk_side','front','far_side','high_table','floor']},
           'motion_presets':{n:asdict(presets.motion(n)) for n in ['knitting','crochet']},
           'mesh_provenance':scene.provenance,
-          'limitations':['prescribed geometry, not free sliding or a snag probability','no fuzz, FDM roughness, or deformation','stand mass and friction are assumptions','no table edge/environment model'],
+          'limitations':['prescribed geometry, not free sliding or a snag probability','no fuzz, FDM roughness, or deformation','stand mass and friction are assumptions','no table edge/environment model','paths entering the ball are rejected; relocation of the yarn exit is not solved'],
+          'path_model':'arc-length-weight catenary; exit on ball surface; invalid inward paths excluded',
           'static_path_tension_N':.04,'static_yarn_diameter_m':.002,'polyline_generation_step_m':.004,
           'path_sampling_step_m':.0005,'sweep_motion_step_m':.001}
 save(out/'metadata.json',metadata)
@@ -59,7 +60,7 @@ flat=[{k:r.get(k) for k in ['ball','setup','exit_fraction','azimuth_deg','status
 write_csv(out/'static_paths.csv',flat)
 
 # Diameter and tension sensitivity at the boundaries nearest to contact.
-ordered=sorted(rows,key=lambda r:abs(r.get('min_sampled_clearance_m',1)))
+ordered=sorted((r for r in rows if 'min_sampled_clearance_m' in r),key=lambda r:abs(r['min_sampled_clearance_m']))
 selected=[];seen=set()
 for r in ordered:
     key=(r['ball'],r['setup'],r['exit_fraction'])
@@ -92,9 +93,9 @@ write_csv(out/'dynamics.csv',[flatten(r,r['case']) for r in dynamics]);log('60 d
 
 def fixed_path(b,p):
     points,status=taut_path(stand,b,p,.04,step_m=.004)
-    if points is None:raise ValueError(status)
+    if points is None:return None,status
     grid=np.linspace(0,1,len(points)); t=np.linspace(0,1,65)
-    return np.column_stack([np.interp(t,grid,points[:,i]) for i in range(3)])
+    return np.column_stack([np.interp(t,grid,points[:,i]) for i in range(3)]),status
 sweeps=[]
 for ba in ['full','nearly_empty']:
     for mo in ['knitting','crochet']:
@@ -102,11 +103,13 @@ for ba in ['full','nearly_empty']:
             for fraction in [-.65,0]:
                 b=replace(presets.ball(ba),exit_height_fraction=fraction)
                 p=presets.setup(po);amp=presets.motion(mo).lateral_amplitude_m
-                poses=[]
+                poses=[];invalid=None
                 for delta in [-amp,0,amp]:
                     q=replace(p,distance_m=math.hypot(p.distance_m,delta),azimuth_deg=p.azimuth_deg+math.degrees(math.atan2(delta,p.distance_m)))
-                    poses.append(fixed_path(b,q))
-                result=scene.sweep(poses,.001,max_step_m=.0005,motion_step_m=.001)
+                    points,status=fixed_path(b,q)
+                    if points is None:invalid=status;break
+                    poses.append(points)
+                result={'status':invalid,'scope':'no admissible prescribed free path; no sweep performed'} if invalid else scene.sweep(poses,.001,max_step_m=.0005,motion_step_m=.001)
                 sweeps.append({'kind':'prescribed_hand_movement','case':{'ball':ba,'motion':mo,'setup':po,'exit_fraction':fraction},'poses_m':np.asarray(poses).tolist(),'result':result})
         log(f'Hand sweeps: {ba} {mo}')
         save(out/'sweeps.json',sweeps)
@@ -132,6 +135,8 @@ summary={'static_paths':len(rows),'static_statuses':dict(Counter(r['status'] for
          'static_contact_parts':dict(Counter(p for r in rows for p in r.get('contact_parts',[]))),
          'diameter_tension_cases':len(sensitivity),'dynamics_cases':len(dynamics),
          'dynamics_events':dict(Counter(k for r in dynamics for k in r['summary']['first_events_s'])),
+         'dynamics_nominal_path_statuses':dict(Counter(r['summary']['path_screen']['status'] for r in dynamics)),
+         'dynamics_valid_in_reported_scope':sum(r['summary']['hypotheses_valid_for_entire_run'] for r in dynamics),
          'sweeps':len(sweeps),'sweep_statuses':dict(Counter(r['result']['status'] for r in sweeps)),
          'elapsed_s':time.monotonic()-started}
 save(out/'summary.json',summary);log(json.dumps(summary))

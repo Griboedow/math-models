@@ -1,0 +1,20 @@
+{
+  "dynamics_cases": 45,
+  "dynamics_events": {
+    "ball_slipping": 15,
+    "ball_lifting": 2
+  },
+  "dynamics_valid_in_reported_scope": 30,
+  "static_paths": 8640,
+  "static_statuses": {
+    "path_intersects_ball": 4272,
+    "clear": 3704,
+    "contact": 664
+  },
+  "sweeps": 8,
+  "sweep_statuses": {
+    "contact_on_prescribed_sweep": 4,
+    "clear_prescribed_sweep": 4
+  },
+  "elapsed_s": 222.78099999998813
+}

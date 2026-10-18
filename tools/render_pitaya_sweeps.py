@@ -7,7 +7,7 @@ from PIL import Image,ImageDraw,ImageFont
 ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser(description='Render the saved PITAYA loop sweep results; requires VTK, numpy, Pillow and the CAD package renderer.')
 parser.add_argument('cad_package',type=Path)
-parser.add_argument('--results',type=Path,default=ROOT/'results/pitaya_v10_recheck')
+parser.add_argument('--results',type=Path,default=ROOT/'results/pitaya_v10_audit_fix')
 args=parser.parse_args();CAD=args.cad_package.resolve();OUT=args.results.resolve()
 sys.path.insert(0,str(CAD/'source'))
 from render_model import actor_from_file,BG

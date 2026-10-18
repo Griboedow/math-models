@@ -99,8 +99,11 @@ function display(r) {
   $('snag').textContent=number(s.static_limits.critical_snag_N,2);
   const events=Object.keys(s.first_events_s);
   const names={ball_slipping:'проскальзывание клубка',stand_sliding:'сдвиг подставки',stand_tipping:'начало наклона',stand_lifting:'отрыв от опоры',ball_lifting:'вертикальный отрыв клубка'};
-  $('valid').className='warning '+(events.length?'':'good');
+  const pathInvalid=s.nominal_path_valid===false;
+  $('valid').className='warning '+(events.length || pathInvalid ? '' : 'good');
   $('valid').textContent=events.length ? 'Допущения нарушены: '+events.map(e=>names[e]+' на '+number(s.first_events_s[e],2)+' с').join('; ')+'. Дальнейшая кривая условна. Пик до первого события: '+number(s.peak_tension_before_first_event_N)+' Н.' : 'В этом сценарии расчёт не выявил сдвига, наклона или потери сцепления клубка.';
+  if (pathInvalid) $('valid').textContent+=' Траектория нити недопустима или не определена. Все показанные силы условны: обход препятствий и трение в контакте не рассчитаны.';
+  $('peakMeaning').textContent=pathInvalid || events.length ? 'Н, условный пик модели' : 'Н, сила в нити';
   const margin=s.minimum_support_margin_m === null ? null : s.minimum_support_margin_m*1000;
   $('extra').textContent=`95-й процентиль: ${number(s.p95_tension_N)} Н · максимальная слабина: ${number(s.max_slack_m*1000,1)} мм · минимальный запас до края опоры: ${number(margin,1)} мм`;
   const notes=[];
@@ -112,7 +115,12 @@ function display(r) {
   chart('slackPlot',r.trace,'slack_m','#327c63',150,'мм',1000);
   scene(c);
   const path=s.path_screen;
-  $('path').textContent=path.min_clearance_m===null ? 'Для этой слабины оценка зазора ненадёжна.' : `Упрощённая проверка пути: ${path.min_clearance_m<=0?'возможен контакт с краем или декором':'зазор в выбранной траектории'}; минимум ${number(path.min_clearance_m*1000,1)} мм. Деформация клубка и петли нити не моделируются.`;
+  const pathMessages={exit_inside_ball:'Точка схода находится внутри клубка. Для наружной размотки задайте коэффициент радиуса 1 и реальные размеры клубка.',
+    path_intersects_ball:'Заданная нить входит в клубок. Измените высоту схода или положение руки; свободный сход в этой позе не подтверждён.',
+    slack_or_too_low_tension:'Натяжение слишком мало для расчёта свободного пути.',
+    large_sag_outside_approximation:'Провис слишком велик для принятой модели подачи.',
+    unsupported_vertical_path:'Вертикальный свободный путь в этой модели не поддерживается.'};
+  $('path').textContent=path.min_clearance_m===null ? (pathMessages[path.status] || 'Геометрия пути не подтверждена.') : `Упрощённая проверка пути: ${path.min_clearance_m<=0?'возможен контакт с краем или декором':'зазор в выбранной траектории'}; минимум ${number(path.min_clearance_m*1000,1)} мм. Проверена одна траектория при выбранном натяжении; движение и свободные петли этим не подтверждены.`;
   if (c.stand.name.startsWith('PEACH')) $('path').textContent+=' Листья персика проверяются отдельно по STL; эта схема их не учитывает.';
 }
 
