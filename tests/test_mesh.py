@@ -23,6 +23,22 @@ class MeshTests(unittest.TestCase):
         self.assertAlmostEqual(d[1],-.01,places=8)
         np.testing.assert_allclose(n[0],[1,0,0],atol=1e-8)
 
+    def test_invalid_pseudonormal_sign_outside_bounds_cannot_create_a_contact(self):
+        name,field,tree,bounds,poly=self.scene.parts[0]
+        class FlippedOutsideSign:
+            # Emulate the VTK failure seen on near-degenerate decorative tips.
+            def EvaluateFunction(self,p):return -field.EvaluateFunction(p)
+            def EvaluateGradient(self,p,g):
+                field.EvaluateGradient(p,g)
+                for i in range(3):g[i]=-g[i]
+        self.scene.parts[0]=(name,FlippedOutsideSign(),tree,bounds,poly)
+        d,n,_=self.scene.distance([[.03,0,0]],True)
+        self.assertAlmostEqual(d[0],.02)
+        np.testing.assert_allclose(n[0],[1,0,0])
+        result=self.scene.screen([[.03,0,0],[.03,.001,0]],.001)
+        self.assertEqual(result['status'],'clear')
+        self.assertGreater(result['clearance_lower_bound_m'],.018)
+
     def test_finite_radius_catches_miss_of_zero_thickness_ray(self):
         points=[[-.02,0,.0105],[.02,0,.0105]]
         self.assertEqual(self.scene.intersections(points),[])

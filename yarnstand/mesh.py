@@ -88,10 +88,16 @@ class MeshScene:
             bound=np.linalg.norm(np.maximum(np.maximum(bounds[0]-p,p-bounds[1]),0),axis=1)
             for j in np.flatnonzero((bound<=np.maximum(distances,0)) | (bound==0)):
                 d=field.EvaluateFunction(p[j])
+                # Outside a shell's AABB, a point is certainly outside its solid.
+                # Near-degenerate triangles can make VTK's pseudonormal sign
+                # flip even far away; preserve the unsigned closest distance.
+                sign_corrected=bound[j]>0 and d<0
+                if sign_corrected:d=-d
                 if d<distances[j]:
                     distances[j]=d;indices[j]=i
                     if normals:
                         g=[0.,0.,0.];field.EvaluateGradient(p[j],g)
+                        if sign_corrected:g=[-x for x in g]
                         norm=np.linalg.norm(g);gradient[j]=np.asarray(g)/norm if norm>0 else [0,0,1]
         return distances,gradient,indices
 
@@ -130,6 +136,7 @@ class MeshScene:
             for j in np.argsort(bound):
                 if bound[j]>max(best,radius_m):break
                 d=field.EvaluateFunction(samples[j])
+                if bound[j]>0:d=abs(d)
                 if d<=radius_m:contacts.add(name)
                 if d<best:best=d;worst=int(j);nearest=part
         lower=float(best-radius_m-largest/2)

@@ -88,8 +88,9 @@ def _site(scene, part, points, screen, angle, origin):
             if hit is not None:break
         if hit is not None:query=hit
     nearest=None
-    for name,field,_,_,_ in part.parts:
+    for name,field,_,bounds,_ in part.parts:
         surface=[0.,0.,0.];distance=field.EvaluateFunctionAndGetClosestPoint(query,surface)
+        if np.any(query<bounds[0]) or np.any(query>bounds[1]):distance=abs(distance)
         if nearest is None or distance<nearest[0]:nearest=(distance,surface,field)
     _,surface,field=nearest
     normal=[0.,0.,0.];field.EvaluateGradient(surface,normal)
