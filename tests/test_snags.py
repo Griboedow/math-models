@@ -92,6 +92,13 @@ class SnagTests(unittest.TestCase):
         after=audit(scene,spec|{'allowances_m':{'print':.0003}})
         with self.assertRaisesRegex(ValueError,'exactly the same'):compare(before,after)
 
+    def test_report_preserves_inputs_after_caller_edits_the_next_scenario(self):
+        scene=MeshScene([('wall',trimesh.creation.box(extents=[.02,.02,.02]))])
+        spec=self.spec([[[.0112,0,0],[.0112,.001,0]]])
+        before=audit(scene,spec)
+        spec['cases'][0]['poses_m'][0][0][0]=.02
+        self.assertAlmostEqual(before['inputs']['cases'][0]['poses_m'][0][0][0],.0112)
+
     def test_comparison_reports_cad_improvement_with_same_test(self):
         a=trimesh.creation.box(extents=[.02,.02,.02]);b=trimesh.creation.box(extents=[.01,.02,.02])
         spec=self.spec([[[.0105,0,0],[.0105,.001,0]]])
@@ -101,11 +108,25 @@ class SnagTests(unittest.TestCase):
 
     def test_bad_units_rotations_and_unbounded_work_are_rejected(self):
         scene=MeshScene([('box',trimesh.creation.box(extents=[.02,.02,.02]))])
-        spec=self.spec([[[.03,0,0],[.03,.01,0]],[[.04,0,0],[.04,.01,0]]])
+        spec=self.spec([[[.03,0,0],[.03,.01,0]],[[-.03,0,0],[-.03,.01,0]]])
         for extra in ({'allowances_m':{'print':-.1}},{'motion_step_m':1e-15}):
             with self.assertRaises(ValueError):audit(scene,spec|extra)
         spec['cases'][0]['part_rotation_deg']={'missing':[0,90]}
         with self.assertRaises(ValueError):audit(scene,spec)
+
+    def test_bounding_volume_proof_is_conservative_for_rotation_and_interpolation(self):
+        from yarnstand.snags import _sweep_box_lower_bound,_rotate
+        obstacle=trimesh.creation.box(extents=[.01,.02,.03]);obstacle.apply_translation([.1,0,0])
+        scene=MeshScene([('far_part',obstacle)])
+        poses=np.array([[[.01,0,0],[.02,.01,.01]],[[.015,-.005,.002],[.025,.02,.02]]])
+        origin=np.array([.005,0,0])
+        for angles in (np.array([20.,20.]),np.array([10.,730.])):
+            bound=_sweep_box_lower_bound(scene,poses,angles,origin)
+            self.assertGreater(bound,0)
+            for f in np.linspace(0,1,51):
+                a,b=_rotate(poses[0]+f*(poses[1]-poses[0]),-(angles[0]+f*(angles[1]-angles[0])),origin)
+                sampled=a+np.linspace(0,1,21)[:,None]*(b-a)
+                self.assertGreaterEqual(scene.distance(sampled)[0].min()+1e-12,bound)
 
 
 if __name__=='__main__':unittest.main()

@@ -4,6 +4,7 @@ Contact is a geometric snag risk, not proof of frictional locking. The report
 locates obstacles in both assembly and original STL coordinates for CAD edits.
 """
 from collections import Counter
+from copy import deepcopy
 from pathlib import Path
 import hashlib
 import html
@@ -33,18 +34,37 @@ def _rotate(points, angle_deg, origin):
     return (np.asarray(points)-origin)@rotation.T+origin
 
 
+def _sweep_box_lower_bound(part,poses,angles,origin):
+    """Distance between boxes enclosing the *entire* continuous sweep and part.
+
+    With a fixed angle, interpolation stays in the endpoint box. With rotation,
+    a full cylinder bounds every arc, regardless of angle count or direction.
+    Positive separation of these envelopes proves a distant part irrelevant.
+    """
+    if np.all(angles==angles[0]):
+        points=_rotate(poses.reshape(-1,3),-angles[0],origin)
+        lo,hi=points.min(axis=0),points.max(axis=0)
+    else:
+        radial=float(np.linalg.norm((poses-origin)[:,:,:2],axis=2).max())
+        lo=np.array([origin[0]-radial,origin[1]-radial,poses[:,:,2].min()])
+        hi=np.array([origin[0]+radial,origin[1]+radial,poses[:,:,2].max()])
+    bounds=np.asarray([p[3] for p in part.parts])
+    distance=np.linalg.norm(np.maximum(np.maximum(bounds[:,0]-hi,lo-bounds[:,1]),0),axis=1)
+    return float(distance.min())
+
+
 def _frames(poses, angles, origin, motion_step):
     """Exact relative poses; bounds include travel on the rotation arc.
 
     World nodes and angle interpolate linearly within each input interval.
     ||dq/df|| <= ||dp/df|| + |dtheta/df| * max(radius), even for a full turn.
     """
-    counts=[];bounds=[]
+    counts=[];bounds=[];used_frames=1
     for a,b,aa,bb in zip(poses,poses[1:],angles,angles[1:]):
         radial=max(np.linalg.norm((a-origin)[:,:2],axis=1).max(),np.linalg.norm((b-origin)[:,:2],axis=1).max())
         travel=float(np.linalg.norm(b-a,axis=1).max()+abs(math.radians(bb-aa))*radial)
-        count=_subdivisions(travel,motion_step,MAX_SWEEP_POINTS//poses.shape[1]-sum(counts)-1)
-        counts.append(count);bounds.append(travel/count)
+        count=_subdivisions(travel,motion_step,min(100000,MAX_SWEEP_POINTS//poses.shape[1])-used_frames)
+        counts.append(count);bounds.append(travel/count);used_frames+=count
     margin=max(bounds,default=0.)/2
     yield _rotate(poses[0],-angles[0],origin),0.,float(angles[0]),margin
     for i,count in enumerate(counts):
@@ -88,12 +108,14 @@ def _site(scene, part, points, screen, angle, origin):
     return result
 
 
-def audit(scene, specification):
+def audit(scene, specification, on_progress=None):
     """Evaluate every case/part, retaining the worst site and first contacts.
 
     Allowances are radial, additive worst-case geometric envelopes, not measured
     probabilities or a model of individual fibres. No unseen path is certified.
     """
+    source_hashes={n:hashlib.sha256((Path(__file__).parent/n).read_bytes()).hexdigest() for n in ('snags.py','mesh.py')}
+    specification=deepcopy(specification)
     allowed={'cases','allowances_m','sampling_step_m','motion_step_m','description'}
     if set(specification)-allowed:raise ValueError('Unknown audit settings')
     allowances=specification.get('allowances_m',{})
@@ -117,7 +139,7 @@ def audit(scene, specification):
         radius=_number(case.get('yarn_radius_m'),'yarn_radius_m',True)
         poses=np.asarray(case.get('poses_m'),dtype=float)
         if poses.ndim!=3 or poses.shape[2]!=3 or poses.shape[0]<1 or poses.shape[1]<2 or not np.isfinite(poses).all():raise ValueError('Cases need finite poses with corresponding nodes in metres')
-        if poses.size//3>MAX_SWEEP_POINTS or poses.shape[1]>MAX_PATH_SAMPLES:raise ValueError('Too many pose nodes')
+        if poses.size//3>MAX_SWEEP_POINTS or poses.shape[1]>MAX_PATH_SAMPLES or len(poses)>100000:raise ValueError('Too many pose nodes')
         rotations=case.get('part_rotation_deg',{})
         if not isinstance(rotations,dict) or set(rotations)-set(names):raise ValueError('Rotation names must match scene parts')
         origin=np.asarray(case.get('rotation_origin_m',[0,0,0]),dtype=float)
@@ -126,6 +148,13 @@ def audit(scene, specification):
         for name,part in parts.items():
             angles=np.asarray(rotations.get(name,[0.]*len(poses)),dtype=float)
             if angles.shape!=(len(poses),) or not np.isfinite(angles).all():raise ValueError('One finite rotation angle per pose required')
+            box_lower=_sweep_box_lower_bound(part,poses,angles,origin)-radius-allowance
+            if box_lower>0:
+                rows.append({'part':name,'status':'clear_with_allowance','first_nominal_contact_pose':None,
+                    'first_allowance_contact_pose':None,'minimum_sampled_nominal_clearance_m':None,
+                    'clearance_lower_bound_with_allowance_m':box_lower,'clearance_deficit_bound_m':0.,
+                    'checked_frames':0,'proof':'separated bounding volumes of entire continuous motion','site':None})
+                continue
             row={'part':name,'status':'clear_with_allowance','first_nominal_contact_pose':None,
                  'first_allowance_contact_pose':None,'minimum_sampled_nominal_clearance_m':math.inf,
                  'clearance_lower_bound_with_allowance_m':math.inf,'checked_frames':0}
@@ -157,7 +186,7 @@ def audit(scene, specification):
             if row['status']!='clear_with_allowance':row['site']['cord_pose_world_m']=site_pose
             rows.append(row)
         results.append({'id':case_id,'yarn_radius_m':radius,'status':max((r['status'] for r in rows),key=SEVERITY.get),'parts':rows})
-    source_hashes={n:hashlib.sha256((Path(__file__).parent/n).read_bytes()).hexdigest() for n in ('snags.py','mesh.py')}
+        if on_progress is not None:on_progress(len(results),len(cases),case_id)
     return {'schema_version':1,'scope':'prescribed geometry and conservative clearance envelopes; no frictional locking or release force',
             'allowances_m':allowances,'effective_radial_allowance_m':allowance,
             'sampling_step_m':step,'motion_step_m':motion_step,

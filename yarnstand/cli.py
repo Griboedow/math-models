@@ -129,7 +129,7 @@ def main():
         from .snags import audit,write_report
         scene=MeshScene.from_manifest(args.manifest)
         specification=json.loads(Path(args.cases).read_text(encoding='utf-8-sig'))
-        report=audit(scene,specification);write_report(args.out,report)
+        report=audit(scene,specification,on_progress=lambda done,total,name:print(f'{done}/{total}: {name}',flush=True));write_report(args.out,report)
         print(json.dumps(report['summary'],ensure_ascii=False,indent=2));print('Report:',Path(args.out)/'report.html')
     elif args.action=='snag-compare':
         from .snags import compare
