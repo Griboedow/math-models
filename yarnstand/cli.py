@@ -97,6 +97,10 @@ def main():
     mesh.add_argument('manifest');mesh.add_argument('config');mesh.add_argument('--tension',type=float,default=.04);mesh.add_argument('--out',default='results/custom_mesh.json')
     sweep=sub.add_parser('mesh-sweep',help='Optional mesh extra: prescribed cord poses, not friction dynamics')
     sweep.add_argument('manifest');sweep.add_argument('poses');sweep.add_argument('--out',default='results/custom_sweep.json')
+    snag=sub.add_parser('snag-audit',help='Optional mesh extra: locate geometric snag risks for CAD review')
+    snag.add_argument('manifest');snag.add_argument('cases');snag.add_argument('--out',default='results/custom_snags')
+    comparison=sub.add_parser('snag-compare',help='Compare CAD revisions checked with identical snag-audit cases')
+    comparison.add_argument('baseline');comparison.add_argument('candidate');comparison.add_argument('--out',default='results/custom_snag_comparison.json')
     args=parser.parse_args()
     if args.action=='preset': save(args.out,presets.config(args.stand,args.ball,args.motion,args.setup)); print(args.out)
     elif args.action=='run':
@@ -120,3 +124,14 @@ def main():
         result=scene.sweep(data['poses_m'],data['yarn_radius_m'])
         save(args.out,{'inputs':data,'provenance':scene.provenance,'result':result})
         print(json.dumps(clean({k:v for k,v in result.items() if k!='screens'}),ensure_ascii=False,indent=2))
+    elif args.action=='snag-audit':
+        from .mesh import MeshScene
+        from .snags import audit,write_report
+        scene=MeshScene.from_manifest(args.manifest)
+        specification=json.loads(Path(args.cases).read_text(encoding='utf-8-sig'))
+        report=audit(scene,specification);write_report(args.out,report)
+        print(json.dumps(report['summary'],ensure_ascii=False,indent=2));print('Report:',Path(args.out)/'report.html')
+    elif args.action=='snag-compare':
+        from .snags import compare
+        report=compare(json.loads(Path(args.baseline).read_text(encoding='utf-8-sig')),json.loads(Path(args.candidate).read_text(encoding='utf-8-sig')))
+        save(args.out,report);print(json.dumps(report['summary'],ensure_ascii=False,indent=2))

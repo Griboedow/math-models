@@ -75,7 +75,7 @@ class MeshScene:
             m.apply_transform(transform);m.apply_scale(scale)
             parts.append((item['name'],m))
             sources.append({'name':item['name'],'file':p.name,'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'transform':transform.tolist()})
-        scene=cls(parts);scene.provenance={'manifest_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'sources':sources,'units':'m'}
+        scene=cls(parts);scene.provenance={'manifest_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'sources':sources,'units':'m','input_unit':data['unit']}
         return scene
 
     def distance(self,points,normals=False):
