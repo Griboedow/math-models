@@ -1,0 +1,100 @@
+{
+  "scope": "prescribed geometry and conservative clearance envelopes; no frictional locking or release force",
+  "cases": [
+    {
+      "case": "lift_under_overhang",
+      "before": "nominal_contact",
+      "after": "clear_with_allowance",
+      "risk_rank_change": -3
+    },
+    {
+      "case": "outward_then_up",
+      "before": "clear_with_allowance",
+      "after": "clear_with_allowance",
+      "risk_rank_change": 0
+    }
+  ],
+  "summary": {
+    "improved": 1,
+    "worsened": 0,
+    "remaining_flagged": 0
+  },
+  "baseline_provenance": {
+    "manifest_sha256": "b2b314b828cf85be3a10fb88610e8fe3b371fa7de0e4f35eb2cd00b1074215d3",
+    "sources": [
+      {
+        "name": "hook",
+        "file": "before.stl",
+        "sha256": "1ec705cf7eef98a9ccafbb452fe01c2a9b54638c896f3f689b9b13aa65476e0f",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "candidate_provenance": {
+    "manifest_sha256": "7344d2790a44eb912b26eff1545bffbf791da6453885e227465fb88092270972",
+    "sources": [
+      {
+        "name": "hook",
+        "file": "after.stl",
+        "sha256": "837c591beb2119a85300f109a9ab0ccb7bd2a6615271199b6c3e4d5084a30826",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "same_runtime": true,
+  "same_audit_code": true
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "part": "01_body_peach",
+    "file": "review_markers_part_1.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 3
+  },
+  {
+    "part": "04_leaf_green",
+    "file": "review_markers_part_2.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 2
+  },
+  {
+    "part": "08_leaf_second_green",
+    "file": "review_markers_part_3.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 3
+  }
+]

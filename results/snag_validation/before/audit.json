@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "scope": "prescribed geometry and conservative clearance envelopes; no frictional locking or release force",
+  "allowances_m": {
+    "print": 0.0,
+    "fuzz": 0.0,
+    "mesh": 0.0,
+    "reserve": 0.0005
+  },
+  "effective_radial_allowance_m": 0.0005,
+  "sampling_step_m": 0.0005,
+  "motion_step_m": 0.0005,
+  "summary": {
+    "cases": 2,
+    "case_statuses": {
+      "nominal_contact": 1,
+      "clear_with_allowance": 1
+    },
+    "part_statuses": {
+      "nominal_contact": 1,
+      "clear_with_allowance": 1
+    },
+    "distance_samples": 11826
+  },
+  "provenance": {
+    "manifest_sha256": "b2b314b828cf85be3a10fb88610e8fe3b371fa7de0e4f35eb2cd00b1074215d3",
+    "sources": [
+      {
+        "name": "hook",
+        "file": "before.stl",
+        "sha256": "1ec705cf7eef98a9ccafbb452fe01c2a9b54638c896f3f689b9b13aa65476e0f",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "source_sha256": {
+    "snags.py": "896280a3e4f7590223ffd372759b08c961c79871613102ef856974ac7508c2c0",
+    "mesh.py": "1286a97cf67b22ee005f5135a525883bb4707ff6eeb2acab951a1f92a1b5d4ac"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "vtk": "9.6.2",
+    "numpy": "2.5.4",
+    "trimesh": "5.1.1"
+  },
+  "inputs": {
+    "description": "Synthetic overhang validation, not a proposed fruit CAD change",
+    "allowances_m": {
+      "reserve": 0.0005
+    },
+    "sampling_step_m": 0.0005,
+    "motion_step_m": 0.0005,
+    "cases": [
+      {
+        "id": "lift_under_overhang",
+        "yarn_radius_m": 0.001,
+        "poses_m": [
+          [
+            [
+              0.02,
+              -0.02,
+              0.004
+            ],
+            [
+              0.02,
+              0.02,
+              0.004
+            ]
+          ],
+          [
+            [
+              0.02,
+              -0.02,
+              0.03
+            ],
+            [
+              0.02,
+              0.02,
+              0.03
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "outward_then_up",
+        "yarn_radius_m": 0.001,
+        "poses_m": [
+          [
+            [
+              0.02,
+              -0.02,
+              0.004
+            ],
+            [
+              0.02,
+              0.02,
+              0.004
+            ]
+          ],
+          [
+            [
+              0.04,
+              -0.02,
+              0.004
+            ],
+            [
+              0.04,
+              0.02,
+              0.004
+            ]
+          ],
+          [
+            [
+              0.04,
+              -0.02,
+              0.03
+            ],
+            [
+              0.04,
+              0.02,
+              0.03
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "lift_under_overhang",
+      "yarn_radius_m": 0.001,
+      "status": "nominal_contact",
+      "parts": [
+        {
+          "part": "hook",
+          "status": "nominal_contact",
+          "first_nominal_contact_pose": 0.3269230769230769,
+          "first_allowance_contact_pose": 0.3076923076923077,
+          "minimum_sampled_nominal_clearance_m": -0.0029999999999999983,
+          "clearance_lower_bound_with_allowance_m": -0.003999999999999998,
+          "checked_frames": 53,
+          "site": {
+            "surface_reference_assembly_m": [
+              0.02,
+              -0.0125,
+              0.013000000000000001
+            ],
+            "surface_world_m": [
+              0.02,
+              -0.0125,
+              0.013000000000000001
+            ],
+            "cord_world_m": [
+              0.02,
+              -0.0125,
+              0.015
+            ],
+            "outward_normal_reference": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "source_file": "before.stl",
+            "surface_source_coordinates": [
+              20.0,
+              -12.5,
+              13.0
+            ],
+            "source_unit": "mm",
+            "pose_coordinate": 0.4230769230769231,
+            "part_angle_deg": 0.0,
+            "cord_pose_world_m": [
+              [
+                0.02,
+                -0.02,
+                0.015
+              ],
+              [
+                0.02,
+                0.02,
+                0.015
+              ]
+            ]
+          },
+          "first_nominal_contact_site": {
+            "surface_reference_assembly_m": [
+              0.02,
+              -0.014,
+              0.013000000000000001
+            ],
+            "surface_world_m": [
+              0.02,
+              -0.014,
+              0.013000000000000001
+            ],
+            "cord_world_m": [
+              0.02,
+              -0.014,
+              0.012499999999999999
+            ],
+            "outward_normal_reference": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "source_file": "before.stl",
+            "surface_source_coordinates": [
+              20.0,
+              -14.0,
+              13.0
+            ],
+            "source_unit": "mm"
+          },
+          "clearance_deficit_bound_m": 0.003999999999999998
+        }
+      ]
+    },
+    {
+      "id": "outward_then_up",
+      "yarn_radius_m": 0.001,
+      "status": "clear_with_allowance",
+      "parts": [
+        {
+          "part": "hook",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": 0.008000000000000002,
+          "clearance_lower_bound_with_allowance_m": 0.007000000000000001,
+          "checked_frames": 93,
+          "site": {
+            "surface_reference_assembly_m": [
+              0.02,
+              -0.014,
+              0.013000000000000001
+            ],
+            "surface_world_m": [
+              0.02,
+              -0.014,
+              0.013000000000000001
+            ],
+            "cord_world_m": [
+              0.02,
+              -0.014,
+              0.004
+            ],
+            "outward_normal_reference": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "source_file": "before.stl",
+            "surface_source_coordinates": [
+              20.0,
+              -14.0,
+              13.0
+            ],
+            "source_unit": "mm",
+            "pose_coordinate": 0.0,
+            "part_angle_deg": 0.0
+          },
+          "clearance_deficit_bound_m": 0.0
+        }
+      ]
+    }
+  ],
+  "exporter_sha256": "896280a3e4f7590223ffd372759b08c961c79871613102ef856974ac7508c2c0"
+}

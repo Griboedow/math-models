@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "scope": "prescribed geometry and conservative clearance envelopes; no frictional locking or release force",
+  "allowances_m": {
+    "print": 0.0,
+    "fuzz": 0.0,
+    "mesh": 0.0,
+    "reserve": 0.0005
+  },
+  "effective_radial_allowance_m": 0.0005,
+  "sampling_step_m": 0.0005,
+  "motion_step_m": 0.0005,
+  "summary": {
+    "cases": 2,
+    "case_statuses": {
+      "clear_with_allowance": 2
+    },
+    "part_statuses": {
+      "clear_with_allowance": 2
+    },
+    "distance_samples": 0
+  },
+  "provenance": {
+    "manifest_sha256": "7344d2790a44eb912b26eff1545bffbf791da6453885e227465fb88092270972",
+    "sources": [
+      {
+        "name": "hook",
+        "file": "after.stl",
+        "sha256": "837c591beb2119a85300f109a9ab0ccb7bd2a6615271199b6c3e4d5084a30826",
+        "transform": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    ],
+    "units": "m",
+    "input_unit": "mm"
+  },
+  "source_sha256": {
+    "snags.py": "896280a3e4f7590223ffd372759b08c961c79871613102ef856974ac7508c2c0",
+    "mesh.py": "1286a97cf67b22ee005f5135a525883bb4707ff6eeb2acab951a1f92a1b5d4ac"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "vtk": "9.6.2",
+    "numpy": "2.5.4",
+    "trimesh": "5.1.1"
+  },
+  "inputs": {
+    "description": "Synthetic overhang validation, not a proposed fruit CAD change",
+    "allowances_m": {
+      "reserve": 0.0005
+    },
+    "sampling_step_m": 0.0005,
+    "motion_step_m": 0.0005,
+    "cases": [
+      {
+        "id": "lift_under_overhang",
+        "yarn_radius_m": 0.001,
+        "poses_m": [
+          [
+            [
+              0.02,
+              -0.02,
+              0.004
+            ],
+            [
+              0.02,
+              0.02,
+              0.004
+            ]
+          ],
+          [
+            [
+              0.02,
+              -0.02,
+              0.03
+            ],
+            [
+              0.02,
+              0.02,
+              0.03
+            ]
+          ]
+        ]
+      },
+      {
+        "id": "outward_then_up",
+        "yarn_radius_m": 0.001,
+        "poses_m": [
+          [
+            [
+              0.02,
+              -0.02,
+              0.004
+            ],
+            [
+              0.02,
+              0.02,
+              0.004
+            ]
+          ],
+          [
+            [
+              0.04,
+              -0.02,
+              0.004
+            ],
+            [
+              0.04,
+              0.02,
+              0.004
+            ]
+          ],
+          [
+            [
+              0.04,
+              -0.02,
+              0.03
+            ],
+            [
+              0.04,
+              0.02,
+              0.03
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "lift_under_overhang",
+      "yarn_radius_m": 0.001,
+      "status": "clear_with_allowance",
+      "parts": [
+        {
+          "part": "hook",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.0085,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        }
+      ]
+    },
+    {
+      "id": "outward_then_up",
+      "yarn_radius_m": 0.001,
+      "status": "clear_with_allowance",
+      "parts": [
+        {
+          "part": "hook",
+          "status": "clear_with_allowance",
+          "first_nominal_contact_pose": null,
+          "first_allowance_contact_pose": null,
+          "minimum_sampled_nominal_clearance_m": null,
+          "clearance_lower_bound_with_allowance_m": 0.0085,
+          "clearance_deficit_bound_m": 0.0,
+          "checked_frames": 0,
+          "proof": "separated bounding volumes of entire continuous motion",
+          "site": null
+        }
+      ]
+    }
+  ],
+  "exporter_sha256": "896280a3e4f7590223ffd372759b08c961c79871613102ef856974ac7508c2c0"
+}

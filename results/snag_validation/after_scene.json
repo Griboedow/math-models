@@ -1,0 +1,9 @@
+{
+  "unit": "mm",
+  "parts": [
+    {
+      "name": "hook",
+      "path": "after.stl"
+    }
+  ]
+}

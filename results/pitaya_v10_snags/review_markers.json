@@ -1,0 +1,51 @@
+[
+  {
+    "part": "body",
+    "file": "review_markers_part_1.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 1
+  },
+  {
+    "part": "leaf_1",
+    "file": "review_markers_part_2.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 3
+  },
+  {
+    "part": "leaf_2",
+    "file": "review_markers_part_3.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 3
+  },
+  {
+    "part": "leaf_3",
+    "file": "review_markers_part_4.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 3
+  },
+  {
+    "part": "leaf_4",
+    "file": "review_markers_part_5.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 3
+  },
+  {
+    "part": "leaf_5",
+    "file": "review_markers_part_6.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 3
+  },
+  {
+    "part": "leaf_6",
+    "file": "review_markers_part_7.stl",
+    "unit": "mm",
+    "coordinates": "original STL",
+    "zone_count": 3
+  }
+]

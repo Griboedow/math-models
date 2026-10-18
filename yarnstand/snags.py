@@ -11,6 +11,7 @@ import html
 import json
 import math
 import platform
+import re
 
 import numpy as np
 import vtk
@@ -201,6 +202,8 @@ def audit(scene, specification, on_progress=None):
 def write_report(path, report):
     """Self-contained HTML plus machine-readable JSON for repeated CAD reviews."""
     path=Path(path);path.mkdir(parents=True,exist_ok=True)
+    report=deepcopy(report)
+    report['exporter_sha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     (path/'audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,allow_nan=False),encoding='utf-8')
     labels={'clear_with_allowance':'Свободно с заданным запасом','unresolved_clearance':'Зазор не разрешён точностью',
             'allowance_contact':'Не хватает запаса','nominal_contact':'Контакт на пути','initial_nominal_contact':'Контакт в начальной позе'}
@@ -247,6 +250,11 @@ def write_report(path, report):
         trimesh.util.concatenate(spheres).export(path/filename)
         index.append({'part':name,'file':filename,'unit':'mm','coordinates':'original STL','zone_count':len(points)})
     (path/'review_markers.json').write_text(json.dumps(index,ensure_ascii=False,indent=2),encoding='utf-8')
+    current={item['file'] for item in index}
+    for old in path.glob('review_markers_part_*.stl'):
+        if old.name in current or not re.fullmatch(r'review_markers_part_\d+\.stl',old.name):continue
+        if old.resolve().parent!=path.resolve():raise ValueError('Refusing to remove a marker outside the report directory')
+        old.unlink()
 
 
 def compare(baseline,candidate):

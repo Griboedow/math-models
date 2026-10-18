@@ -84,6 +84,10 @@ class SnagTests(unittest.TestCase):
             markers=json.loads((root/'report/review_markers.json').read_text(encoding='utf-8'))
             self.assertEqual(markers[0]['part'],'translated')
             self.assertTrue((root/'report'/markers[0]['file']).exists())
+            clear=audit(MeshScene([('other',trimesh.creation.box(extents=[.001,.001,.001]))]),self.spec([[[.05,0,.0405],[.051,0,.0405]]]))
+            write_report(root/'report',clear)
+            self.assertFalse((root/'report'/markers[0]['file']).exists())
+            self.assertEqual(json.loads((root/'report/review_markers.json').read_text(encoding='utf-8')),[])
 
     def test_comparison_rejects_changed_paths_or_allowances(self):
         scene=MeshScene([('wall',trimesh.creation.box(extents=[.02,.02,.02]))])

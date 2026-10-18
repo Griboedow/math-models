@@ -1,0 +1,82 @@
+{
+  "description": "Synthetic overhang validation, not a proposed fruit CAD change",
+  "allowances_m": {
+    "reserve": 0.0005
+  },
+  "sampling_step_m": 0.0005,
+  "motion_step_m": 0.0005,
+  "cases": [
+    {
+      "id": "lift_under_overhang",
+      "yarn_radius_m": 0.001,
+      "poses_m": [
+        [
+          [
+            0.02,
+            -0.02,
+            0.004
+          ],
+          [
+            0.02,
+            0.02,
+            0.004
+          ]
+        ],
+        [
+          [
+            0.02,
+            -0.02,
+            0.03
+          ],
+          [
+            0.02,
+            0.02,
+            0.03
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "outward_then_up",
+      "yarn_radius_m": 0.001,
+      "poses_m": [
+        [
+          [
+            0.02,
+            -0.02,
+            0.004
+          ],
+          [
+            0.02,
+            0.02,
+            0.004
+          ]
+        ],
+        [
+          [
+            0.04,
+            -0.02,
+            0.004
+          ],
+          [
+            0.04,
+            0.02,
+            0.004
+          ]
+        ],
+        [
+          [
+            0.04,
+            -0.02,
+            0.03
+          ],
+          [
+            0.04,
+            0.02,
+            0.03
+          ]
+        ]
+      ]
+    }
+  ]
+}
