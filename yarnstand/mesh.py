@@ -12,6 +12,10 @@ import trimesh
 
 MAX_PATH_SAMPLES=250000
 MAX_SWEEP_POINTS=2000000
+INTERSECTION_TOLERANCE_M=1e-9
+# VTK 9.7 moved the all-intersections tolerance from the locator property
+# to a method argument. Older OBBTree versions only implement the old overload.
+_EXPLICIT_INTERSECTION_TOLERANCE=(vtk.vtkVersion.GetVTKMajorVersion(),vtk.vtkVersion.GetVTKMinorVersion()) >= (9,7)
 
 
 def _subdivisions(length,step,budget):
@@ -51,7 +55,8 @@ class MeshScene:
         # Scene units are metres. VTK's 0.01 default is a centimetre and
         # can miss crossings of small curved surfaces. This epsilon is
         # numerical only; yarn radius and clearance margins are separate.
-        tree.SetTolerance(1e-9);tree.BuildLocator()
+        if not _EXPLICIT_INTERSECTION_TOLERANCE:tree.SetTolerance(INTERSECTION_TOLERANCE_M)
+        tree.BuildLocator()
         self.parts.append((name,field,tree,np.asarray(mesh.bounds),poly))
 
     @classmethod
@@ -95,7 +100,11 @@ class MeshScene:
             for a,b in zip(points,points[1:]):
                 if np.any(np.maximum(a,b)<bounds[0]) or np.any(np.minimum(a,b)>bounds[1]):continue
                 hits=vtk.vtkPoints();ids=vtk.vtkIdList()
-                if tree.IntersectWithLine(a,b,hits,ids):found.add(name);break
+                if _EXPLICIT_INTERSECTION_TOLERANCE:
+                    crossed=tree.IntersectWithLine(a,b,INTERSECTION_TOLERANCE_M,hits,ids)
+                else:
+                    crossed=tree.IntersectWithLine(a,b,hits,ids)
+                if crossed:found.add(name);break
         return sorted(found)
 
     def screen(self,points,radius_m,max_step_m=None):
