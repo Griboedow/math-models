@@ -1,59 +1,60 @@
-# PITAYA v10: зоны зацепа перед печатью
+# PITAYA v10: snag zones before printing
 
-Следующая версия: [PITAYA v11 — исправление посадок и низких кончиков](pitaya-v11.md).
-Обе геометрии повторно проверены на 0.3.0 с теми же 40 сценариями:
-6 улучшений, 0 ухудшений; прямой и диагональный подъём под листьями всё ещё дают контакт.
+Next version: [PITAYA v11 — revised fits and low tips](pitaya-v11.md).
+Both geometries were rechecked with 0.3.0 on the same 40 cases:
+6 improvements, 0 regressions; straight and diagonal lifts under leaves still contact.
 
-Проверены **40 сценариев** с добавочным радиальным запасом 0.5 мм:
-36 движений под шестью листьями (три маршрута, диаметры 2/4 мм) и четыре
-проверки полного оборота площадки с нитью у её края.
+**40 cases** were checked with an additional radial allowance of 0.5 mm:
+36 motions under six leaves (three routes, 2/4 mm diameters) and four
+full-turn platform checks with yarn near its rim.
 
-Итог: **8 свободны с запасом, 30 имеют контакт в ходе движения,
-2 пересекают корпус уже в начальной позе**. Это специально выбранные стресс-сценарии,
-а не доли или вероятности зацепов при обычном вязании.
+Result: **8 clear with allowance, 30 with contact during motion,
+and 2 intersecting the body in the initial pose**. These are deliberately chosen
+stress cases, not frequencies or probabilities of snagging during normal knitting.
 
-## Что менять или проверять в CAD
+## What to revise or inspect in CAD
 
-| Движение | Нить 2 мм | Нить 4 мм |
+| Motion | 2 mm yarn | 4 mm yarn |
 |---|---|---|
-| Подъём петли прямо вверх под листом | Контакт, все 6 листьев | Контакт, все 6 листьев |
-| Подъём по диагонали наружу | Контакт, все 6 листьев | Контакт, все 6 листьев |
-| Сначала наружу внизу, затем вверх | Свободно с запасом, все 6 листьев | Контакт с нижними кончиками, все 6 листьев |
-| Нить у края площадки, полный оборот в обе стороны | Свободно с запасом | Начальный контакт с корпусом |
+| Lift a loop straight up under a leaf | Contact, all 6 leaves | Contact, all 6 leaves |
+| Lift diagonally outward | Contact, all 6 leaves | Contact, all 6 leaves |
+| First outward at low height, then up | Clear with allowance, all 6 leaves | Contact with low tips, all 6 leaves |
+| Yarn at the platform rim, full turn in both directions | Clear with allowance | Initial body contact |
 
-У 4-мм нити найдено препятствие даже на маршруте, который свободен для 2-мм.
-У листа 1 проблемная поверхность находится примерно в точке
-**X=69.170, Y=45.457, Z=2.871 мм** исходного `cad/leaf_1.stl`.
-В координатах сборки над опорой это Z≈3.871 мм. Сценарий держит центр 4-мм нити
-на высоте 3 мм при движении наружу; нижняя номинальная поверхность нити остаётся
-на 1 мм над опорой. Верхняя часть нити встречает низ кончика.
+The 4 mm yarn meets an obstacle even on the route that is clear for 2 mm yarn.
+For leaf 1, the problematic surface is near
+**X=69.170, Y=45.457, Z=2.871 mm** in the original `cad/leaf_1.stl`.
+In assembly coordinates above the support surface, Z≈3.871 mm.
+The case holds the center of the 4 mm yarn at 3 mm height during outward motion;
+its nominal lower surface remains 1 mm above the support. The yarn's upper
+surface meets the underside of the tip.
 
-![4-мм нить встречает нижний кончик листа](../results/pitaya_v10_snags/leaf_4mm_exit.png)
+![4 mm yarn meets the low leaf tip](../results/pitaya_v10_snags/leaf_4mm_exit.png)
 
-Красная трубка — нить, полупрозрачная оболочка — запас; зелёный — проверяемый лист.
-На рисунке заданная поза показывает геометрическое препятствие, а не рассчитанное
-продавливание нити сквозь деталь.
+The red tube is yarn, the translucent envelope is the allowance, and green
+is the checked leaf. This prescribed pose shows a geometric obstacle,
+not a calculated deformation forcing yarn through the part.
 
-Для правки следует рассмотреть нижний кончик и обеспечить непрерывный выход
-петли наружу с достаточным зазором. Проверка одного скругления или только тонкой
-нити этого не подтверждает. Повторить нужно все сохранённые маршруты и диаметры;
-изменение высоты листа также требует проверки его посадки и прочности.
+Review the low tip and provide a continuous outward loop exit with sufficient
+clearance. Checking one fillet or only thin yarn cannot establish this.
+Repeat every saved route and diameter; changing leaf height also requires
+fit and strength checks.
 
-В сценариях у вращающегося края 4-мм нить уже в начальной позе касается корпуса.
-Это не доказательство закусывания вращением и не успешный тест освобождения.
-Нужно отдельно определить допустимый исходный путь нити около этого края.
+The 4 mm yarn at the rotating rim already contacts the body in its initial pose.
+This does not prove rotational pinching or a successful release test.
+A valid initial yarn route near that rim must be determined separately.
 
-## Файлы
+## Files
 
-- [Отчёт HTML](../results/pitaya_v10_snags/report.html) и [полные результаты JSON](../results/pitaya_v10_snags/audit.json).
-- [40 исходных сценариев](../results/pitaya_v10_snags/cases.json) и [сборка](../results/pitaya_v10_snags/scene.json).
-- [Маркеры зон для импорта поверх соответствующего STL](../results/pitaya_v10_snags/review_markers.json).
+- [HTML report](../results/pitaya_v10_snags/report.html) and [full JSON results](../results/pitaya_v10_snags/audit.json).
+- [40 original cases](../results/pitaya_v10_snags/cases.json) and [assembly](../results/pitaya_v10_snags/scene.json).
+- [Zone markers for importing over the corresponding STL](../results/pitaya_v10_snags/review_markers.json).
 
 ```sh
 python tools/run_snag_audit_parallel.py results/pitaya_v10_snags/scene.json results/pitaya_v10_snags/cases.json --out results/pitaya_new_revision --workers 3
 python -m yarnstand snag-compare results/pitaya_v10_snags/audit.json results/pitaya_new_revision/audit.json --out results/pitaya_comparison.json
 ```
 
-Проверка не моделирует автоматическое огибание, сжатие и трение пряжи,
-образование петель или микрозацепы печати. Она даёт геометрические зоны риска
-и повторяемое сравнение правок. [Метод и параметры](snags.md).
+The check does not model automatic routing, yarn compression or friction,
+loop formation, or printed micro-snags. It identifies geometric risk zones
+and provides reproducible revision comparisons. [Method and parameters](snags.md).

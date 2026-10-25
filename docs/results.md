@@ -1,38 +1,38 @@
-# Результаты расчёта PITAYA
+# PITAYA calculation results
 
-Все числа ниже рассчитаны при сценарных, ещё не измеренных свойствах пряжи и подставки. Размеры ножек и площадки взяты из CAD. Это ориентиры для пробы, не аттестация изделия.
+All values below use assumed, unmeasured yarn and stand properties. Foot and platform dimensions come from CAD. These are guides for testing, not product certification.
 
-## Сбоку на столе
+## Beside the hand on a desk
 
-До рабочей руки 40 см по горизонтали, рука на 20 см выше поверхности под ножками. Подставка 230 г; полный клубок 100 г, почти пустой 10 г.
+The working hand is 40 cm away horizontally and 20 cm above the surface under the feet. Stand mass: 230 g; full ball: 100 g; nearly empty ball: 10 g.
 
-| Клубок | Подача | Пуск, Н | Пик связанной модели, Н | Порог зацепа, Н | Сцепление весь прогон |
+| Ball | Feed | Start, N | Coupled-model peak, N | Snag threshold, N | Traction throughout run |
 |---|---|---:|---:|---:|---|
-| Полный | Спицы | 0.029 | 0.092 | 1.34 | да, при допущениях |
-| Полный | Крючок | 0.029 | 0.203 | 1.34 | да, при допущениях |
-| Почти пустой | Спицы | 0.040 | 0.128 | 0.97 | нет; пик условный |
-| Почти пустой | Крючок | 0.040 | 0.270 | 0.97 | нет; пик условный |
+| Full | Knitting | 0.029 | 0.092 | 1.34 | yes, under the assumptions |
+| Full | Crochet | 0.029 | 0.203 | 1.34 | yes, under the assumptions |
+| Nearly empty | Knitting | 0.040 | 0.128 | 0.97 | no; hypothetical peak |
+| Nearly empty | Crochet | 0.040 | 0.270 | 0.97 | no; hypothetical peak |
 
-У почти пустого клубка в исходном сценарии не хватает сцепления с площадкой. Поэтому его динамические пики нельзя выдавать за реальные силы. Плотность посадки на палочку особенно важна; отдельный анализ `spindle_grip` показывает влияние дополнительного удерживающего момента.
+The nearly empty ball lacks platform traction in the baseline scenario, so its dynamic peaks must not be presented as actual forces. Spindle fit is particularly important; the separate `spindle_grip` analysis shows the effect of additional retaining torque.
 
-![Натяжение](tension.png)
+![Tension](tension.png)
 
-## Что следует из сравнения
+## What the comparison shows
 
-- Малый радиус клубка повышает пусковое натяжение при том же сопротивлении узла. Потеря массы не гарантирует лёгкой подачи.
-- Резкие импульсы выбранного сценария крючка дают больший разгон и выбег. Это эффект заданного ритма, не обязательное свойство вязания крючком.
-- При стандартных параметрах расчёт не выявил сдвига или наклона PITAYA в обычной подаче. Порог около одного ньютона относится к зацепу и не является большим запасом против сильного рывка рукой.
-- При руках ниже высокой подставки низкий выход нити из остатка клубка может пересекать край. Изменение формы листьев не устраняет эту причину: важнее взаимная высота руки и подставки.
-- При крутой тяге вверх уменьшается рабочее плечо и прижим клубка. Возможен другой режим схода нити, который модель не описывает.
-- Более широкая опора улучшает предел наклона, но не исправляет скользкие ножки. Для сравнения меняйте реальную геометрию контакта, а не диаметр декора.
+- A smaller ball radius increases starting tension at the same assembly resistance. Lower mass does not guarantee easy feed.
+- Sharp pulses in the selected crochet scenario cause more acceleration and overrun. This follows from the prescribed rhythm, not an inherent property of crochet.
+- With default parameters, no PITAYA sliding or tipping was detected during normal feed. The roughly one-newton threshold concerns snagging and is not a large margin against a strong hand pull.
+- With hands below a tall stand, a low exit from a nearly empty ball can intersect the rim. Changing leaf shape does not remove this cause: relative hand and stand heights matter more.
+- A steep upward pull reduces the effective lever arm and ball contact force. Yarn may unwind in a different mode outside this model.
+- Wider support raises the tipping limit but does not fix slippery feet. Compare actual contact geometry, not the diameter of decoration.
 
-![Чувствительность](sensitivity.png)
+![Sensitivity](sensitivity.png)
 
-## Состав проверок
+## Check coverage
 
-- 80 сценариев подставка × клубок × ритм × положение.
-- 69 случаев чувствительности: сопротивление узла, трение ножек, упругость нити, сход слоёв и посадка на палочку.
-- 864 геометрических проверки пути: два вида листьев, два клубка, три положения, три высоты выхода и 24 азимута. Это сетка проверок, не статистика вероятности.
-- Аналитические тесты равновесия, касательной, инвариантности при повороте, интеграла подачи, ошибок конфигурации и сходимости по времени.
+- 80 stand × ball × rhythm × position scenarios.
+- 69 sensitivity cases: assembly resistance, foot friction, yarn elasticity, layer peeling, and spindle fit.
+- 864 geometric path checks: two leaf types, two balls, three positions, three exit heights, and 24 azimuths. This is a check grid, not probability statistics.
+- Analytical tests for equilibrium, tangency, rotational invariance, integrated feed, configuration errors, and time-step convergence.
 
-Для практической пробы сначала проверить низкое сопротивление вращению и посадку остатка клубка. Обычный столик рядом с рукой — разумная исходная конфигурация для испытания. После печати подставить несколько измерений по [инструкции](calibration.md).
+For physical testing, start by checking low rotational resistance and the fit of a nearly empty ball. A normal desk beside the hand is a reasonable starting setup. After printing, enter measurements following the [calibration guide](calibration.md).

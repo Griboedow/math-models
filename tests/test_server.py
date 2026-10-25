@@ -35,20 +35,21 @@ class ServerTests(unittest.TestCase):
         for prefix in ['', 'peach_v13/', 'pitaya_v09/', 'lemon_v05/']:
             self.assertIn(prefix+'full/knitting/desk_side',data)
 
-    def test_english_assets_keep_warnings_and_default_language(self):
-        with urlopen(self.base+'/?stand=lemon_v05&lang=en',timeout=5) as r:page=r.read().decode()
-        self.assertIn('lang="en"',page)
-        self.assertIn('src="/ui.js?lang=en"',page)
-        self.assertIn('Lemon · v05',page)
-        self.assertNotRegex(page,r'[А-Яа-яЁё]')
-        with urlopen(self.base+'/ui.js?lang=en',timeout=5) as r:script=r.read().decode()
-        self.assertNotRegex(script,r'[А-Яа-яЁё]')
-        self.assertIn('All displayed forces are conditional',script)
-        self.assertIn('The later curve is hypothetical',script)
-        self.assertIn('N, hypothetical model peak',script)
-        with urlopen(self.base+'/?lang=unknown',timeout=5) as r:default=r.read().decode()
-        self.assertIn('lang="ru"',default)
-        self.assertIn('Как подставка подаёт пряжу',default)
+    def test_assets_are_english_by_default_and_for_legacy_language_links(self):
+        for query in ['', '?stand=lemon_v05', '?stand=lemon_v05&lang=en', '?lang=ru', '?lang=unknown']:
+            with self.subTest(query=query):
+                with urlopen(self.base+'/'+query,timeout=5) as r:page=r.read().decode()
+                self.assertIn('lang="en"',page)
+                self.assertIn('src="/ui.js"',page)
+                self.assertIn('Lemon · v05',page)
+                self.assertIn('How a yarn stand feeds yarn',page)
+                self.assertNotIn('id="language"',page)
+                self.assertNotRegex(page,r'[\u0400-\u052f]')
+                with urlopen(self.base+'/ui.js'+query,timeout=5) as r:script=r.read().decode()
+                self.assertNotRegex(script,r'[\u0400-\u052f]')
+                self.assertIn('All displayed forces are conditional',script)
+                self.assertIn('The later curve is hypothetical',script)
+                self.assertIn('N, hypothetical model peak',script)
 
     def test_lemon_preset_matches_audited_input_snapshot(self):
         fixture=json.loads((Path(__file__).parents[1]/'examples/lemon_v05.json').read_text(encoding='utf-8'))

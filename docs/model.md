@@ -1,151 +1,151 @@
-# Модель и допущения
+# Model and assumptions
 
-## Единицы и происхождение
+## Units and provenance
 
-Внутри используются м, кг, с, Н, Н·м, кг·м²; углы конфигурации в градусах.
-Пересчёт на граммы, миллиметры и мН·м делается только в интерфейсе.
-Геометрия PITAYA взята из исходной CAD-модели v07/v08. Размеры и массы клубков,
-ритмы руки, трение, упругость и сопротивление размотке — сценарные оценки.
-Трение задаётся для **всего собранного узла**, а не умножается на число подшипников.
+Internal units are m, kg, s, N, N·m, and kg·m²; configuration angles are in degrees.
+Conversion to grams, millimeters, and mN·m happens only in the interface.
+PITAYA geometry comes from the original v07/v08 CAD model. Ball dimensions and
+masses, hand rhythms, friction, elasticity, and unwinding resistance are scenario
+estimates. Friction is specified for **the complete assembled mechanism**,
+not multiplied by the number of bearings.
 
-## Клубок и нить
+## Ball and yarn
 
-Клубок — эллипсоид с полуосями a, b, c. Его осевой момент инерции:
+The ball is an ellipsoid with semi-axes a, b, c. Its axial moment of inertia is:
 
-`I_ball = κ m (a² + b²) + m e²`, по умолчанию `κ=1/5`.
+`I_ball = κ m (a² + b²) + m e²`, with `κ=1/5` by default.
 
-Это формула однородного эллипсоида с поправкой на эксцентриситет e. Настоящий
-клубок не однороден, поэтому κ — редактируемый параметр. Полный момент инерции
+This is the uniform-ellipsoid formula with an eccentricity correction e.
+Real balls are not uniform, so κ is editable. Total inertia is
 `I = I_rotor + I_ball`.
 
-Положение выхода по высоте: `z = z_platform + c(1 + exit_height_fraction)`.
-В горизонтальной проекции строится касательная к эллипсу с полуосями
-`a*ratio*sqrt(1-f²)` и `b*ratio*sqrt(1-f²)`, где f — высотная доля.
-По умолчанию `unwind_radius_ratio=1`: точка схода находится на внешней поверхности.
-Старое значение 0.85 сохраняется при импорте без подмены, но путь с точкой
-внутри клубка получает `exit_inside_ball`, а силы помечаются как условные.
-Единичное направление нити u и точка выхода p дают рабочее плечо
-`A = |(p × u)_z|`; для кругового сечения это `r cos(β)`.
+Exit height: `z = z_platform + c(1 + exit_height_fraction)`.
+The horizontal projection uses a tangent to an ellipse with semi-axes
+`a*ratio*sqrt(1-f²)` and `b*ratio*sqrt(1-f²)`, where f is the height fraction.
+The default `unwind_radius_ratio=1` places the exit on the outer surface.
+The legacy value 0.85 is preserved on import, but an exit inside the ball
+receives `exit_inside_ball`, and forces are marked as conditional.
+Unit yarn direction u and exit point p give the effective lever arm
+`A = |(p × u)_z|`; for a circular section this is `r cos(β)`.
 
-Это локальная модель постоянного касательного выхода, допускающая наклонную
-нить: выдача вдоль нити `ds = A dθ`, а момент `T A` согласован с ней по работе.
-Она не отслеживает конкретный виток или перемещение точки схода по мягкому
-клубку. Если пространственная линия входит в эллипсоид, результат получает
-`path_intersects_ball`. Автоматический перенос точки схода и огибание клубка
-не решаются. Ориентация неосесимметричного эллипсоида в этой локальной модели
-постоянна; изменение его формы и поворот главных осей не рассчитываются.
+This local model assumes a fixed tangential exit and allows inclined yarn:
+feed along the yarn is `ds = A dθ`, consistent with torque `T A` in work.
+It does not track a specific winding or movement of the exit point over a soft
+ball. A spatial line entering the ellipsoid receives `path_intersects_ball`.
+Automatic exit relocation and routing around the ball are not solved.
+The orientation of a non-axisymmetric ellipsoid stays fixed in this local model;
+shape changes and rotation of its principal axes are not calculated.
 
-Заданная подача — гладкий импульс `sin²` за часть периода. Интеграл каждого
-импульса равен `draw_m`. К нему добавлено изменение длины свободного пролёта
-из-за поперечного движения руки. Ритм спиц по умолчанию: 24 мм за 1 с,
-активная доля 0.55; крючка: 45 мм за 1.35 с, активная доля 0.30.
-Эти значения **не эмпирическая норма**.
+Prescribed feed is a smooth `sin²` pulse over part of a period. Each pulse
+integrates to `draw_m`. Changes in free-span length due to transverse hand motion
+are added. Default knitting rhythm: 24 mm per 1 s, active fraction 0.55;
+crochet: 45 mm per 1.35 s, active fraction 0.30.
+These values are **not an empirical norm**.
 
-Положительное растяжение `x = потреблённая длина − выданная длина` создаёт
-натяжение `T = max(0, k x + c_y x_dot)`; при `x<=0` натяжение равно нулю.
-`k = EA / L_initial`, где EA — эффективная продольная жёсткость нити,
-а L_initial — исходный свободный пролёт. Это локальное линейное приближение.
-Отрицательное x интерпретируется как идеализированный запас свободной нити.
+Positive extension `x = consumed length − supplied length` produces
+tension `T = max(0, k x + c_y x_dot)`; tension is zero for `x<=0`.
+`k = EA / L_initial`, where EA is the effective axial stiffness of the yarn
+and L_initial is its initial free span. This is a local linear approximation.
+Negative x represents an idealized reserve of loose yarn.
 
-Сопротивление сходу внешних слоёв задаётся `peel_force_N`. Оно даёт
-диссипативный момент `F_peel A`, в том числе при предполагаемом разматывании
-во время выбега. Этот эмпирический параметр сворачивает трение между витками;
-не является самостоятельной точной моделью структуры клубка.
+Outer-layer peeling resistance is specified by `peel_force_N`. It produces
+dissipative torque `F_peel A`, including during assumed unwinding on overrun.
+This empirical parameter combines friction between windings; it is not a
+separate exact model of the ball structure.
 
-## Вращение и сцепление
+## Rotation and traction
 
-Покой сохраняется при `T A <= τ_start + F_peel A`.
-При вращении:
+The system remains at rest while `T A <= τ_start + F_peel A`.
+During rotation:
 
 `I θ_ddot = T A − (τ_run + b θ_dot) − F_peel A`.
 
-Скорость ограничивается снизу нулём: двигатель или пружина, раскручивающие
-подставку назад, в этой модели отсутствуют. Используется полунеявный Euler,
-обычно dt=0.0005 с. Автоматически проверяется ограничение шага относительно
-периода системы пружина–инерция и времени затухания `I/(b+c_y*A_max²)`.
-Требуется не менее 20 шагов на активный импульс и 40 на период движения руки.
-Длина протяжки интегрируется аналитически, включая границы периодов.
-Слишком крупный шаг отклоняется с ошибкой, а не теряет короткие рывки.
-Тест сравнивает результат с вдвое меньшим шагом.
-Это контроль численного решения, не физическая валидация.
+Angular velocity is bounded below by zero: this model has no motor or spring
+driving the stand backward. Integration uses semi-implicit Euler, usually
+dt=0.0005 s. The time step is automatically checked against the spring–inertia
+period and damping time `I/(b+c_y*A_max²)`. At least 20 steps per active pulse
+and 40 per hand-motion period are required. Draw length is integrated
+analytically, including period boundaries. An excessive step raises an error
+instead of losing short pulls. A test compares results at half the time step.
+This checks the numerical solution, not physical validity.
 
-Момент, который клубок должен передать ротору:
+Torque the ball must transmit to the rotor:
 `τ_required = |I_rotor α + τ_bearing|`.
-Доступный момент:
+Available torque:
 `τ_capacity = μ_ball max(0, m_ball g − T u_z) r_contact + τ_spindle`.
 
-По умолчанию `τ_spindle=0`: неизвестный дополнительный зацеп на палочке не
-выдумывается. При плотной посадке на палочку он может быть существенным;
-его нужно измерить. При `τ_required > τ_capacity` записывается первое
-проскальзывание. Далее интегрируется условная связанная система, а не новая
-физическая модель скольжения. Вертикальный отрыв клубка отмечается отдельно;
-удержание палочкой по вертикали не моделируется.
+The default is `τ_spindle=0`: unknown extra spindle grip is not invented.
+A tight spindle fit can add substantial grip and should be measured.
+The first slip is recorded when `τ_required > τ_capacity`. Integration then
+continues for the hypothetical coupled system, not a new physical slip model.
+Vertical ball lift-off is flagged separately; vertical spindle retention
+is not modeled.
 
-## Сдвиг и начало опрокидывания
+## Sliding and onset of tipping
 
-Опора — выпуклая оболочка контактных кружков ножек (каждый приближён 24 углами)
-или пользовательских точек. Декоративные листья не считаются ножками.
+The support is the convex hull of circular foot contacts (each approximated
+by 24 vertices) or user-defined points. Decorative leaves are not feet.
 
-Нормальная реакция `N = (m_stand + m_ball)g − F_z`.
-Сдвиг начинается при `|F_xy + F_inertia| > μ_foot N`.
-Эксцентриситет вращающегося клубка добавляет горизонтальную реакцию `−m a_com`.
+Normal reaction: `N = (m_stand + m_ball)g − F_z`.
+Sliding starts when `|F_xy + F_inertia| > μ_foot N`.
+Ball eccentricity adds a horizontal reaction `−m a_com`.
 
-Центр давления на плоскости опоры:
+The center of pressure on the support plane is:
 
 `x_COP = [W x_COM + z_exit F_x − x_exit F_z + z_ball F_inertia,x] / N`,
 
-и аналогично для y. Пока COP внутри выпуклого многоугольника, опрокидывание
-не началось. Высота центра массы неподвижного корпуса не входит в это
-условие начального отрыва на горизонтальном столе; после наклона она важна,
-но дальнейшее качание и падение здесь не рассчитываются.
+with an analogous expression for y. Tipping has not started while the COP
+remains inside the convex polygon. The stationary body's center-of-mass height
+does not enter this initial lift-off condition on a horizontal table.
+It matters after tilting, but subsequent rocking and falling are not calculated.
 
-Порог зацепа вычисляется отдельно из статического равновесия. Для каждой
-грани `n·x <= B` максимальная сила:
+The snag threshold is computed separately from static equilibrium.
+For each edge `n·x <= B`, the maximum force is:
 
 `T_tip = [W B − m_ball g e] / [z_exit(n·u_xy) + (B − n·p_xy)u_z]`
 
-для положительного знаменателя. Вычитание `m_ball g e` даёт худшую фазу
-смещения клубка. Порог сдвига:
+for a positive denominator. Subtracting `m_ball g e` represents the worst
+phase of ball displacement. The sliding threshold is:
 
 `T_slide = μ_foot W / (|u_xy| + μ_foot u_z)`.
 
-Также проверяется отрыв `T_lift = W/u_z` при u_z>0. Минимум — порог зацепа.
-Не учитываются податливость стола, толчок рукой, ударный импульс и поворот всей
-подставки вокруг вертикальной оси.
+Lift-off is also checked: `T_lift = W/u_z` for u_z>0. The minimum is the snag
+threshold. Table compliance, hand pushes, impact impulses, and rotation of
+the entire stand about the vertical axis are excluded.
 
-## Проверка траектории
+## Path checks
 
-Проверяется цепная линия: `z(x)=a*cosh((x-x0)/a)+C`, `a=H/(λ*g)`.
-Константы определяются высотами двух концов. Плотность λ задана на метр
-длины нити, включая наклон, а не на метр горизонтальной проекции.
-`H=T*D/L` задаётся по номинальному натяжению вдоль прямой между концами.
-Это точное равновесие тяжёлой нити для заданных концов и H, но не решение
-схода, контактов или растяжения. Динамика по-прежнему использует направление
-прямого пролёта. При H < 0.001 Н или провисе более 10% горизонтального
-пролёта применяется статус неприменимости, а не экстраполяция силы.
-Для малого провиса ведущая поправка пропорциональна `λ*g*D*L/(8*H)`;
-старая формула с `D²` занижала провис при разных высотах концов.
-241 точка сравнивается с поверхностью вращения корпуса и эллипсоидными
-оболочками листьев. Это **геометрический скрининг**, не вероятность зацепа.
-Ступеньки FDM, щель вращения, ворс и свободные петли требуют физической пробы.
-В пакет CAD дополнительно включена проверка выбранных лучей по STL.
+The path is a catenary: `z(x)=a*cosh((x-x0)/a)+C`, `a=H/(λ*g)`.
+Constants are determined by the endpoint heights. Density λ is per meter
+of yarn length, including inclination, not per meter of horizontal projection.
+`H=T*D/L` is set from nominal tension along the straight endpoint span.
+This is exact equilibrium of a heavy yarn for the prescribed endpoints and H,
+but does not solve unwinding, contacts, or extension. Dynamics still use
+the direction of the straight span. If H < 0.001 N or sag exceeds 10% of the
+horizontal span, an out-of-scope status is returned rather than extrapolated forces.
+For small sag, the leading correction is proportional to `λ*g*D*L/(8*H)`;
+the old `D²` formula underestimated sag at unequal endpoint heights.
+241 points are compared with the body's surface of revolution and ellipsoidal
+leaf envelopes. This is **geometric screening**, not a snag probability.
+FDM steps, the rotating gap, fuzz, and loose loops require physical testing.
+The CAD package also includes checks of selected rays against STL files.
 
-`hypotheses_valid_for_entire_run` требует и отсутствия механических событий,
-и допустимого номинального пути. При геометрической проблеме поле
-`peak_tension_with_valid_path_and_coupling_N` равно null, все силы условны.
-`mechanical_hypotheses_valid_for_entire_run`, `valid_coupled_interval_end_s`
-и `peak_tension_before_first_event_N` относятся только к опоре и сцеплению:
-они не отменяют геометрическое ограничение. В trace это различается полями
-`coupled_assumptions_valid` и `model_assumptions_valid`.
-Проверка одной номинальной траектории не подтверждает каждый момент движения
-или свободные петли. Время первого геометрического контакта не выдумывается.
+`hypotheses_valid_for_entire_run` requires both no mechanical events and
+a valid nominal path. With a geometric problem,
+`peak_tension_with_valid_path_and_coupling_N` is null and all forces are conditional.
+`mechanical_hypotheses_valid_for_entire_run`, `valid_coupled_interval_end_s`,
+and `peak_tension_before_first_event_N` refer only to support and traction;
+they do not override geometric limitations. Trace fields
+`coupled_assumptions_valid` and `model_assumptions_valid` distinguish these.
+One nominal path check does not validate every instant of motion or loose loops.
+A time of first geometric contact is not invented.
 
-## Основания уравнений
+## Basis of the equations
 
-- [OpenStax: условия статического равновесия](https://openstax.org/books/university-physics-volume-1/pages/12-1-conditions-for-static-equilibrium).
-- [OpenStax: динамика вращения и момент инерции](https://openstax.org/books/college-physics/pages/10-3-dynamics-of-rotational-motion-rotational-inertia).
-- [SKF: составляющие трения подшипников](https://evolution.skf.com/using-a-friction-model-as-an-engineering-tool-3/).
+- [OpenStax: conditions for static equilibrium](https://openstax.org/books/university-physics-volume-1/pages/12-1-conditions-for-static-equilibrium).
+- [OpenStax: rotational dynamics and moment of inertia](https://openstax.org/books/college-physics/pages/10-3-dynamics-of-rotational-motion-rotational-inertia).
+- [SKF: bearing friction components](https://evolution.skf.com/using-a-friction-model-as-an-engineering-tool-3/).
 
-Эти источники обосновывают базовую механику и необходимость различать источники
-трения. Они **не подтверждают выбранные значения для конкретного экземпляра
-подставки, пряжи или движений рук**.
+These sources support the basic mechanics and the need to distinguish friction
+sources. They **do not validate the chosen values for a particular stand,
+yarn, or hand motion**.

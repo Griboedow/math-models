@@ -1,56 +1,56 @@
-# Зацепки и правка CAD до печати
+# Snags and CAD revisions before printing
 
-`snag-audit` проверяет геометрические причины крупных зацепов: попадание
-петли под выступ, препятствие при вытягивании, тесный проход и контакт
-с вращающейся деталью. Он сохраняет координаты поверхности **исходного STL**,
-позу нити и запас зазора, чтобы найти место в CAD и повторить проверку после правки.
+`snag-audit` checks geometric causes of large snags: loops under overhangs,
+obstacles during pulling, narrow passages, and contact with rotating parts.
+It saves **original STL** surface coordinates, yarn poses, and clearance
+allowances so the location can be found in CAD and checked again after revision.
 
-Это проверка заданных движений нити, а не прогноз её самопроизвольного
-соскальзывания. Контакт может закончиться соскальзыванием, остановкой, затягиванием
-петли или деформацией пряжи; эти исходы данная модель не различает.
-`critical_snag_N` основной модели означает потерю устойчивости подставки при
-внешней силе и **не является усилием освобождения зацепившейся нити**.
+This checks prescribed yarn motions, not spontaneous slipping off.
+Contact may lead to sliding, stopping, loop tightening, or yarn deformation;
+the model does not distinguish these outcomes.
+The core model's `critical_snag_N` describes loss of stand stability under
+external force and **is not the release force of snagged yarn**.
 
-## Воспроизводимая проверка
+## Reproducible review
 
 ```sh
 python -m pip install ".[mesh]"
 python -m yarnstand snag-audit scene.json cases.json --out results/design_a
-# После изменения STL, с теми же позами, диаметрами и запасами:
+# After editing the STL, use the same poses, diameters, and allowances:
 python -m yarnstand snag-audit revised_scene.json cases.json --out results/design_b
 python -m yarnstand snag-compare results/design_a/audit.json results/design_b/audit.json --out results/comparison.json
 ```
 
-Большой набор можно распределить между независимыми процессами:
+Large sets can be distributed across independent processes:
 
 ```sh
 python tools/run_snag_audit_parallel.py scene.json cases.json --out results/design_a --workers 3
 ```
 
-Порядок исходных сценариев сохраняется. Перед объединением проверяются хеши
-геометрии и кода, версии библиотек и параметры проверки. Каждый процесс загружает
-свою копию сеток; при ограниченной памяти используйте обычный последовательный запуск.
+Original case order is preserved. Geometry and code hashes, library versions,
+and checking parameters are verified before merging. Each process loads its
+own meshes; use the sequential command when memory is limited.
 
-Откройте `report.html`. В `audit.json` есть каждый сценарий и каждая деталь,
-нижняя граница зазора, первый обнаруженный контакт, наиболее тесное место,
-координаты в исходном STL и в сборке, исходные позы, хеши файлов и версии библиотек.
-`review_markers.json` связывает детали с `review_markers_part_*.stl`:
-это маленькие сферы-маркеры в системе соответствующего исходного STL,
-в миллиметрах. Их можно импортировать поверх детали в CAD как вспомогательную
-геометрию; это не детали для печати.
+Open `report.html`. The `audit.json` file contains every case and part,
+the clearance lower bound, first detected contact, tightest location,
+coordinates in the original STL and assembly frames, input poses, file hashes,
+and library versions. `review_markers.json` maps parts to
+`review_markers_part_*.stl`: small marker spheres in the corresponding original
+STL frame, in millimeters. Import them over the part in CAD as reference
+geometry; they are not printable parts.
 
-Сравнение не принимает разные сценарии или допуски: иначе улучшение можно
-ошибочно получить изменением теста. Изменение версии расчётного кода или библиотек
-показывается отдельно в `same_audit_code` и `same_runtime`.
+Comparisons reject different cases or allowances, since changing the test
+could otherwise create a false improvement. Changes to calculation code or
+libraries are reported separately in `same_audit_code` and `same_runtime`.
 
-## Параметры
+## Parameters
 
-Манифест STL такой же, как у [mesh-check](mesh.md). Повороты в нём задают
-исходную сборку. Дополнительное вращение во времени задаётся ниже, вокруг оси Z
-сборки, относительно `rotation_origin_m`. Имена деталей должны точно совпадать.
-Используйте сетки `cad/` в координатах сборки. Для STL из `print/`, уже повёрнутых
-для печати, сначала нужны обратные трансформации в собранное положение.
-После переноса проекта обновите пути к внешним CAD-файлам в манифесте.
+The STL manifest is the same as for [mesh-check](mesh.md). Its rotations define
+the initial assembly. Additional rotation over time is specified below,
+about the assembly Z axis relative to `rotation_origin_m`. Part names must match
+exactly. Use `cad/` meshes in assembly coordinates. STL files from `print/`,
+already oriented for printing, first need inverse transforms into the assembled
+position. Update external CAD paths in the manifest after moving the project.
 
 ```json
 {
@@ -70,91 +70,91 @@ python tools/run_snag_audit_parallel.py scene.json cases.json --out results/desi
 }
 ```
 
-Все размеры входа — метры, кроме углов в градусах. В каждой позе одинаковое число
-соответствующих узлов; это точки одной и той же заданной ломаной. Между входными
-позами координаты в мировой системе и углы изменяются линейно. `0 → 360`
-означает полный оборот; углы не сворачиваются к кратчайшей дуге.
-Неперечисленные детали неподвижны. Одна поза означает статическую проверку.
+All input dimensions are in meters, except angles in degrees. Every pose has
+the same number of corresponding nodes: points on the same prescribed polyline.
+World coordinates and angles vary linearly between input poses. `0 → 360`
+means a full turn; angles are not reduced to the shortest arc.
+Unlisted parts remain stationary. One pose means a static check.
 
-Запасы суммируются **по радиусу**, а не по диаметру. В примере радиус пряжи 2 мм
-превращается в проверочную оболочку радиуса 2.5 мм. Значения 0.2/0.2/0.05/0.05 мм —
-явные проектные предположения для предварительной проверки, не измеренная
-точность принтера и не подтверждённая модель ворса. Для другой пряжи или печати
-нужно заменить их своими значениями и повторить расчёт.
+Allowances are summed **radially**, not by diameter. In this example a 2 mm
+yarn radius becomes a 2.5 mm checking envelope. The 0.2/0.2/0.05/0.05 mm values
+are explicit design assumptions for preliminary review, not measured printer
+accuracy or a validated fuzz model. Replace them for different yarn or printing
+conditions and rerun the calculation.
 
-## Как читать результат
+## Interpreting results
 
-| Статус | Значение для правки CAD |
+| Status | Meaning for CAD revision |
 |---|---|
-| `initial_nominal_contact` | Нить пересекает деталь уже в начальной позе. Проверить реалистичность исходного положения; это не успешный тест освобождения. |
-| `nominal_contact` | Заданный путь наталкивается на поверхность. Изменить выступ/переход или проверить иной путь выхода. |
-| `allowance_contact` | Номинальная нить проходит, но заданного запаса на печать и ворс недостаточно. |
-| `unresolved_clearance` | Контакт не обнаружен, но точность проверки не позволяет утверждать свободный проход. Уменьшить оба шага. |
-| `clear_with_allowance` | Именно это движение свободно при заданных размерах и запасах. Это не результат для всех возможных петель. |
+| `initial_nominal_contact` | Yarn intersects the part in the initial pose. Check whether the starting position is realistic; this is not a successful release test. |
+| `nominal_contact` | The prescribed path hits a surface. Revise the overhang/transition or check a different exit route. |
+| `allowance_contact` | Nominal yarn passes, but the specified print and fuzz allowance is insufficient. |
+| `unresolved_clearance` | No contact was detected, but checking precision cannot establish a clear passage. Reduce both steps. |
+| `clear_with_allowance` | This particular motion is clear at the specified dimensions and allowances. It does not cover every possible loop. |
 
-Дефицит зазора — консервативная величина относительно проверенного движения.
-Он **не равен глубине, которую нужно срезать с детали**: изменение поверхности
-может перенести контакт, затронуть прочность или создать новый крючок.
-Сначала рассматривайте указанную зону, затем повторяйте весь тот же набор сценариев.
+The clearance deficit is conservative for the checked motion.
+It **does not equal the depth to cut from the part**: a surface change may
+relocate contact, affect strength, or create a new hook. Review the indicated
+zone first, then rerun the entire unchanged case set.
 
-Скругление само по себе не доказывает устранение зацепа: округлый нависающий
-выступ всё ещё может препятствовать подъёму петли. Контрольный тест в коде
-проверяет три исхода: подъём под выступом блокируется, выведение наружу проходит,
-а укорочение выступа делает исходный подъём свободным.
+Rounding alone does not prove snag elimination: a rounded overhang can still
+block a rising loop. A control test covers three outcomes: lifting under an
+overhang is blocked, moving outward succeeds, and shortening the overhang
+makes the original lift clear.
 
-## Защита от пропущенного контакта
+## Protection against missed contact
 
-Каждая деталь проверяется отдельно, включая связные оболочки. Радиус нити
-учтён знаковым расстоянием до поверхности; пересечения отрезков с треугольниками
-ловят тонкую стенку даже между образцами расстояния. Координата такого контакта
-берётся из фактического пересечения, а не из далёкого узла нити.
-У точки вне габаритного параллелепипеда отдельной замкнутой оболочки знак
-расстояния принудительно положителен. Это геометрическое следствие, которое
-устраняет ложные глубокие контакты из-за неустойчивого знака нормали на очень
-тонких гранях декора. Такой случай воспроизведён на семечках PITAYA при вращении.
+Each part is checked separately, including connected shells. Signed distance
+accounts for yarn radius; segment–triangle intersections catch thin walls
+even between distance samples. Such contact coordinates come from the actual
+intersection, not a distant yarn node.
+For a point outside an individual closed shell's bounding box, the distance
+sign is forced positive. This geometric consequence removes false deep contacts
+caused by unstable normal signs on very thin decorative faces. The issue
+was reproduced on PITAYA seeds during rotation.
 
-Детали, отделённые от всего движения нити непересекающимися ограничивающими
-объёмами, исключаются без подробного сканирования. Для вращения используется
-оболочка полного цилиндра, поэтому этот отбор не пропускает промежуточные углы.
-Для таких строк `proof` содержит метод, нижняя граница зазора вычислена по
-оболочкам, а `minimum_sampled_nominal_clearance_m=null`: выборочных расстояний
-там не было. Положительная граница уже доказывает свободное движение в рамках геометрии.
+Parts separated from the entire yarn motion by disjoint bounding volumes
+are excluded without detailed sampling. A full cylindrical envelope is used
+for rotation, so intermediate angles cannot be missed by this filter.
+For these rows, `proof` gives the method, the clearance lower bound is derived
+from the envelopes, and `minimum_sampled_nominal_clearance_m=null` because no
+distances were sampled. A positive bound already proves geometric clearance.
 
-Из минимального зазора вычитаются половина пространственного шага и половина
-верхней границы перемещения между проверенными позами. Для вращения эта граница
-включает `max|Δp| + max(rho) * |Δangle|`, угол — в радианах. Поэтому полный оборот
-не исчезает из проверки при совпадающих конечных положениях.
+Half the spatial step and half an upper bound on displacement between checked
+poses are subtracted from minimum clearance. For rotation, that bound includes
+`max|Δp| + max(rho) * |Δangle|`, with the angle in radians. Thus a full turn
+does not disappear from the check when endpoint poses coincide.
 
-## Покрытие и границы
+## Coverage and limits
 
-Для PITAYA сохранены 36 движений нити под шестью листьями (три пути, диаметры
-2/4 мм) и четыре сценария у края вращающейся площадки. Для PEACH — восемь
-сохранённых протяжек под обоими листьями и четыре сценария у вращающегося края.
-Это стресс-сценарии с известной геометрией, не вероятности появления петель.
-Номинальные траектории натянутой нити проверены отдельно в отчётах аудита модели.
+PITAYA includes 36 yarn motions under six leaves (three routes, 2/4 mm
+diameters) and four scenarios at the rotating platform rim. PEACH includes
+eight saved sweeps under both leaves and four rotating-rim scenarios.
+These are stress cases with known geometry, not probabilities of loop formation.
+Nominal taut-yarn paths are checked separately in model audit reports.
 
-В этом наборе нет полной модели клубка, стола, руки, самоконтакта нити,
-натяжения петли или всех способов её попадания под деталь. При необходимости
-дополнительные неподвижные препятствия нужно включить в STL-сцену.
-Положение заранее заданной нити не проверяется на совместимость с её растяжением
-или балансом сил. Для прогноза удержания и усилия освобождения нужна контактная
-механика нити с изгибом, трением и экспериментальными параметрами материала.
-Например, [Discrete Elastic Rods](https://www.cs.columbia.edu/cg/rods/index.html)
-описывает модель тонких упругих стержней; это отдельная задача, она здесь не реализована.
+This set does not include a complete model of the ball, table, hand,
+yarn self-contact, loop tension, or every way yarn can get under a part.
+Include additional stationary obstacles in the STL scene when needed.
+Prescribed yarn poses are not checked for compatibility with extension or
+force balance. Predicting retention and release force requires yarn contact
+mechanics with bending, friction, and experimentally determined material
+parameters. For example, [Discrete Elastic Rods](https://www.cs.columbia.edu/cg/rods/index.html)
+describes thin elastic rods; that is a separate problem and is not implemented here.
 
-Рабочий результат этого режима — найти геометрически плохие зоны **до основной
-печати** и проверить исправления на одинаковом наборе движений.
+This mode aims to find geometrically problematic zones **before the main print**
+and compare revisions using the same motions.
 
-[Результаты и координаты для персика v13](peach-snag-review.md).
-[Результаты и координаты для PITAYA v10](pitaya-snag-review.md).
-[Исправленная PITAYA v11 и сравнение на одинаковых сценариях](pitaya-v11.md).
+[Peach v13 results and coordinates](peach-snag-review.md).
+[PITAYA v10 results and coordinates](pitaya-snag-review.md).
+[Revised PITAYA v11 compared on identical cases](pitaya-v11.md).
 
-Полный контрольный пример, не требующий CAD-комплекта:
+A complete control example requiring no CAD package:
 
 ```sh
 python tools/validate_snag_workflow.py
 ```
 
-Он создаёт STL выступа до/после укорочения и запускает настоящие команды CLI.
-Один заблокированный путь становится свободным, уже свободный остаётся свободным.
-Этот процесс также выполняется в CI, помимо отдельных тестов контакта и вращения.
+It creates STL overhangs before and after shortening and invokes the actual CLI.
+One blocked path becomes clear; an already clear path stays clear.
+This workflow also runs in CI alongside individual contact and rotation tests.

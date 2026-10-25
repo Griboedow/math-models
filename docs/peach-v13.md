@@ -1,61 +1,62 @@
-# Персик v13 — пересчёт после аудита модели
+# Peach v13 — recalculation after the model audit
 
-Пресет `peach_v13` использует площадку на 70.7 мм над опорой, ножки Ø7.9 мм
-на радиусе 54 мм, оценку массы 300 г и инерции 0.0000545 кг·м².
-Масса, трение и свойства пряжи требуют калибровки. Исходные STL находятся
-в отдельном CAD-проекте PEACH_v13; форма деталей в этом исправлении не менялась.
+The `peach_v13` preset uses a platform 70.7 mm above the support surface,
+Ø7.9 mm feet on a 54 mm radius, and estimated mass and inertia of 300 g and
+0.0000545 kg·m². Mass, friction, and yarn properties need calibration.
+Original STL files are in the separate PEACH_v13 CAD project; this fix did not
+change part geometry.
 
-Модель 0.2.0 исправляет вес наклонной нити, проверку выхода из клубка,
-статусы достоверности и составные STL. Старое утверждение о 6 912 свободных
-траекториях с рукой выше основания заменено новым расчётом: прежняя проверка
-не исключала прохождение нити через клубок. В новых пресетах точка схода
-перенесена на наружную поверхность (`unwind_radius_ratio=1`).
+Model 0.2.0 fixes inclined-yarn weight, ball-exit checks, validity statuses,
+and multi-shell STL handling. The old claim of 6,912 clear paths with the hand
+above the base is replaced by this recalculation: the previous check did not
+exclude yarn passing through the ball. New presets move the exit to the outer
+surface (`unwind_radius_ratio=1`).
 
-## Динамика
+## Dynamics
 
-Повторены 45 сценариев: три клубка, три ритма, пять положений руки.
-Во всех 15 основных сценариях полного клубка сохраняются опора, сцепление
-и допустимость проверенного номинального пути. Почти пустой клубок во всех
-15 сценариях теряет сцепление; последующие силы условны. Для большого клубка
-проверки также проходят, но остаётся предупреждение о выходе за площадку:
-деформация и реальная мягкая опора не рассчитаны.
+45 scenarios were repeated: three balls, three rhythms, and five hand positions.
+All 15 baseline full-ball scenarios retain support, traction, and a valid checked
+nominal path. The nearly empty ball loses traction in all 15 scenarios;
+subsequent forces are conditional. The large ball also passes the checks,
+but retains the platform-overhang warning: deformation and actual soft contact
+are not calculated.
 
-При полном клубке и руке сбоку пик составляет около 0.091 Н для спиц,
-0.191 Н для коротких рывков и 0.042 Н для медленной подачи.
-Условный избыток выдачи соответственно 35, 197 и 0 мм.
-Это сценарные расчёты, а не измерения готового изделия.
+For a full ball with the hand to the side, peaks are about 0.091 N for knitting,
+0.191 N for short pulls, and 0.042 N for slow feed.
+Hypothetical excess feed is 35, 197, and 0 mm, respectively.
+These are scenario calculations, not measurements of a finished product.
 
-## Геометрия нити
+## Yarn geometry
 
-Повторена сетка 8 640 траекторий: клубки 100/10/200 г, пять положений,
-четыре высоты выхода, 24 направления, три натяжения, диаметры 2/4 мм.
-Контакты, недопустимые пути через клубок и неразрешённые зазоры учитываются
-отдельно. Для пограничного зазора уменьшаются шаг генерации пути и шаг проверки.
-Итог: **3 704 свободных пути, 664 контакта, 4 272 пути через клубок**.
-После уточнения шага неразрешённых зазоров в этой сетке не осталось.
-Итоговые количества и хеши доступны в
-[summary.json](../results/peach_v13_audit_fix/summary.json) и
+The 8,640-path grid was repeated: 100/10/200 g balls, five positions,
+four exit heights, 24 directions, three tensions, and 2/4 mm diameters.
+Contacts, invalid paths through the ball, and unresolved clearances are counted
+separately. Marginal clearances use smaller path-generation and checking steps.
+Result: **3,704 clear paths, 664 contacts, and 4,272 paths through the ball**.
+No unresolved clearances remained in this grid after refinement.
+Totals and hashes are in
+[summary.json](../results/peach_v13_audit_fix/summary.json) and
 [metadata.json](../results/peach_v13_audit_fix/metadata.json).
 
-Повторно проверены восемь сохранённых протяжек под листьями. Четыре маршрута
-к кончикам геометрически свободны, четыре маршрута к основанию касаются деталей.
-Для 4-мм нити у малого листа нижняя граница номинального зазора остаётся
-около 0.126 мм. Она не включает погрешности печати и ворс.
-В каталоге результатов сохранены исходные позы, их хеши и ответы проверки.
-Трение и самостоятельный выбор пути мягкой нитью не моделируются.
+Eight saved sweeps under the leaves were rechecked. Four routes toward the tips
+are geometrically clear; four toward the roots contact parts.
+For 4 mm yarn near the small leaf, the nominal clearance lower bound remains
+about 0.126 mm. It excludes printing error and fuzz.
+The result directory retains input poses, their hashes, and check responses.
+Friction and spontaneous path selection by soft yarn are not modeled.
 
-## Что остаётся проверить на изделии
+## What still needs physical checking
 
-Сохраняется прежнее замечание к CAD: распорка 8.15 мм при расстоянии между
-плечами корпуса 7.99 мм. Осевую свободу нижнего внешнего кольца после печати
-и затяжки нужно проверить отдельно. Исправление симулятора не меняет эти размеры
-и не подтверждает прочность листьев или печатную посадку.
+The previous CAD concern remains: an 8.15 mm spacer with 7.99 mm between body
+shoulders. Check axial freedom of the lower outer bearing ring after printing
+and tightening. The simulator fix does not change these dimensions or validate
+leaf strength or printed fit.
 
 ```sh
 python -m pip install ".[mesh]"
 python tools/recheck_peach.py /path/to/PEACH_v13 --out results/peach_v13_audit_fix
 ```
 
-Для воспроизведения протяжек нужен каталог `simulation` CAD-комплекта с
-сохранёнными `sweep_*mm_*.json`. См. [уравнения](model.md),
-[методику STL](mesh.md) и [описание исправлений](audit-fixes.md).
+Reproducing sweeps requires the CAD package's `simulation` directory with
+saved `sweep_*mm_*.json` files. See the [equations](model.md),
+[STL method](mesh.md), and [fix description](audit-fixes.md).

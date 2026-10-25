@@ -1,163 +1,165 @@
-# PITAYA v11: исправления CAD и повторный расчёт 0.3.0
+# PITAYA v11: CAD fixes and recalculation with 0.3.0
 
-В v11 исправлены тесная посадка широких листьев и низкий кончик, мешавший
-вывести наружу нить Ø4 мм. V10 сохранена отдельно. Микро-язычок у верхнего стыка,
-широкие асимметричные листья, 21 семечко и вращающийся механизм сохранены.
-Это проверенный в CAD и слайсере **непечатавшийся прототип**: перед большим
-корпусом нужна физическая проба посадки листа.
+V11 fixes the tight wide-leaf fit and the low tip that blocked Ø4 mm yarn moving
+outward. V10 is preserved separately. The upper-joint micro-tab, wide asymmetric
+leaves, 21 seeds, and rotating mechanism are retained.
+This is an **unprinted prototype** checked in CAD and a slicer:
+physically test the leaf fit before printing the large body.
 
-![Одинаковая поза нити Ø4 мм до и после правки](../results/pitaya_v11_validation/yarn_escape.png)
+![Identical Ø4 mm yarn pose before and after revision](../results/pitaya_v11_validation/yarn_escape.png)
 
-## Изменения геометрии
+## Geometry changes
 
-| Параметр | V10 | V11 |
+| Parameter | V10 | V11 |
 |---|---:|---:|
-| Минимальный просвет листа над столом | 3,870 мм | 6,974 мм |
-| Минимальное расстояние поверхностей лист–корпус | 0,00978 мм | 0,21034 мм |
-| Ширина листа в его плоскости | около 34,3 мм | 34,34 мм |
-| Свободные исходные стресс-сценарии | 8 из 40 | 14 из 40 |
-| Контакт во время движения | 30 | 24 |
-| Контакт уже в исходной позе | 2 | 2 |
+| Minimum leaf clearance above the table | 3.870 mm | 6.974 mm |
+| Minimum leaf–body surface distance | 0.00978 mm | 0.21034 mm |
+| Leaf width in its own plane | about 34.3 mm | 34.34 mm |
+| Clear original stress cases | 8 of 40 | 14 of 40 |
+| Contact during motion | 30 | 24 |
+| Contact in the initial pose | 2 | 2 |
 
-Дистальная часть листа плавно укорочена в локальной плоскости максимум на
-3,8 мм; изменение начинается после X=18 мм. Это поднимает низ примерно на
-3,1 мм без изменения положения двух штифтов. Толщина и скруглённая кромка
-сохранены; корни не сделаны тоньше для получения свободного прохода.
+The distal leaf section is smoothly shortened in its local plane by up to
+3.8 mm, starting after X=18 mm. This raises the bottom by about 3.1 mm without
+moving the two pins. Thickness and rounded edges are preserved; roots were not
+thinned to obtain clearance.
 
-Углубление корпуса получено смещением контура на 0,40 мм вместо масштабирования
-вокруг центра. Зазор сзади — 0,35 мм, радиальный зазор штифтов — 0,25 мм.
-Номинальное смещение контура не равно минимальному пространственному зазору
-округлых деталей: последний отдельно измерен и составляет 0,21034 мм.
+The body recess uses a 0.40 mm outline offset instead of scaling about its
+center. Rear clearance is 0.35 mm; radial pin clearance is 0.25 mm.
+The nominal outline offset is not the minimum spatial clearance between rounded
+parts: that distance was separately measured as 0.21034 mm.
 
-При сохранении STEP выявлена особенность OpenCascade 7.9: поверхности,
-выдавленные непосредственно из offset-кривой, терялись при обратном импорте.
-В итоговом исходнике только контур углубления преобразован в B-сплайн с
-заданным допуском 0,00001 мм **до** создания тела. Итоговые STL и STEP созданы
-из этой же геометрии, после чего расчёты и нарезка повторены.
+STEP export exposed an OpenCascade 7.9 issue: surfaces extruded directly from
+an offset curve were lost on reimport. In the final source, only the recess
+outline is converted to a B-spline with tolerance 0.00001 mm **before** solid
+creation. Final STL and STEP files come from this same geometry, after which
+calculations and slicing were repeated.
 
-![Форма и верхний стык](../results/pitaya_v11_validation/shape_comparison.png)
+![Shape and upper joint](../results/pitaya_v11_validation/shape_comparison.png)
 
-## Одинаковые сценарии до/после
+## Identical cases before and after
 
-Обе версии проверены одним кодом симулятора **0.3.0, a698bae1f233cdacc0f07e7d9bcadbe07bd1b44e**.
-Хеши выполненных файлов и сеток, версии Python/VTK/trimesh сохранены в отчётах.
-Финальный `snag-compare` подтверждает `same_audit_code=true` и
-`same_runtime=true`: **6 улучшений, 0 ухудшений**, 26 оставшихся отмеченных случаев.
+Both versions use the same simulator code:
+**0.3.0, a698bae1f233cdacc0f07e7d9bcadbe07bd1b44e**.
+Executed source and mesh hashes, plus Python/VTK/trimesh versions, are in
+the reports. Final `snag-compare` confirms `same_audit_code=true` and
+`same_runtime=true`: **6 improvements, 0 regressions**, and 26 remaining flagged cases.
 
-Исходные [40 сценариев](../results/pitaya_v11_validation/cases.json) не изменены.
-Оба шага — пространственный и движения — 0,25 мм. Дополнительный запас
-**по радиусу** 0,5 мм: печать 0,2; ворс 0,2; сетка 0,05; резерв 0,05 мм.
-Это проектные допущения, не измеренная точность печати или ворс конкретной пряжи.
-`unresolved_clearance` нет ни по сценариям, ни по деталям; дополнительного
-уточнения шагов для разрешения неопределённости не потребовалось.
+The original [40 cases](../results/pitaya_v11_validation/cases.json) are unchanged.
+Spatial and motion steps are both 0.25 mm. Additional **radial** allowance:
+0.5 mm, comprising print 0.2, fuzz 0.2, mesh 0.05, reserve 0.05 mm.
+These are design assumptions, not measured print accuracy or specific yarn fuzz.
+No cases or parts have `unresolved_clearance`; no further step refinement
+was needed to resolve uncertainty.
 
-| Движение под каждым из 6 листьев | V10, Ø2/4 мм | V11, Ø2/4 мм |
+| Motion under each of 6 leaves | V10, Ø2/4 mm | V11, Ø2/4 mm |
 |---|---|---|
-| Прямой подъём | контакт / контакт | контакт / контакт |
-| Диагонально наружу и вверх | контакт / контакт | контакт / контакт |
-| Сначала наружу внизу, затем вверх | свободно / контакт | свободно / свободно |
+| Straight lift | contact / contact | contact / contact |
+| Diagonally outward and up | contact / contact | contact / contact |
+| First outward at low height, then up | clear / contact | clear / clear |
 
-У листа 1 нижняя граница зазора на последнем маршруте после вычета запаса
-и поправок на оба шага составляет **3,225 мм для Ø2 мм** и **1,226 мм для Ø4 мм**.
-Все шесть листьев проверены отдельно. Сохранённые движения — стресс-сценарии,
-их доли не являются вероятностью появления зацепа при вязании.
+For leaf 1 on the last route, the clearance lower bound after subtracting the
+allowance and both step corrections is **3.225 mm for Ø2 mm** and
+**1.226 mm for Ø4 mm**. All six leaves were checked separately.
+Saved motions are stress cases; their proportions do not represent snag
+probabilities during knitting.
 
-Два исходных случая Ø4 мм у вращающегося края пересекают неподвижный корпус
-ещё до вращения. Они остались в исходном наборе с соответствующим статусом;
-это не доказанное закусывание вращением. В [отдельном дополнительном наборе](../results/pitaya_v11_validation/additional_rim_cases.json)
-центр нити поднят с 44,11 до 46,11 мм при тех же XY, диаметре, запасе и полном
-обороте в обе стороны. Оба дополнительных случая свободны. Они не заменяют
-исходные два неудачных положения и не входят в число 6 улучшений.
+Two original Ø4 mm rotating-rim cases intersect the stationary body before
+rotation. They remain in the original set with that status; this does not
+prove rotational pinching. In a [separate additional set](../results/pitaya_v11_validation/additional_rim_cases.json),
+the yarn center is raised from 44.11 to 46.11 mm with identical XY, diameter,
+allowance, and full turns in both directions. Both additional cases are clear.
+They do not replace the original two failing poses or count among the 6 improvements.
 
-- [До: полный snag-audit](../results/pitaya_v11_validation/before/snags/audit.json).
-- [После: полный snag-audit](../results/pitaya_v11_validation/after/snags/audit.json) и [HTML](../results/pitaya_v11_validation/after/snags/report.html).
-- [Сравнение](../results/pitaya_v11_validation/comparison.json).
-- [Дополнительная проверка вращающегося края](../results/pitaya_v11_validation/after/additional_rim/audit.json).
+- [Before: full snag-audit](../results/pitaya_v11_validation/before/snags/audit.json).
+- [After: full snag-audit](../results/pitaya_v11_validation/after/snags/audit.json) and [HTML](../results/pitaya_v11_validation/after/snags/report.html).
+- [Comparison](../results/pitaya_v11_validation/comparison.json).
+- [Additional rotating-rim check](../results/pitaya_v11_validation/after/additional_rim/audit.json).
 
-## Номинальные пути и механика
+## Nominal paths and mechanics
 
-Обе геометрии повторно проверены после исправления знака расстояния в 0.3.0.
-Для каждой: 720 статических путей, 54 случая диаметра/натяжения, 60 динамических
-сценариев и 27 заданных движений. Полный и почти пустой круглые клубки, спицы
-и крючок, пять положений подставки, разные высоты выхода и азимуты сохранены.
-Масса подставки 230 г, инерция вращающегося узла 0,000065 кг·м², трение и ритмы
-подачи остаются одинаковыми сценарными оценками. Правка листьев не выдаётся
-за измеренное изменение этих физических параметров.
+Both geometries were rechecked after the distance-sign fix in 0.3.0.
+Each uses 720 static paths, 54 diameter/tension cases, 60 dynamic scenarios,
+and 27 prescribed motions. Full and nearly empty round balls, knitting and
+crochet, five stand positions, different exit heights, and azimuths are retained.
+Stand mass of 230 g, rotating-assembly inertia of 0.000065 kg·m², friction,
+and feed rhythms remain identical scenario estimates. Leaf revision is not
+presented as a measured change to these physical parameters.
 
-Адаптивный выбор ближайших к контакту азимутов может меняться даже при малой
-правке из-за симметричных направлений с почти одинаковыми зазорами. Поэтому
-54 сочетания диаметра/натяжения для v11 явно воспроизведены из сохранённого
-набора v10; их параметры совпадают, источник и его хеш записаны в метаданных.
+Adaptive selection of azimuths nearest contact can change after even a small
+revision because symmetric directions have almost equal clearances.
+Therefore the 54 diameter/tension combinations for v11 were explicitly replayed
+from the saved v10 set. Their inputs match; source and source hash are in metadata.
 
-В обеих версиях из 720 номинальных путей **456 свободны, 24 касаются деталей,
-240 входят в клубок и отклонены как недопустимые**. Все 24 контакта относятся
-к почти пустому клубку, низкому выходу и рукам ниже высокой подставки.
-Для такого расположения нужен другой путь схода/положение подставки;
-срезать корпус ради заданного пути через него нельзя считать исправлением.
+For both versions, of 720 nominal paths, **456 are clear, 24 contact parts,
+and 240 enter the ball and are rejected as invalid**. All 24 contacts involve
+a nearly empty ball, low exit, and hands below a high stand.
+That setup needs a different exit route or stand position; cutting away the
+body to accommodate a prescribed path through it is not a valid fix.
 
-Из 24 движений руки 14 свободны, 2 имеют начальный контакт, 8 отклонены из-за
-входа нити в клубок. Ещё 3 прежних маршрута петли Ø2 мм дают два контакта
-и один свободный выход. Эти проверки без запаса 0,5 мм сохранены отдельно
-от нового stress-набора: условия между ними не смешиваются.
+Of 24 hand motions, 14 are clear, 2 have initial contact, and 8 are rejected for
+entering the ball. The 3 older Ø2 mm loop routes give two contacts and one clear
+exit. These checks without the 0.5 mm allowance are kept separate from the
+new stress set; their conditions are not mixed.
 
-Для полного клубка при выходе из середины и руках сбоку расчётные пики:
-**0,092 Н для спиц**, **0,203 Н для крючка**. При принятых параметрах весь
-расчётный интервал проходит проверки механики и этого номинального пути.
-Для крючка модель также отмечает избыточную свободную подачу; это оценка
-выбега, а не рассчитанная форма свободной петли.
+For a full ball, middle exit, and hands to the side, calculated peaks are
+**0.092 N for knitting** and **0.203 N for crochet**. With the assumed parameters,
+mechanics and this nominal path pass throughout the simulated interval.
+For crochet, the model also flags excess loose feed; this estimates overrun,
+not the shape of a free loop.
 
-Во всех 30 сценариях почти пустого клубка нарушается сцепление с площадкой.
-В примере сбоку оно теряется через 0,141 с для спиц и 0,082 с для крючка;
-достоверность модели совместного вращения после события прекращается.
-Силы до него около 0,026 Н. Поздние пики и 6 последующих отметок подъёма
-клубка не используются как достоверное задание на изменение CAD.
-Нужны измерения сопротивления вращению и реального сцепления клубка со
-шпинделем/площадкой. В текущем расчёте дополнительное сцепление со шпинделем
-не предполагается. Всего 20 из 60 динамических случаев проходят одновременно
-проверки механики и допустимости номинального пути.
+All 30 nearly empty-ball scenarios lose platform traction.
+In the side-position example, this occurs after 0.141 s for knitting and
+0.082 s for crochet; coupled-rotation validity ends at the event.
+Forces before it are about 0.026 N. Late peaks and 6 subsequent ball-lift flags
+are not used as reliable CAD revision requirements. Rotational resistance
+and actual ball-to-spindle/platform traction need measurement.
+The current calculation assumes no additional spindle coupling.
+Overall, 20 of 60 dynamic cases pass both mechanics and nominal-path validity.
 
-[До: сводка](../results/pitaya_v11_validation/before/nominal/summary.json),
-[после: сводка](../results/pitaya_v11_validation/after/nominal/summary.json),
-[параметры и хеши](../results/pitaya_v11_validation/after/nominal/metadata.json).
+[Before summary](../results/pitaya_v11_validation/before/nominal/summary.json),
+[after summary](../results/pitaya_v11_validation/after/nominal/summary.json),
+[parameters and hashes](../results/pitaya_v11_validation/after/nominal/metadata.json).
 
-## Проверка CAD и печатного комплекта
+## CAD and print-package checks
 
-Повторно импортированные корпус и лист — по одному корректному телу;
-полная STEP-сборка — **49 корректных тел**. Изменение объёма корпуса при
-STEP round-trip около 0,0125 мм³. Проверены все шесть положений листьев,
-установка с отступами 0/0,5/1,5/3/6/9 мм, механические сопряжения и полный
-цилиндрический габарит вращающейся площадки: объёмы пересечений нулевые.
-Минимальный зазор корпус–площадка **0,8 мм**. Сетки неизменённых деталей
-механизма совпадают с v09 по SHA-256.
+Reimported body and leaf each contain one valid solid; the full STEP assembly
+contains **49 valid solids**. Body volume changes by about 0.0125 mm³ during
+the STEP round trip. All six leaf positions, insertion offsets of
+0/0.5/1.5/3/6/9 mm, mechanical interfaces, and the rotating platform's full
+cylindrical envelope were checked: intersection volumes are zero.
+Minimum body–platform clearance is **0.8 mm**.
+Unchanged mechanism meshes match v09 by SHA-256.
 
-Расстояние посадки измеряется между всеми граничными оболочками с отдельной
-проверкой объёма пересечения. У STEP есть воспроизводимая численная особенность
-OCCT: сокращённая проверка включения твёрдых тел возвращает ноль возле одного
-шва сплайна, хотя граничные поверхности разделены на 0,21034 мм; сдвиг точки
-на 0,001 мм меняет этот ответ. Сырое значение сохранено в отчёте, а не скрыто.
-Такой ответ не используется вместо измерения расстояния поверхностей.
+Fit distance is measured between all boundary shells, with a separate
+intersection-volume check. STEP exhibits a reproducible OCCT numerical issue:
+a shortcut solid-containment check returns zero near one spline seam even
+though boundary surfaces are 0.21034 mm apart; shifting a point by 0.001 mm
+changes that response. The raw value is retained in the report, not hidden.
+It is not substituted for the surface-distance measurement.
 
-Все 15 печатных STL замкнуты, согласованно ориентированы и имеют положительный
-объём. Обе материальные области цветной 3MF также замкнуты. Проекты нового
-корпуса, шести листьев и пробы посадки созданы и нарезаны Bambu Studio для
-P2S/0,4 мм без предупреждений. Оценки: корпус около 289 минут / 126,7 г,
-шесть листьев 108 минут / 17,2 г, проба посадки 48 минут / 13,8 г; масса включает
-поддержки. Совместимые проекты неизменённой площадки и механизма включены
-с прежними именами версий. G-code в передаваемый комплект не входит.
+All 15 print STL files are watertight, consistently oriented, and have positive
+volume. Both material regions of the multicolor 3MF are also watertight.
+New body, six-leaf, and fit-coupon projects were created and sliced in Bambu
+Studio for P2S/0.4 mm without warnings.
+Estimates: body about 289 minutes / 126.7 g, six leaves 108 minutes / 17.2 g,
+fit coupon 48 minutes / 13.8 g; mass includes supports.
+Compatible projects for the unchanged platform and mechanism retain their
+previous version names. G-code is not included in the delivered package.
 
-[Проверка CAD до](../results/pitaya_v11_validation/before/cad_fit.json),
-[после](../results/pitaya_v11_validation/after/cad_fit.json),
-[STEP и исходники](../results/pitaya_v11_validation/after/geometry_provenance.json).
+[CAD check before](../results/pitaya_v11_validation/before/cad_fit.json),
+[after](../results/pitaya_v11_validation/after/cad_fit.json),
+[STEP and sources](../results/pitaya_v11_validation/after/geometry_provenance.json).
 
-В отдельном комплекте `PITAYA_v11_model.zip` находятся параметрические
-исходники, STL для печати, STL в сборочных координатах, STEP, проекты 3MF,
-проба посадки, инструкции и переносимый набор сценариев. Прежняя v10 сохранена.
-Сначала следует напечатать один лист и небольшую пробу посадки.
+The separate `PITAYA_v11_model.zip` contains parametric sources, print STL files,
+STL files in assembly coordinates, STEP, 3MF projects, a fit coupon, instructions,
+and a portable scenario set. V10 is preserved.
+Print one leaf and a small fit coupon first.
 
-## Повторение расчётов
+## Repeating the calculations
 
-Пути в scene.json разрешаются относительно манифеста. При другом расположении
-CAD-пакета обновите только `path`, сохранив имена деталей и трансформации.
+Paths in scene.json resolve relative to the manifest. If the CAD package moves,
+update only `path`, preserving part names and transforms.
 
 ```sh
 python tools/recheck_pitaya.py /path/to/PITAYA_v10 --out results/pitaya_v11_validation/before/nominal
@@ -168,8 +170,8 @@ python tools/run_snag_audit_parallel.py results/pitaya_v11_validation/after/scen
 python -m yarnstand snag-compare results/pitaya_v11_validation/before/snags/audit.json results/pitaya_v11_validation/after/snags/audit.json --out results/pitaya_v11_validation/comparison.json
 ```
 
-Локально прошли **65 Python-тестов и 10 тестов интерфейса** на расчётном коде.
-Изменения CAD отдельно проверены описанными выше геометрическими и печатными
-проверками. Контакт нити с поверхностью не доказывает заклинивание; трение,
-изгиб, смятие, заусенцы и самостоятельное соскальзывание петли не моделируются.
-Прочность печатного материала и реальные посадки ещё не испытаны.
+At the time of this review, **65 Python tests and 10 UI tests** passed locally
+on the calculation code. CAD changes were separately checked by the geometry
+and slicing procedures above. Yarn contact with a surface does not prove
+jamming; friction, bending, crushing, burrs, and spontaneous loop release
+are not modeled. Printed material strength and actual fits remain untested.

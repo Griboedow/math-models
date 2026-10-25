@@ -1,70 +1,71 @@
-# Персик v13: зоны для проверки перед печатью
+# Peach v13: zones to review before printing
 
-Проверены восемь сохранённых движений нити под листьями и четыре стресс-сценария
-у края вращающейся площадки. Диаметры нити — 2 и 4 мм. Добавочный запас по радиусу
-0.5 мм: печать 0.2, ворс 0.2, сетка 0.05, резерв 0.05 мм. Это проектные допущения.
+Eight saved yarn motions under the leaves and four stress cases at the rotating
+platform rim were checked. Yarn diameters: 2 and 4 mm. Additional radial
+allowance: 0.5 mm, comprising print 0.2, fuzz 0.2, mesh 0.05, reserve 0.05 mm.
+These are design assumptions.
 
-**Итог: 7 сценариев свободны с запасом, 4 имеют номинальный контакт,
-1 не проходит по заданному запасу.** Четыре проверки полного оборота площадки
-проходят; это относится к сохранённому положению отрезка нити у края.
-Прохождение остальных положений из этого не следует.
+**Result: 7 cases clear with allowance, 4 with nominal contact,
+and 1 failing the specified allowance.** All four full-turn platform checks
+pass for the saved yarn-segment position at the rim.
+This does not establish clearance at other positions.
 
-## Тесный проход после малого листа
+## Narrow passage after the small leaf
 
-В `sweep_second_4mm_tip` номинальный зазор до корпуса уменьшается примерно
-до **0.189 мм**. При запасе 0.5 мм его недостаточно: разница примерно **0.311 мм**.
-Уточнение с пространственным шагом и шагом движения 0.025 мм даёт нижнюю
-границу зазора с запасом **−0.336 мм**. Возле самого малого листа эта граница
-после уточнения положительна, около **+0.019 мм**.
+In `sweep_second_4mm_tip`, nominal body clearance drops to about **0.189 mm**.
+This is insufficient for the 0.5 mm allowance: the difference is about **0.311 mm**.
+Refining both spatial and motion steps to 0.025 mm gives a clearance lower
+bound with allowance of **−0.336 mm**. Near the small leaf itself, the refined
+bound is positive, about **+0.019 mm**.
 
-Место на корпусе `01_body_peach.stl`, координаты исходного CAD-STL, мм:
-**X=68.553, Y=24.973, Z=49.451**. Это зона, где нить после движения у кончика
-приближается к корпусу. Чтобы соблюсти выбранный запас, нужно изменить проход
-или обеспечить иной допустимый путь. Число дефицита не является готовой
-командой срезать столько материала: после изменения проверяется весь путь.
+The location on `01_body_peach.stl`, in original CAD-STL coordinates, mm:
+**X=68.553, Y=24.973, Z=49.451**. Here the yarn approaches the body after moving
+past the tip. Meeting the chosen allowance requires a passage change or another
+valid route. The deficit is not an instruction to remove that depth of material:
+the entire path must be checked after revision.
 
-![Нить возле корпуса после малого листа](../results/peach_v13_snags/second_leaf_4mm_gap.png)
+![Yarn near the body after the small leaf](../results/peach_v13_snags/second_leaf_4mm_gap.png)
 
-Красная трубка — номинальная нить, полупрозрачная оболочка — проверочный запас.
-Зелёным выделена проверяемая деталь; светлые детали показывают контекст сборки.
-Это заданная проверочная поза, не рассчитанная деформация при контакте.
+The red tube is nominal yarn; the translucent envelope is the checking allowance.
+Green highlights the checked part; pale parts provide assembly context.
+This is a prescribed checking pose, not a calculated contact deformation.
 
-## Маршруты к основаниям листьев
+## Routes toward the leaf roots
 
-Все четыре исходных маршрута к основаниям встречают препятствие. Координаты
-первого обнаруженного контакта с листом приведены в его исходной системе, мм:
+All four original rootward routes encounter an obstacle. Coordinates of the
+first detected leaf contact are in its original frame, in mm:
 
-| Сценарий | Деталь | X | Y | Z |
+| Case | Part | X | Y | Z |
 |---|---|---:|---:|---:|
-| Большой лист, нить 2 мм | `04_leaf_green.stl` | 77.767 | −24.698 | 23.149 |
-| Большой лист, нить 4 мм | `04_leaf_green.stl` | 79.647 | −21.934 | 18.849 |
-| Малый лист, нить 2 мм | `08_leaf_second_green.stl` | 75.938 | −0.555 | 49.723 |
-| Малый лист, нить 4 мм | `08_leaf_second_green.stl` | 79.077 | 5.871 | 46.579 |
+| Large leaf, 2 mm yarn | `04_leaf_green.stl` | 77.767 | −24.698 | 23.149 |
+| Large leaf, 4 mm yarn | `04_leaf_green.stl` | 79.647 | −21.934 | 18.849 |
+| Small leaf, 2 mm yarn | `08_leaf_second_green.stl` | 75.938 | −0.555 | 49.723 |
+| Small leaf, 4 mm yarn | `08_leaf_second_green.stl` | 79.077 | 5.871 | 46.579 |
 
-Начальная поза не пересекает лист. В ходе заданного движения нить попадает
-в его объём. Это повод проверить обратную сторону, переходы и возможность
-выхода наружу. Простое скругление может оставить нависающий выступ;
-его эффективность проверяется повторением сохранённого движения.
+The initial pose does not intersect the leaf. During the prescribed motion,
+the yarn enters its volume. Review the reverse side, transitions, and outward
+escape options. Simple rounding may leave an overhang; its effectiveness
+must be checked by repeating the saved motion.
 
-![Заданный путь пересекает большой лист](../results/peach_v13_snags/main_leaf_root.png)
+![Prescribed path intersects the large leaf](../results/peach_v13_snags/main_leaf_root.png)
 
-Другие сохранённые пути, проходящие у кончиков большого листа, свободны с
-запасом для обоих диаметров. У малого листа путь 2-мм нити свободен с запасом.
-Эти пути имеют собственные начальные положения: их нельзя считать доказанным
-способом освобождения нити из любого положения под основанием.
+Other saved routes near the large leaf's tips are clear with allowance for both
+diameters. Near the small leaf, the 2 mm route is clear with allowance.
+These paths have their own starting positions; they cannot establish a release
+route from every position under a root.
 
-## Файлы для правки и повторения
+## Files for revision and reproduction
 
-- [Сценарии](../results/peach_v13_snags/cases.json) и [манифест сборки](../results/peach_v13_snags/scene.json).
-- [Полный отчёт](../results/peach_v13_snags/report.html), [JSON](../results/peach_v13_snags/audit.json).
-- [Уточнение тесного прохода](../results/peach_v13_snags/refined_tip/report.html).
-- [STL-маркеры зон и соответствие деталям](../results/peach_v13_snags/review_markers.json).
+- [Cases](../results/peach_v13_snags/cases.json) and [assembly manifest](../results/peach_v13_snags/scene.json).
+- [Full report](../results/peach_v13_snags/report.html), [JSON](../results/peach_v13_snags/audit.json).
+- [Narrow-passage refinement](../results/peach_v13_snags/refined_tip/report.html).
+- [STL zone markers and part mapping](../results/peach_v13_snags/review_markers.json).
 
 ```sh
 python -m yarnstand snag-audit results/peach_v13_snags/scene.json results/peach_v13_snags/cases.json --out results/peach_new_revision
 python -m yarnstand snag-compare results/peach_v13_snags/audit.json results/peach_new_revision/audit.json --out results/peach_comparison.json
 ```
 
-Тест показывает геометрическое препятствие и недостаточный запас. Он не выдаёт
-силу удержания, вероятность зацепа или гарантию отсутствия микрозацепов печати.
-Метод, покрытие и ограничения: [snags.md](snags.md).
+The test identifies geometric obstacles and insufficient allowance. It does not
+provide retention forces, snag probabilities, or a guarantee against printed
+micro-snags. Method, coverage, and limitations: [snags.md](snags.md).
