@@ -205,8 +205,8 @@ def write_report(path, report):
     report=deepcopy(report)
     report['exporter_sha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     (path/'audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2,allow_nan=False),encoding='utf-8')
-    labels={'clear_with_allowance':'Свободно с заданным запасом','unresolved_clearance':'Зазор не разрешён точностью',
-            'allowance_contact':'Не хватает запаса','nominal_contact':'Контакт на пути','initial_nominal_contact':'Контакт в начальной позе'}
+    labels={'clear_with_allowance':'Clear with the specified allowance','unresolved_clearance':'Clearance unresolved at this precision',
+            'allowance_contact':'Insufficient allowance','nominal_contact':'Contact along the path','initial_nominal_contact':'Contact in the initial pose'}
     rows=[]
     for case in report['cases']:
         for part in sorted(case['parts'],key=lambda p:SEVERITY[p['status']],reverse=True):
@@ -216,19 +216,19 @@ def write_report(path, report):
             rows.append(f'<tr><td>{html.escape(case["id"])}</td><td>{html.escape(part["part"])}</td><td>{labels[part["status"]]}</td>'
                         f'<td>{coords} {unit}</td><td>{1000*part["clearance_lower_bound_with_allowance_m"]:.3f}</td>'
                         f'<td>{1000*part["clearance_deficit_bound_m"]:.3f}</td></tr>')
-    body=''.join(rows) or '<tr><td colspan="6">Проверенные пути свободны с заданным запасом.</td></tr>'
+    body=''.join(rows) or '<tr><td colspan="6">The checked paths are clear with the specified allowance.</td></tr>'
     summary=html.escape(json.dumps(report['summary']['case_statuses'],ensure_ascii=False))
     allowance=1000*report['effective_radial_allowance_m']
-    document=f'''<!doctype html><html lang="ru"><meta charset="utf-8"><title>Проверка зон зацепа перед печатью</title>
+    document=f'''<!doctype html><html lang="en"><meta charset="utf-8"><title>Pre-print snag-zone review</title>
 <style>body{{font:16px system-ui;max-width:1400px;margin:40px auto;padding:0 24px;color:#182d30;background:#f5f6f2}}h1{{font-size:30px}}p{{max-width:1000px;line-height:1.55}}table{{border-collapse:collapse;background:white;width:100%}}td,th{{padding:10px;text-align:left;border-bottom:1px solid #ddd}}th{{background:#dce7e1}}td{{font-size:14px}}code{{overflow-wrap:anywhere}}</style>
-<h1>Зоны риска зацепа: проверка CAD</h1><p>Проверено сценариев: {report['summary']['cases']}. Добавочный радиальный запас: {allowance:.3f} мм.
-Отрицательная граница зазора требует проверки или изменения геометрии. «Контакт» означает препятствие на заданном пути, а не доказанное удержание нити.</p>
-<p>Координаты указаны в системе исходного STL, когда она известна; иначе — в системе сборки, мм. Дефицит — запас зазора для проверенного движения, <b>не глубина срезания материала</b>.
-После правки повторите те же сценарии. Результат «свободно» относится только к этим движениям и заданным допускам.</p>
-<p>Сводка: <code>{summary}</code>. Полные параметры, координаты, позы и хеши: <a href="audit.json">audit.json</a>.</p>
-<table><thead><tr><th>Сценарий</th><th>Деталь</th><th>Результат</th><th>XYZ поверхности STL</th><th>Нижняя граница зазора, мм</th><th>Дефицит, мм</th></tr></thead><tbody>{body}</tbody></table>
-<p>Трение, сжатие и изгиб пряжи, самоконтакт, заусенцы и усилие освобождения не рассчитываются. Ворс и печать учтены только заданным геометрическим запасом.
-Петли задаются пользователем; самопроизвольное образование и затягивание петель не предсказывается.</p></html>'''
+<h1>Snag-risk zones: CAD review</h1><p>Cases checked: {report['summary']['cases']}. Additional radial allowance: {allowance:.3f} mm.
+A negative clearance bound requires review or a geometry change. Contact means an obstacle along the prescribed path, not proven yarn retention.</p>
+<p>Coordinates use the original STL frame when known; otherwise they use the assembly frame in mm. The deficit is a clearance allowance for the checked motion, <b>not the depth of material to remove</b>.
+Repeat the same cases after editing. A clear result applies only to these motions and specified allowances.</p>
+<p>Summary: <code>{summary}</code>. Full parameters, coordinates, poses, and hashes: <a href="audit.json">audit.json</a>.</p>
+<table><thead><tr><th>Case</th><th>Part</th><th>Result</th><th>STL surface XYZ</th><th>Clearance lower bound, mm</th><th>Deficit, mm</th></tr></thead><tbody>{body}</tbody></table>
+<p>Friction, yarn compression and bending, self-contact, burrs, and release force are not calculated. Fuzz and printing are represented only by the specified geometric allowance.
+Loops are prescribed by the user; spontaneous loop formation and tightening are not predicted.</p></html>'''
     (path/'report.html').write_text(document,encoding='utf-8')
     # Visual CAD overlays in each original STL's coordinates, always in mm.
     # These spheres locate review zones; they are not replacement print parts.

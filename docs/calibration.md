@@ -1,33 +1,35 @@
-# Калибровка без лаборатории
+# Calibration without a laboratory
 
-1. **Масса и размеры.** Взвесить готовую подставку целиком и клубок отдельно.
-   Измерить диаметр клубка в двух направлениях, высоту, расстояние до руки
-   по горизонтали и высоту руки от поверхности под ножками. Вводятся полуоси.
+1. **Mass and dimensions.** Weigh the complete stand and the ball separately.
+   Measure the ball diameter in two directions, its height, the horizontal
+   distance to the hand, and hand height above the surface under the feet.
+   Enter semi-axes.
 
-2. **Пусковое сопротивление.** Снять клубок. Тянуть нитью площадку по касательной
-   на известном радиусе r, измеряя силу начала и медленного устойчивого вращения.
-   `τ_start = F_start r`, `τ_run ≈ F_slow r`. Нужен достаточно чувствительный
-   динамометр; грубые весы не различат малые силы. Альтернатива — маленькие
-   известные грузы с учётом трения направляющей. 1 грамм-сила = 0.00980665 Н.
-   Измерять уже собранный узел, в нескольких положениях площадки.
+2. **Starting resistance.** Remove the ball. Pull the platform tangentially
+   with yarn at a known radius r, measuring the force needed to start and
+   sustain slow rotation. `τ_start = F_start r`, `τ_run ≈ F_slow r`.
+   Use a sufficiently sensitive force gauge; coarse scales cannot resolve
+   these small forces. Small known weights are an alternative if guide
+   friction is accounted for. 1 gram-force = 0.00980665 N.
+   Measure the assembled mechanism at several platform positions.
 
-3. **Клубок на площадке.** Удерживая площадку, определить, насколько легко
-   клубок проворачивается относительно неё. Плотная посадка на палочку
-   означает дополнительное сцепление: его можно задать как `spindle_coupling_Nm`.
-   Повторить с остатком пряжи. Если измерения нет, сохранить нулевой дополнительный
-   момент и читать предупреждение о проскальзывании как повод проверить посадку.
+3. **Ball on the platform.** Hold the platform and assess how easily the ball
+   rotates relative to it. A tight spindle fit adds coupling, represented by
+   `spindle_coupling_Nm`. Repeat with a nearly empty ball. Without a measurement,
+   keep the additional torque at zero and treat the slip warning as a reason
+   to check the fit.
 
-4. **Нить и ритм.** Записать короткое видео обычного вязания: примерно оценить
-   период и длину каждой протяжки. Для эффективной жёсткости измерить увеличение
-   длины ΔL от небольшой известной силы F: `EA ≈ F L / ΔL`. Сделать несколько
-   повторов, потому что пряжа нелинейна и имеет гистерезис. Сопротивление сходу
-   слоёв можно оценить по медленному разматыванию при свободном вращении,
-   вычитая вклад подшипников `τ_run/A`.
+4. **Yarn and rhythm.** Record a short video of normal knitting and estimate
+   the period and length of each draw. To estimate effective stiffness,
+   measure extension ΔL under a small known force F: `EA ≈ F L / ΔL`.
+   Repeat several times because yarn is nonlinear and exhibits hysteresis.
+   Estimate layer-peeling resistance by slow unwinding with free rotation,
+   subtracting the bearing contribution `τ_run/A`.
 
-5. **Ножки и край.** Медленно тянуть готовую подставку горизонтально на малой
-   высоте: `μ_foot ≈ F_slide / (m_total g)`. Проверить реальной нитью низкий выход
-   из почти пустого клубка при руках ниже столика. Несколько минут вязания
-   покажут выбег, слабину и зацепы лучше любого дополнительного знака после запятой.
+5. **Feet and rim.** Slowly pull the assembled stand horizontally at a low
+   height: `μ_foot ≈ F_slide / (m_total g)`. Test actual yarn leaving low on
+   a nearly empty ball with hands below the stand. A few minutes of knitting
+   reveal overrun, slack, and snags better than another decimal place.
 
-Сохранить замеренные параметры новым JSON, не перезаписывая исходные сценарии.
-Сначала сверить одну простую ситуацию, затем сравнивать конструкции.
+Save measured parameters in a new JSON file without overwriting the original
+scenarios. Validate one simple situation first, then compare designs.

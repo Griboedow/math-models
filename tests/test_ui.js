@@ -48,9 +48,9 @@ test('a geometric failure cannot display a green result with unconditional force
   r.summary.path_screen={status:'path_intersects_ball',min_clearance_m:null};
   h.context.responseFixture=r;h.get('display(responseFixture)');
   assert.ok(!h.element('valid').className.includes('good'));
-  assert.match(h.element('valid').textContent,/Все показанные силы условны/);
-  assert.match(h.element('path').textContent,/входит в клубок/);
-  assert.match(h.element('peakMeaning').textContent,/условный/);
+  assert.match(h.element('valid').textContent,/All displayed forces are conditional/);
+  assert.match(h.element('path').textContent,/enters the ball/);
+  assert.match(h.element('peakMeaning').textContent,/hypothetical/);
 });
 
 test('rounded/clamped controls do not silently change imported JSON',()=>{
@@ -107,7 +107,7 @@ test('a late failed request cannot overwrite a newer successful run',async()=>{
   const first=h.get('run({})'),second=h.get('run({})');
   requests[1].resolve({ok:true,json:async()=>result(base)});await second;
   requests[0].reject(new Error('old request failed'));await first;
-  assert.match(h.element('status').textContent,/Готово/);
+  assert.match(h.element('status').textContent,/Done/);
   assert.equal(h.element('saveResult').disabled,false);
 });
 
@@ -127,8 +127,8 @@ test('undefined support margin renders the warning instead of throwing',()=>{
   r.summary.minimum_support_margin_m=null;r.summary.static_limits.critical_snag_N=null;
   r.summary.first_events_s={stand_lifting:.1};r.summary.peak_tension_before_first_event_N=null;
   h.context.response=r;h.get('display(response)');
-  assert.match(h.element('valid').textContent,/отрыв от опоры/);
-  assert.match(h.element('extra').textContent,/— мм/);
+  assert.match(h.element('valid').textContent,/stand lift-off/);
+  assert.match(h.element('extra').textContent,/— mm/);
 });
 
 test('switching the ball preserves custom stand values and exit height resets only for the ball',()=>{

@@ -57,9 +57,9 @@ try:
     bold=ImageFont.truetype('C:/Windows/Fonts/arialbd.ttf',31);font=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',25)
 except OSError:
     bold=ImageFont.truetype('DejaVuSans-Bold.ttf',31);font=ImageFont.truetype('DejaVuSans.ttf',25)
-for x,name,title in [(0,'loop_contact.png','Подъём петли вверх: контакт с листом'),(1000,'loop_clear_route.png','Сначала наружу, затем вверх: свободно')]:
+for x,name,title in [(0,'loop_contact.png','Lift the loop: contact with the leaf'),(1000,'loop_clear_route.png','First outward, then up: clear')]:
     board.paste(Image.open(OUT/name),(x,65));d.text((x+25,17),title,font=bold,fill='#993260')
-d.text((25,977),'Нить Ø2 мм. Серый — начальное положение; цвет — проверенные положения заданного движения.',font=font,fill='#57665f')
-d.text((25,1008),'Геометрическая проверка по STL: трение, ворс и самостоятельное соскальзывание не рассчитывались.',font=font,fill='#57665f')
+d.text((25,977),'Yarn Ø2 mm. Gray: initial pose; color: checked poses along the prescribed motion.',font=font,fill='#57665f')
+d.text((25,1008),'STL geometry check: friction, fuzz, and spontaneous slipping were not modeled.',font=font,fill='#57665f')
 board.save(OUT/'leaf_sweep_comparison.png')
 print(OUT/'leaf_sweep_comparison.png')

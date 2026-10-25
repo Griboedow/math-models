@@ -1,6 +1,7 @@
-# Архив результатов до исправления модели
+# Results archive from before the model fix
 
-Эти файлы сохранены для воспроизведения первоначального отчёта на `8b09b76`.
-Расчёты траекторий и динамики заменены каталогом
-[pitaya_v10_audit_fix](../pitaya_v10_audit_fix). См. [описание исправлений](../../docs/audit-fixes.md).
-CAD-проверки посадок относятся к прежней неизменённой геометрии изделия.
+These files are preserved to reproduce the original report at `8b09b76`.
+Path and dynamics calculations have been superseded by
+[pitaya_v10_audit_fix](../pitaya_v10_audit_fix).
+See the [fix description](../../docs/audit-fixes.md).
+CAD-fit checks refer to the previous, unchanged product geometry.

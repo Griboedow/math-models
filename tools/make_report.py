@@ -1,4 +1,4 @@
-"""Generate figures and the Russian result note from saved numerical outputs."""
+"""Generate figures and the English result note from saved numerical outputs."""
 from pathlib import Path
 import json,sys
 import matplotlib
@@ -14,50 +14,50 @@ fig,axs=plt.subplots(2,2,figsize=(12,6),sharex=True)
 for col,ba in enumerate(['full','nearly_empty']):
     for mo,color in [('knitting','#236b50'),('crochet','#ba2e71')]:
         r=get(ba,mo);t=[x['t_s'] for x in r['trace']]
-        axs[0,col].plot(t,[x['tension_N'] for x in r['trace']],color=color,label='Спицы' if mo=='knitting' else 'Крючок',lw=1.8)
+        axs[0,col].plot(t,[x['tension_N'] for x in r['trace']],color=color,label='Knitting' if mo=='knitting' else 'Crochet',lw=1.8)
         axs[1,col].plot(t,[x['slack_m']*1000 for x in r['trace']],color=color,lw=1.8)
-    axs[0,col].set_title('Полный · 100 г' if ba=='full' else 'Почти пустой · 10 г (условное сцепление)')
-    axs[1,col].set_xlabel('Время, с')
+    axs[0,col].set_title('Full · 100 g' if ba=='full' else 'Nearly empty · 10 g (assumed coupling)')
+    axs[1,col].set_xlabel('Time, s')
     for ax in axs[:,col]:ax.grid(alpha=.7)
-axs[0,0].set_ylabel('Натяжение, Н');axs[1,0].set_ylabel('Условный избыток выдачи, мм');axs[0,0].legend(frameon=False)
-fig.suptitle('PITAYA · подставка сбоку на столе',fontsize=17)
-fig.text(.05,.015,'Сценарные параметры, без физических измерений. Справа допущение сцепления нарушается; кривые не предсказывают реальное скольжение.',fontsize=9)
+axs[0,0].set_ylabel('Tension, N');axs[1,0].set_ylabel('Hypothetical excess feed, mm');axs[0,0].legend(frameon=False)
+fig.suptitle('PITAYA · stand beside the hand on a desk',fontsize=17)
+fig.text(.05,.015,'Scenario assumptions, no physical measurements. Right: coupling fails; the curves do not predict actual slip.',fontsize=9)
 fig.tight_layout(rect=[0,.04,1,.94]);fig.savefig(ROOT/'docs/tension.png',dpi=150);plt.close(fig)
 
 fig,axs=plt.subplots(1,2,figsize=(11,4.4))
-for ba,col,label in [('full','#236b50','Полный'),('nearly_empty','#ba2e71','Почти пустой')]:
+for ba,col,label in [('full','#236b50','Full'),('nearly_empty','#ba2e71','Nearly empty')]:
     points=[x for x in sens if x['sweep']=='bearing_and_feet' and x['ball_preset']==ba and x['motion_preset']=='knitting' and x['foot_mu']==.45]
     axs[0].plot([x['start_torque_mNm'] for x in points],[x['start_N'] for x in points],'o-',color=col,label=label)
     setups=['desk_side','front','far_side','high_table','floor']
     axs[1].plot(range(5),[get(ba,'knitting',p)['summary']['static_limits']['critical_snag_N'] for p in setups],'o-',color=col,label=label)
-axs[0].set(xlabel='Пусковой момент узла, мН·м',ylabel='Пусковое натяжение, Н',title='Маленький клубок: меньше рабочее плечо')
-axs[1].set(xticks=range(5),xticklabels=['Сбоку','Спереди','Далеко','Руки ниже','Пол'],ylabel='Статический порог зацепа, Н',title='Первый предел сдвига / наклона / отрыва')
+axs[0].set(xlabel='Assembly starting torque, mN·m',ylabel='Starting tension, N',title='Small ball: shorter effective lever arm')
+axs[1].set(xticks=range(5),xticklabels=['Side','Front','Far','Hands below','Floor'],ylabel='Static snag threshold, N',title='First sliding / tipping / lift-off limit')
 for ax in axs:ax.grid(alpha=.7);ax.legend(frameon=False)
 fig.tight_layout();fig.savefig(ROOT/'docs/sensitivity.png',dpi=150);plt.close(fig)
 
-lines=['# Результаты расчёта PITAYA','',
-'Все числа ниже рассчитаны при сценарных, ещё не измеренных свойствах пряжи и подставки. Размеры ножек и площадки взяты из CAD. Это ориентиры для пробы, не аттестация изделия.','',
-'## Сбоку на столе','',
-'До рабочей руки 40 см по горизонтали, рука на 20 см выше поверхности под ножками. Подставка 230 г; полный клубок 100 г, почти пустой 10 г.','',
-'| Клубок | Подача | Пуск, Н | Пик связанной модели, Н | Порог зацепа, Н | Сцепление весь прогон |',
+lines=['# PITAYA calculation results','',
+'All values below use assumed, unmeasured yarn and stand properties. Foot and platform dimensions come from CAD. These are guides for testing, not product certification.','',
+'## Beside the hand on a desk','',
+'The working hand is 40 cm away horizontally and 20 cm above the surface under the feet. Stand mass: 230 g; full ball: 100 g; nearly empty ball: 10 g.','',
+'| Ball | Feed | Start, N | Coupled-model peak, N | Snag threshold, N | Traction throughout run |',
 '|---|---|---:|---:|---:|---|']
 for ba in ['full','nearly_empty']:
     for mo in ['knitting','crochet']:
-        x=get(ba,mo)['summary'];lines.append(f"| {'Полный' if ba=='full' else 'Почти пустой'} | {'Спицы' if mo=='knitting' else 'Крючок'} | {x['static_limits']['start_tension_N']:.3f} | {x['peak_tension_N']:.3f} | {x['static_limits']['critical_snag_N']:.2f} | {'да, при допущениях' if x['hypotheses_valid_for_entire_run'] else 'нет; пик условный'} |")
+        x=get(ba,mo)['summary'];lines.append(f"| {'Full' if ba=='full' else 'Nearly empty'} | {'Knitting' if mo=='knitting' else 'Crochet'} | {x['static_limits']['start_tension_N']:.3f} | {x['peak_tension_N']:.3f} | {x['static_limits']['critical_snag_N']:.2f} | {'yes, under the assumptions' if x['hypotheses_valid_for_entire_run'] else 'no; hypothetical peak'} |")
 lines += ['',
-'У почти пустого клубка в исходном сценарии не хватает сцепления с площадкой. Поэтому его динамические пики нельзя выдавать за реальные силы. Плотность посадки на палочку особенно важна; отдельный анализ `spindle_grip` показывает влияние дополнительного удерживающего момента.','',
-'![Натяжение](tension.png)','','## Что следует из сравнения','',
-'- Малый радиус клубка повышает пусковое натяжение при том же сопротивлении узла. Потеря массы не гарантирует лёгкой подачи.',
-'- Резкие импульсы выбранного сценария крючка дают больший разгон и выбег. Это эффект заданного ритма, не обязательное свойство вязания крючком.',
-'- При стандартных параметрах расчёт не выявил сдвига или наклона PITAYA в обычной подаче. Порог около одного ньютона относится к зацепу и не является большим запасом против сильного рывка рукой.',
-'- При руках ниже высокой подставки низкий выход нити из остатка клубка может пересекать край. Изменение формы листьев не устраняет эту причину: важнее взаимная высота руки и подставки.',
-'- При крутой тяге вверх уменьшается рабочее плечо и прижим клубка. Возможен другой режим схода нити, который модель не описывает.',
-'- Более широкая опора улучшает предел наклона, но не исправляет скользкие ножки. Для сравнения меняйте реальную геометрию контакта, а не диаметр декора.','',
-'![Чувствительность](sensitivity.png)','','## Состав проверок','',
-f'- {len(rows)} сценариев подставка × клубок × ритм × положение.',
-f'- {len(sens)} случаев чувствительности: сопротивление узла, трение ножек, упругость нити, сход слоёв и посадка на палочку.',
-'- 864 геометрических проверки пути: два вида листьев, два клубка, три положения, три высоты выхода и 24 азимута. Это сетка проверок, не статистика вероятности.',
-'- Аналитические тесты равновесия, касательной, инвариантности при повороте, интеграла подачи, ошибок конфигурации и сходимости по времени.','',
-'Для практической пробы сначала проверить низкое сопротивление вращению и посадку остатка клубка. Обычный столик рядом с рукой — разумная исходная конфигурация для испытания. После печати подставить несколько измерений по [инструкции](calibration.md).','']
+'The nearly empty ball lacks platform traction in the baseline scenario, so its dynamic peaks must not be presented as actual forces. Spindle fit is particularly important; the separate `spindle_grip` analysis shows the effect of additional retaining torque.','',
+'![Tension](tension.png)','','## What the comparison shows','',
+'- A smaller ball radius increases starting tension at the same assembly resistance. Lower mass does not guarantee easy feed.',
+'- Sharp pulses in the selected crochet scenario cause more acceleration and overrun. This follows from the prescribed rhythm, not an inherent property of crochet.',
+'- With default parameters, no PITAYA sliding or tipping was detected during normal feed. The roughly one-newton threshold concerns snagging and is not a large margin against a strong hand pull.',
+'- With hands below a tall stand, a low exit from a nearly empty ball can intersect the rim. Changing leaf shape does not remove this cause: relative hand and stand heights matter more.',
+'- A steep upward pull reduces the effective lever arm and ball contact force. Yarn may unwind in a different mode outside this model.',
+'- Wider support raises the tipping limit but does not fix slippery feet. Compare actual contact geometry, not the diameter of decoration.','',
+'![Sensitivity](sensitivity.png)','','## Check coverage','',
+f'- {len(rows)} stand × ball × rhythm × position scenarios.',
+f'- {len(sens)} sensitivity cases: assembly resistance, foot friction, yarn elasticity, layer peeling, and spindle fit.',
+'- 864 geometric path checks: two leaf types, two balls, three positions, three exit heights, and 24 azimuths. This is a check grid, not probability statistics.',
+'- Analytical tests for equilibrium, tangency, rotational invariance, integrated feed, configuration errors, and time-step convergence.','',
+'For physical testing, start by checking low rotational resistance and the fit of a nearly empty ball. A normal desk beside the hand is a reasonable starting setup. After printing, enter measurements following the [calibration guide](calibration.md).','']
 (ROOT/'docs/results.md').write_text('\n'.join(lines),encoding='utf-8')
 print('Figures and result note generated from saved outputs')

@@ -1,124 +1,125 @@
-# PITAYA v10: повторная проверка, 18 октября 2026
+# PITAYA v10: recheck, October 18, 2026
 
-> Архивный расчёт до аудита модели. Числа траекторий и динамики ниже заменены
-> [пересчётом модели 0.2.0](audit-fixes.md). В частности, 696 свободных путей
-> включали недопустимые линии через клубок. Раздел о CAD-посадках остаётся
-> отдельной проверкой неизменённой геометрии.
+> Archived calculation from before the model audit. The path and dynamics
+> values below are superseded by the [model 0.2.0 recalculation](audit-fixes.md).
+> In particular, the 696 clear paths included invalid lines through the ball.
+> The CAD-fit section remains a separate check of unchanged geometry.
 
-Взята текущая CAD-геометрия v10 с широкими листьями, розовым микроязычком
-и сдвинутым первым штифтом. Обновление симулятора подтянуто с
-`f5322a7932dea19f92ca371f747bcb993a7e9e73`; локальных изменений перед обновлением
-не было. В ходе проверки исправлен дополнительный численный допуск VTK.
-Хеши реально рассчитанных исходников, STL и преобразования координат сохранены
-в [metadata.json](../results/pitaya_v10_recheck/metadata.json).
+The review used v10 CAD geometry with wide leaves, the pink micro-tab,
+and the shifted first pin. The simulator update was pulled from
+`f5322a7932dea19f92ca371f747bcb993a7e9e73`; there were no local changes before
+updating. An additional VTK numerical tolerance was fixed during the review.
+Hashes of executed sources and STL files, plus coordinate transforms, are in
+[metadata.json](../results/pitaya_v10_recheck/metadata.json).
 
-**Вывод: вращающийся узел не имеет найденных пересечений, но v10 ещё нельзя
-считать проверенной печатной посадкой.** Между листом и корпусом обнаружен
-минимальный CAD-зазор всего 0,0098 мм. Кроме того, свободная петля под листом
-не может пройти по некоторым заданным траекториям подъёма без контакта.
+**Conclusion: no intersections were found in the rotating assembly, but v10
+cannot yet be considered a validated printed fit.** Minimum leaf-to-body CAD
+clearance was only 0.0098 mm. A loose loop under a leaf also cannot follow some
+prescribed lifting routes without contact.
 
-| Проверка | Результат |
+| Check | Result |
 |---|---|
-| Натянутая нить Ø2 мм, 0,04 Н | 696 свободных путей, 24 с контактом из 720 |
-| Диаметр 1/2/4 мм и натяжение 0,01/0,04/0,10 Н | 54 дополнительных случая; найден контакт толстой слабонатянутой нити |
-| Заданные движения руки | 22 свободных протяжки, 2 с начальным контактом из 24 |
-| Три маршрута петли под листом | Два с контактом, один геометрически свободен |
-| Динамика вращения и опоры | 60 сценариев; сцепление почти пустого клубка нарушается в 30 из 30 |
-| CAD-посадка | Пересечений не найдено; минимальный зазор листа слишком мал для вывода о печатной совместимости |
+| Taut Ø2 mm yarn, 0.04 N | 696 clear paths and 24 contacts out of 720 |
+| Diameters 1/2/4 mm and tensions 0.01/0.04/0.10 N | 54 additional cases; contact found for thick yarn under low tension |
+| Prescribed hand motions | 22 clear sweeps and 2 with initial contact out of 24 |
+| Three loop routes under a leaf | Two with contact, one geometrically clear |
+| Rotation and support dynamics | 60 scenarios; nearly empty ball loses traction in all 30 of its scenarios |
+| CAD fit | No intersections found; minimum leaf clearance is too small to establish printed compatibility |
 
-Это количества выбранных сценариев, **не вероятности** зацепления или успеха.
+These are counts of selected cases, **not probabilities** of snagging or success.
 
-## Нить и листья
+## Yarn and leaves
 
-Основная сетка: полный и почти пустой клубок, пять положений подставки,
-три высоты схода нити и 24 азимута. Диаметр нити 2 мм, натяжение 0,04 Н.
-В сцену включены корпус, площадка, семечки, палочка, шесть листьев и ножки.
-Начало Z перенесено на поверхность под ножками (+1 мм к CAD).
+The main grid uses full and nearly empty balls, five stand positions,
+three yarn exit heights, and 24 azimuths. Yarn diameter is 2 mm; tension is 0.04 N.
+The scene includes the body, platform, seeds, spindle, six leaves, and feet.
+Z=0 was moved to the surface under the feet (+1 mm relative to CAD).
 
-Все 24 контакта основной сетки относятся к почти пустому клубку, нижнему
-сходу нити и высокой подставке: руки на 5 см ниже поверхности под ножками,
-на горизонтальном расстоянии 35 см. Нить встречает корпус и площадку;
-в шести направлениях — также листья. Все остальные 696 путей имеют
-положительную консервативную границу зазора, минимум около 1,11 мм.
+All 24 main-grid contacts occur with a nearly empty ball, low yarn exit,
+and a high stand: hands 5 cm below the surface under the feet, 35 cm away
+horizontally. Yarn meets the body and platform; in six directions, also leaves.
+The other 696 paths have positive conservative clearance bounds, with a
+minimum of about 1.11 mm.
 
-При меньшем натяжении 0,01 Н и полном клубке в той же низкой траектории
-нить Ø4 мм уже касается корпуса. Для Ø2 мм уточнение шага даёт всего
-около 0,046 мм минимального вычисленного зазора (нижняя граница 0,021 мм).
-Этот формально свободный путь практически близок к касанию: погрешность
-сетки, печати и ворс в границу не включены.
+At lower tension, 0.01 N, a full ball on the same low route already gives body
+contact for Ø4 mm yarn. For Ø2 mm, step refinement gives only about 0.046 mm
+minimum sampled clearance (lower bound 0.021 mm). This formally clear path is
+practically near contact: mesh error, printing error, and fuzz are excluded.
 
-![Заданные протяжки петли под листом](../results/pitaya_v10_recheck/leaf_sweep_comparison.png)
+![Prescribed loop sweeps under a leaf](../results/pitaya_v10_recheck/leaf_sweep_comparison.png)
 
-Для свободной петли проверен поперечный участок нити под первым листом:
-центр на радиусе 80 мм, высота 2 мм над столом, длина участка 44 мм.
-При прямом подъёме контакт появляется примерно на высоте 5 мм. При одновременном
-подъёме и смещении наружу выбранный диагональный маршрут тоже касается листа.
-Если сначала отвести нить на радиус 95 мм, а затем поднять, заданный путь
-свободен; нижняя граница зазора около 0,38 мм.
+The loose-loop check uses a transverse yarn segment under leaf 1:
+center radius 80 mm, height 2 mm above the table, segment length 44 mm.
+Straight lifting produces contact at about 5 mm height. The selected diagonal
+route, lifting and moving outward together, also contacts the leaf.
+Moving first to radius 95 mm, then lifting, is geometrically clear;
+the clearance lower bound is about 0.38 mm.
 
-Это показывает геометрическое препятствие под кончиком. Расчёт **не доказывает**,
-что настоящая мягкая петля застрянет либо сама соскользнёт: трение, ворс,
-деформация, самостоятельный обход препятствия и усилие освобождения не считаются.
-Микроязычок у верхнего стыка не устраняет этот нижний выступ.
+This demonstrates a geometric obstacle under the tip. It **does not prove**
+that an actual soft loop will stay trapped or slip off: friction, fuzz,
+deformation, spontaneous obstacle routing, and release force are not calculated.
+The upper-joint micro-tab does not remove this lower overhang.
 
-## Посадка и вращающийся узел
+## Fit and rotating assembly
 
-Проверены сохранённые STEP корпуса и листа v10, шесть установленных листьев,
-шесть положений вставки и неизменённый механизм v09. Хеши площадки, палочки,
-семечек, втулок, подшипников, крепежа и ножек совпадают с v09.
+The review checked saved v10 body and leaf STEP files, six installed leaves,
+six insertion positions, and the unchanged v09 mechanism. Hashes for the
+platform, spindle, seeds, bushings, bearings, hardware, and feet match v09.
 
-Пересечений корпуса с площадкой, палочкой, крепежом и цилиндрическим объёмом,
-занимаемым вращающейся площадкой, не найдено. Минимальное расстояние
-корпус–площадка — 0,8 мм. Кончик листа находится примерно в 3,87 мм над столом.
+No intersections were found between the body and platform, spindle, hardware,
+or the cylindrical volume swept by the rotating platform.
+Minimum body–platform distance is 0.8 mm. The leaf tip sits about 3.87 mm
+above the table.
 
-Минимальное расстояние лист–корпус — **0,0098 мм** у внутренней стороны верхнего
-выступа листа. Для v09 аналогичная проверка даёт 0,0183 мм: проблема не появилась
-с нуля в v10. Масштабирование контура кармана не обеспечивает одинаковый зазор
-по всему сложному контуру. Перед печатью нужен карман с контролируемым зазором
-и небольшая проба посадки. Отсутствие пересечений не подтверждает возможность
-сборки реальных деталей с погрешностями печати.
+Minimum leaf–body distance is **0.0098 mm**, near the inside of the upper leaf
+projection. The equivalent v09 check gives 0.0183 mm, so this problem did not
+first appear in v10. Scaling a pocket outline does not produce uniform clearance
+around a complex contour. A pocket with controlled clearance and a small fit
+coupon are needed before printing. No intersections does not establish
+assembly compatibility of real parts with print errors.
 
-## Динамика
+## Dynamics
 
-Масса подставки 230 г, инерция ротора 0,000065 кг·м² и коэффициенты трения
-сохранены как прежние **оценки**, а не новые измерения v10. Масса клубков 100 и
-10 г. Дополнительное сцепление с палочкой принято равным нулю.
+Stand mass of 230 g, rotor inertia of 0.000065 kg·m², and friction coefficients
+retain their previous **estimated** values, not new v10 measurements.
+Ball masses are 100 and 10 g. Additional spindle coupling is zero.
 
-Для полного клубка во всех 30 сценариях не обнаружены срыв сцепления,
-сдвиг или начало опрокидывания. Максимальное использование расчётного предела
-сдвига около 20%, опрокидывания — 23%. Для положения сбоку на столе и схода
-из середины пиковое натяжение около 0,107 Н в примере спиц и 0,231 Н в примере крючка.
+For the full ball, none of the 30 scenarios show traction loss, sliding,
+or onset of tipping. Maximum use of the calculated sliding limit is about 20%,
+and tipping limit about 23%. With the stand beside the hand on a desk and
+a middle exit, peak tension is about 0.107 N for knitting and 0.231 N for crochet.
 
-Для почти пустого клубка все 30 сценариев нарушают условие совместного вращения
-клубка и площадки через 0,08–0,21 с. После этого кривая — условное продолжение,
-а не прогноз реального скольжения. Семь поздних событий отрыва также лежат после
-потери сцепления и не являются самостоятельными достоверными прогнозами.
-Первым делом здесь нужно измерять сопротивление вращению и сцепление клубка
-с площадкой/палочкой, а не усиливать основание по этим условным пикам.
+For the nearly empty ball, all 30 scenarios violate coupled ball/platform
+rotation after 0.08–0.21 s. The subsequent curve is a hypothetical continuation,
+not a prediction of actual slip. Seven late lift-off events also occur after
+traction loss and are not independently reliable predictions.
+The first priority is to measure rotational resistance and ball-to-platform/
+spindle traction, rather than reinforcing the base using these conditional peaks.
 
-В резком примере крючка полный клубок даёт до 211 мм условного избытка выдачи
-при выбеге. Это показатель чувствительности к ритму и торможению, а не
-предсказанная форма или фактическая длина свисающей петли.
+In the sharp crochet example, a full ball produces up to 211 mm of hypothetical
+excess feed during overrun. This indicates sensitivity to rhythm and braking,
+not a predicted shape or actual length of a hanging loop.
 
-## Исправление симулятора и воспроизведение
+## Simulator fix and reproduction
 
-У `vtkOBBTree` обнаружен стандартный допуск `0.01`: при работе в метрах это
-сантиметр. Он скрывал некоторые пересечения коротких отрезков с кривыми
-поверхностями. В PITAYA проверка знакового расстояния всё равно находила
-24 основных контакта, но отдельный список пересечений был ошибочно пуст.
-Допуск теперь явно `1e-9` м. Добавлен регрессионный тест на хорде сферы;
-повторный прогон восстановил пересечения. Прошли **38 Python-тестов и 9 JS-тестов**.
+The default `vtkOBBTree` tolerance was found to be `0.01`: one centimeter when
+working in meters. It hid some intersections between short segments and curved
+surfaces. PITAYA signed-distance checks still found the 24 main contacts,
+but the separate intersection list was incorrectly empty.
+Tolerance is now explicitly `1e-9` m. A sphere-chord regression was added;
+rerunning restored intersections. **38 Python tests and 9 JS tests** passed
+at the time of this review.
 
 ```sh
 python -m pip install ".[mesh]"
 python tools/recheck_pitaya.py /path/to/PITAYA_v10 --out results/pitaya_v10_recheck
-# Отдельная проверка STEP, дополнительно требуется CadQuery:
+# Separate STEP check; also requires CadQuery:
 python tools/check_pitaya_cad.py /path/to/PITAYA_v10 /path/to/PITAYA_v09 --out results/pitaya_v10_recheck/cad_fit.json
-# Иллюстрация сохранённых протяжек; дополнительно нужен Pillow:
+# Render saved sweeps; also requires Pillow:
 python tools/render_pitaya_sweeps.py /path/to/PITAYA_v10 --results results/pitaya_v10_recheck
 ```
 
-CAD-пакеты передаются отдельно. В [каталоге результатов](../results/pitaya_v10_recheck)
-сохранены все конфигурации, таблицы, заданные позы, результаты по кадрам,
-хеши геометрии и проверка STEP. Последний полный комплект нарезки остаётся v09;
-v10 пока имеет статус CAD-прототипа.
+CAD packages are supplied separately. The [results directory](../results/pitaya_v10_recheck)
+contains all configurations, tables, prescribed poses, per-frame results,
+geometry hashes, and STEP checks. The latest complete sliced package remains
+v09; v10 still has CAD-prototype status.
