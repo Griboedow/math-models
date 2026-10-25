@@ -1,0 +1,58 @@
+{
+  "name": "Trike feature inventory \u2014 illustrative estimates",
+  "brush_diameter_m": 0.003,
+  "brush_reach_m": 0.015,
+  "dirt_grain_diameter_m": 0.0005,
+  "layer_height_m": 0.0002,
+  "roughness_reference_m": 0.0004,
+  "retention_reference_m3": 1e-06,
+  "operations_reference": 12,
+  "disassembly_operations": 16,
+  "provenance": "Manual area/pocket estimates for v06; depths and nominal gaps informed by CAD. No cleaning experiment or automatic mesh extraction.",
+  "features": [
+    {
+      "name": "Open body and wheel surfaces",
+      "area_m2": 0.04,
+      "opening_m": 0.04,
+      "depth_m": 0.0,
+      "pocket_volume_m3": 0.0,
+      "drainable_fraction": 1.0
+    },
+    {
+      "name": "Shallow armor panels",
+      "area_m2": 0.005,
+      "opening_m": 0.008,
+      "depth_m": 0.0015,
+      "pocket_volume_m3": 6e-07,
+      "drainable_fraction": 0.9
+    },
+    {
+      "name": "Bolt wells and hex sockets",
+      "area_m2": 0.0018,
+      "opening_m": 0.004,
+      "depth_m": 0.01,
+      "pocket_volume_m3": 1.5e-06,
+      "drainable_fraction": 0.4,
+      "opens_on_disassembly": true
+    },
+    {
+      "name": "Body joint and axle bearing gaps",
+      "area_m2": 0.002,
+      "opening_m": 0.0003,
+      "depth_m": 0.01,
+      "pocket_volume_m3": 4e-07,
+      "drainable_fraction": 0.15,
+      "opens_on_disassembly": true
+    },
+    {
+      "name": "Internal surfaces",
+      "area_m2": 0.014,
+      "opening_m": 0.02,
+      "depth_m": 0.012,
+      "pocket_volume_m3": 2e-06,
+      "drainable_fraction": 0.8,
+      "hidden_until_disassembly": true,
+      "opens_on_disassembly": true
+    }
+  ]
+}

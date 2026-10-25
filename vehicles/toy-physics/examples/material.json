@@ -1,0 +1,8 @@
+{
+  "material": "PLA",
+  "print_axis": "XY",
+  "strength_factor": 0.5,
+  "modulus_factor": 0.7,
+  "safety_factor": 2.0,
+  "stress_concentration_factor": 1.5
+}

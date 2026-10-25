@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Own weight",
+    "force_N": 0
+  },
+  {
+    "name": "Child presses near center",
+    "child_mass_kg": 15,
+    "weight_fraction": 0.25,
+    "position_m": [
+      0,
+      0,
+      0.06
+    ],
+    "contact_area_m2": 0.0006
+  },
+  {
+    "name": "Off-center press",
+    "force_N": 35,
+    "position_m": [
+      0.03,
+      0.06,
+      0.06
+    ]
+  }
+]

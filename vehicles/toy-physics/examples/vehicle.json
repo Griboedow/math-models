@@ -1,0 +1,405 @@
+{
+  "name": "Trike MINI v06",
+  "wheels": [
+    {
+      "name": "front",
+      "position_m": [
+        0.0539900025666706,
+        0.0,
+        0.021109448864398174
+      ],
+      "radius_m": 0.021125,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08,
+      "axle": {
+        "diameter_m": 0.008,
+        "span_or_overhang_m": 0.04,
+        "support": "two_supports_center_load"
+      }
+    },
+    {
+      "name": "rear_right",
+      "position_m": [
+        -0.05614777173167492,
+        0.056875,
+        0.02240243860882822
+      ],
+      "radius_m": 0.022425,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08,
+      "axle": {
+        "diameter_m": 0.008,
+        "span_or_overhang_m": 0.018,
+        "support": "cantilever"
+      }
+    },
+    {
+      "name": "rear_left",
+      "position_m": [
+        -0.05614777173167492,
+        -0.056875,
+        0.02240243860882822
+      ],
+      "radius_m": 0.022425,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08,
+      "axle": {
+        "diameter_m": 0.008,
+        "span_or_overhang_m": 0.018,
+        "support": "cantilever"
+      }
+    }
+  ],
+  "mass_components": [
+    {
+      "name": "01_upper_body",
+      "polymer_volume_m3": 4.522964602911412e-05,
+      "position_m": [
+        -0.03353789406026357,
+        3.683359566455277e-05,
+        0.05179315757075328
+      ],
+      "reference_slicer_mass_kg": 0.057441650456974934,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "02_lower_chassis",
+      "polymer_volume_m3": 2.9107948341163158e-05,
+      "position_m": [
+        -0.01860607059119956,
+        -0.00015600239358574755,
+        0.03554673338862086
+      ],
+      "reference_slicer_mass_kg": 0.03696709439327721,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "03_front_fork_R",
+      "polymer_volume_m3": 5.105005170342071e-06,
+      "position_m": [
+        0.042536274100768434,
+        0.02168892478201692,
+        0.028241391839396206
+      ],
+      "reference_slicer_mass_kg": 0.00648335656633443,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "04_front_fork_L",
+      "polymer_volume_m3": 3.521666996833127e-06,
+      "position_m": [
+        0.035120647716817666,
+        -0.020906137040086255,
+        0.03217652620509488
+      ],
+      "reference_slicer_mass_kg": 0.0044725170859780715,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "05_rear_carrier_R",
+      "polymer_volume_m3": 1.4732137124295416e-05,
+      "position_m": [
+        -0.05310790998577983,
+        0.03898250006116681,
+        0.03730401387201063
+      ],
+      "reference_slicer_mass_kg": 0.018709814147855178,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "06_rear_carrier_L",
+      "polymer_volume_m3": 1.4766676815126351e-05,
+      "position_m": [
+        -0.05310129545136977,
+        -0.03898422821488205,
+        0.0372837289569034
+      ],
+      "reference_slicer_mass_kg": 0.018753679555210467,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "07_front_wheel",
+      "polymer_volume_m3": 1.6922587366799097e-05,
+      "position_m": [
+        0.05398645893485676,
+        -0.0002819758074188936,
+        0.021059676038043335
+      ],
+      "reference_slicer_mass_kg": 0.021491685955834856,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "08_rear_R_wheel",
+      "polymer_volume_m3": 1.8778265459742616e-05,
+      "position_m": [
+        -0.056165941754689475,
+        0.056535213711846014,
+        0.022406131869853258
+      ],
+      "reference_slicer_mass_kg": 0.02384839713387312,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "09_rear_L_wheel",
+      "polymer_volume_m3": 1.8778268304164468e-05,
+      "position_m": [
+        -0.05616594020098715,
+        -0.056535213938326945,
+        0.022406131145815418
+      ],
+      "reference_slicer_mass_kg": 0.023848400746288873,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "10_front_axle",
+      "polymer_volume_m3": 4.687629381685071e-06,
+      "position_m": [
+        0.05397851071680312,
+        -0.0031470614362520645,
+        0.02150015478902964
+      ],
+      "reference_slicer_mass_kg": 0.005953289314740041,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "11_front_axle_keeper",
+      "polymer_volume_m3": 1.0967603999575545e-06,
+      "position_m": [
+        0.039562011249229284,
+        0.029350837575863983,
+        0.03006087271022329
+      ],
+      "reference_slicer_mass_kg": 0.0013928857079460943,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "12_rear_R_axle",
+      "polymer_volume_m3": 4.1075778693370144e-06,
+      "position_m": [
+        -0.05616066050669297,
+        0.057265223953458705,
+        0.02284063577004204
+      ],
+      "reference_slicer_mass_kg": 0.005216623894058008,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "13_rear_L_axle",
+      "polymer_volume_m3": 4.107577967558871e-06,
+      "position_m": [
+        -0.05616066050645108,
+        -0.05726522536387477,
+        0.022840635761818006
+      ],
+      "reference_slicer_mass_kg": 0.005216624018799766,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "14_rear_R_axle_keeper",
+      "polymer_volume_m3": 6.379559468821971e-07,
+      "position_m": [
+        -0.058205676962913,
+        0.029350000381469735,
+        0.027996227873458564
+      ],
+      "reference_slicer_mass_kg": 0.0008102040525403904,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "15_clear_canopy",
+      "polymer_volume_m3": 7.4222233987623655e-06,
+      "position_m": [
+        0.0027583622758421303,
+        8.757855550117908e-07,
+        0.0535887704302383
+      ],
+      "reference_slicer_mass_kg": 0.009203557014465333,
+      "reference_slicer_density_kg_m3": 1240.0
+    },
+    {
+      "name": "16_canopy_retainer",
+      "polymer_volume_m3": 3.5625771567988653e-06,
+      "position_m": [
+        -0.0013092856956046553,
+        -1.9976182804891782e-07,
+        0.04256040702716175
+      ],
+      "reference_slicer_mass_kg": 0.004524472989134559,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "17_rear_L_axle_keeper",
+      "polymer_volume_m3": 6.379559468821969e-07,
+      "position_m": [
+        -0.05820567696291288,
+        -0.029350000381469694,
+        0.027996227873458505
+      ],
+      "reference_slicer_mass_kg": 0.0008102040525403901,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "20_body_screw_1",
+      "polymer_volume_m3": 7.994481975664483e-07,
+      "position_m": [
+        -0.007610805452268797,
+        -5.629843510002551e-07,
+        0.03637337004701864
+      ],
+      "reference_slicer_mass_kg": 0.0010152992109093892,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "20_body_screw_2",
+      "polymer_volume_m3": 7.994481744558891e-07,
+      "position_m": [
+        -0.0465939466749254,
+        -5.629857162904815e-07,
+        0.03522676325819561
+      ],
+      "reference_slicer_mass_kg": 0.0010152991815589791,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "20_body_screw_3",
+      "polymer_volume_m3": 8.878314604069482e-07,
+      "position_m": [
+        0.023661906078766656,
+        0.023075004278038304,
+        0.03405235789760014
+      ],
+      "reference_slicer_mass_kg": 0.0011275459547168242,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "20_body_screw_4",
+      "polymer_volume_m3": 8.878314529380546e-07,
+      "position_m": [
+        0.023661906079969264,
+        -0.02307499549598447,
+        0.03405235786492003
+      ],
+      "reference_slicer_mass_kg": 0.0011275459452313294,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "20_body_screw_5",
+      "polymer_volume_m3": 9.09928625176715e-07,
+      "position_m": [
+        -0.04129441456549659,
+        0.027945744578784792,
+        0.03184026296724582
+      ],
+      "reference_slicer_mass_kg": 0.001155609353974428,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "20_body_screw_6",
+      "polymer_volume_m3": 9.099286209049019e-07,
+      "position_m": [
+        -0.04129441456452385,
+        -0.027954255353943594,
+        0.031840262933030175
+      ],
+      "reference_slicer_mass_kg": 0.0011556093485492254,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "21_body_nut_1",
+      "polymer_volume_m3": 4.086765932447182e-07,
+      "position_m": [
+        -0.007806367958295202,
+        6.9029497772472125e-06,
+        0.043435715629380714
+      ],
+      "reference_slicer_mass_kg": 0.0005190192734207921,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "21_body_nut_2",
+      "polymer_volume_m3": 4.086766886722348e-07,
+      "position_m": [
+        -0.0467895081312022,
+        6.902946428983113e-06,
+        0.04228910905832078
+      ],
+      "reference_slicer_mass_kg": 0.0005190193946137382,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "21_body_nut_3",
+      "polymer_volume_m3": 4.0867683226588134e-07,
+      "position_m": [
+        0.023380144870704504,
+        0.023081900265596603,
+        0.044353003195732446
+      ],
+      "reference_slicer_mass_kg": 0.0005190195769776693,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "21_body_nut_4",
+      "polymer_volume_m3": 4.086768297667867e-07,
+      "position_m": [
+        0.02338014487186895,
+        -0.023068099773202812,
+        0.04435300319752696
+      ],
+      "reference_slicer_mass_kg": 0.0005190195738038191,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "21_body_nut_5",
+      "polymer_volume_m3": 4.0867689508104437e-07,
+      "position_m": [
+        -0.04159175758602606,
+        0.027956900253488494,
+        0.0424419921848039
+      ],
+      "reference_slicer_mass_kg": 0.0005190196567529264,
+      "reference_slicer_density_kg_m3": 1270.0
+    },
+    {
+      "name": "21_body_nut_6",
+      "polymer_volume_m3": 4.0867689508104437e-07,
+      "position_m": [
+        -0.04159175758602611,
+        -0.027943099746511484,
+        0.042441992184803955
+      ],
+      "reference_slicer_mass_kg": 0.0005190196567529264,
+      "reference_slicer_density_kg_m3": 1270.0
+    }
+  ],
+  "provenance": {
+    "manifest_sha256": "aa2b3c3bfd9ceff093e4b235e5acece92f0f5d407fd2991503035ec4f67044ec",
+    "model_revision": "mini_surface_v06",
+    "coordinates": "x forward = -ground Y; y right = ground X; z up",
+    "mass": "Polymer volumes inferred from slicer object mass and the recorded filament density (PETG 1270, PLA 1240 kg/m3); key excluded. Selected calculation material determines new masses.",
+    "center_of_gravity": "Per-plate object masses allocated by min(1, area*2.1mm/volume) shell proxy plus 20% infill; solid fasteners and canopy. Approximate, not measured.",
+    "measured_inputs": false,
+    "assumed_inputs": [
+      "contact fraction",
+      "surface elastic modulus",
+      "vertical stiffness",
+      "journal friction",
+      "axle beam idealization"
+    ],
+    "reference_assembled_mass_kg": 0.2548554832131138,
+    "reference_cg_m": [
+      -0.024006862738908855,
+      0.00022689222435201713,
+      0.0354380917006425
+    ],
+    "key_estimate_kg": 0.001623258432699207
+  }
+}

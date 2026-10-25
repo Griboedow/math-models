@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Linoleum",
+    "kind": "hard",
+    "modulus_Pa": 20000000.0,
+    "poisson": 0.45,
+    "rolling_arm_m": 0.00015,
+    "traction_coefficient": 0.35,
+    "parameter_status": "Illustrative uncalibrated preset; not a measured material property"
+  },
+  {
+    "name": "Parquet",
+    "kind": "hard",
+    "modulus_Pa": 1000000000.0,
+    "poisson": 0.3,
+    "rolling_arm_m": 0.0001,
+    "traction_coefficient": 0.25,
+    "parameter_status": "Illustrative uncalibrated preset; not a measured material property"
+  },
+  {
+    "name": "Tile",
+    "kind": "hard",
+    "modulus_Pa": 50000000000.0,
+    "poisson": 0.22,
+    "rolling_arm_m": 5e-05,
+    "traction_coefficient": 0.2,
+    "parameter_status": "Illustrative uncalibrated preset; not a measured material property"
+  },
+  {
+    "name": "Carpet short pile",
+    "kind": "carpet",
+    "pile_height_m": 0.003,
+    "foundation_Pa_m": 50000000.0,
+    "backing_stiffness_N_m": 100000.0,
+    "hysteresis_fraction": 0.2,
+    "rolling_arm_m": 0.0002,
+    "traction_coefficient": 0.5,
+    "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured"
+  },
+  {
+    "name": "Carpet medium pile",
+    "kind": "carpet",
+    "pile_height_m": 0.008,
+    "foundation_Pa_m": 10000000.0,
+    "backing_stiffness_N_m": 100000.0,
+    "hysteresis_fraction": 0.3,
+    "rolling_arm_m": 0.0002,
+    "traction_coefficient": 0.5,
+    "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured"
+  },
+  {
+    "name": "Carpet long pile",
+    "kind": "carpet",
+    "pile_height_m": 0.018,
+    "foundation_Pa_m": 2000000.0,
+    "backing_stiffness_N_m": 100000.0,
+    "hysteresis_fraction": 0.4,
+    "rolling_arm_m": 0.0002,
+    "traction_coefficient": 0.5,
+    "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured"
+  }
+]

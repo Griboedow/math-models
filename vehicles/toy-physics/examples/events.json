@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Kick, free toy",
+    "kind": "kick",
+    "effective_impact_mass_kg": 1.0,
+    "speed_m_s": 1.5,
+    "stopping_distance_m": 0.008,
+    "contact_area_m2": 0.0006,
+    "peak_to_mean_factor": 2,
+    "toy_trapped": false,
+    "edge_radius_m": 0.003
+  },
+  {
+    "name": "Kick, trapped toy",
+    "kind": "kick",
+    "effective_impact_mass_kg": 1.0,
+    "speed_m_s": 1.5,
+    "stopping_distance_m": 0.008,
+    "contact_area_m2": 0.0006,
+    "peak_to_mean_factor": 2,
+    "toy_trapped": true,
+    "edge_radius_m": 0.003
+  },
+  {
+    "name": "Slow step, broad contact",
+    "kind": "step",
+    "adult_mass_kg": 75.0,
+    "weight_fraction": 0.7,
+    "effective_impact_mass_kg": 10.0,
+    "speed_m_s": 0.0,
+    "stopping_distance_m": 0.004,
+    "contact_area_m2": 0.0012,
+    "peak_to_mean_factor": 2,
+    "edge_radius_m": 0.006
+  },
+  {
+    "name": "Step onto small contact",
+    "kind": "step",
+    "adult_mass_kg": 75.0,
+    "weight_fraction": 0.7,
+    "effective_impact_mass_kg": 10.0,
+    "speed_m_s": 0.25,
+    "stopping_distance_m": 0.004,
+    "contact_area_m2": 0.00015,
+    "peak_to_mean_factor": 2,
+    "edge_radius_m": 0.001
+  }
+]

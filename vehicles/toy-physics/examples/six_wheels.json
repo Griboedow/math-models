@@ -1,0 +1,96 @@
+{
+  "name": "Six-wheel compliance demonstrator",
+  "wheels": [
+    {
+      "name": "wheel_1",
+      "position_m": [
+        -0.08,
+        -0.05,
+        0.025
+      ],
+      "radius_m": 0.025,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08,
+      "ground_height_m": -0.001
+    },
+    {
+      "name": "wheel_2",
+      "position_m": [
+        -0.08,
+        0.05,
+        0.025
+      ],
+      "radius_m": 0.025,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08
+    },
+    {
+      "name": "wheel_3",
+      "position_m": [
+        0,
+        -0.05,
+        0.025
+      ],
+      "radius_m": 0.025,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08
+    },
+    {
+      "name": "wheel_4",
+      "position_m": [
+        0,
+        0.05,
+        0.025
+      ],
+      "radius_m": 0.025,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08
+    },
+    {
+      "name": "wheel_5",
+      "position_m": [
+        0.08,
+        -0.05,
+        0.025
+      ],
+      "radius_m": 0.025,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08
+    },
+    {
+      "name": "wheel_6",
+      "position_m": [
+        0.08,
+        0.05,
+        0.025
+      ],
+      "radius_m": 0.025,
+      "width_m": 0.02935,
+      "vertical_stiffness_N_m": 20000.0,
+      "tread_contact_fraction": 0.65,
+      "journal_radius_m": 0.005,
+      "journal_friction": 0.08
+    }
+  ],
+  "mass_kg": 0.6,
+  "cg_m": [
+    0,
+    0,
+    0.05
+  ]
+}

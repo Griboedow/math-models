@@ -1,0 +1,4348 @@
+{
+  "vehicle": "Trike MINI v06",
+  "mass_kg": 0.24905268180684642,
+  "cg_m": [
+    -0.02398349843121214,
+    0.00022669492664136154,
+    0.035453936067447164
+  ],
+  "input_sha256": {
+    "buoyancy.json": "3295e8077eb7e0fd97c8f34a74fb9b22487a23f254a6df7ade399a494bb62bfc",
+    "cleaning.json": "0be05920442eb877e8ea231ecd20e1f5db190f3986522f4c6fb1396403db2173",
+    "events.json": "cade2ffced7c6d91c893bb1f62cc8d35cf22bbc29f982f2bfaf0aca0e861d44c",
+    "loads.json": "d884f9e513a5d17091060d85214af6fbdfc4f5372506e9e7660ac3585024b102",
+    "material.json": "63827618852d3e7d80561389bb575269241b08a79d4449d9c2d7448d12f3db65",
+    "six_wheels.json": "ad00571856d9fc55cf7b5bc5a5adcce771f8e1822d3db34568ed582154f39b76",
+    "surfaces.json": "8b9fabde00b5c8e423a540d55608c84fe010a31253b42aa09990278e6bdb6e84",
+    "vehicle.json": "c1cde5457c21047dfe3f0351a7d6f634776ccdee33572551516bad2d39e576a0"
+  },
+  "material_settings": {
+    "material": "PLA",
+    "print_axis": "XY",
+    "strength_factor": 0.5,
+    "modulus_factor": 0.7,
+    "safety_factor": 2.0,
+    "stress_concentration_factor": 1.5
+  },
+  "selected_material": {
+    "material": "PLA",
+    "print_axis": "XY",
+    "density_g_cm3": 1.24,
+    "density_kg_m3": 1240.0,
+    "poisson": 0.35,
+    "strength_factor": 0.5,
+    "modulus_factor": 0.7,
+    "safety_factor": 2.0,
+    "stress_concentration_factor": 1.5,
+    "reference_product": "Bambu PLA Basic, TDS V3.0",
+    "source_url": "https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf",
+    "specimen_condition": "100% infill; manufacturer conditioned specimens at 55 C for 8 h.",
+    "property_overrides": {},
+    "reference_young_modulus_Pa": 2580000000.0,
+    "reference_bending_modulus_Pa": 2750000000.0,
+    "reference_tensile_strength_Pa": 35000000.0,
+    "effective_young_modulus_Pa": 1806000000.0,
+    "effective_bending_modulus_Pa": 1924999999.9999998,
+    "screening_allowable_stress_Pa": 8750000.0,
+    "evidence": "Reference coupon data plus assumed reductions. Poisson ratio and all four factors are uncalibrated assumptions."
+  },
+  "material_resolution": {
+    "profile": {
+      "material": "PLA",
+      "print_axis": "XY",
+      "density_g_cm3": 1.24,
+      "density_kg_m3": 1240.0,
+      "poisson": 0.35,
+      "strength_factor": 0.5,
+      "modulus_factor": 0.7,
+      "safety_factor": 2.0,
+      "stress_concentration_factor": 1.5,
+      "reference_product": "Bambu PLA Basic, TDS V3.0",
+      "source_url": "https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf",
+      "specimen_condition": "100% infill; manufacturer conditioned specimens at 55 C for 8 h.",
+      "property_overrides": {},
+      "reference_young_modulus_Pa": 2580000000.0,
+      "reference_bending_modulus_Pa": 2750000000.0,
+      "reference_tensile_strength_Pa": 35000000.0,
+      "effective_young_modulus_Pa": 1806000000.0,
+      "effective_bending_modulus_Pa": 1924999999.9999998,
+      "screening_allowable_stress_Pa": 8750000.0,
+      "evidence": "Reference coupon data plus assumed reductions. Poisson ratio and all four factors are uncalibrated assumptions."
+    },
+    "mass_basis": "Sum of polymer volume times selected density, plus fixed masses",
+    "components": [
+      {
+        "name": "01_upper_body",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.056084761076101504
+      },
+      {
+        "name": "02_lower_chassis",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.03609385594304231
+      },
+      {
+        "name": "03_front_fork_R",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.006330206411224168
+      },
+      {
+        "name": "04_front_fork_L",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0043668670760730775
+      },
+      {
+        "name": "05_rear_carrier_R",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.018267850034126315
+      },
+      {
+        "name": "06_rear_carrier_L",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.018310679250756676
+      },
+      {
+        "name": "07_front_wheel",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.02098400833483088
+      },
+      {
+        "name": "08_rear_R_wheel",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.023285049170080844
+      },
+      {
+        "name": "09_rear_L_wheel",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.02328505269716394
+      },
+      {
+        "name": "10_front_axle",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.005812660433289488
+      },
+      {
+        "name": "11_front_axle_keeper",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0013599828959473675
+      },
+      {
+        "name": "12_rear_R_axle",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.005093396557977898
+      },
+      {
+        "name": "13_rear_L_axle",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.005093396679773
+      },
+      {
+        "name": "14_rear_R_axle_keeper",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0007910653741339244
+      },
+      {
+        "name": "15_clear_canopy",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.009203557014465333
+      },
+      {
+        "name": "16_canopy_retainer",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.004417595674430593
+      },
+      {
+        "name": "17_rear_L_axle_keeper",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0007910653741339242
+      },
+      {
+        "name": "20_body_screw_1",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0009913157649823958
+      },
+      {
+        "name": "20_body_screw_2",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0009913157363253024
+      },
+      {
+        "name": "20_body_screw_3",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0011009110109046157
+      },
+      {
+        "name": "20_body_screw_4",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0011009110016431877
+      },
+      {
+        "name": "20_body_screw_5",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0011283114952191267
+      },
+      {
+        "name": "20_body_screw_6",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0011283114899220785
+      },
+      {
+        "name": "21_body_nut_1",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0005067589756234506
+      },
+      {
+        "name": "21_body_nut_2",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0005067590939535711
+      },
+      {
+        "name": "21_body_nut_3",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0005067592720096928
+      },
+      {
+        "name": "21_body_nut_4",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.0005067592689108156
+      },
+      {
+        "name": "21_body_nut_5",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.000506759349900495
+      },
+      {
+        "name": "21_body_nut_6",
+        "material": "PLA",
+        "density_kg_m3": 1240.0,
+        "mass_kg": 0.000506759349900495
+      }
+    ]
+  },
+  "material_comparison": [
+    {
+      "profile": {
+        "material": "PLA",
+        "print_axis": "XY",
+        "density_g_cm3": 1.24,
+        "density_kg_m3": 1240.0,
+        "poisson": 0.35,
+        "strength_factor": 0.5,
+        "modulus_factor": 0.7,
+        "safety_factor": 2.0,
+        "stress_concentration_factor": 1.5,
+        "reference_product": "Bambu PLA Basic, TDS V3.0",
+        "source_url": "https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf",
+        "specimen_condition": "100% infill; manufacturer conditioned specimens at 55 C for 8 h.",
+        "property_overrides": {},
+        "reference_young_modulus_Pa": 2580000000.0,
+        "reference_bending_modulus_Pa": 2750000000.0,
+        "reference_tensile_strength_Pa": 35000000.0,
+        "effective_young_modulus_Pa": 1806000000.0,
+        "effective_bending_modulus_Pa": 1924999999.9999998,
+        "screening_allowable_stress_Pa": 8750000.0,
+        "evidence": "Reference coupon data plus assumed reductions. Poisson ratio and all four factors are uncalibrated assumptions."
+      },
+      "vehicle_mass_kg": 0.24905268180684642,
+      "cg_m": [
+        -0.02398349843121214,
+        0.00022669492664136154,
+        0.035453936067447164
+      ],
+      "axle_checks": [
+        {
+          "load_name": "Own weight",
+          "wheel_count": 3,
+          "total_vertical_force_N": 2.4423724820411103,
+          "child_force_N": 0.0,
+          "required_cop_m": [
+            -0.02398349843121214,
+            0.0002266949266413615
+          ],
+          "surface": "Linoleum",
+          "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+          "status": "supported",
+          "support_margin_m": 0.03216427330046278,
+          "wheels": [
+            {
+              "name": "front",
+              "normal_force_N": 0.7132624253065187,
+              "unloaded": false,
+              "area_m2": 7.686862867601035e-06,
+              "mean_pressure_Pa": 92789.79443132933,
+              "peak_pressure_Pa": 118143.63561781507,
+              "compression_m": 3.5663121265325934e-05,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.005064585268448653,
+              "journal_force_N": 0.013505560715863077,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 141899.05088655782,
+                "deflection_m": 2.4571264222780577e-06,
+                "model": "two_supports_center_load",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 212848.57632983674,
+                "allowable_stress_Pa": 8750000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.02432555158055277,
+                "reserve_factor": 41.10903700121879,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            },
+            {
+              "name": "rear_right",
+              "normal_force_N": 0.8694224872740841,
+              "unloaded": false,
+              "area_m2": 8.74395193959041e-06,
+              "mean_pressure_Pa": 99431.2975735329,
+              "peak_pressure_Pa": 126599.86005495151,
+              "compression_m": 4.347112436370421e-05,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.005815535031933672,
+              "journal_force_N": 0.015508093418489795,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 311338.99459107214,
+                "deflection_m": 4.366832651407244e-06,
+                "model": "cantilever",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 467008.4918866082,
+                "allowable_stress_Pa": 8750000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.05337239907275522,
+                "reserve_factor": 18.736276003573273,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            },
+            {
+              "name": "rear_left",
+              "normal_force_N": 0.8596875694605073,
+              "unloaded": false,
+              "area_m2": 8.694861149557582e-06,
+              "mean_pressure_Pa": 98873.06475322502,
+              "peak_pressure_Pa": 125889.09595296647,
+              "compression_m": 4.298437847302536e-05,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.005750418524819446,
+              "journal_force_N": 0.015334449399518526,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 307852.9339371679,
+                "deflection_m": 4.317937255222614e-06,
+                "model": "cantilever",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 461779.40090575186,
+                "allowable_stress_Pa": 8750000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.05277478867494307,
+                "reserve_factor": 18.94844157802928,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            }
+          ],
+          "pull_force_N": 0.06097864235907317,
+          "traction_bound_N": 0.8548303687143886,
+          "rolling_without_slip_feasible": true,
+          "equilibrium_residual_N": 4.440892098500626e-16,
+          "warnings": [
+            "Floor and bearing parameters require calibration.",
+            "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+          ]
+        },
+        {
+          "load_name": "Child presses near center",
+          "wheel_count": 3,
+          "total_vertical_force_N": 39.21730998204111,
+          "child_force_N": 36.7749375,
+          "required_cop_m": [
+            -0.0014936423895033299,
+            1.4118088438516941e-05
+          ],
+          "surface": "Linoleum",
+          "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+          "applied_load_mean_pressure_Pa": 61291.56250000001,
+          "status": "supported",
+          "support_margin_m": 0.02544513260490087,
+          "wheels": [
+            {
+              "name": "front",
+              "normal_force_N": 19.460970097365678,
+              "unloaded": false,
+              "area_m2": 4.0151955659682664e-05,
+              "mean_pressure_Pa": 484682.99433062994,
+              "peak_pressure_Pa": 617117.5550424068,
+              "compression_m": 0.0009730485048682839,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.1381844030582178,
+              "journal_force_N": 0.3684917414885809,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 3871636.9854491395,
+                "deflection_m": 6.704133308137038e-05,
+                "model": "two_supports_center_load",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 5807455.4781737095,
+                "allowable_stress_Pa": 8750000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.6637091975055668,
+                "reserve_factor": 1.5066839570075607,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            },
+            {
+              "name": "rear_right",
+              "normal_force_N": 9.883037401244504,
+              "unloaded": false,
+              "area_m2": 2.9480683406984312e-05,
+              "mean_pressure_Pa": 335237.7305779519,
+              "peak_pressure_Pa": 426837.9354591206,
+              "compression_m": 0.0004941518700622252,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.06610727358691974,
+              "journal_force_N": 0.1762860628984527,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 3539102.07413282,
+                "deflection_m": 4.963935376705772e-05,
+                "model": "cantilever",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 5308653.11119923,
+                "allowable_stress_Pa": 8750000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.6067032127084834,
+                "reserve_factor": 1.6482523564293254,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            },
+            {
+              "name": "rear_left",
+              "normal_force_N": 9.87330248343093,
+              "unloaded": false,
+              "area_m2": 2.9466160405303222e-05,
+              "mean_pressure_Pa": 335072.5831810094,
+              "peak_pressure_Pa": 426627.6632626234,
+              "compression_m": 0.0004936651241715465,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.06604215707980554,
+              "journal_force_N": 0.17611241887948148,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 3535616.013478916,
+                "deflection_m": 4.95904583708731e-05,
+                "model": "cantilever",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 5303424.020218374,
+                "allowable_stress_Pa": 8750000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.6061056023106713,
+                "reserve_factor": 1.6498775068035592,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            }
+          ],
+          "pull_force_N": 0.9912240569914581,
+          "traction_bound_N": 13.726058493714387,
+          "rolling_without_slip_feasible": true,
+          "equilibrium_residual_N": 7.105427357601002e-15,
+          "warnings": [
+            "Floor and bearing parameters require calibration.",
+            "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+          ]
+        },
+        {
+          "load_name": "Off-center press",
+          "wheel_count": 3,
+          "total_vertical_force_N": 37.44237248204111,
+          "child_force_N": 35.0,
+          "required_cop_m": [
+            0.026478646989692187,
+            0.05610097689344228
+          ],
+          "surface": "Linoleum",
+          "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+          "status": "tipping",
+          "reason": "No nonnegative wheel reactions balance the specified load"
+        }
+      ],
+      "buoyancy": [
+        {
+          "name": "Sealed level box",
+          "mass_kg": 0.5225697279999996,
+          "cg_m": [
+            -4.823796549938691e-18,
+            4.019830458282242e-19,
+            -2.009915229141121e-19
+          ],
+          "maximum_supported_mass_kg": 1.4374079999999996,
+          "mass_override_applied": false,
+          "reserve_buoyancy_kg": 0.914838272,
+          "effective_bulk_density_kg_m3": 362.89564444444426,
+          "components": [
+            {
+              "name": "Printed box",
+              "envelope_volume_m3": 0.0014399999999999994,
+              "solid_volume_m3": 0.0004214271999999997,
+              "mass_kg": 0.5225697279999996,
+              "material": "PLA",
+              "polymer_density_kg_m3": 1240.0,
+              "density_source": "selected material",
+              "maximum_displacement_m3": 0.0014399999999999994
+            }
+          ],
+          "assumptions": [
+            "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+            "Components must not overlap; inner meshes must lie inside their outer meshes.",
+            "Part-scale infill is homogenized. Printed watertightness must be measured.",
+            "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+          ],
+          "status": "local_equilibrium",
+          "level_pose": {
+            "heave_m": 0.008186997929606641,
+            "displaced_volume_m3": 0.0005235120496894406,
+            "cb_m": [
+              4.044954398646506e-19,
+              2.022477199323253e-19,
+              -0.010906501035196676
+            ],
+            "cg_world_m": [
+              -4.823796549938691e-18,
+              4.019830458282242e-19,
+              0.008186997929606641
+            ],
+            "torque_Nm": [
+              -1.0235753202412836e-18,
+              -2.679321058392592e-17
+            ]
+          },
+          "equilibrium": {
+            "heave_m": 0.008186997929606641,
+            "displaced_volume_m3": 0.0005235120496894406,
+            "cb_m": [
+              4.044954398646506e-19,
+              2.022477199323253e-19,
+              -0.010906501035196676
+            ],
+            "cg_world_m": [
+              -4.823796549938691e-18,
+              4.019830458282242e-19,
+              0.008186997929606641
+            ],
+            "torque_Nm": [
+              -1.0235753202412836e-18,
+              -2.679321058392592e-17
+            ],
+            "roll_deg": 0.0,
+            "pitch_deg": 0.0
+          },
+          "holds_level": true,
+          "locally_stable": true,
+          "restoring_stiffness_Nm_rad": [
+            [
+              0.18407548407054727,
+              5.959590259568592e-14
+            ],
+            [
+              5.959590259568592e-14,
+              0.685272184877511
+            ]
+          ],
+          "equivalent_GM_eigenvalues_m": [
+            0.03591956163187807,
+            0.13372055819169204
+          ],
+          "torque_residual_Nm": 2.6812755170455855e-17,
+          "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+        },
+        {
+          "name": "Shifted ballast",
+          "mass_kg": 0.6025697279999995,
+          "cg_m": [
+            0.00464676512922999,
+            0.002655294359559997,
+            -0.0026552943595599967
+          ],
+          "maximum_supported_mass_kg": 1.4374079999999996,
+          "mass_override_applied": false,
+          "reserve_buoyancy_kg": 0.834838272,
+          "effective_bulk_density_kg_m3": 418.45119999999986,
+          "components": [
+            {
+              "name": "Printed box",
+              "envelope_volume_m3": 0.0014399999999999994,
+              "solid_volume_m3": 0.0004214271999999997,
+              "mass_kg": 0.5225697279999996,
+              "material": "PLA",
+              "polymer_density_kg_m3": 1240.0,
+              "density_source": "selected material",
+              "maximum_displacement_m3": 0.0014399999999999994
+            }
+          ],
+          "assumptions": [
+            "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+            "Components must not overlap; inner meshes must lie inside their outer meshes.",
+            "Part-scale infill is homogenized. Printed watertightness must be measured.",
+            "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+          ],
+          "status": "local_equilibrium",
+          "level_pose": {
+            "heave_m": 0.004847653776798254,
+            "displaced_volume_m3": 0.0006036563093568418,
+            "cb_m": [
+              3.5079271686763332e-19,
+              7.0158543373526665e-19,
+              -0.012576173111600876
+            ],
+            "cg_world_m": [
+              0.00464676512922999,
+              0.002655294359559997,
+              0.002192359417238257
+            ],
+            "torque_Nm": [
+              -0.01569064,
+              0.02745861999999998
+            ]
+          },
+          "equilibrium": {
+            "heave_m": 0.004828502060707058,
+            "displaced_volume_m3": 0.000603656309356842,
+            "cb_m": [
+              0.004531078507371585,
+              0.0024351245819489993,
+              -0.012780838032037991
+            ],
+            "cg_world_m": [
+              0.004531078507371598,
+              0.002435124581948996,
+              0.0017899006935525943
+            ],
+            "torque_Nm": [
+              2.0485849062076804e-17,
+              7.688108513215215e-17
+            ],
+            "roll_deg": -4.5732471114342,
+            "pitch_deg": 2.2476946961475113
+          },
+          "holds_level": false,
+          "locally_stable": true,
+          "restoring_stiffness_Nm_rad": [
+            [
+              0.19845304307714548,
+              -0.0024683722739246823
+            ],
+            [
+              -0.0024683722739246823,
+              0.7013359517191302
+            ]
+          ],
+          "equivalent_GM_eigenvalues_m": [
+            0.03358174526380051,
+            0.11868767412742318
+          ],
+          "torque_residual_Nm": 7.956363027722793e-17,
+          "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+        },
+        {
+          "name": "High center of gravity",
+          "mass_kg": 0.5225697279999996,
+          "cg_m": [
+            0.0,
+            0.0,
+            0.08
+          ],
+          "maximum_supported_mass_kg": 1.4374079999999996,
+          "mass_override_applied": false,
+          "reserve_buoyancy_kg": 0.914838272,
+          "effective_bulk_density_kg_m3": 362.89564444444426,
+          "components": [
+            {
+              "name": "Printed box",
+              "envelope_volume_m3": 0.0014399999999999994,
+              "solid_volume_m3": 0.0004214271999999997,
+              "mass_kg": 0.5225697279999996,
+              "material": "PLA",
+              "polymer_density_kg_m3": 1240.0,
+              "density_source": "selected material",
+              "maximum_displacement_m3": 0.0014399999999999994
+            }
+          ],
+          "assumptions": [
+            "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+            "Components must not overlap; inner meshes must lie inside their outer meshes.",
+            "Part-scale infill is homogenized. Printed watertightness must be measured.",
+            "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+          ],
+          "status": "local_equilibrium",
+          "level_pose": {
+            "heave_m": 0.008186997929606641,
+            "displaced_volume_m3": 0.0005235120496894406,
+            "cb_m": [
+              4.044954398646506e-19,
+              2.022477199323253e-19,
+              -0.010906501035196676
+            ],
+            "cg_world_m": [
+              0.0,
+              0.0,
+              0.08818699792960664
+            ],
+            "torque_Nm": [
+              1.03645048150218e-18,
+              -2.07290096300436e-18
+            ]
+          },
+          "equilibrium": {
+            "heave_m": 0.008186997929606641,
+            "displaced_volume_m3": 0.0005235120496894406,
+            "cb_m": [
+              4.044954398646506e-19,
+              2.022477199323253e-19,
+              -0.010906501035196676
+            ],
+            "cg_world_m": [
+              0.0,
+              0.0,
+              0.08818699792960664
+            ],
+            "torque_Nm": [
+              1.03645048150218e-18,
+              -2.07290096300436e-18
+            ],
+            "roll_deg": 0.0,
+            "pitch_deg": 0.0
+          },
+          "holds_level": true,
+          "locally_stable": false,
+          "restoring_stiffness_Nm_rad": [
+            [
+              -0.22589718909346057,
+              5.959590259568593e-14
+            ],
+            [
+              5.959590259568593e-14,
+              0.27529951171350314
+            ]
+          ],
+          "equivalent_GM_eigenvalues_m": [
+            -0.04408043823478859,
+            0.05372055832502539
+          ],
+          "torque_residual_Nm": 2.317573731951263e-18,
+          "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+        },
+        {
+          "name": "Flooded pores",
+          "mass_kg": 0.5225697279999996,
+          "cg_m": [
+            -4.823796549938691e-18,
+            4.019830458282242e-19,
+            -2.009915229141121e-19
+          ],
+          "maximum_supported_mass_kg": 0.4206686310399997,
+          "mass_override_applied": false,
+          "reserve_buoyancy_kg": -0.10190109695999988,
+          "effective_bulk_density_kg_m3": 362.89564444444426,
+          "components": [
+            {
+              "name": "Printed box",
+              "envelope_volume_m3": 0.0014399999999999994,
+              "solid_volume_m3": 0.0004214271999999997,
+              "mass_kg": 0.5225697279999996,
+              "material": "PLA",
+              "polymer_density_kg_m3": 1240.0,
+              "density_source": "selected material",
+              "maximum_displacement_m3": 0.0004214271999999997
+            }
+          ],
+          "assumptions": [
+            "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+            "Components must not overlap; inner meshes must lie inside their outer meshes.",
+            "Part-scale infill is homogenized. Printed watertightness must be measured.",
+            "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+          ],
+          "status": "sinks_or_fully_submerged_neutral",
+          "equilibrium": null
+        }
+      ]
+    },
+    {
+      "profile": {
+        "material": "PETG",
+        "print_axis": "XY",
+        "density_g_cm3": 1.28,
+        "density_kg_m3": 1280.0,
+        "poisson": 0.38,
+        "strength_factor": 0.5,
+        "modulus_factor": 0.7,
+        "safety_factor": 2.0,
+        "stress_concentration_factor": 1.5,
+        "reference_product": "Bambu PETG HF, TDS V1.0",
+        "source_url": "https://store.bblcdn.com/ce12d65176a94f1086e6aefa238e62e2.pdf",
+        "specimen_condition": "100% infill; manufacturer conditioned specimens at 75 C for 8 h.",
+        "property_overrides": {},
+        "reference_young_modulus_Pa": 1810000000.0,
+        "reference_bending_modulus_Pa": 2050000000.0,
+        "reference_tensile_strength_Pa": 34000000.0,
+        "effective_young_modulus_Pa": 1267000000.0,
+        "effective_bending_modulus_Pa": 1435000000.0,
+        "screening_allowable_stress_Pa": 8500000.0,
+        "evidence": "Reference coupon data plus assumed reductions. Poisson ratio and all four factors are uncalibrated assumptions."
+      },
+      "vehicle_mass_kg": 0.2570866392844867,
+      "cg_m": [
+        -0.023983498431212127,
+        0.00022669492664136268,
+        0.035453936067447164
+      ],
+      "axle_checks": [
+        {
+          "load_name": "Own weight",
+          "wheel_count": 3,
+          "total_vertical_force_N": 2.5211586911392114,
+          "child_force_N": 0.0,
+          "required_cop_m": [
+            -0.023983498431212127,
+            0.00022669492664136265
+          ],
+          "surface": "Linoleum",
+          "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+          "status": "supported",
+          "support_margin_m": 0.032164273300462794,
+          "wheels": [
+            {
+              "name": "front",
+              "normal_force_N": 0.7362708906389878,
+              "unloaded": false,
+              "area_m2": 7.828165060094635e-06,
+              "mean_pressure_Pa": 94054.08355429937,
+              "peak_pressure_Pa": 119753.37852515907,
+              "compression_m": 3.6813544531949386e-05,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.005227958986785711,
+              "journal_force_N": 0.0139412239647619,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 146476.439624834,
+                "deflection_m": 3.402472465152938e-06,
+                "model": "two_supports_center_load",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 219714.659437251,
+                "allowable_stress_Pa": 8500000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.025848783463205998,
+                "reserve_factor": 38.686540177932656,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            },
+            {
+              "name": "rear_right",
+              "normal_force_N": 0.8974683739603452,
+              "unloaded": false,
+              "area_m2": 8.904685856846875e-06,
+              "mean_pressure_Pa": 100786.07919338059,
+              "peak_pressure_Pa": 128324.82158782198,
+              "compression_m": 4.487341869801726e-05,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.006003132936189599,
+              "journal_force_N": 0.0160083544965056,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 321382.1879649778,
+                "deflection_m": 6.046912247424667e-06,
+                "model": "cantilever",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 482073.2819474667,
+                "allowable_stress_Pa": 8500000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.0567145037585255,
+                "reserve_factor": 17.63217402479127,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            },
+            {
+              "name": "rear_left",
+              "normal_force_N": 0.8874194265398788,
+              "unloaded": false,
+              "area_m2": 8.854692665355562e-06,
+              "mean_pressure_Pa": 100220.24028139934,
+              "peak_pressure_Pa": 127604.3731091375,
+              "compression_m": 4.437097132699394e-05,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.005935915896587818,
+              "journal_force_N": 0.015829109057567514,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 317783.6737415928,
+                "deflection_m": 5.979205011165855e-06,
+                "model": "cantilever",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 476675.5106123892,
+                "allowable_stress_Pa": 8500000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.05607947183675167,
+                "reserve_factor": 17.83183698503826,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            }
+          ],
+          "pull_force_N": 0.06294569533839814,
+          "traction_bound_N": 0.8824055418987239,
+          "rolling_without_slip_feasible": true,
+          "equilibrium_residual_N": 4.440892098500626e-16,
+          "warnings": [
+            "Floor and bearing parameters require calibration.",
+            "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+          ]
+        },
+        {
+          "load_name": "Child presses near center",
+          "wheel_count": 3,
+          "total_vertical_force_N": 39.29609619113921,
+          "child_force_N": 36.7749375,
+          "required_cop_m": [
+            -0.001538733140810269,
+            1.4544291671087453e-05
+          ],
+          "surface": "Linoleum",
+          "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+          "applied_load_mean_pressure_Pa": 61291.56250000001,
+          "status": "supported",
+          "support_margin_m": 0.02546544299725119,
+          "wheels": [
+            {
+              "name": "front",
+              "normal_force_N": 19.483978562698145,
+              "unloaded": false,
+              "area_m2": 4.026984710195697e-05,
+              "mean_pressure_Pa": 483835.42439005914,
+              "peak_pressure_Pa": 616038.3954771431,
+              "compression_m": 0.0009741989281349073,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.13834777677655485,
+              "journal_force_N": 0.36892740473747965,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 3876214.374187415,
+                "deflection_m": 9.003982286149628e-05,
+                "model": "two_supports_center_load",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 5814321.561281122,
+                "allowable_stress_Pa": 8500000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.6840378307389555,
+                "reserve_factor": 1.461907448773287,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            },
+            {
+              "name": "rear_right",
+              "normal_force_N": 9.911083287930767,
+              "unloaded": false,
+              "area_m2": 2.9591677759533157e-05,
+              "mean_pressure_Pa": 334928.06215551076,
+              "peak_pressure_Pa": 426443.6533779128,
+              "compression_m": 0.0004955541643965383,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.06629487149117569,
+              "journal_force_N": 0.1767863239764685,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 3549145.267506726,
+                "deflection_m": 6.677834301232165e-05,
+                "model": "cantilever",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 5323717.901260089,
+                "allowable_stress_Pa": 8500000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.6263197530894222,
+                "reserve_factor": 1.596628551258906,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            },
+            {
+              "name": "rear_left",
+              "normal_force_N": 9.901034340510304,
+              "unloaded": false,
+              "area_m2": 2.9576672304585287e-05,
+              "mean_pressure_Pa": 334758.2256228109,
+              "peak_pressure_Pa": 426227.4107883386,
+              "compression_m": 0.0004950517170255152,
+              "pile_compression_m": 0.0,
+              "pile_bottomed": false,
+              "rolling_force_N": 0.06622765445157393,
+              "journal_force_N": 0.1766070785375305,
+              "warnings": [],
+              "axle": {
+                "bending_stress_Pa": 3545546.7532833423,
+                "deflection_m": 6.671063577606286e-05,
+                "model": "cantilever",
+                "strength_pass_fail": null,
+                "local_stress_Pa": 5318320.1299250135,
+                "allowable_stress_Pa": 8500000.0,
+                "stress_concentration_factor": 1.5,
+                "utilization": 0.6256847211676486,
+                "reserve_factor": 1.598249032090486,
+                "screen_status": "within_assumed_allowable",
+                "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+              }
+            }
+          ],
+          "pull_force_N": 0.9931911099707831,
+          "traction_bound_N": 13.753633666898724,
+          "rolling_without_slip_feasible": true,
+          "equilibrium_residual_N": 3.3428121382073073e-15,
+          "warnings": [
+            "Floor and bearing parameters require calibration.",
+            "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+          ]
+        },
+        {
+          "load_name": "Off-center press",
+          "wheel_count": 3,
+          "total_vertical_force_N": 37.52115869113921,
+          "child_force_N": 35.0,
+          "required_cop_m": [
+            0.0263726875449587,
+            0.05598365314823282
+          ],
+          "surface": "Linoleum",
+          "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+          "status": "tipping",
+          "reason": "No nonnegative wheel reactions balance the specified load"
+        }
+      ],
+      "buoyancy": [
+        {
+          "name": "Sealed level box",
+          "mass_kg": 0.5394268159999995,
+          "cg_m": [
+            -4.823796549938691e-18,
+            4.019830458282242e-19,
+            -2.009915229141121e-19
+          ],
+          "maximum_supported_mass_kg": 1.4374079999999996,
+          "mass_override_applied": false,
+          "reserve_buoyancy_kg": 0.897981184,
+          "effective_bulk_density_kg_m3": 374.6019555555554,
+          "components": [
+            {
+              "name": "Printed box",
+              "envelope_volume_m3": 0.0014399999999999994,
+              "solid_volume_m3": 0.0004214271999999997,
+              "mass_kg": 0.5394268159999995,
+              "material": "PETG",
+              "polymer_density_kg_m3": 1280.0,
+              "density_source": "selected material",
+              "maximum_displacement_m3": 0.0014399999999999994
+            }
+          ],
+          "assumptions": [
+            "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+            "Components must not overlap; inner meshes must lie inside their outer meshes.",
+            "Part-scale infill is homogenized. Printed watertightness must be measured.",
+            "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+          ],
+          "status": "local_equilibrium",
+          "level_pose": {
+            "heave_m": 0.007483352701529439,
+            "displaced_volume_m3": 0.0005403995351632935,
+            "cb_m": [
+              7.837099147377606e-19,
+              -1.371492350791081e-18,
+              -0.011258323649235279
+            ],
+            "cg_world_m": [
+              -4.823796549938691e-18,
+              4.019830458282242e-19,
+              0.007483352701529439
+            ],
+            "torque_Nm": [
+              -9.381631617476254e-18,
+              -2.9663540889540654e-17
+            ]
+          },
+          "equilibrium": {
+            "heave_m": 0.007483352701529439,
+            "displaced_volume_m3": 0.0005403995351632935,
+            "cb_m": [
+              7.837099147377606e-19,
+              -1.371492350791081e-18,
+              -0.011258323649235279
+            ],
+            "cg_world_m": [
+              -4.823796549938691e-18,
+              4.019830458282242e-19,
+              0.007483352701529439
+            ],
+            "torque_Nm": [
+              -9.381631617476254e-18,
+              -2.9663540889540654e-17
+            ],
+            "roll_deg": 0.0,
+            "pitch_deg": 0.0
+          },
+          "holds_level": true,
+          "locally_stable": true,
+          "restoring_stiffness_Nm_rad": [
+            [
+              0.18278023900257734,
+              -4.145801907870838e-14
+            ],
+            [
+              -4.145801907870838e-14,
+              0.6839769398092198
+            ]
+          ],
+          "equivalent_GM_eigenvalues_m": [
+            0.034552226102698785,
+            0.12929694151995785
+          ],
+          "torque_residual_Nm": 3.111174488696319e-17,
+          "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+        },
+        {
+          "name": "Shifted ballast",
+          "mass_kg": 0.6194268159999995,
+          "cg_m": [
+            0.004520308013271418,
+            0.002583033150440813,
+            -0.002583033150440813
+          ],
+          "maximum_supported_mass_kg": 1.4374079999999996,
+          "mass_override_applied": false,
+          "reserve_buoyancy_kg": 0.8179811840000001,
+          "effective_bulk_density_kg_m3": 430.1575111111109,
+          "components": [
+            {
+              "name": "Printed box",
+              "envelope_volume_m3": 0.0014399999999999994,
+              "solid_volume_m3": 0.0004214271999999997,
+              "mass_kg": 0.5394268159999995,
+              "material": "PETG",
+              "polymer_density_kg_m3": 1280.0,
+              "density_source": "selected material",
+              "maximum_displacement_m3": 0.0014399999999999994
+            }
+          ],
+          "assumptions": [
+            "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+            "Components must not overlap; inner meshes must lie inside their outer meshes.",
+            "Part-scale infill is homogenized. Printed watertightness must be measured.",
+            "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+          ],
+          "status": "local_equilibrium",
+          "level_pose": {
+            "heave_m": 0.004144008548721057,
+            "displaced_volume_m3": 0.0006205437948306945,
+            "cb_m": [
+              -6.824924802329219e-19,
+              -6.824924802329219e-19,
+              -0.012927995725639477
+            ],
+            "cg_world_m": [
+              0.004520308013271418,
+              0.002583033150440813,
+              0.0015609753982802439
+            ],
+            "torque_Nm": [
+              -0.015690640000000006,
+              0.027458619999999975
+            ]
+          },
+          "equilibrium": {
+            "heave_m": 0.0041275312931111285,
+            "displaced_volume_m3": 0.0006205437948306946,
+            "cb_m": [
+              0.0044076224195617455,
+              0.0023680236058835212,
+              -0.013125338391355972
+            ],
+            "cg_world_m": [
+              0.004407622419561745,
+              0.002368023605883518,
+              0.001170736769314579
+            ],
+            "torque_Nm": [
+              1.8426549803365767e-17,
+              -5.268790599233237e-18
+            ],
+            "roll_deg": -4.590376807660262,
+            "pitch_deg": 2.2500103534719824
+          },
+          "holds_level": false,
+          "locally_stable": true,
+          "restoring_stiffness_Nm_rad": [
+            [
+              0.19773425649075815,
+              -0.0024802760527563236
+            ],
+            [
+              -0.0024802760527563236,
+              0.7006183003503924
+            ]
+          ],
+          "equivalent_GM_eigenvalues_m": [
+            0.03254950353045236,
+            0.11533958417431661
+          ],
+          "torque_residual_Nm": 1.9165017402405028e-17,
+          "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+        },
+        {
+          "name": "High center of gravity",
+          "mass_kg": 0.5394268159999995,
+          "cg_m": [
+            0.0,
+            0.0,
+            0.08
+          ],
+          "maximum_supported_mass_kg": 1.4374079999999996,
+          "mass_override_applied": false,
+          "reserve_buoyancy_kg": 0.897981184,
+          "effective_bulk_density_kg_m3": 374.6019555555554,
+          "components": [
+            {
+              "name": "Printed box",
+              "envelope_volume_m3": 0.0014399999999999994,
+              "solid_volume_m3": 0.0004214271999999997,
+              "mass_kg": 0.5394268159999995,
+              "material": "PETG",
+              "polymer_density_kg_m3": 1280.0,
+              "density_source": "selected material",
+              "maximum_displacement_m3": 0.0014399999999999994
+            }
+          ],
+          "assumptions": [
+            "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+            "Components must not overlap; inner meshes must lie inside their outer meshes.",
+            "Part-scale infill is homogenized. Printed watertightness must be measured.",
+            "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+          ],
+          "status": "local_equilibrium",
+          "level_pose": {
+            "heave_m": 0.007483352701529439,
+            "displaced_volume_m3": 0.0005403995351632935,
+            "cb_m": [
+              7.837099147377606e-19,
+              -1.371492350791081e-18,
+              -0.011258323649235279
+            ],
+            "cg_world_m": [
+              0.0,
+              0.0,
+              0.08748335270152945
+            ],
+            "torque_Nm": [
+              -7.25515337051526e-18,
+              -4.14580192600872e-18
+            ]
+          },
+          "equilibrium": {
+            "heave_m": 0.007483352701529439,
+            "displaced_volume_m3": 0.0005403995351632935,
+            "cb_m": [
+              7.837099147377606e-19,
+              -1.371492350791081e-18,
+              -0.011258323649235279
+            ],
+            "cg_world_m": [
+              0.0,
+              0.0,
+              0.08748335270152945
+            ],
+            "torque_Nm": [
+              -7.25515337051526e-18,
+              -4.14580192600872e-18
+            ],
+            "roll_deg": 0.0,
+            "pitch_deg": 0.0
+          },
+          "holds_level": true,
+          "locally_stable": false,
+          "restoring_stiffness_Nm_rad": [
+            [
+              -0.240417359102205,
+              -4.1458019078708374e-14
+            ],
+            [
+              -4.1458019078708374e-14,
+              0.26077934170443734
+            ]
+          ],
+          "equivalent_GM_eigenvalues_m": [
+            -0.04544777376396789,
+            0.04929694165329115
+          ],
+          "torque_residual_Nm": 8.356130925218713e-18,
+          "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+        },
+        {
+          "name": "Flooded pores",
+          "mass_kg": 0.5394268159999995,
+          "cg_m": [
+            -4.823796549938691e-18,
+            4.019830458282242e-19,
+            -2.009915229141121e-19
+          ],
+          "maximum_supported_mass_kg": 0.4206686310399997,
+          "mass_override_applied": false,
+          "reserve_buoyancy_kg": -0.11875818495999985,
+          "effective_bulk_density_kg_m3": 374.6019555555554,
+          "components": [
+            {
+              "name": "Printed box",
+              "envelope_volume_m3": 0.0014399999999999994,
+              "solid_volume_m3": 0.0004214271999999997,
+              "mass_kg": 0.5394268159999995,
+              "material": "PETG",
+              "polymer_density_kg_m3": 1280.0,
+              "density_source": "selected material",
+              "maximum_displacement_m3": 0.0004214271999999997
+            }
+          ],
+          "assumptions": [
+            "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+            "Components must not overlap; inner meshes must lie inside their outer meshes.",
+            "Part-scale infill is homogenized. Printed watertightness must be measured.",
+            "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+          ],
+          "status": "sinks_or_fully_submerged_neutral",
+          "equilibrium": null
+        }
+      ]
+    }
+  ],
+  "resolved_vehicle": {
+    "name": "Trike MINI v06",
+    "wheels": [
+      {
+        "name": "front",
+        "position_m": [
+          0.0539900025666706,
+          0.0,
+          0.021109448864398174
+        ],
+        "radius_m": 0.021125,
+        "width_m": 0.02935,
+        "vertical_stiffness_N_m": 20000.0,
+        "tread_contact_fraction": 0.65,
+        "journal_radius_m": 0.005,
+        "journal_friction": 0.08,
+        "axle": {
+          "diameter_m": 0.008,
+          "span_or_overhang_m": 0.04,
+          "support": "two_supports_center_load",
+          "effective_modulus_Pa": 1924999999.9999998,
+          "allowable_stress_Pa": 8750000.0,
+          "stress_concentration_factor": 1.5,
+          "material_resolution": {
+            "material": "PLA",
+            "print_axis": "XY",
+            "density_g_cm3": 1.24,
+            "density_kg_m3": 1240.0,
+            "poisson": 0.35,
+            "strength_factor": 0.5,
+            "modulus_factor": 0.7,
+            "safety_factor": 2.0,
+            "stress_concentration_factor": 1.5,
+            "reference_product": "Bambu PLA Basic, TDS V3.0",
+            "source_url": "https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf",
+            "specimen_condition": "100% infill; manufacturer conditioned specimens at 55 C for 8 h.",
+            "property_overrides": {},
+            "reference_young_modulus_Pa": 2580000000.0,
+            "reference_bending_modulus_Pa": 2750000000.0,
+            "reference_tensile_strength_Pa": 35000000.0,
+            "effective_young_modulus_Pa": 1806000000.0,
+            "effective_bending_modulus_Pa": 1924999999.9999998,
+            "screening_allowable_stress_Pa": 8750000.0,
+            "evidence": "Reference coupon data plus assumed reductions. Poisson ratio and all four factors are uncalibrated assumptions."
+          }
+        },
+        "surface_modulus_Pa": 1806000000.0,
+        "poisson": 0.35
+      },
+      {
+        "name": "rear_right",
+        "position_m": [
+          -0.05614777173167492,
+          0.056875,
+          0.02240243860882822
+        ],
+        "radius_m": 0.022425,
+        "width_m": 0.02935,
+        "vertical_stiffness_N_m": 20000.0,
+        "tread_contact_fraction": 0.65,
+        "journal_radius_m": 0.005,
+        "journal_friction": 0.08,
+        "axle": {
+          "diameter_m": 0.008,
+          "span_or_overhang_m": 0.018,
+          "support": "cantilever",
+          "effective_modulus_Pa": 1924999999.9999998,
+          "allowable_stress_Pa": 8750000.0,
+          "stress_concentration_factor": 1.5,
+          "material_resolution": {
+            "material": "PLA",
+            "print_axis": "XY",
+            "density_g_cm3": 1.24,
+            "density_kg_m3": 1240.0,
+            "poisson": 0.35,
+            "strength_factor": 0.5,
+            "modulus_factor": 0.7,
+            "safety_factor": 2.0,
+            "stress_concentration_factor": 1.5,
+            "reference_product": "Bambu PLA Basic, TDS V3.0",
+            "source_url": "https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf",
+            "specimen_condition": "100% infill; manufacturer conditioned specimens at 55 C for 8 h.",
+            "property_overrides": {},
+            "reference_young_modulus_Pa": 2580000000.0,
+            "reference_bending_modulus_Pa": 2750000000.0,
+            "reference_tensile_strength_Pa": 35000000.0,
+            "effective_young_modulus_Pa": 1806000000.0,
+            "effective_bending_modulus_Pa": 1924999999.9999998,
+            "screening_allowable_stress_Pa": 8750000.0,
+            "evidence": "Reference coupon data plus assumed reductions. Poisson ratio and all four factors are uncalibrated assumptions."
+          }
+        },
+        "surface_modulus_Pa": 1806000000.0,
+        "poisson": 0.35
+      },
+      {
+        "name": "rear_left",
+        "position_m": [
+          -0.05614777173167492,
+          -0.056875,
+          0.02240243860882822
+        ],
+        "radius_m": 0.022425,
+        "width_m": 0.02935,
+        "vertical_stiffness_N_m": 20000.0,
+        "tread_contact_fraction": 0.65,
+        "journal_radius_m": 0.005,
+        "journal_friction": 0.08,
+        "axle": {
+          "diameter_m": 0.008,
+          "span_or_overhang_m": 0.018,
+          "support": "cantilever",
+          "effective_modulus_Pa": 1924999999.9999998,
+          "allowable_stress_Pa": 8750000.0,
+          "stress_concentration_factor": 1.5,
+          "material_resolution": {
+            "material": "PLA",
+            "print_axis": "XY",
+            "density_g_cm3": 1.24,
+            "density_kg_m3": 1240.0,
+            "poisson": 0.35,
+            "strength_factor": 0.5,
+            "modulus_factor": 0.7,
+            "safety_factor": 2.0,
+            "stress_concentration_factor": 1.5,
+            "reference_product": "Bambu PLA Basic, TDS V3.0",
+            "source_url": "https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf",
+            "specimen_condition": "100% infill; manufacturer conditioned specimens at 55 C for 8 h.",
+            "property_overrides": {},
+            "reference_young_modulus_Pa": 2580000000.0,
+            "reference_bending_modulus_Pa": 2750000000.0,
+            "reference_tensile_strength_Pa": 35000000.0,
+            "effective_young_modulus_Pa": 1806000000.0,
+            "effective_bending_modulus_Pa": 1924999999.9999998,
+            "screening_allowable_stress_Pa": 8750000.0,
+            "evidence": "Reference coupon data plus assumed reductions. Poisson ratio and all four factors are uncalibrated assumptions."
+          }
+        },
+        "surface_modulus_Pa": 1806000000.0,
+        "poisson": 0.35
+      }
+    ],
+    "mass_components": [
+      {
+        "name": "01_upper_body",
+        "polymer_volume_m3": 4.522964602911412e-05,
+        "position_m": [
+          -0.03353789406026357,
+          3.683359566455277e-05,
+          0.05179315757075328
+        ],
+        "reference_slicer_mass_kg": 0.057441650456974934,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "02_lower_chassis",
+        "polymer_volume_m3": 2.9107948341163158e-05,
+        "position_m": [
+          -0.01860607059119956,
+          -0.00015600239358574755,
+          0.03554673338862086
+        ],
+        "reference_slicer_mass_kg": 0.03696709439327721,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "03_front_fork_R",
+        "polymer_volume_m3": 5.105005170342071e-06,
+        "position_m": [
+          0.042536274100768434,
+          0.02168892478201692,
+          0.028241391839396206
+        ],
+        "reference_slicer_mass_kg": 0.00648335656633443,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "04_front_fork_L",
+        "polymer_volume_m3": 3.521666996833127e-06,
+        "position_m": [
+          0.035120647716817666,
+          -0.020906137040086255,
+          0.03217652620509488
+        ],
+        "reference_slicer_mass_kg": 0.0044725170859780715,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "05_rear_carrier_R",
+        "polymer_volume_m3": 1.4732137124295416e-05,
+        "position_m": [
+          -0.05310790998577983,
+          0.03898250006116681,
+          0.03730401387201063
+        ],
+        "reference_slicer_mass_kg": 0.018709814147855178,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "06_rear_carrier_L",
+        "polymer_volume_m3": 1.4766676815126351e-05,
+        "position_m": [
+          -0.05310129545136977,
+          -0.03898422821488205,
+          0.0372837289569034
+        ],
+        "reference_slicer_mass_kg": 0.018753679555210467,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "07_front_wheel",
+        "polymer_volume_m3": 1.6922587366799097e-05,
+        "position_m": [
+          0.05398645893485676,
+          -0.0002819758074188936,
+          0.021059676038043335
+        ],
+        "reference_slicer_mass_kg": 0.021491685955834856,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "08_rear_R_wheel",
+        "polymer_volume_m3": 1.8778265459742616e-05,
+        "position_m": [
+          -0.056165941754689475,
+          0.056535213711846014,
+          0.022406131869853258
+        ],
+        "reference_slicer_mass_kg": 0.02384839713387312,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "09_rear_L_wheel",
+        "polymer_volume_m3": 1.8778268304164468e-05,
+        "position_m": [
+          -0.05616594020098715,
+          -0.056535213938326945,
+          0.022406131145815418
+        ],
+        "reference_slicer_mass_kg": 0.023848400746288873,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "10_front_axle",
+        "polymer_volume_m3": 4.687629381685071e-06,
+        "position_m": [
+          0.05397851071680312,
+          -0.0031470614362520645,
+          0.02150015478902964
+        ],
+        "reference_slicer_mass_kg": 0.005953289314740041,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "11_front_axle_keeper",
+        "polymer_volume_m3": 1.0967603999575545e-06,
+        "position_m": [
+          0.039562011249229284,
+          0.029350837575863983,
+          0.03006087271022329
+        ],
+        "reference_slicer_mass_kg": 0.0013928857079460943,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "12_rear_R_axle",
+        "polymer_volume_m3": 4.1075778693370144e-06,
+        "position_m": [
+          -0.05616066050669297,
+          0.057265223953458705,
+          0.02284063577004204
+        ],
+        "reference_slicer_mass_kg": 0.005216623894058008,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "13_rear_L_axle",
+        "polymer_volume_m3": 4.107577967558871e-06,
+        "position_m": [
+          -0.05616066050645108,
+          -0.05726522536387477,
+          0.022840635761818006
+        ],
+        "reference_slicer_mass_kg": 0.005216624018799766,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "14_rear_R_axle_keeper",
+        "polymer_volume_m3": 6.379559468821971e-07,
+        "position_m": [
+          -0.058205676962913,
+          0.029350000381469735,
+          0.027996227873458564
+        ],
+        "reference_slicer_mass_kg": 0.0008102040525403904,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "15_clear_canopy",
+        "polymer_volume_m3": 7.4222233987623655e-06,
+        "position_m": [
+          0.0027583622758421303,
+          8.757855550117908e-07,
+          0.0535887704302383
+        ],
+        "reference_slicer_mass_kg": 0.009203557014465333,
+        "reference_slicer_density_kg_m3": 1240.0
+      },
+      {
+        "name": "16_canopy_retainer",
+        "polymer_volume_m3": 3.5625771567988653e-06,
+        "position_m": [
+          -0.0013092856956046553,
+          -1.9976182804891782e-07,
+          0.04256040702716175
+        ],
+        "reference_slicer_mass_kg": 0.004524472989134559,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "17_rear_L_axle_keeper",
+        "polymer_volume_m3": 6.379559468821969e-07,
+        "position_m": [
+          -0.05820567696291288,
+          -0.029350000381469694,
+          0.027996227873458505
+        ],
+        "reference_slicer_mass_kg": 0.0008102040525403901,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "20_body_screw_1",
+        "polymer_volume_m3": 7.994481975664483e-07,
+        "position_m": [
+          -0.007610805452268797,
+          -5.629843510002551e-07,
+          0.03637337004701864
+        ],
+        "reference_slicer_mass_kg": 0.0010152992109093892,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "20_body_screw_2",
+        "polymer_volume_m3": 7.994481744558891e-07,
+        "position_m": [
+          -0.0465939466749254,
+          -5.629857162904815e-07,
+          0.03522676325819561
+        ],
+        "reference_slicer_mass_kg": 0.0010152991815589791,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "20_body_screw_3",
+        "polymer_volume_m3": 8.878314604069482e-07,
+        "position_m": [
+          0.023661906078766656,
+          0.023075004278038304,
+          0.03405235789760014
+        ],
+        "reference_slicer_mass_kg": 0.0011275459547168242,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "20_body_screw_4",
+        "polymer_volume_m3": 8.878314529380546e-07,
+        "position_m": [
+          0.023661906079969264,
+          -0.02307499549598447,
+          0.03405235786492003
+        ],
+        "reference_slicer_mass_kg": 0.0011275459452313294,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "20_body_screw_5",
+        "polymer_volume_m3": 9.09928625176715e-07,
+        "position_m": [
+          -0.04129441456549659,
+          0.027945744578784792,
+          0.03184026296724582
+        ],
+        "reference_slicer_mass_kg": 0.001155609353974428,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "20_body_screw_6",
+        "polymer_volume_m3": 9.099286209049019e-07,
+        "position_m": [
+          -0.04129441456452385,
+          -0.027954255353943594,
+          0.031840262933030175
+        ],
+        "reference_slicer_mass_kg": 0.0011556093485492254,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "21_body_nut_1",
+        "polymer_volume_m3": 4.086765932447182e-07,
+        "position_m": [
+          -0.007806367958295202,
+          6.9029497772472125e-06,
+          0.043435715629380714
+        ],
+        "reference_slicer_mass_kg": 0.0005190192734207921,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "21_body_nut_2",
+        "polymer_volume_m3": 4.086766886722348e-07,
+        "position_m": [
+          -0.0467895081312022,
+          6.902946428983113e-06,
+          0.04228910905832078
+        ],
+        "reference_slicer_mass_kg": 0.0005190193946137382,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "21_body_nut_3",
+        "polymer_volume_m3": 4.0867683226588134e-07,
+        "position_m": [
+          0.023380144870704504,
+          0.023081900265596603,
+          0.044353003195732446
+        ],
+        "reference_slicer_mass_kg": 0.0005190195769776693,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "21_body_nut_4",
+        "polymer_volume_m3": 4.086768297667867e-07,
+        "position_m": [
+          0.02338014487186895,
+          -0.023068099773202812,
+          0.04435300319752696
+        ],
+        "reference_slicer_mass_kg": 0.0005190195738038191,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "21_body_nut_5",
+        "polymer_volume_m3": 4.0867689508104437e-07,
+        "position_m": [
+          -0.04159175758602606,
+          0.027956900253488494,
+          0.0424419921848039
+        ],
+        "reference_slicer_mass_kg": 0.0005190196567529264,
+        "reference_slicer_density_kg_m3": 1270.0
+      },
+      {
+        "name": "21_body_nut_6",
+        "polymer_volume_m3": 4.0867689508104437e-07,
+        "position_m": [
+          -0.04159175758602611,
+          -0.027943099746511484,
+          0.042441992184803955
+        ],
+        "reference_slicer_mass_kg": 0.0005190196567529264,
+        "reference_slicer_density_kg_m3": 1270.0
+      }
+    ],
+    "provenance": {
+      "manifest_sha256": "aa2b3c3bfd9ceff093e4b235e5acece92f0f5d407fd2991503035ec4f67044ec",
+      "model_revision": "mini_surface_v06",
+      "coordinates": "x forward = -ground Y; y right = ground X; z up",
+      "mass": "Polymer volumes inferred from slicer object mass and the recorded filament density (PETG 1270, PLA 1240 kg/m3); key excluded. Selected calculation material determines new masses.",
+      "center_of_gravity": "Per-plate object masses allocated by min(1, area*2.1mm/volume) shell proxy plus 20% infill; solid fasteners and canopy. Approximate, not measured.",
+      "measured_inputs": false,
+      "assumed_inputs": [
+        "contact fraction",
+        "surface elastic modulus",
+        "vertical stiffness",
+        "journal friction",
+        "axle beam idealization"
+      ],
+      "reference_assembled_mass_kg": 0.2548554832131138,
+      "reference_cg_m": [
+        -0.024006862738908855,
+        0.00022689222435201713,
+        0.0354380917006425
+      ],
+      "key_estimate_kg": 0.001623258432699207
+    },
+    "mass_kg": 0.24905268180684642,
+    "cg_m": [
+      -0.02398349843121214,
+      0.00022669492664136154,
+      0.035453936067447164
+    ],
+    "material_resolution": {
+      "profile": {
+        "material": "PLA",
+        "print_axis": "XY",
+        "density_g_cm3": 1.24,
+        "density_kg_m3": 1240.0,
+        "poisson": 0.35,
+        "strength_factor": 0.5,
+        "modulus_factor": 0.7,
+        "safety_factor": 2.0,
+        "stress_concentration_factor": 1.5,
+        "reference_product": "Bambu PLA Basic, TDS V3.0",
+        "source_url": "https://store.bblcdn.com/s7/default/b189de92249a4b9ebed28b8ea1f080f0/Bambu_PLA_Basic_Technical_Data_Sheet.pdf",
+        "specimen_condition": "100% infill; manufacturer conditioned specimens at 55 C for 8 h.",
+        "property_overrides": {},
+        "reference_young_modulus_Pa": 2580000000.0,
+        "reference_bending_modulus_Pa": 2750000000.0,
+        "reference_tensile_strength_Pa": 35000000.0,
+        "effective_young_modulus_Pa": 1806000000.0,
+        "effective_bending_modulus_Pa": 1924999999.9999998,
+        "screening_allowable_stress_Pa": 8750000.0,
+        "evidence": "Reference coupon data plus assumed reductions. Poisson ratio and all four factors are uncalibrated assumptions."
+      },
+      "mass_basis": "Sum of polymer volume times selected density, plus fixed masses",
+      "components": [
+        {
+          "name": "01_upper_body",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.056084761076101504
+        },
+        {
+          "name": "02_lower_chassis",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.03609385594304231
+        },
+        {
+          "name": "03_front_fork_R",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.006330206411224168
+        },
+        {
+          "name": "04_front_fork_L",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0043668670760730775
+        },
+        {
+          "name": "05_rear_carrier_R",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.018267850034126315
+        },
+        {
+          "name": "06_rear_carrier_L",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.018310679250756676
+        },
+        {
+          "name": "07_front_wheel",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.02098400833483088
+        },
+        {
+          "name": "08_rear_R_wheel",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.023285049170080844
+        },
+        {
+          "name": "09_rear_L_wheel",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.02328505269716394
+        },
+        {
+          "name": "10_front_axle",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.005812660433289488
+        },
+        {
+          "name": "11_front_axle_keeper",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0013599828959473675
+        },
+        {
+          "name": "12_rear_R_axle",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.005093396557977898
+        },
+        {
+          "name": "13_rear_L_axle",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.005093396679773
+        },
+        {
+          "name": "14_rear_R_axle_keeper",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0007910653741339244
+        },
+        {
+          "name": "15_clear_canopy",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.009203557014465333
+        },
+        {
+          "name": "16_canopy_retainer",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.004417595674430593
+        },
+        {
+          "name": "17_rear_L_axle_keeper",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0007910653741339242
+        },
+        {
+          "name": "20_body_screw_1",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0009913157649823958
+        },
+        {
+          "name": "20_body_screw_2",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0009913157363253024
+        },
+        {
+          "name": "20_body_screw_3",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0011009110109046157
+        },
+        {
+          "name": "20_body_screw_4",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0011009110016431877
+        },
+        {
+          "name": "20_body_screw_5",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0011283114952191267
+        },
+        {
+          "name": "20_body_screw_6",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0011283114899220785
+        },
+        {
+          "name": "21_body_nut_1",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0005067589756234506
+        },
+        {
+          "name": "21_body_nut_2",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0005067590939535711
+        },
+        {
+          "name": "21_body_nut_3",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0005067592720096928
+        },
+        {
+          "name": "21_body_nut_4",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.0005067592689108156
+        },
+        {
+          "name": "21_body_nut_5",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.000506759349900495
+        },
+        {
+          "name": "21_body_nut_6",
+          "material": "PLA",
+          "density_kg_m3": 1240.0,
+          "mass_kg": 0.000506759349900495
+        }
+      ]
+    }
+  },
+  "material_model_sha256": "e7b2613a673cc29cd550c235a6382aef29009e809cfa6c7e8ed7f58bee602018",
+  "rolling": [
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 2.4423724820411103,
+      "child_force_N": 0.0,
+      "required_cop_m": [
+        -0.02398349843121214,
+        0.0002266949266413615
+      ],
+      "surface": "Linoleum",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "status": "supported",
+      "support_margin_m": 0.03216427330046278,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 0.7132624253065187,
+          "unloaded": false,
+          "area_m2": 7.686862867601035e-06,
+          "mean_pressure_Pa": 92789.79443132933,
+          "peak_pressure_Pa": 118143.63561781507,
+          "compression_m": 3.5663121265325934e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.005064585268448653,
+          "journal_force_N": 0.013505560715863077,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 141899.05088655782,
+            "deflection_m": 2.4571264222780577e-06,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 212848.57632983674,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.02432555158055277,
+            "reserve_factor": 41.10903700121879,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 0.8694224872740841,
+          "unloaded": false,
+          "area_m2": 8.74395193959041e-06,
+          "mean_pressure_Pa": 99431.2975735329,
+          "peak_pressure_Pa": 126599.86005495151,
+          "compression_m": 4.347112436370421e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.005815535031933672,
+          "journal_force_N": 0.015508093418489795,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 311338.99459107214,
+            "deflection_m": 4.366832651407244e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 467008.4918866082,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05337239907275522,
+            "reserve_factor": 18.736276003573273,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 0.8596875694605073,
+          "unloaded": false,
+          "area_m2": 8.694861149557582e-06,
+          "mean_pressure_Pa": 98873.06475322502,
+          "peak_pressure_Pa": 125889.09595296647,
+          "compression_m": 4.298437847302536e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.005750418524819446,
+          "journal_force_N": 0.015334449399518526,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 307852.9339371679,
+            "deflection_m": 4.317937255222614e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 461779.40090575186,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05277478867494307,
+            "reserve_factor": 18.94844157802928,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.06097864235907317,
+      "traction_bound_N": 0.8548303687143886,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 4.440892098500626e-16,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Own weight",
+      "illustrative_parameter_sweep_force_N": [
+        0.030489321179536583,
+        0.12195728471814633
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 2.4423724820411103,
+      "child_force_N": 0.0,
+      "required_cop_m": [
+        -0.02398349843121214,
+        0.0002266949266413615
+      ],
+      "surface": "Parquet",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "status": "supported",
+      "support_margin_m": 0.03216427330046278,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 0.7132624253065187,
+          "unloaded": false,
+          "area_m2": 1.4295288428029214e-06,
+          "mean_pressure_Pa": 498949.30689751107,
+          "peak_pressure_Pa": 635281.988360112,
+          "compression_m": 3.5663121265325934e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.0033763901789657692,
+          "journal_force_N": 0.013505560715863077,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 141899.05088655782,
+            "deflection_m": 2.4571264222780577e-06,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 212848.57632983674,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.02432555158055277,
+            "reserve_factor": 41.10903700121879,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 0.8694224872740841,
+          "unloaded": false,
+          "area_m2": 1.626116103932531e-06,
+          "mean_pressure_Pa": 534661.9993317262,
+          "peak_pressure_Pa": 680752.800616319,
+          "compression_m": 4.347112436370421e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.003877023354622449,
+          "journal_force_N": 0.015508093418489795,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 311338.99459107214,
+            "deflection_m": 4.366832651407244e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 467008.4918866082,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05337239907275522,
+            "reserve_factor": 18.736276003573273,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 0.8596875694605073,
+          "unloaded": false,
+          "area_m2": 1.6169866708365283e-06,
+          "mean_pressure_Pa": 531660.2696642876,
+          "peak_pressure_Pa": 676930.8797011314,
+          "compression_m": 4.298437847302536e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.0038336123498796315,
+          "journal_force_N": 0.015334449399518526,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 307852.9339371679,
+            "deflection_m": 4.317937255222614e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 461779.40090575186,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05277478867494307,
+            "reserve_factor": 18.94844157802928,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.055435129417339246,
+      "traction_bound_N": 0.6105931205102776,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 4.440892098500626e-16,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Own weight",
+      "illustrative_parameter_sweep_force_N": [
+        0.027717564708669623,
+        0.11087025883467849
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 2.4423724820411103,
+      "child_force_N": 0.0,
+      "required_cop_m": [
+        -0.02398349843121214,
+        0.0002266949266413615
+      ],
+      "surface": "Tile",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "status": "supported",
+      "support_margin_m": 0.03216427330046278,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 0.7132624253065187,
+          "unloaded": false,
+          "area_m2": 8.597592075803608e-07,
+          "mean_pressure_Pa": 829607.1958494853,
+          "peak_pressure_Pa": 1056288.688352414,
+          "compression_m": 3.5663121265325934e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.0016881950894828846,
+          "journal_force_N": 0.013505560715863077,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 141899.05088655782,
+            "deflection_m": 2.4571264222780577e-06,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 212848.57632983674,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.02432555158055277,
+            "reserve_factor": 41.10903700121879,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 0.8694224872740841,
+          "unloaded": false,
+          "area_m2": 9.779923643999101e-07,
+          "mean_pressure_Pa": 888986.9889807946,
+          "peak_pressure_Pa": 1131893.3891253902,
+          "compression_m": 4.347112436370421e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.0019385116773112244,
+          "journal_force_N": 0.015508093418489795,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 311338.99459107214,
+            "deflection_m": 4.366832651407244e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 467008.4918866082,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05337239907275522,
+            "reserve_factor": 18.736276003573273,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 0.8596875694605073,
+          "unloaded": false,
+          "area_m2": 9.725016642970095e-07,
+          "mean_pressure_Pa": 883995.9878957617,
+          "peak_pressure_Pa": 1125538.64917611,
+          "compression_m": 4.298437847302536e-05,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.0019168061749398157,
+          "journal_force_N": 0.015334449399518526,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 307852.9339371679,
+            "deflection_m": 4.317937255222614e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 461779.40090575186,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05277478867494307,
+            "reserve_factor": 18.94844157802928,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.049891616475605326,
+      "traction_bound_N": 0.4884744964082221,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 4.440892098500626e-16,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Own weight",
+      "illustrative_parameter_sweep_force_N": [
+        0.024945808237802663,
+        0.09978323295121065
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 2.4423724820411103,
+      "child_force_N": 0.0,
+      "required_cop_m": [
+        -0.02398349843121214,
+        0.0002266949266413615
+      ],
+      "surface": "Carpet short pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "status": "supported",
+      "support_margin_m": 0.03216427330046278,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 0.7132624253065187,
+          "unloaded": false,
+          "area_m2": 9.573476088661817e-05,
+          "mean_pressure_Pa": 7450.401700498933,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.00018467115527530473,
+          "pile_compression_m": 0.0001490080340099788,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.010988632886344772,
+          "journal_force_N": 0.013505560715863077,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 141899.05088655782,
+            "deflection_m": 2.4571264222780577e-06,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 212848.57632983674,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.02432555158055277,
+            "reserve_factor": 41.10903700121879,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 0.8694224872740841,
+          "unloaded": false,
+          "area_m2": 0.00010432188102912116,
+          "mean_pressure_Pa": 8334.037679318562,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0002101518779500756,
+          "pile_compression_m": 0.0001666807535863714,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.013054248113360312,
+          "journal_force_N": 0.015508093418489795,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 311338.99459107214,
+            "deflection_m": 4.366832651407244e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 467008.4918866082,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05337239907275522,
+            "reserve_factor": 18.736276003573273,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 0.8596875694605073,
+          "unloaded": false,
+          "area_m2": 0.00010393105488359937,
+          "mean_pressure_Pa": 8271.710225815947,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.00020841858298934444,
+          "pile_compression_m": 0.00016543420451631908,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.012888445713227803,
+          "journal_force_N": 0.015334449399518526,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 307852.9339371679,
+            "deflection_m": 4.317937255222614e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 461779.40090575186,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05277478867494307,
+            "reserve_factor": 18.94844157802928,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.08127943024680429,
+      "traction_bound_N": 1.2211862410205552,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 4.440892098500626e-16,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Own weight",
+      "illustrative_parameter_sweep_force_N": [
+        0.03911750609376852,
+        0.17023031328871036
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 2.4423724820411103,
+      "child_force_N": 0.0,
+      "required_cop_m": [
+        -0.02398349843121214,
+        0.0002266949266413615
+      ],
+      "surface": "Carpet medium pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "status": "supported",
+      "support_margin_m": 0.03216427330046278,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 0.7132624253065187,
+          "unloaded": false,
+          "area_m2": 0.0001637041383769621,
+          "mean_pressure_Pa": 4357.021345814037,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0004713652558467298,
+          "pile_compression_m": 0.0004357021345814039,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.017617589263815986,
+          "journal_force_N": 0.013505560715863077,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 141899.05088655782,
+            "deflection_m": 2.4571264222780577e-06,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 212848.57632983674,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.02432555158055277,
+            "reserve_factor": 41.10903700121879,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 0.8694224872740841,
+          "unloaded": false,
+          "area_m2": 0.00017838790727186523,
+          "mean_pressure_Pa": 4873.774801052373,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0005308486044689419,
+          "pile_compression_m": 0.00048737748010523773,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.02134887207961402,
+          "journal_force_N": 0.015508093418489795,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 311338.99459107214,
+            "deflection_m": 4.366832651407244e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 467008.4918866082,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05337239907275522,
+            "reserve_factor": 18.736276003573273,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 0.8596875694605073,
+          "unloaded": false,
+          "area_m2": 0.00017771960396369057,
+          "mean_pressure_Pa": 4837.325485128516,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0005267169269858774,
+          "pile_compression_m": 0.00048373254851285196,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.021059468217730457,
+          "journal_force_N": 0.015334449399518526,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 307852.9339371679,
+            "deflection_m": 4.317937255222614e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 461779.40090575186,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05277478867494307,
+            "reserve_factor": 18.94844157802928,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.10437403309503186,
+      "traction_bound_N": 1.2211862410205552,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 4.440892098500626e-16,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Own weight",
+      "illustrative_parameter_sweep_force_N": [
+        0.048282605307784575,
+        0.2284250658235984
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 2.4423724820411103,
+      "child_force_N": 0.0,
+      "required_cop_m": [
+        -0.02398349843121214,
+        0.0002266949266413615
+      ],
+      "surface": "Carpet long pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "status": "supported",
+      "support_margin_m": 0.03216427330046278,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 0.7132624253065187,
+          "unloaded": false,
+          "area_m2": 0.0002799301389960388,
+          "mean_pressure_Pa": 2548.001540186467,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0013096638913585605,
+          "pile_compression_m": 0.0012740007700932346,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.031524196216999756,
+          "journal_force_N": 0.013505560715863077,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 141899.05088655782,
+            "deflection_m": 2.4571264222780577e-06,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 212848.57632983674,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.02432555158055277,
+            "reserve_factor": 41.10903700121879,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 0.8694224872740841,
+          "unloaded": false,
+          "area_m2": 0.0003050390306128825,
+          "mean_pressure_Pa": 2850.200794066405,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0014685715213969075,
+          "pile_compression_m": 0.0014251003970332033,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.03874981255271332,
+          "journal_force_N": 0.015508093418489795,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 311338.99459107214,
+            "deflection_m": 4.366832651407244e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 467008.4918866082,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05337239907275522,
+            "reserve_factor": 18.736276003573273,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 0.8596875694605073,
+          "unloaded": false,
+          "area_m2": 0.00030389624803081947,
+          "mean_pressure_Pa": 2828.885104804988,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0014574269308755203,
+          "pile_compression_m": 0.001414442552402495,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.03820111041678279,
+          "journal_force_N": 0.015334449399518526,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 307852.9339371679,
+            "deflection_m": 4.317937255222614e-06,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 461779.40090575186,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.05277478867494307,
+            "reserve_factor": 18.94844157802928,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.15282322272036725,
+      "traction_bound_N": 1.2211862410205552,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 4.440892098500626e-16,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Own weight",
+      "illustrative_parameter_sweep_force_N": [
+        0.06750967895235063,
+        0.3505093735422152
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 39.21730998204111,
+      "child_force_N": 36.7749375,
+      "required_cop_m": [
+        -0.0014936423895033299,
+        1.4118088438516941e-05
+      ],
+      "surface": "Linoleum",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "applied_load_mean_pressure_Pa": 61291.56250000001,
+      "status": "supported",
+      "support_margin_m": 0.02544513260490087,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 19.460970097365678,
+          "unloaded": false,
+          "area_m2": 4.0151955659682664e-05,
+          "mean_pressure_Pa": 484682.99433062994,
+          "peak_pressure_Pa": 617117.5550424068,
+          "compression_m": 0.0009730485048682839,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.1381844030582178,
+          "journal_force_N": 0.3684917414885809,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3871636.9854491395,
+            "deflection_m": 6.704133308137038e-05,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5807455.4781737095,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6637091975055668,
+            "reserve_factor": 1.5066839570075607,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 9.883037401244504,
+          "unloaded": false,
+          "area_m2": 2.9480683406984312e-05,
+          "mean_pressure_Pa": 335237.7305779519,
+          "peak_pressure_Pa": 426837.9354591206,
+          "compression_m": 0.0004941518700622252,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.06610727358691974,
+          "journal_force_N": 0.1762860628984527,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3539102.07413282,
+            "deflection_m": 4.963935376705772e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5308653.11119923,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6067032127084834,
+            "reserve_factor": 1.6482523564293254,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 9.87330248343093,
+          "unloaded": false,
+          "area_m2": 2.9466160405303222e-05,
+          "mean_pressure_Pa": 335072.5831810094,
+          "peak_pressure_Pa": 426627.6632626234,
+          "compression_m": 0.0004936651241715465,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.06604215707980554,
+          "journal_force_N": 0.17611241887948148,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3535616.013478916,
+            "deflection_m": 4.95904583708731e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5303424.020218374,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6061056023106713,
+            "reserve_factor": 1.6498775068035592,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.9912240569914581,
+      "traction_bound_N": 13.726058493714387,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 7.105427357601002e-15,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Child presses near center",
+      "illustrative_parameter_sweep_force_N": [
+        0.49561202849572905,
+        1.9824481139829162
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 39.21730998204111,
+      "child_force_N": 36.7749375,
+      "required_cop_m": [
+        -0.0014936423895033299,
+        1.4118088438516941e-05
+      ],
+      "surface": "Parquet",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "applied_load_mean_pressure_Pa": 61291.56250000001,
+      "status": "supported",
+      "support_margin_m": 0.02544513260490087,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 19.460970097365678,
+          "unloaded": false,
+          "area_m2": 7.467074630976681e-06,
+          "mean_pressure_Pa": 2606237.523947208,
+          "peak_pressure_Pa": 3318364.678462241,
+          "compression_m": 0.0009730485048682839,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.09212293537214522,
+          "journal_force_N": 0.3684917414885809,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3871636.9854491395,
+            "deflection_m": 6.704133308137038e-05,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5807455.4781737095,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6637091975055668,
+            "reserve_factor": 1.5066839570075607,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 9.883037401244504,
+          "unloaded": false,
+          "area_m2": 5.482534027431918e-06,
+          "mean_pressure_Pa": 1802640.4125892555,
+          "peak_pressure_Pa": 2295193.0582463495,
+          "compression_m": 0.0004941518700622252,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.044071515724613174,
+          "journal_force_N": 0.1762860628984527,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3539102.07413282,
+            "deflection_m": 4.963935376705772e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5308653.11119923,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6067032127084834,
+            "reserve_factor": 1.6482523564293254,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 9.87330248343093,
+          "unloaded": false,
+          "area_m2": 5.479833179225727e-06,
+          "mean_pressure_Pa": 1801752.3819632002,
+          "peak_pressure_Pa": 2294062.38253632,
+          "compression_m": 0.0004936651241715465,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.04402810471987037,
+          "journal_force_N": 0.17611241887948148,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3535616.013478916,
+            "deflection_m": 4.95904583708731e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5303424.020218374,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6061056023106713,
+            "reserve_factor": 1.6498775068035592,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.9011127790831438,
+      "traction_bound_N": 9.804327495510277,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 7.105427357601002e-15,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Child presses near center",
+      "illustrative_parameter_sweep_force_N": [
+        0.4505563895415719,
+        1.8022255581662876
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 39.21730998204111,
+      "child_force_N": 36.7749375,
+      "required_cop_m": [
+        -0.0014936423895033299,
+        1.4118088438516941e-05
+      ],
+      "surface": "Tile",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "applied_load_mean_pressure_Pa": 61291.56250000001,
+      "status": "supported",
+      "support_margin_m": 0.02544513260490087,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 19.460970097365678,
+          "unloaded": false,
+          "area_m2": 4.490910554196484e-06,
+          "mean_pressure_Pa": 4333412.982180324,
+          "peak_pressure_Pa": 5517472.77258072,
+          "compression_m": 0.0009730485048682839,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.04606146768607261,
+          "journal_force_N": 0.3684917414885809,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3871636.9854491395,
+            "deflection_m": 6.704133308137038e-05,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5807455.4781737095,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6637091975055668,
+            "reserve_factor": 1.5066839570075607,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 9.883037401244504,
+          "unloaded": false,
+          "area_m2": 3.2973515257761517e-06,
+          "mean_pressure_Pa": 2997265.3276384207,
+          "peak_pressure_Pa": 3816236.741212831,
+          "compression_m": 0.0004941518700622252,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.022035757862306587,
+          "journal_force_N": 0.1762860628984527,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3539102.07413282,
+            "deflection_m": 4.963935376705772e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5308653.11119923,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6067032127084834,
+            "reserve_factor": 1.6482523564293254,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 9.87330248343093,
+          "unloaded": false,
+          "area_m2": 3.2957271590309544e-06,
+          "mean_pressure_Pa": 2995788.791671088,
+          "peak_pressure_Pa": 3814356.757229999,
+          "compression_m": 0.0004936651241715465,
+          "pile_compression_m": 0.0,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.022014052359935185,
+          "journal_force_N": 0.17611241887948148,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3535616.013478916,
+            "deflection_m": 4.95904583708731e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5303424.020218374,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6061056023106713,
+            "reserve_factor": 1.6498775068035592,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 0.8110015011748295,
+      "traction_bound_N": 7.843461996408222,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 7.105427357601002e-15,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Child presses near center",
+      "illustrative_parameter_sweep_force_N": [
+        0.40550075058741475,
+        1.622003002349659
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 39.21730998204111,
+      "child_force_N": 36.7749375,
+      "required_cop_m": [
+        -0.0014936423895033299,
+        1.4118088438516941e-05
+      ],
+      "surface": "Carpet short pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "applied_load_mean_pressure_Pa": 61291.56250000001,
+      "status": "supported",
+      "support_margin_m": 0.02544513260490087,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 19.460970097365678,
+          "unloaded": false,
+          "area_m2": 0.0002882093305780461,
+          "mean_pressure_Pa": 67523.73373316487,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0023235231795315824,
+          "pile_compression_m": 0.0013504746746632983,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.532177852587962,
+          "journal_force_N": 0.3684917414885809,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3871636.9854491395,
+            "deflection_m": 6.704133308137038e-05,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5807455.4781737095,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6637091975055668,
+            "reserve_factor": 1.5066839570075607,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 9.883037401244504,
+          "unloaded": false,
+          "area_m2": 0.0002345643097852963,
+          "mean_pressure_Pa": 42133.594024985054,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0013368237505619269,
+          "pile_compression_m": 0.0008426718804997017,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.22361157642545126,
+          "journal_force_N": 0.1762860628984527,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3539102.07413282,
+            "deflection_m": 4.963935376705772e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5308653.11119923,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6067032127084834,
+            "reserve_factor": 1.6482523564293254,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 9.87330248343093,
+          "unloaded": false,
+          "area_m2": 0.00023448726820577936,
+          "mean_pressure_Pa": 42105.9213959813,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.001335783552091173,
+          "pile_compression_m": 0.0008421184279196265,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.22334686597283446,
+          "journal_force_N": 0.17611241887948148,
+          "warnings": [],
+          "axle": {
+            "bending_stress_Pa": 3535616.013478916,
+            "deflection_m": 4.95904583708731e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5303424.020218374,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6061056023106713,
+            "reserve_factor": 1.6498775068035592,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 1.7000265182527627,
+      "traction_bound_N": 19.608654991020554,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 7.105427357601002e-15,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Child presses near center",
+      "illustrative_parameter_sweep_force_N": [
+        0.786195426274383,
+        3.721674760381147
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 39.21730998204111,
+      "child_force_N": 36.7749375,
+      "required_cop_m": [
+        -0.0014936423895033299,
+        1.4118088438516941e-05
+      ],
+      "surface": "Carpet medium pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "applied_load_mean_pressure_Pa": 61291.56250000001,
+      "status": "supported",
+      "support_margin_m": 0.02544513260490087,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 19.460970097365678,
+          "unloaded": false,
+          "area_m2": 0.0004928310228962515,
+          "mean_pressure_Pa": 39488.11903722731,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.004921860408591017,
+          "pile_compression_m": 0.003948811903722733,
+          "pile_bottomed": false,
+          "rolling_force_N": 1.0766788507926375,
+          "journal_force_N": 0.3684917414885809,
+          "warnings": [
+            "Pile indentation exceeds 10% of radius: small-indentation approximation is weak."
+          ],
+          "axle": {
+            "bending_stress_Pa": 3871636.9854491395,
+            "deflection_m": 6.704133308137038e-05,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5807455.4781737095,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6637091975055668,
+            "reserve_factor": 1.5066839570075607,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 9.883037401244504,
+          "unloaded": false,
+          "area_m2": 0.00040109932768167805,
+          "mean_pressure_Pa": 24639.87526074319,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0029581393961365457,
+          "pile_compression_m": 0.0024639875260743203,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.4356149616101786,
+          "journal_force_N": 0.1762860628984527,
+          "warnings": [
+            "Pile indentation exceeds 10% of radius: small-indentation approximation is weak."
+          ],
+          "axle": {
+            "bending_stress_Pa": 3539102.07413282,
+            "deflection_m": 4.963935376705772e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5308653.11119923,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6067032127084834,
+            "reserve_factor": 1.6482523564293254,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 9.87330248343093,
+          "unloaded": false,
+          "area_m2": 0.0004009675884338101,
+          "mean_pressure_Pa": 24623.692209129193,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.0029560343450844673,
+          "pile_compression_m": 0.0024623692209129206,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.4350718621622739,
+          "journal_force_N": 0.17611241887948148,
+          "warnings": [
+            "Pile indentation exceeds 10% of radius: small-indentation approximation is weak."
+          ],
+          "axle": {
+            "bending_stress_Pa": 3535616.013478916,
+            "deflection_m": 4.95904583708731e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5303424.020218374,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6061056023106713,
+            "reserve_factor": 1.6498775068035592,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 2.668255897831605,
+      "traction_bound_N": 19.608654991020554,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 7.105427357601002e-15,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Child presses near center",
+      "illustrative_parameter_sweep_force_N": [
+        1.1704375101968758,
+        6.161459913297221
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 39.21730998204111,
+      "child_force_N": 36.7749375,
+      "required_cop_m": [
+        -0.0014936423895033299,
+        1.4118088438516941e-05
+      ],
+      "surface": "Carpet long pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "applied_load_mean_pressure_Pa": 61291.56250000001,
+      "status": "supported",
+      "support_margin_m": 0.02544513260490087,
+      "wheels": [
+        {
+          "name": "front",
+          "normal_force_N": 19.460970097365678,
+          "unloaded": false,
+          "area_m2": 0.0008427291949286625,
+          "mean_pressure_Pa": 23092.792102702766,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.01251944455621967,
+          "pile_compression_m": 0.011546396051351387,
+          "pile_bottomed": false,
+          "rolling_force_N": 2.2189644439491953,
+          "journal_force_N": 0.3684917414885809,
+          "warnings": [
+            "Pile indentation exceeds 10% of radius: small-indentation approximation is weak."
+          ],
+          "axle": {
+            "bending_stress_Pa": 3871636.9854491395,
+            "deflection_m": 6.704133308137038e-05,
+            "model": "two_supports_center_load",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5807455.4781737095,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6637091975055668,
+            "reserve_factor": 1.5066839570075607,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_right",
+          "normal_force_N": 9.883037401244504,
+          "unloaded": false,
+          "area_m2": 0.0006858702025638642,
+          "mean_pressure_Pa": 14409.486465953087,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.007698895103038774,
+          "pile_compression_m": 0.007204743232976549,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.8803678884099643,
+          "journal_force_N": 0.1762860628984527,
+          "warnings": [
+            "Pile indentation exceeds 10% of radius: small-indentation approximation is weak."
+          ],
+          "axle": {
+            "bending_stress_Pa": 3539102.07413282,
+            "deflection_m": 4.963935376705772e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5308653.11119923,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6067032127084834,
+            "reserve_factor": 1.6482523564293254,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        },
+        {
+          "name": "rear_left",
+          "normal_force_N": 9.87330248343093,
+          "unloaded": false,
+          "area_m2": 0.0006856449316187766,
+          "mean_pressure_Pa": 14400.022559957542,
+          "peak_pressure_Pa": null,
+          "compression_m": 0.007693676404150321,
+          "pile_compression_m": 0.007200011279978775,
+          "pile_bottomed": false,
+          "rolling_force_N": 0.8792407684742016,
+          "journal_force_N": 0.17611241887948148,
+          "warnings": [
+            "Pile indentation exceeds 10% of radius: small-indentation approximation is weak."
+          ],
+          "axle": {
+            "bending_stress_Pa": 3535616.013478916,
+            "deflection_m": 4.95904583708731e-05,
+            "model": "cantilever",
+            "strength_pass_fail": null,
+            "local_stress_Pa": 5303424.020218374,
+            "allowable_stress_Pa": 8750000.0,
+            "stress_concentration_factor": 1.5,
+            "utilization": 0.6061056023106713,
+            "reserve_factor": 1.6498775068035592,
+            "screen_status": "within_assumed_allowable",
+            "scope": "Local static axle bending only; no chassis, fastener, bearing, fatigue, creep or impact verification."
+          }
+        }
+      ],
+      "pull_force_N": 4.699463324099876,
+      "traction_bound_N": 19.608654991020554,
+      "rolling_without_slip_feasible": true,
+      "equilibrium_residual_N": 7.105427357601002e-15,
+      "warnings": [
+        "Floor and bearing parameters require calibration.",
+        "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+      ],
+      "load_name": "Child presses near center",
+      "illustrative_parameter_sweep_force_N": [
+        1.976522711502844,
+        11.234326686325115
+      ],
+      "sweep_note": "Half/double loss parameters; carpet stiffness varied inversely. Not a statistical confidence interval."
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 37.44237248204111,
+      "child_force_N": 35.0,
+      "required_cop_m": [
+        0.026478646989692187,
+        0.05610097689344228
+      ],
+      "surface": "Linoleum",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "status": "tipping",
+      "reason": "No nonnegative wheel reactions balance the specified load",
+      "load_name": "Off-center press"
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 37.44237248204111,
+      "child_force_N": 35.0,
+      "required_cop_m": [
+        0.026478646989692187,
+        0.05610097689344228
+      ],
+      "surface": "Parquet",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "status": "tipping",
+      "reason": "No nonnegative wheel reactions balance the specified load",
+      "load_name": "Off-center press"
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 37.44237248204111,
+      "child_force_N": 35.0,
+      "required_cop_m": [
+        0.026478646989692187,
+        0.05610097689344228
+      ],
+      "surface": "Tile",
+      "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+      "status": "tipping",
+      "reason": "No nonnegative wheel reactions balance the specified load",
+      "load_name": "Off-center press"
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 37.44237248204111,
+      "child_force_N": 35.0,
+      "required_cop_m": [
+        0.026478646989692187,
+        0.05610097689344228
+      ],
+      "surface": "Carpet short pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "status": "tipping",
+      "reason": "No nonnegative wheel reactions balance the specified load",
+      "load_name": "Off-center press"
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 37.44237248204111,
+      "child_force_N": 35.0,
+      "required_cop_m": [
+        0.026478646989692187,
+        0.05610097689344228
+      ],
+      "surface": "Carpet medium pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "status": "tipping",
+      "reason": "No nonnegative wheel reactions balance the specified load",
+      "load_name": "Off-center press"
+    },
+    {
+      "wheel_count": 3,
+      "total_vertical_force_N": 37.44237248204111,
+      "child_force_N": 35.0,
+      "required_cop_m": [
+        0.026478646989692187,
+        0.05610097689344228
+      ],
+      "surface": "Carpet long pile",
+      "parameter_status": "Illustrative uncalibrated preset; backing, fiber and direction must be measured",
+      "status": "tipping",
+      "reason": "No nonnegative wheel reactions balance the specified load",
+      "load_name": "Off-center press"
+    }
+  ],
+  "six_wheel_example": {
+    "wheel_count": 6,
+    "total_vertical_force_N": 5.88399,
+    "child_force_N": 0.0,
+    "required_cop_m": [
+      0.0,
+      0.0
+    ],
+    "surface": "Tile",
+    "parameter_status": "Illustrative uncalibrated preset; not a measured material property",
+    "status": "supported",
+    "support_margin_m": 0.05,
+    "wheels": [
+      {
+        "name": "wheel_1",
+        "normal_force_N": 3.4806195946257555e-15,
+        "unloaded": true,
+        "area_m2": 6.533593169017661e-14,
+        "mean_pressure_Pa": 0.053272671018619204,
+        "peak_pressure_Pa": 0.06782887139457282,
+        "compression_m": 1.7403097973128777e-19,
+        "pile_compression_m": 0.0,
+        "pile_bottomed": false,
+        "rolling_force_N": 6.961239189251511e-18,
+        "journal_force_N": 5.568991351401209e-17,
+        "warnings": [],
+        "axle": null
+      },
+      {
+        "name": "wheel_2",
+        "normal_force_N": 1.5690639999999973,
+        "unloaded": false,
+        "area_m2": 1.3872161532535818e-06,
+        "mean_pressure_Pa": 1131088.3284626617,
+        "peak_pressure_Pa": 1440146.3883870556,
+        "compression_m": 7.845319999999987e-05,
+        "pile_compression_m": 0.0,
+        "pile_bottomed": false,
+        "rolling_force_N": 0.0031381279999999944,
+        "journal_force_N": 0.025105023999999955,
+        "warnings": [],
+        "axle": null
+      },
+      {
+        "name": "wheel_3",
+        "normal_force_N": 1.7651969999999957,
+        "unloaded": false,
+        "area_m2": 1.4713649234056864e-06,
+        "mean_pressure_Pa": 1199700.3407653573,
+        "peak_pressure_Pa": 1527505.9156947033,
+        "compression_m": 8.825984999999978e-05,
+        "pile_compression_m": 0.0,
+        "pile_bottomed": false,
+        "rolling_force_N": 0.0035303939999999914,
+        "journal_force_N": 0.02824315199999993,
+        "warnings": [],
+        "axle": null
+      },
+      {
+        "name": "wheel_4",
+        "normal_force_N": 0.9806650000000033,
+        "unloaded": false,
+        "area_m2": 1.0966906628146318e-06,
+        "mean_pressure_Pa": 894203.8381936696,
+        "peak_pressure_Pa": 1138535.687842143,
+        "compression_m": 4.903325000000017e-05,
+        "pile_compression_m": 0.0,
+        "pile_bottomed": false,
+        "rolling_force_N": 0.001961330000000007,
+        "journal_force_N": 0.015690640000000054,
+        "warnings": [],
+        "axle": null
+      },
+      {
+        "name": "wheel_5",
+        "normal_force_N": 1.1767980000000011,
+        "unloaded": false,
+        "area_m2": 1.2013644292577304e-06,
+        "mean_pressure_Pa": 979551.2263727437,
+        "peak_pressure_Pa": 1247203.3575116026,
+        "compression_m": 5.883990000000005e-05,
+        "pile_compression_m": 0.0,
+        "pile_bottomed": false,
+        "rolling_force_N": 0.002353596000000002,
+        "journal_force_N": 0.018828768000000017,
+        "warnings": [],
+        "axle": null
+      },
+      {
+        "name": "wheel_6",
+        "normal_force_N": 0.39226599999999956,
+        "unloaded": false,
+        "area_m2": 6.93608076626791e-07,
+        "mean_pressure_Pa": 565544.1642313311,
+        "peak_pressure_Pa": 720073.194193528,
+        "compression_m": 1.9613299999999977e-05,
+        "pile_compression_m": 0.0,
+        "pile_bottomed": false,
+        "rolling_force_N": 0.0007845319999999991,
+        "journal_force_N": 0.006276255999999992,
+        "warnings": [],
+        "axle": null
+      }
+    ],
+    "pull_force_N": 0.10591182,
+    "traction_bound_N": 1.176798,
+    "rolling_without_slip_feasible": true,
+    "equilibrium_residual_N": 8.881784197001252e-16,
+    "warnings": [
+      "Floor and bearing parameters require calibration.",
+      "Small-angle rigid chassis model; body-ground contact and structural failure are not simulated."
+    ]
+  },
+  "rigid_step_examples": [
+    {
+      "wheel": "front",
+      "steps": [
+        {
+          "height_m": 0,
+          "force_N": 0.0,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.001,
+          "force_N": 0.2276278693834782,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.003,
+          "force_N": 0.42702351259525834,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.005,
+          "force_N": 0.603667455879064,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.01,
+          "force_N": 1.1513680818553804,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.025,
+          "force_N": null,
+          "status": "blocked_in_horizontal_axle_force_model"
+        }
+      ]
+    },
+    {
+      "wheel": "rear_right",
+      "steps": [
+        {
+          "height_m": 0,
+          "force_N": 0.0,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.001,
+          "force_N": 0.26871681115119767,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.003,
+          "force_N": 0.501508386477034,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.005,
+          "force_N": 0.7042992843871934,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.01,
+          "force_N": 1.3062787520601264,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.025,
+          "force_N": null,
+          "status": "blocked_in_horizontal_axle_force_model"
+        }
+      ]
+    },
+    {
+      "wheel": "rear_left",
+      "steps": [
+        {
+          "height_m": 0,
+          "force_N": 0.0,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.001,
+          "force_N": 0.2657079908020885,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.003,
+          "force_N": 0.4958930004056655,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.005,
+          "force_N": 0.6964132499792647,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.01,
+          "force_N": 1.2916523575522072,
+          "status": "quasistatic"
+        },
+        {
+          "height_m": 0.025,
+          "force_N": null,
+          "status": "blocked_in_horizontal_axle_force_model"
+        }
+      ]
+    }
+  ],
+  "buoyancy": [
+    {
+      "name": "Sealed level box",
+      "mass_kg": 0.5225697279999996,
+      "cg_m": [
+        -4.823796549938691e-18,
+        4.019830458282242e-19,
+        -2.009915229141121e-19
+      ],
+      "maximum_supported_mass_kg": 1.4374079999999996,
+      "mass_override_applied": false,
+      "reserve_buoyancy_kg": 0.914838272,
+      "effective_bulk_density_kg_m3": 362.89564444444426,
+      "components": [
+        {
+          "name": "Printed box",
+          "envelope_volume_m3": 0.0014399999999999994,
+          "solid_volume_m3": 0.0004214271999999997,
+          "mass_kg": 0.5225697279999996,
+          "material": "PLA",
+          "polymer_density_kg_m3": 1240.0,
+          "density_source": "selected material",
+          "maximum_displacement_m3": 0.0014399999999999994
+        }
+      ],
+      "assumptions": [
+        "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+        "Components must not overlap; inner meshes must lie inside their outer meshes.",
+        "Part-scale infill is homogenized. Printed watertightness must be measured.",
+        "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+      ],
+      "status": "local_equilibrium",
+      "level_pose": {
+        "heave_m": 0.008186997929606641,
+        "displaced_volume_m3": 0.0005235120496894406,
+        "cb_m": [
+          4.044954398646506e-19,
+          2.022477199323253e-19,
+          -0.010906501035196676
+        ],
+        "cg_world_m": [
+          -4.823796549938691e-18,
+          4.019830458282242e-19,
+          0.008186997929606641
+        ],
+        "torque_Nm": [
+          -1.0235753202412836e-18,
+          -2.679321058392592e-17
+        ]
+      },
+      "equilibrium": {
+        "heave_m": 0.008186997929606641,
+        "displaced_volume_m3": 0.0005235120496894406,
+        "cb_m": [
+          4.044954398646506e-19,
+          2.022477199323253e-19,
+          -0.010906501035196676
+        ],
+        "cg_world_m": [
+          -4.823796549938691e-18,
+          4.019830458282242e-19,
+          0.008186997929606641
+        ],
+        "torque_Nm": [
+          -1.0235753202412836e-18,
+          -2.679321058392592e-17
+        ],
+        "roll_deg": 0.0,
+        "pitch_deg": 0.0
+      },
+      "holds_level": true,
+      "locally_stable": true,
+      "restoring_stiffness_Nm_rad": [
+        [
+          0.18407548407054727,
+          5.959590259568592e-14
+        ],
+        [
+          5.959590259568592e-14,
+          0.685272184877511
+        ]
+      ],
+      "equivalent_GM_eigenvalues_m": [
+        0.03591956163187807,
+        0.13372055819169204
+      ],
+      "torque_residual_Nm": 2.6812755170455855e-17,
+      "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+    },
+    {
+      "name": "Shifted ballast",
+      "mass_kg": 0.6025697279999995,
+      "cg_m": [
+        0.00464676512922999,
+        0.002655294359559997,
+        -0.0026552943595599967
+      ],
+      "maximum_supported_mass_kg": 1.4374079999999996,
+      "mass_override_applied": false,
+      "reserve_buoyancy_kg": 0.834838272,
+      "effective_bulk_density_kg_m3": 418.45119999999986,
+      "components": [
+        {
+          "name": "Printed box",
+          "envelope_volume_m3": 0.0014399999999999994,
+          "solid_volume_m3": 0.0004214271999999997,
+          "mass_kg": 0.5225697279999996,
+          "material": "PLA",
+          "polymer_density_kg_m3": 1240.0,
+          "density_source": "selected material",
+          "maximum_displacement_m3": 0.0014399999999999994
+        }
+      ],
+      "assumptions": [
+        "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+        "Components must not overlap; inner meshes must lie inside their outer meshes.",
+        "Part-scale infill is homogenized. Printed watertightness must be measured.",
+        "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+      ],
+      "status": "local_equilibrium",
+      "level_pose": {
+        "heave_m": 0.004847653776798254,
+        "displaced_volume_m3": 0.0006036563093568418,
+        "cb_m": [
+          3.5079271686763332e-19,
+          7.0158543373526665e-19,
+          -0.012576173111600876
+        ],
+        "cg_world_m": [
+          0.00464676512922999,
+          0.002655294359559997,
+          0.002192359417238257
+        ],
+        "torque_Nm": [
+          -0.01569064,
+          0.02745861999999998
+        ]
+      },
+      "equilibrium": {
+        "heave_m": 0.004828502060707058,
+        "displaced_volume_m3": 0.000603656309356842,
+        "cb_m": [
+          0.004531078507371585,
+          0.0024351245819489993,
+          -0.012780838032037991
+        ],
+        "cg_world_m": [
+          0.004531078507371598,
+          0.002435124581948996,
+          0.0017899006935525943
+        ],
+        "torque_Nm": [
+          2.0485849062076804e-17,
+          7.688108513215215e-17
+        ],
+        "roll_deg": -4.5732471114342,
+        "pitch_deg": 2.2476946961475113
+      },
+      "holds_level": false,
+      "locally_stable": true,
+      "restoring_stiffness_Nm_rad": [
+        [
+          0.19845304307714548,
+          -0.0024683722739246823
+        ],
+        [
+          -0.0024683722739246823,
+          0.7013359517191302
+        ]
+      ],
+      "equivalent_GM_eigenvalues_m": [
+        0.03358174526380051,
+        0.11868767412742318
+      ],
+      "torque_residual_Nm": 7.956363027722793e-17,
+      "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+    },
+    {
+      "name": "High center of gravity",
+      "mass_kg": 0.5225697279999996,
+      "cg_m": [
+        0.0,
+        0.0,
+        0.08
+      ],
+      "maximum_supported_mass_kg": 1.4374079999999996,
+      "mass_override_applied": false,
+      "reserve_buoyancy_kg": 0.914838272,
+      "effective_bulk_density_kg_m3": 362.89564444444426,
+      "components": [
+        {
+          "name": "Printed box",
+          "envelope_volume_m3": 0.0014399999999999994,
+          "solid_volume_m3": 0.0004214271999999997,
+          "mass_kg": 0.5225697279999996,
+          "material": "PLA",
+          "polymer_density_kg_m3": 1240.0,
+          "density_source": "selected material",
+          "maximum_displacement_m3": 0.0014399999999999994
+        }
+      ],
+      "assumptions": [
+        "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+        "Components must not overlap; inner meshes must lie inside their outer meshes.",
+        "Part-scale infill is homogenized. Printed watertightness must be measured.",
+        "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+      ],
+      "status": "local_equilibrium",
+      "level_pose": {
+        "heave_m": 0.008186997929606641,
+        "displaced_volume_m3": 0.0005235120496894406,
+        "cb_m": [
+          4.044954398646506e-19,
+          2.022477199323253e-19,
+          -0.010906501035196676
+        ],
+        "cg_world_m": [
+          0.0,
+          0.0,
+          0.08818699792960664
+        ],
+        "torque_Nm": [
+          1.03645048150218e-18,
+          -2.07290096300436e-18
+        ]
+      },
+      "equilibrium": {
+        "heave_m": 0.008186997929606641,
+        "displaced_volume_m3": 0.0005235120496894406,
+        "cb_m": [
+          4.044954398646506e-19,
+          2.022477199323253e-19,
+          -0.010906501035196676
+        ],
+        "cg_world_m": [
+          0.0,
+          0.0,
+          0.08818699792960664
+        ],
+        "torque_Nm": [
+          1.03645048150218e-18,
+          -2.07290096300436e-18
+        ],
+        "roll_deg": 0.0,
+        "pitch_deg": 0.0
+      },
+      "holds_level": true,
+      "locally_stable": false,
+      "restoring_stiffness_Nm_rad": [
+        [
+          -0.22589718909346057,
+          5.959590259568593e-14
+        ],
+        [
+          5.959590259568593e-14,
+          0.27529951171350314
+        ]
+      ],
+      "equivalent_GM_eigenvalues_m": [
+        -0.04408043823478859,
+        0.05372055832502539
+      ],
+      "torque_residual_Nm": 2.317573731951263e-18,
+      "equilibrium_scope": "Root nearest the upright starting pose; not a global capsize search."
+    },
+    {
+      "name": "Flooded pores",
+      "mass_kg": 0.5225697279999996,
+      "cg_m": [
+        -4.823796549938691e-18,
+        4.019830458282242e-19,
+        -2.009915229141121e-19
+      ],
+      "maximum_supported_mass_kg": 0.4206686310399997,
+      "mass_override_applied": false,
+      "reserve_buoyancy_kg": -0.10190109695999988,
+      "effective_bulk_density_kg_m3": 362.89564444444426,
+      "components": [
+        {
+          "name": "Printed box",
+          "envelope_volume_m3": 0.0014399999999999994,
+          "solid_volume_m3": 0.0004214271999999997,
+          "mass_kg": 0.5225697279999996,
+          "material": "PLA",
+          "polymer_density_kg_m3": 1240.0,
+          "density_source": "selected material",
+          "maximum_displacement_m3": 0.0004214271999999997
+        }
+      ],
+      "assumptions": [
+        "Fixed flooded fraction; no leak-rate or air-compression prediction.",
+        "Components must not overlap; inner meshes must lie inside their outer meshes.",
+        "Part-scale infill is homogenized. Printed watertightness must be measured.",
+        "No internal free-surface sloshing, waves, surface tension or dynamic capsizing."
+      ],
+      "status": "sinks_or_fully_submerged_neutral",
+      "equilibrium": null
+    }
+  ],
+  "infill_sweep": [
+    {
+      "infill": 0.0,
+      "mass_kg": 0.2068121599999996,
+      "status": "local_equilibrium",
+      "heave_m": 0.021367287784679105,
+      "stable": true,
+      "minimum_GM_m": 0.11332249629145337
+    },
+    {
+      "infill": 0.05,
+      "mass_kg": 0.2857515519999995,
+      "status": "local_equilibrium",
+      "heave_m": 0.01807221532091099,
+      "stable": true,
+      "minimum_GM_m": 0.07656933054649429
+    },
+    {
+      "infill": 0.1,
+      "mass_kg": 0.36469094399999946,
+      "status": "local_equilibrium",
+      "heave_m": 0.014777142857142876,
+      "stable": true,
+      "minimum_GM_m": 0.05644025770034979
+    },
+    {
+      "infill": 0.15000000000000002,
+      "mass_kg": 0.4436303359999997,
+      "status": "local_equilibrium",
+      "heave_m": 0.011482070393374757,
+      "stable": true,
+      "minimum_GM_m": 0.04406102583993314
+    },
+    {
+      "infill": 0.2,
+      "mass_kg": 0.5225697279999996,
+      "status": "local_equilibrium",
+      "heave_m": 0.008186997929606641,
+      "stable": true,
+      "minimum_GM_m": 0.03591956163187807
+    },
+    {
+      "infill": 0.25,
+      "mass_kg": 0.6015091199999996,
+      "status": "local_equilibrium",
+      "heave_m": 0.004891925465838529,
+      "stable": true,
+      "minimum_GM_m": 0.0303474275207681
+    },
+    {
+      "infill": 0.30000000000000004,
+      "mass_kg": 0.6804485119999996,
+      "status": "local_equilibrium",
+      "heave_m": 0.0015968530020704144,
+      "stable": true,
+      "minimum_GM_m": 0.026450413208001174
+    },
+    {
+      "infill": 0.35000000000000003,
+      "mass_kg": 0.7593879039999997,
+      "status": "local_equilibrium",
+      "heave_m": -0.0016982194616977037,
+      "stable": true,
+      "minimum_GM_m": 0.02370612583858221
+    },
+    {
+      "infill": 0.4,
+      "mass_kg": 0.8383272959999994,
+      "status": "local_equilibrium",
+      "heave_m": -0.004993291925465816,
+      "stable": true,
+      "minimum_GM_m": 0.021788932818317567
+    },
+    {
+      "infill": 0.45,
+      "mass_kg": 0.9172666879999994,
+      "status": "local_equilibrium",
+      "heave_m": -0.00828836438923393,
+      "stable": true,
+      "minimum_GM_m": 0.02048529649486403
+    },
+    {
+      "infill": 0.5,
+      "mass_kg": 0.9962060799999994,
+      "status": "local_equilibrium",
+      "heave_m": -0.011583436853002045,
+      "stable": true,
+      "minimum_GM_m": 0.019649362129198742
+    },
+    {
+      "infill": 0.55,
+      "mass_kg": 1.0751454719999995,
+      "status": "local_equilibrium",
+      "heave_m": -0.01487850931677017,
+      "stable": true,
+      "minimum_GM_m": 0.01917811080211157
+    },
+    {
+      "infill": 0.6000000000000001,
+      "mass_kg": 1.1540848639999997,
+      "status": "local_equilibrium",
+      "heave_m": -0.018173581780538288,
+      "stable": true,
+      "minimum_GM_m": 0.018996709566084884
+    },
+    {
+      "infill": 0.65,
+      "mass_kg": 1.2330242559999995,
+      "status": "local_equilibrium",
+      "heave_m": -0.021468654244306398,
+      "stable": true,
+      "minimum_GM_m": 0.019049488981083332
+    },
+    {
+      "infill": 0.7000000000000001,
+      "mass_kg": 1.3119636479999994,
+      "status": "local_equilibrium",
+      "heave_m": -0.024763726708074505,
+      "stable": true,
+      "minimum_GM_m": 0.01929417787998388
+    },
+    {
+      "infill": 0.75,
+      "mass_kg": 1.3909030399999993,
+      "status": "local_equilibrium",
+      "heave_m": -0.028058799171842612,
+      "stable": true,
+      "minimum_GM_m": 0.01969810133674169
+    },
+    {
+      "infill": 0.8,
+      "mass_kg": 1.4698424319999996,
+      "status": "sinks_or_fully_submerged_neutral",
+      "heave_m": null,
+      "stable": null,
+      "minimum_GM_m": null
+    },
+    {
+      "infill": 0.8500000000000001,
+      "mass_kg": 1.5487818239999995,
+      "status": "sinks_or_fully_submerged_neutral",
+      "heave_m": null,
+      "stable": null,
+      "minimum_GM_m": null
+    },
+    {
+      "infill": 0.9,
+      "mass_kg": 1.6277212159999994,
+      "status": "sinks_or_fully_submerged_neutral",
+      "heave_m": null,
+      "stable": null,
+      "minimum_GM_m": null
+    },
+    {
+      "infill": 0.9500000000000001,
+      "mass_kg": 1.7066606079999993,
+      "status": "sinks_or_fully_submerged_neutral",
+      "heave_m": null,
+      "stable": null,
+      "minimum_GM_m": null
+    },
+    {
+      "infill": 1.0,
+      "mass_kg": 1.7855999999999994,
+      "status": "sinks_or_fully_submerged_neutral",
+      "heave_m": null,
+      "stable": null,
+      "minimum_GM_m": null
+    }
+  ],
+  "parent_contact": [
+    {
+      "name": "Kick, free toy",
+      "static_force_N": 0.0,
+      "available_relative_energy_J": 0.22431741359971713,
+      "mean_dynamic_force_N": 28.03967669996464,
+      "estimated_peak_force_N": 56.07935339992928,
+      "mean_contact_pressure_Pa": 93465.58899988215,
+      "energy_per_area_J_m2": 373.8623559995286,
+      "contact_area_m2": 0.0006,
+      "effective_mass_kg": 0.19939325653308188,
+      "pain_score": null,
+      "injury_probability": null,
+      "interpretation": "Comparative mechanical stimulus only. Area, stopping distance and impact mass are scenario inputs; breakage and tissue response are not modeled.",
+      "edge_radius_m": 0.003
+    },
+    {
+      "name": "Kick, trapped toy",
+      "static_force_N": 0.0,
+      "available_relative_energy_J": 1.125,
+      "mean_dynamic_force_N": 140.625,
+      "estimated_peak_force_N": 281.25,
+      "mean_contact_pressure_Pa": 468750.00000000006,
+      "energy_per_area_J_m2": 1875.0000000000002,
+      "contact_area_m2": 0.0006,
+      "effective_mass_kg": 1.0,
+      "pain_score": null,
+      "injury_probability": null,
+      "interpretation": "Comparative mechanical stimulus only. Area, stopping distance and impact mass are scenario inputs; breakage and tissue response are not modeled.",
+      "edge_radius_m": 0.003
+    },
+    {
+      "name": "Slow step, broad contact",
+      "static_force_N": 514.849125,
+      "available_relative_energy_J": 0.0,
+      "mean_dynamic_force_N": 0.0,
+      "estimated_peak_force_N": 514.849125,
+      "mean_contact_pressure_Pa": 429040.9375,
+      "energy_per_area_J_m2": 0.0,
+      "contact_area_m2": 0.0012,
+      "effective_mass_kg": 10.0,
+      "pain_score": null,
+      "injury_probability": null,
+      "interpretation": "Comparative mechanical stimulus only. Area, stopping distance and impact mass are scenario inputs; breakage and tissue response are not modeled.",
+      "edge_radius_m": 0.006
+    },
+    {
+      "name": "Step onto small contact",
+      "static_force_N": 514.849125,
+      "available_relative_energy_J": 0.3125,
+      "mean_dynamic_force_N": 78.125,
+      "estimated_peak_force_N": 671.099125,
+      "mean_contact_pressure_Pa": 4473994.166666667,
+      "energy_per_area_J_m2": 2083.3333333333335,
+      "contact_area_m2": 0.00015,
+      "effective_mass_kg": 10.0,
+      "pain_score": null,
+      "injury_probability": null,
+      "interpretation": "Comparative mechanical stimulus only. Area, stopping distance and impact mass are scenario inputs; breakage and tissue response are not modeled.",
+      "edge_radius_m": 0.001
+    }
+  ],
+  "cleaning": [
+    {
+      "state": "assembled",
+      "washability_index_0_100": 54.64152686917095,
+      "brush_accessible_area_fraction": 0.7452229299363057,
+      "modeled_retained_liquid_m3": 3.2999999999999997e-06,
+      "operations": 0,
+      "components": {
+        "access": 0.7452229299363057,
+        "drainage": 0.036883167401240015,
+        "surface": 0.6666666666666666,
+        "effort": 1.0
+      },
+      "features": [
+        {
+          "name": "Open body and wheel surfaces",
+          "brush_accessible": true,
+          "depth_to_opening_ratio": 0.0,
+          "retained_volume_m3": 0.0,
+          "dry_grain_can_enter": true,
+          "liquid_mud_can_enter": true
+        },
+        {
+          "name": "Shallow armor panels",
+          "brush_accessible": true,
+          "depth_to_opening_ratio": 0.1875,
+          "retained_volume_m3": 5.999999999999998e-08,
+          "dry_grain_can_enter": true,
+          "liquid_mud_can_enter": true
+        },
+        {
+          "name": "Bolt wells and hex sockets",
+          "brush_accessible": true,
+          "depth_to_opening_ratio": 2.5,
+          "retained_volume_m3": 9e-07,
+          "dry_grain_can_enter": true,
+          "liquid_mud_can_enter": true
+        },
+        {
+          "name": "Body joint and axle bearing gaps",
+          "brush_accessible": false,
+          "depth_to_opening_ratio": 33.333333333333336,
+          "retained_volume_m3": 3.4e-07,
+          "dry_grain_can_enter": false,
+          "liquid_mud_can_enter": true
+        },
+        {
+          "name": "Internal surfaces",
+          "brush_accessible": false,
+          "depth_to_opening_ratio": 0.6,
+          "retained_volume_m3": 2e-06,
+          "dry_grain_can_enter": true,
+          "liquid_mud_can_enter": true
+        }
+      ],
+      "interpretation": "Unvalidated design-comparison heuristic; feature inventory is manual, not automatic mesh analysis. No hygiene guarantee or cleaning-time prediction."
+    },
+    {
+      "state": "disassembled",
+      "washability_index_0_100": 87.53865029324174,
+      "brush_accessible_area_fraction": 1.0,
+      "modeled_retained_liquid_m3": 5.999999999999998e-08,
+      "operations": 16.0,
+      "components": {
+        "access": 1.0,
+        "drainage": 0.9417645335842487,
+        "surface": 0.6666666666666666,
+        "effort": 0.4285714285714286
+      },
+      "features": [
+        {
+          "name": "Open body and wheel surfaces",
+          "brush_accessible": true,
+          "depth_to_opening_ratio": 0.0,
+          "retained_volume_m3": 0.0,
+          "dry_grain_can_enter": true,
+          "liquid_mud_can_enter": true
+        },
+        {
+          "name": "Shallow armor panels",
+          "brush_accessible": true,
+          "depth_to_opening_ratio": 0.1875,
+          "retained_volume_m3": 5.999999999999998e-08,
+          "dry_grain_can_enter": true,
+          "liquid_mud_can_enter": true
+        },
+        {
+          "name": "Bolt wells and hex sockets",
+          "brush_accessible": true,
+          "depth_to_opening_ratio": 2.5,
+          "retained_volume_m3": 0.0,
+          "dry_grain_can_enter": true,
+          "liquid_mud_can_enter": true
+        },
+        {
+          "name": "Body joint and axle bearing gaps",
+          "brush_accessible": true,
+          "depth_to_opening_ratio": 33.333333333333336,
+          "retained_volume_m3": 0.0,
+          "dry_grain_can_enter": false,
+          "liquid_mud_can_enter": true
+        },
+        {
+          "name": "Internal surfaces",
+          "brush_accessible": true,
+          "depth_to_opening_ratio": 0.6,
+          "retained_volume_m3": 0.0,
+          "dry_grain_can_enter": true,
+          "liquid_mud_can_enter": true
+        }
+      ],
+      "interpretation": "Unvalidated design-comparison heuristic; feature inventory is manual, not automatic mesh analysis. No hygiene guarantee or cleaning-time prediction."
+    }
+  ],
+  "evidence_status": "Analytical/numerical checks only. Floor, event and cleaning parameters are illustrative; no physical calibration."
+}
