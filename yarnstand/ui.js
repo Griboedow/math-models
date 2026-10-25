@@ -89,7 +89,7 @@ function scene(c) {
   const hx=base+d*scale, hy=ground-hh*scale, cy=ground-(z+br)*scale;
   const exit=ground-(z+br*(1+c.ball.exit_height_fraction))*scale;
   const section=c.ball.radius_x_m*c.ball.unwind_radius_ratio*Math.sqrt(1-c.ball.exit_height_fraction**2);
-  $('scene').innerHTML = `<line x1="30" y1="${ground}" x2="860" y2="${ground}" stroke="#bac7bc"/><rect x="${base-.060*scale}" y="${ground-z*scale}" width="${.120*scale}" height="${z*scale}" rx="8" fill="#db3682"/><ellipse cx="${base}" cy="${cy}" rx="${c.ball.radius_x_m*scale}" ry="${br*scale}" fill="#cfb99d" stroke="#9a8064" stroke-width="2"/><line x1="${base}" y1="${ground-z*scale}" x2="${base}" y2="${ground-(z+.123)*scale}" stroke="#aaa89b" stroke-width="5"/><line x1="${base+section*scale}" y1="${exit}" x2="${hx}" y2="${hy}" stroke="#b52d6c" stroke-width="2"/><circle cx="${hx}" cy="${hy}" r="8" fill="#216148"/><text x="${hx+14}" y="${hy+5}" font-size="14" fill="#216148">Рабочая рука</text><text x="30" y="230" font-size="13" fill="#61736a">Боковая схема · ${Math.round(d*100)} см по горизонтали · высота руки ${Math.round(hh*100)} см</text>`;
+  $('scene').innerHTML = `<line x1="30" y1="${ground}" x2="860" y2="${ground}" stroke="#bac7bc"/><rect x="${base-.060*scale}" y="${ground-z*scale}" width="${.120*scale}" height="${z*scale}" rx="8" fill="${c.stand.name.startsWith('LEMON')?'#e5be36':'#db3682'}"/><ellipse cx="${base}" cy="${cy}" rx="${c.ball.radius_x_m*scale}" ry="${br*scale}" fill="#cfb99d" stroke="#9a8064" stroke-width="2"/><line x1="${base}" y1="${ground-z*scale}" x2="${base}" y2="${ground-(z+.123)*scale}" stroke="#aaa89b" stroke-width="5"/><line x1="${base+section*scale}" y1="${exit}" x2="${hx}" y2="${hy}" stroke="#b52d6c" stroke-width="2"/><circle cx="${hx}" cy="${hy}" r="8" fill="#216148"/><text x="${hx+14}" y="${hy+5}" font-size="14" fill="#216148">Рабочая рука</text><text x="30" y="230" font-size="13" fill="#61736a">Боковая схема · ${Math.round(d*100)} см по горизонтали · высота руки ${Math.round(hh*100)} см</text>`;
 }
 
 function display(r) {
@@ -163,7 +163,12 @@ setBusy(true); $('save').disabled=$('saveResult').disabled=true;
 fetch('/presets').then(response=>response.json()).then(value=>{
   presets=value;
   $('save').disabled=false;
-  const requested=new URLSearchParams(location.search).get('stand');
-  if (['pitaya_v08','pitaya_v09','peach_v13'].includes(requested)) $('stand').value=requested;
+  const query=new URLSearchParams(location.search);
+  const requested=query.get('stand');
+  const english=query.get('lang')==='en';
+  query.set('lang',english?'ru':'en');
+  $('language').href='?'+query.toString();
+  $('language').textContent=english?'RU':'English';
+  if (['pitaya_v08','pitaya_v09','peach_v13','lemon_v05'].includes(requested)) $('stand').value=requested;
   syncPreset(); return run(config());
 }).catch(e=>$('status').textContent='Не удалось загрузить параметры: '+e.message);

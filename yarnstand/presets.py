@@ -12,6 +12,15 @@ def stand(name='pitaya_v08'):
     if name=='pitaya_v07':
         return replace(s,name='PITAYA v07 estimate',leaves=[[.082,.014,30+60*i,.012,.016,.010] for i in range(6)])
     if name=='pitaya_v08': return s
+    if name=='lemon_v05':
+        # Same estimates as the final LEMON v05 audit. Friction is unmeasured;
+        # the conservative axisymmetric envelope is not the asymmetric STL.
+        return replace(s,name='LEMON v05; explicit unmeasured friction assumptions',
+                       mass_kg=.2221891594120714,rotor_inertia_kg_m2=3.327726625318396e-05,
+                       com_height_m=.03001080219262895,platform_height_m=.045,
+                       platform_radius_m=.048,support_radius_m=.044,pad_angle_deg=0,
+                       body_profile_m=[[.0491,.0445],[.0505,.0445],[.052,.043],
+                                       [.056,.0395],[.061,.034],[.066,.030],[.071,.024]],leaves=[])
     if name=='peach_v13':
         return Stand(name='PEACH v13 CAD + slicer estimate',mass_kg=.3003084,rotor_inertia_kg_m2=.0000545155,
                      com_height_m=.0350184,platform_height_m=.0707,platform_radius_m=.052,

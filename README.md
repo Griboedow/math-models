@@ -8,7 +8,34 @@
 Это не рейтинг удобства кисти и не модель всех отдельных волокон. Результат
 помогает выбрать, что изменить и проверить руками.
 
-![Пример расчёта натяжения](docs/tension.png)
+## Interface preview · English
+
+The local browser UI includes editable scenarios, tension and slack plots,
+a side schematic, model-validity warnings, and JSON import/export.
+These are screenshots of the running app with the **Lemon v05** preset.
+
+After `python -m yarnstand serve`, open
+<http://127.0.0.1:8765/?stand=lemon_v05&lang=en>.
+The link in the top-right corner switches between English and Russian.
+
+**Full ball, 100 g · illustrative knitting rhythm · desk-side position**
+
+![English simulator interface showing the Lemon v05 parameters, full-ball results, tension and slack plots, and yarn-path schematic](docs/images/lemon-ui-overview-en.jpg)
+
+<details>
+<summary>Compare: nearly empty ball, 10 g — model-validity warning</summary>
+
+Select **Nearly empty · 10 g · Ø42 mm** in the Yarn ball menu.
+The model flags loss of ball traction at **0.14 s**. The later curve and its
+overall peak are hypothetical; the peak before the first event is **0.026 N**.
+
+![English simulator interface with a nearly empty ball and an explicit warning that the curve after ball slip is hypothetical](docs/images/lemon-ui-nearly-empty-en.jpg)
+
+</details>
+
+The screenshots use the saved [Lemon v05 input](examples/lemon_v05.json).
+Mass and inertia are estimates; friction is unmeasured. The side view is a
+simplified schematic, and its fast path check does not replace an exact STL audit.
 
 ## Запуск
 
@@ -23,6 +50,9 @@ python -m yarnstand serve
 массу, радиус ножек и трение. В разделе «Все параметры» доступна полная
 конфигурация, включая произвольный многоугольник опоры. Данные не уходят во
 внешние сервисы. Остановка сервера — Ctrl+C.
+
+Английский интерфейс: `/?lang=en`. Лимон сразу на английском:
+`/?stand=lemon_v05&lang=en`. Кнопка языка находится справа вверху.
 
 ```sh
 # Создать редактируемые параметры
@@ -60,6 +90,14 @@ node --test tests/test_ui.js
 поверхности под ножками**, а не от верхней площадки. Отрицательная высота допустима.
 
 ## Примеры подставок
+
+`lemon_v05` — финальный лимон без листка: площадка Ø96 мм на высоте 45 мм,
+шесть ножек Ø10 мм на радиусе 44 мм. Масса 222.189 г, инерция ротора
+0.0000332773 кг·м² и высота центра масс 30.011 мм — сохранённые оценки
+из расчёта LEMON v05, **не измерения**. Трение оставлено исходным допущением.
+Консервативная осесимметричная оболочка используется только для быстрой
+проверки пути; она не воспроизводит асимметричный корпус лимона.
+Параметры воспроизводятся из [`examples/lemon_v05.json`](examples/lemon_v05.json).
 
 `peach_v13` — персик: площадка на 70.7 мм над столом, шесть ножек Ø7.9 мм
 на радиусе 54 мм. Масса около 300 г и инерция 0.0000545 кг·м² получены из

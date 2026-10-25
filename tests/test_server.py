@@ -1,4 +1,5 @@
 import json,threading,unittest
+from pathlib import Path
 from urllib.request import Request,urlopen
 from urllib.error import HTTPError
 from yarnstand.server import make_server
@@ -31,8 +32,32 @@ class ServerTests(unittest.TestCase):
 
     def test_both_presets_and_legacy_keys_available(self):
         with urlopen(self.base+'/presets',timeout=5) as r:data=json.load(r)
-        for prefix in ['', 'peach_v13/', 'pitaya_v09/']:
+        for prefix in ['', 'peach_v13/', 'pitaya_v09/', 'lemon_v05/']:
             self.assertIn(prefix+'full/knitting/desk_side',data)
+
+    def test_english_assets_keep_warnings_and_default_language(self):
+        with urlopen(self.base+'/?stand=lemon_v05&lang=en',timeout=5) as r:page=r.read().decode()
+        self.assertIn('lang="en"',page)
+        self.assertIn('src="/ui.js?lang=en"',page)
+        self.assertIn('Lemon · v05',page)
+        self.assertNotRegex(page,r'[А-Яа-яЁё]')
+        with urlopen(self.base+'/ui.js?lang=en',timeout=5) as r:script=r.read().decode()
+        self.assertNotRegex(script,r'[А-Яа-яЁё]')
+        self.assertIn('All displayed forces are conditional',script)
+        self.assertIn('The later curve is hypothetical',script)
+        self.assertIn('N, hypothetical model peak',script)
+        with urlopen(self.base+'/?lang=unknown',timeout=5) as r:default=r.read().decode()
+        self.assertIn('lang="ru"',default)
+        self.assertIn('Как подставка подаёт пряжу',default)
+
+    def test_lemon_preset_matches_audited_input_snapshot(self):
+        fixture=json.loads((Path(__file__).parents[1]/'examples/lemon_v05.json').read_text(encoding='utf-8'))
+        with urlopen(self.base+'/presets',timeout=5) as r:data=json.load(r)
+        self.assertEqual(data['lemon_v05/full/knitting/desk_side'],fixture)
+        with self.post(fixture) as r:result=json.load(r)
+        self.assertTrue(result['summary']['hypotheses_valid_for_entire_run'])
+        self.assertAlmostEqual(result['summary']['peak_tension_N'],.08721009604863335,places=10)
+        self.assertAlmostEqual(result['summary']['max_rpm'],35.29786693219291,places=9)
 
     def test_partial_json_is_returned_as_complete_validated_input(self):
         with self.post({'stand':{'mass_kg':.4123},'motion':{'duration_s':2}}) as r:data=json.load(r)

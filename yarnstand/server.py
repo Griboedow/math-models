@@ -1,11 +1,11 @@
 """Local-only UI. Serves known assets and executes the same Python model as CLI."""
 from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
-from pathlib import Path
 import json
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit,parse_qs
 from .model import simulate,from_config
 from .cli import clean
 from .presets import config
+from .i18n import ui_asset
 
 
 def make_server(port=0):
@@ -15,12 +15,14 @@ def make_server(port=0):
             self.send_header('Content-Type',kind+'; charset=utf-8');self.send_header('Content-Length',str(len(raw)))
             self.send_header('Cache-Control','no-store');self.end_headers();self.wfile.write(raw)
         def do_GET(self):
-            path=urlsplit(self.path).path
-            if path=='/': self.send(200,(Path(__file__).parent/'ui.html').read_text(encoding='utf-8'),'text/html')
-            elif path=='/ui.js': self.send(200,(Path(__file__).parent/'ui.js').read_text(encoding='utf-8'),'application/javascript')
+            url=urlsplit(self.path)
+            path=url.path
+            language=parse_qs(url.query).get('lang',['ru'])[0]
+            if path=='/': self.send(200,ui_asset('ui.html',language),'text/html')
+            elif path=='/ui.js': self.send(200,ui_asset('ui.js',language),'application/javascript')
             elif path=='/presets':
                 configs={f'{ba}/{mo}/{po}':config(ball_name=ba,motion_name=mo,setup_name=po) for ba in ['full','nearly_empty','large'] for mo in ['knitting','crochet','gentle'] for po in ['desk_side','front','far_side','high_table','floor']}
-                configs.update({f'{st}/{key}':config(st,ba,mo,po) for st in ['pitaya_v08','pitaya_v09','peach_v13'] for key in list(configs) for ba,mo,po in [key.split('/')]})
+                configs.update({f'{st}/{key}':config(st,ba,mo,po) for st in ['pitaya_v08','pitaya_v09','peach_v13','lemon_v05'] for key in list(configs) for ba,mo,po in [key.split('/')]})
                 self.send(200,json.dumps(configs,ensure_ascii=False))
             else:self.send(404,'{"error":"Not found"}')
         def do_POST(self):
