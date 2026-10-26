@@ -52,6 +52,12 @@ python run.py --inputs examples --output reports
 python make_examples.py /path/to/3d-Models/vehicles/dune-trike/TRIKE_MINI_v06
 ```
 
+The checked-in examples use **v06**. For the second command, use the complete
+[v06 kit at CAD commit a53de1c](https://github.com/Griboedow/3d-Models/tree/a53de1c56152c2b981177e63beb754ad3577e2a8/vehicles/dune-trike/TRIKE_MINI_v06),
+for example from a checkout of that commit. The CAD repository's current branch
+now contains v07; its v06 folder is a history pointer. Existing calculator
+results have not been silently updated to the revised geometry.
+
 The second command regenerates **all example inputs**, including the trike's
 mass/CG estimate from current meshes and plate object masses. Save customized
 inputs elsewhere first. It does not edit the 3D model. `run.py` stores hashes of
