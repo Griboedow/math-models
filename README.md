@@ -16,8 +16,8 @@ mechanisms and scenarios; their assumptions and validation limits are explicit.
 
 | Area | Calculator and its README | Questions it explores |
 |---|---|---|
-| Yarn | [Rotating yarn stands](yarn/stand-simulator/) | Yarn tension, overrun, traction, sliding, tipping, snag clearance and manufacturing mass/inertia; Lemon, Peach and Pitaya examples |
-| Vehicles | [Printed toy vehicles](vehicles/toy-physics/) | N-wheel support, floor resistance, child loads, PLA/PETG axle bending, buoyancy and level attitude, contact and washability comparisons; Trike MINI v06 example |
+| Yarn | [Rotating yarn stands](yarn/stand-simulator/README.md) | Yarn tension, overrun, traction, sliding, tipping, snag clearance and manufacturing mass/inertia; Lemon, Peach and Pitaya examples |
+| Vehicles | [Printed toy vehicles](vehicles/toy-physics/README.md) | N-wheel support, floor resistance, child loads, PLA/PETG axle bending, buoyancy and level attitude, contact and washability comparisons; Trike MINI v06 example |
 
 ```text
 yarn/
